@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/11/2019 13:54:36
+// 11/11/2019 19:32:20
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,16 +9,16 @@ public class MethodDeclaration extends MethodDecl {
 
     private MethodTypeName MethodTypeName;
     private FormPars FormPars;
-    private VarDeclList VarDeclList;
+    private DeclVarList DeclVarList;
     private StatementList StatementList;
 
-    public MethodDeclaration (MethodTypeName MethodTypeName, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
+    public MethodDeclaration (MethodTypeName MethodTypeName, FormPars FormPars, DeclVarList DeclVarList, StatementList StatementList) {
         this.MethodTypeName=MethodTypeName;
         if(MethodTypeName!=null) MethodTypeName.setParent(this);
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
-        this.VarDeclList=VarDeclList;
-        if(VarDeclList!=null) VarDeclList.setParent(this);
+        this.DeclVarList=DeclVarList;
+        if(DeclVarList!=null) DeclVarList.setParent(this);
         this.StatementList=StatementList;
         if(StatementList!=null) StatementList.setParent(this);
     }
@@ -39,12 +39,12 @@ public class MethodDeclaration extends MethodDecl {
         this.FormPars=FormPars;
     }
 
-    public VarDeclList getVarDeclList() {
-        return VarDeclList;
+    public DeclVarList getDeclVarList() {
+        return DeclVarList;
     }
 
-    public void setVarDeclList(VarDeclList VarDeclList) {
-        this.VarDeclList=VarDeclList;
+    public void setDeclVarList(DeclVarList DeclVarList) {
+        this.DeclVarList=DeclVarList;
     }
 
     public StatementList getStatementList() {
@@ -62,7 +62,7 @@ public class MethodDeclaration extends MethodDecl {
     public void childrenAccept(Visitor visitor) {
         if(MethodTypeName!=null) MethodTypeName.accept(visitor);
         if(FormPars!=null) FormPars.accept(visitor);
-        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(DeclVarList!=null) DeclVarList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
     }
 
@@ -70,14 +70,14 @@ public class MethodDeclaration extends MethodDecl {
         accept(visitor);
         if(MethodTypeName!=null) MethodTypeName.traverseTopDown(visitor);
         if(FormPars!=null) FormPars.traverseTopDown(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(DeclVarList!=null) DeclVarList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodTypeName!=null) MethodTypeName.traverseBottomUp(visitor);
         if(FormPars!=null) FormPars.traverseBottomUp(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(DeclVarList!=null) DeclVarList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -99,8 +99,8 @@ public class MethodDeclaration extends MethodDecl {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDeclList!=null)
-            buffer.append(VarDeclList.toString("  "+tab));
+        if(DeclVarList!=null)
+            buffer.append(DeclVarList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

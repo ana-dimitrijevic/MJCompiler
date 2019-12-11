@@ -132,6 +132,8 @@ nonterminal AbstractModif;
 nonterminal ClassExtends;
 nonterminal ClassVarDeclList;
 nonterminal ClassMethDeclList;
+nonterminal RetType;
+nonterminal DeclVarList;
 
 
 precedence left ELSE;
@@ -147,15 +149,37 @@ VarDeclList ::= (VarDeclarations) VarDeclList VarDeclar
 				|
 				(NoVarDeclarations)/* epsilon */ 
 ;
-		
-//(VarDecl) Type:varType IDENT:varName ArrayModif SEMI		
-	
+			
 VarDeclar ::= (VarDeclConst) CONST Type InitList SEMI
 			  | 
-			  (VarDecl) Type VarIdentList SEMI 	
+			  (VarDeclNonConst) DeclVar
 			  |
 			  (ClassDecl) AbstractModif CLASS IDENT ClassExtends LBRACE ClassVarDeclList ClassMethDeclList RBRACE
 ;
+
+DeclVar ::= (VariableDeclaration) Type VarIdentList SEMI
+            |
+            (VariableDeclarationError) error SEMI
+            {: parser.report_info("GRESKA: deklaracija promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
+;
+
+VarIdentList ::= (MultipleVariableIdentList) VarIdentList COMMA VarIdent
+                 |
+                 (OneVariableIdentList) VarIdent
+;
+
+VarIdent ::= (SingleVariableIdent) IDENT:name
+              |
+              (ArrayVariableIdent) IDENT:name LBRACKET RBRACKET
+              |
+              (VariableIdentError) error
+              {: parser.report_info("GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
+;
+
+        
+DeclVarList ::= (VariableDeclarationList) DeclVarList DeclVar
+                |
+                (NoVariableDeclarationList) /* epsilon */;
 
 AbstractModif ::= (AbstractModifer) ABSTRACT
 				  |
@@ -191,42 +215,25 @@ Init ::= (NumConstInitializer) IDENT:name ASSIGN NUMBERCONST:val
           |
           (CharConstInitializer) IDENT:name ASSIGN CHARCONST:val
 ;
-        
-DeclVar ::= (VariableDeclaration) Type VarIdentList SEMI
-            |
-            (VariableDeclarationError) error SEMI
-            {: parser.report_info("GRESKA: deklaracija promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
-;
 
-
-VarIdentList ::= (MultipleVariableIdentList) VarIdentList COMMA VarIdent
-                 |
-                 (OneVariableIdentList) VarIdent
-;
-
-VarIdent ::= (SingleVariableIdent) IDENT:name
-              |
-              (ArrayVariableIdent) IDENT:name LBRACKET RBRACKET
-              |
-              (VariableIdentError) error
-              {: parser.report_info("GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
-;
-
-// APSTRAKTNA KLASA !!!
 
 MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					|
 					(NoMethodDecl)/* epsilon */
 					;
 
-MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
+MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN DeclVarList LBRACE StatementList RBRACE
 			   |
 			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName LPAREN FormPars RPAREN SEMI
 ;
 
-MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
+MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName
 ;
 
+RetType ::= (VoidReturnType) VOID
+             |
+            (ReturnType) Type;
+                            
 FormPars ::= (FormParams) FormalParamList 
 			 | 
 			(NoFormParam) /* epsilon */ ;
@@ -236,7 +243,14 @@ FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					(SingleFormalParamDecl) FormalParamDecl
 					;
 					
-FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
+FormalParamDecl ::= (SimpleFormalParameter) Type IDENT:name
+                     |
+                     (ArrayFormalParameter) Type IDENT:name LBRACKET RBRACKET
+                     |
+                     (FormalParameterError) error
+                     {: parser.report_info("formal parameter error recovery: successful", null); :};
+
+
 
 StatementList ::= (Statements) StatementList Statement 
 					|
