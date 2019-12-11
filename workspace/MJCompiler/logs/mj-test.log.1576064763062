@@ -1,0 +1,79 @@
+INFO  12:45:20,751 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:45:20,782 - #13 program
+INFO  12:45:20,782 - #45 MJProgram
+INFO  12:45:20,782 - #45 int
+INFO  12:45:20,782 - #45 x
+INFO  12:45:20,782 - #7 ;
+INFO  12:45:20,782 - #17 const
+INFO  12:45:20,782 - #45 int
+INFO  12:45:20,782 - #45 y
+INFO  12:45:20,782 - #6 =
+INFO  12:45:20,782 - #44 1
+INFO  12:45:20,782 - #7 ;
+INFO  12:45:20,782 - #11 {
+INFO  12:45:20,782 - #45 int
+INFO  12:45:20,782 - #45 k
+INFO  12:45:20,782 - #10 (
+INFO  12:45:20,798 - #5 )
+INFO  12:45:20,798 - #45 int
+INFO  12:45:20,798 - #45 c
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #11 {
+INFO  12:45:20,798 - #45 c
+INFO  12:45:20,798 - #6 =
+INFO  12:45:20,798 - #44 1
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #8 return
+INFO  12:45:20,798 - #45 c
+INFO  12:45:20,798 - #3 +
+INFO  12:45:20,798 - #44 2
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #4 }
+INFO  12:45:20,798 - #45 int
+INFO  12:45:20,798 - #45 main
+INFO  12:45:20,798 - #10 (
+INFO  12:45:20,798 - #5 )
+INFO  12:45:20,798 - #11 {
+INFO  12:45:20,798 - #45 y
+INFO  12:45:20,798 - #6 =
+INFO  12:45:20,798 - #44 2
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #45 x
+INFO  12:45:20,798 - #6 =
+INFO  12:45:20,798 - #45 y
+INFO  12:45:20,798 - #3 +
+INFO  12:45:20,798 - #44 2
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #45 y
+INFO  12:45:20,798 - #6 =
+INFO  12:45:20,798 - #45 k
+INFO  12:45:20,798 - #10 (
+INFO  12:45:20,798 - #5 )
+INFO  12:45:20,798 - #3 +
+INFO  12:45:20,798 - #44 3
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #14 print
+INFO  12:45:20,798 - #10 (
+INFO  12:45:20,798 - #45 y
+INFO  12:45:20,798 - #5 )
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #8 return
+INFO  12:45:20,798 - #44 0
+INFO  12:45:20,798 - #7 ;
+INFO  12:45:20,798 - #4 }
+INFO  12:45:20,798 - #4 }
+INFO  12:45:20,829 - Deklarisana promenljiva x na liniji 2
+INFO  12:45:20,829 - Obradjuje se funkcija k na liniji 5
+INFO  12:45:20,829 - Deklarisana promenljiva c na liniji 5
+INFO  12:45:20,829 - Obradjuje se funkcija main na liniji 10
+ERROR 12:45:20,829 - Greska na liniji 11 : ime y nije deklarisano! 
+ERROR 12:45:20,829 - Greska na liniji 11 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 12:45:20,829 - Greska na liniji 12 : ime y nije deklarisano! 
+ERROR 12:45:20,829 - Greska na liniji 12 : nekompatibilni tipovi u izrazu za sabiranje.
+ERROR 12:45:20,829 - Greska na liniji 12 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 12:45:20,829 - Greska na liniji 13 : ime y nije deklarisano! 
+INFO  12:45:20,829 - Pronadjen poziv funkcije k na liniji 13
+ERROR 12:45:20,829 - Greska na liniji 13 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 12:45:20,829 - Greska na liniji 14 : ime y nije deklarisano! 
+INFO  12:45:20,829 - Print calls = 1
+ERROR 12:45:20,845 - Parsiranje NIJE uspesno zavrseno!

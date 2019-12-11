@@ -1,0 +1,51 @@
+INFO  13:18:08,000 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  13:18:08,031 - #13 program
+INFO  13:18:08,031 - #45 MJProgram
+INFO  13:18:08,031 - #45 int
+INFO  13:18:08,047 - #45 x
+INFO  13:18:08,047 - #7 ;
+INFO  13:18:08,047 - #17 const
+INFO  13:18:08,047 - #45 int
+INFO  13:18:08,047 - #45 y
+INFO  13:18:08,047 - #6 =
+INFO  13:18:08,047 - #44 1
+INFO  13:18:08,047 - #7 ;
+INFO  13:18:08,047 - #42 abstract
+INFO  13:18:08,047 - #41 class
+INFO  13:18:08,047 - #45 Tab
+INFO  13:18:08,047 - #11 {
+INFO  13:18:08,047 - #45 int
+INFO  13:18:08,047 - #45 size
+INFO  13:18:08,047 - #7 ;
+INFO  13:18:08,047 - #11 {
+INFO  13:18:08,047 - #45 int
+INFO  13:18:08,047 - #45 getSize
+INFO  13:18:08,047 - #10 (
+INFO  13:18:08,047 - #5 )
+INFO  13:18:08,047 - #11 {
+INFO  13:18:08,047 - #8 return
+INFO  13:18:08,047 - #45 size
+INFO  13:18:08,047 - #7 ;
+INFO  13:18:08,047 - #4 }
+INFO  13:18:08,047 - #4 }
+INFO  13:18:08,047 - #4 }
+INFO  13:18:08,062 - #41 class
+INFO  13:18:08,062 - #45 Table
+INFO  13:18:08,062 - #43 extends
+INFO  13:18:08,062 - #45 Tab
+INFO  13:18:08,062 - #11 {
+INFO  13:18:08,062 - #45 int
+INFO  13:18:08,062 - #45 pos
+INFO  13:18:08,062 - #7 ;
+INFO  13:18:08,062 - #45 int
+INFO  13:18:08,062 - #45 neg
+INFO  13:18:08,062 - #7 ;
+INFO  13:18:08,062 - #11 {
+INFO  13:18:08,062 - #15 void
+ERROR 13:18:08,062 - 
+Sintaksna greska na liniji 12
+ERROR 13:18:08,062 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12
+INFO  13:18:08,078 - Deklarisana promenljiva pos na liniji 10
+INFO  13:18:08,078 - Deklarisana promenljiva neg na liniji 10
+INFO  13:18:08,078 - Print calls = 0
+ERROR 13:18:08,078 - Parsiranje NIJE uspesno zavrseno!

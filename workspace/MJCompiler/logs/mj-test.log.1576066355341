@@ -1,0 +1,62 @@
+INFO  12:46:03,062 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:46:03,093 - #13 program
+INFO  12:46:03,093 - #45 MJProgram
+INFO  12:46:03,093 - #45 int
+INFO  12:46:03,093 - #45 x
+INFO  12:46:03,093 - #7 ;
+INFO  12:46:03,093 - #17 const
+INFO  12:46:03,093 - #45 int
+INFO  12:46:03,093 - #45 y
+INFO  12:46:03,093 - #6 =
+INFO  12:46:03,093 - #44 1
+INFO  12:46:03,093 - #7 ;
+INFO  12:46:03,093 - #11 {
+INFO  12:46:03,093 - #45 int
+INFO  12:46:03,093 - #45 k
+INFO  12:46:03,093 - #10 (
+INFO  12:46:03,093 - #5 )
+INFO  12:46:03,093 - #45 int
+INFO  12:46:03,093 - #45 c
+INFO  12:46:03,093 - #7 ;
+INFO  12:46:03,093 - #11 {
+INFO  12:46:03,093 - #45 c
+INFO  12:46:03,109 - #6 =
+INFO  12:46:03,109 - #44 1
+INFO  12:46:03,109 - #7 ;
+INFO  12:46:03,109 - #8 return
+INFO  12:46:03,109 - #45 c
+INFO  12:46:03,109 - #3 +
+INFO  12:46:03,109 - #44 2
+INFO  12:46:03,109 - #7 ;
+INFO  12:46:03,109 - #4 }
+INFO  12:46:03,109 - #45 int
+INFO  12:46:03,109 - #45 main
+INFO  12:46:03,109 - #10 (
+INFO  12:46:03,109 - #5 )
+INFO  12:46:03,109 - #11 {
+INFO  12:46:03,109 - #45 x
+INFO  12:46:03,109 - #6 =
+INFO  12:46:03,109 - #45 y
+INFO  12:46:03,109 - #3 +
+INFO  12:46:03,109 - #44 2
+INFO  12:46:03,109 - #7 ;
+INFO  12:46:03,109 - #14 print
+INFO  12:46:03,109 - #10 (
+INFO  12:46:03,109 - #45 y
+INFO  12:46:03,109 - #5 )
+INFO  12:46:03,109 - #7 ;
+INFO  12:46:03,109 - #8 return
+INFO  12:46:03,109 - #44 0
+INFO  12:46:03,109 - #7 ;
+INFO  12:46:03,109 - #4 }
+INFO  12:46:03,109 - #4 }
+INFO  12:46:03,125 - Deklarisana promenljiva x na liniji 2
+INFO  12:46:03,125 - Obradjuje se funkcija k na liniji 5
+INFO  12:46:03,125 - Deklarisana promenljiva c na liniji 5
+INFO  12:46:03,125 - Obradjuje se funkcija main na liniji 10
+ERROR 12:46:03,125 - Greska na liniji 12 : ime y nije deklarisano! 
+ERROR 12:46:03,125 - Greska na liniji 12 : nekompatibilni tipovi u izrazu za sabiranje.
+ERROR 12:46:03,125 - Greska na liniji 12 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 12:46:03,140 - Greska na liniji 14 : ime y nije deklarisano! 
+INFO  12:46:03,140 - Print calls = 1
+ERROR 12:46:03,140 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,64 @@
+INFO  13:43:22,136 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  13:43:22,162 - #13 program
+INFO  13:43:22,162 - #45 MJProgram
+INFO  13:43:22,162 - #45 int
+INFO  13:43:22,162 - #45 x
+INFO  13:43:22,162 - #7 ;
+INFO  13:43:22,162 - #17 const
+INFO  13:43:22,162 - #45 int
+INFO  13:43:22,162 - #45 y
+INFO  13:43:22,162 - #6 =
+INFO  13:43:22,162 - #44 1
+INFO  13:43:22,162 - #7 ;
+INFO  13:43:22,162 - #42 abstract
+INFO  13:43:22,162 - #41 class
+INFO  13:43:22,162 - #45 Tab
+INFO  13:43:22,162 - #11 {
+INFO  13:43:22,162 - #45 int
+INFO  13:43:22,162 - #45 size
+INFO  13:43:22,177 - #7 ;
+INFO  13:43:22,177 - #11 {
+INFO  13:43:22,177 - #45 int
+INFO  13:43:22,177 - #45 getSize
+INFO  13:43:22,177 - #10 (
+INFO  13:43:22,177 - #5 )
+INFO  13:43:22,177 - #11 {
+INFO  13:43:22,177 - #8 return
+INFO  13:43:22,177 - #45 size
+INFO  13:43:22,177 - #7 ;
+INFO  13:43:22,177 - #4 }
+INFO  13:43:22,177 - #4 }
+INFO  13:43:22,194 - #4 }
+INFO  13:43:22,194 - #41 class
+INFO  13:43:22,195 - #45 Table
+INFO  13:43:22,195 - #43 extends
+INFO  13:43:22,195 - #45 Tab
+INFO  13:43:22,196 - #11 {
+INFO  13:43:22,197 - #45 int
+INFO  13:43:22,197 - #45 pos
+INFO  13:43:22,197 - #36 [
+INFO  13:43:22,197 - #37 ]
+INFO  13:43:22,198 - #7 ;
+INFO  13:43:22,198 - #45 int
+INFO  13:43:22,198 - #45 neg
+INFO  13:43:22,201 - #36 [
+INFO  13:43:22,201 - #37 ]
+INFO  13:43:22,201 - #7 ;
+INFO  13:43:22,201 - #11 {
+INFO  13:43:22,202 - #45 int
+INFO  13:43:22,202 - #45 putp
+INFO  13:43:22,202 - #10 (
+INFO  13:43:22,202 - #45 int
+INFO  13:43:22,202 - #45 a
+INFO  13:43:22,202 - #12 ,
+INFO  13:43:22,203 - #45 int
+INFO  13:43:22,203 - #45 idx
+INFO  13:43:22,203 - #5 )
+INFO  13:43:22,204 - #11 {
+INFO  13:43:22,204 - #45 this
+INFO  13:43:22,204 - #38 .
+ERROR 13:43:22,204 - 
+Sintaksna greska na liniji 12
+ERROR 13:43:22,204 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 12
+INFO  13:43:22,215 - Print calls = 0
+ERROR 13:43:22,223 - Parsiranje NIJE uspesno zavrseno!

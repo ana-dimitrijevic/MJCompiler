@@ -1,30 +1,36 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/11/2019 12:27:32
+// 11/11/2019 13:54:36
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public interface Visitor { 
 
+    public void visit(MethodDecl MethodDecl);
     public void visit(Factor Factor);
     public void visit(ActualParamList ActualParamList);
     public void visit(DeclClass DeclClass);
     public void visit(DeclVar DeclVar);
     public void visit(Expr Expr);
     public void visit(FormalParamList FormalParamList);
+    public void visit(AbstractModif AbstractModif);
     public void visit(FormPars FormPars);
     public void visit(VarIdent VarIdent);
     public void visit(VarDeclList VarDeclList);
     public void visit(Unmatched Unmatched);
+    public void visit(ClassExtends ClassExtends);
     public void visit(MethodDeclList MethodDeclList);
     public void visit(Statement Statement);
+    public void visit(ClassMethDeclList ClassMethDeclList);
     public void visit(InitList InitList);
     public void visit(DeclConst DeclConst);
+    public void visit(ClassVarDeclList ClassVarDeclList);
     public void visit(VarIdentList VarIdentList);
     public void visit(StatementList StatementList);
     public void visit(Matched Matched);
     public void visit(ActualPars ActualPars);
+    public void visit(VarDeclar VarDeclar);
     public void visit(Init Init);
     public void visit(Addop Addop);
     public void visit(Designator Designator);
@@ -57,7 +63,8 @@ public interface Visitor {
     public void visit(NoFormParam NoFormParam);
     public void visit(FormParams FormParams);
     public void visit(MethodTypeName MethodTypeName);
-    public void visit(MethodDecl MethodDecl);
+    public void visit(AbstractMethodDeclaration AbstractMethodDeclaration);
+    public void visit(MethodDeclaration MethodDeclaration);
     public void visit(NoMethodDecl NoMethodDecl);
     public void visit(MethodDeclarations MethodDeclarations);
     public void visit(VariableIdentError VariableIdentError);
@@ -73,8 +80,17 @@ public interface Visitor {
     public void visit(SingleInitializer SingleInitializer);
     public void visit(InitializerList InitializerList);
     public void visit(Type Type);
-    public void visit(ConstDeclaration ConstDeclaration);
+    public void visit(NoClassMethodDeclList NoClassMethodDeclList);
+    public void visit(ClassMethodDeclList ClassMethodDeclList);
+    public void visit(NoClassVarDeclarationList NoClassVarDeclarationList);
+    public void visit(ClassVarDeclarationList ClassVarDeclarationList);
+    public void visit(NoExtesion NoExtesion);
+    public void visit(Extension Extension);
+    public void visit(NoAbstractModifer NoAbstractModifer);
+    public void visit(AbstractModifer AbstractModifer);
+    public void visit(ClassDecl ClassDecl);
     public void visit(VarDecl VarDecl);
+    public void visit(VarDeclConst VarDeclConst);
     public void visit(NoVarDeclarations NoVarDeclarations);
     public void visit(VarDeclarations VarDeclarations);
     public void visit(ProgName ProgName);

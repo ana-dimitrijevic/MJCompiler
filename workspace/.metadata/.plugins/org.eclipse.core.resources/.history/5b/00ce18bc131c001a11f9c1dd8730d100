@@ -1,0 +1,32 @@
+program MJProgram
+	int x; const int y = 1;
+	abstract class Tab{
+		int size;
+		{
+		int getSize() { return size;}
+		}
+	}
+	class Table extends Tab{
+		int pos[], neg[];
+	{
+
+ 		int getp (int idx) {  }
+ 		int getn (int idx) {  }
+	}
+}
+	
+{
+	
+	int k () int c; {
+		c = 1;
+		return c+2;
+	}
+	
+	int main() {
+		//y = 2;
+		x = y + 2;
+		//y = k() + 3;
+		print(y);
+		return 0;
+	}
+}

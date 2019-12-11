@@ -1,0 +1,44 @@
+INFO  13:17:30,015 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  13:17:30,066 - #13 program
+INFO  13:17:30,066 - #45 MJProgram
+INFO  13:17:30,066 - #45 int
+INFO  13:17:30,068 - #45 x
+INFO  13:17:30,069 - #7 ;
+INFO  13:17:30,069 - #17 const
+INFO  13:17:30,070 - #45 int
+INFO  13:17:30,070 - #45 y
+INFO  13:17:30,070 - #6 =
+INFO  13:17:30,070 - #44 1
+INFO  13:17:30,070 - #7 ;
+INFO  13:17:30,071 - #42 abstract
+INFO  13:17:30,074 - #41 class
+INFO  13:17:30,079 - #45 Tab
+INFO  13:17:30,079 - #11 {
+INFO  13:17:30,081 - #45 int
+INFO  13:17:30,082 - #45 size
+INFO  13:17:30,082 - #7 ;
+INFO  13:17:30,082 - #11 {
+INFO  13:17:30,083 - #45 int
+INFO  13:17:30,084 - #45 getSize
+INFO  13:17:30,085 - #10 (
+INFO  13:17:30,086 - #5 )
+INFO  13:17:30,087 - #11 {
+INFO  13:17:30,087 - #8 return
+INFO  13:17:30,087 - #45 size
+INFO  13:17:30,088 - #7 ;
+INFO  13:17:30,089 - #4 }
+INFO  13:17:30,090 - #4 }
+INFO  13:17:30,091 - #4 }
+INFO  13:17:30,091 - #41 class
+INFO  13:17:30,092 - #45 Table
+INFO  13:17:30,092 - #43 extends
+INFO  13:17:30,092 - #45 Tab
+INFO  13:17:30,092 - #11 {
+INFO  13:17:30,092 - #45 int
+INFO  13:17:30,092 - #45 pos
+INFO  13:17:30,093 - #36 [
+ERROR 13:17:30,093 - 
+Sintaksna greska na liniji 10
+ERROR 13:17:30,093 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
+INFO  13:17:30,112 - Print calls = 0
+ERROR 13:17:30,112 - Parsiranje NIJE uspesno zavrseno!

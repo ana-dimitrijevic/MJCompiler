@@ -100,20 +100,6 @@ terminal EXTENDS;
 terminal Integer NUMBERCONST;
 terminal String IDENT;
 
-
-
-
-nonterminal MethodDeclList;
-nonterminal VarDecl;
-nonterminal DeclClass;
-nonterminal DeclConst;
-nonterminal DeclVar;
-
-nonterminal InitList;
-nonterminal Init;
-nonterminal VarIdentList;
-nonterminal VarIdent;
-
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator;
@@ -126,8 +112,13 @@ nonterminal rs.etf.pp1.symboltable.concepts.Struct Factor;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct VarDeclList; 
 
 
-
-
+nonterminal MethodDeclList;
+nonterminal VarDeclar;
+nonterminal DeclVar;
+nonterminal InitList;
+nonterminal Init;
+nonterminal VarIdentList;
+nonterminal VarIdent;
 nonterminal FormalParamList;
 nonterminal FormalParamDecl;
 nonterminal FormPars;
@@ -137,6 +128,10 @@ nonterminal StatementList;
 nonterminal Statement;
 nonterminal Addop;
 nonterminal Unmatched, Matched;
+nonterminal AbstractModif;
+nonterminal ClassExtends;
+nonterminal ClassVarDeclList;
+nonterminal ClassMethDeclList;
 
 
 precedence left ELSE;
@@ -148,26 +143,39 @@ Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE
 ProgName ::= (ProgName) IDENT:pName
 ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList VarDecl  
+VarDeclList ::= (VarDeclarations) VarDeclList VarDeclar  
 				|
 				(NoVarDeclarations)/* epsilon */ 
 ;
 		
-/*		
-VarDecl ::= (VarDeclClass) DeclClass
-			|
-			(VarDeclConst) DeclConst
-			| 
-			(VarDeclVar) DeclVar		 
-;
-*/
-
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI 
+//(VarDecl) Type:varType IDENT:varName ArrayModif SEMI		
+	
+VarDeclar ::= (VarDeclConst) CONST Type InitList SEMI
+			  | 
+			  (VarDecl) Type VarIdentList SEMI 	
+			  |
+			  (ClassDecl) AbstractModif CLASS IDENT ClassExtends LBRACE ClassVarDeclList ClassMethDeclList RBRACE
 ;
 
-DeclConst ::= (ConstDeclaration) CONST Type InitList SEMI
-;
+AbstractModif ::= (AbstractModifer) ABSTRACT
+				  |
+				  (NoAbstractModifer) /* epsilon */
+				;
 
+ClassExtends ::= (Extension) EXTENDS Type
+				|
+				(NoExtesion) /* epsilon */
+				;
+				
+ClassVarDeclList ::= (ClassVarDeclarationList) ClassVarDeclList VarDeclar
+					|
+					(NoClassVarDeclarationList) /* epsilon */
+					;	
+
+ClassMethDeclList ::= (ClassMethodDeclList) LBRACE MethodDeclList RBRACE
+					|
+					(NoClassMethodDeclList) /* epsilon */
+					;
 
 Type ::= (Type) IDENT:typeName 
 ;
@@ -211,9 +219,10 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					(NoMethodDecl)/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName
-			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE 
-			   ;
+MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
+			   |
+			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName LPAREN FormPars RPAREN SEMI
+;
 
 MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
 ;

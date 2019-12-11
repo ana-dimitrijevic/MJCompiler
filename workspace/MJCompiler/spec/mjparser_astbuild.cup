@@ -104,7 +104,7 @@ terminal String IDENT;
 
 
 nonterminal MethodDeclList MethodDeclList;
-nonterminal VarDecl VarDecl;
+nonterminal VarDeclar VarDeclar;
 nonterminal DeclClass DeclClass;
 nonterminal DeclConst DeclConst;
 nonterminal DeclVar DeclVar;
@@ -138,6 +138,10 @@ nonterminal Statement Statement;
 nonterminal Addop Addop;
 nonterminal Unmatched Unmatched;
 nonterminal Matched Matched;
+nonterminal AbstractModif AbstractModif;
+nonterminal ClassExtends ClassExtends;
+nonterminal ClassVarDeclList ClassVarDeclList;
+nonterminal ClassMethDeclList ClassMethDeclList;
 
 
 precedence left ELSE;
@@ -149,26 +153,39 @@ Program ::= (Program) PROG ProgName:p VarDeclList:V1 LBRACE MethodDeclList:M2 RB
 ProgName ::= (ProgName) IDENT:pName {: RESULT=new ProgName(pName); RESULT.setLine(pNameleft); :}
 ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclarations(V1, V2); RESULT.setLine(V1left); :}  
+VarDeclList ::= (VarDeclarations) VarDeclList:V1 VarDeclar:V2 {: RESULT=new VarDeclarations(V1, V2); RESULT.setLine(V1left); :}  
 				|
 				(NoVarDeclarations) {: RESULT=new NoVarDeclarations(); :}/* epsilon */ 
 ;
 		
-/*		
-VarDecl ::= (VarDeclClass) DeclClass
-			|
-			(VarDeclConst) DeclConst
-			| 
-			(VarDeclVar) DeclVar		 
-;
-*/
-
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI {: RESULT=new VarDecl(varType, varName); RESULT.setLine(varTypeleft); :} 
+//(VarDecl) Type:varType IDENT:varName ArrayModif SEMI		
+	
+VarDeclar ::= (VarDeclConst) CONST Type:T1 InitList:I2 SEMI {: RESULT=new VarDeclConst(T1, I2); RESULT.setLine(T1left); :}
+			  | 
+			  (VarDecl) Type:T1 VarIdentList:V2 SEMI {: RESULT=new VarDecl(T1, V2); RESULT.setLine(T1left); :} 	
+			  |
+			  (ClassDecl) AbstractModif:A1 CLASS IDENT:I2 ClassExtends:C3 LBRACE ClassVarDeclList:C4 ClassMethDeclList:C5 RBRACE {: RESULT=new ClassDecl(A1, I2, C3, C4, C5); RESULT.setLine(A1left); :}
 ;
 
-DeclConst ::= (ConstDeclaration) CONST Type:T1 InitList:I2 SEMI {: RESULT=new ConstDeclaration(T1, I2); RESULT.setLine(T1left); :}
-;
+AbstractModif ::= (AbstractModifer) ABSTRACT {: RESULT=new AbstractModifer(); :}
+				  |
+				  (NoAbstractModifer) {: RESULT=new NoAbstractModifer(); :} /* epsilon */
+				;
 
+ClassExtends ::= (Extension) EXTENDS Type:T1 {: RESULT=new Extension(T1); RESULT.setLine(T1left); :}
+				|
+				(NoExtesion) {: RESULT=new NoExtesion(); :} /* epsilon */
+				;
+				
+ClassVarDeclList ::= (ClassVarDeclarationList) ClassVarDeclList:C1 VarDeclar:V2 {: RESULT=new ClassVarDeclarationList(C1, V2); RESULT.setLine(C1left); :}
+					|
+					(NoClassVarDeclarationList) {: RESULT=new NoClassVarDeclarationList(); :} /* epsilon */
+					;	
+
+ClassMethDeclList ::= (ClassMethodDeclList) LBRACE MethodDeclList:M1 RBRACE {: RESULT=new ClassMethodDeclList(M1); RESULT.setLine(M1left); :}
+					|
+					(NoClassMethodDeclList) {: RESULT=new NoClassMethodDeclList(); :} /* epsilon */
+					;
 
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :} 
 ;
@@ -212,9 +229,10 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 					(NoMethodDecl) {: RESULT=new NoMethodDecl(); :}/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName:M1
-			   LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, F2, V3, S4); RESULT.setLine(M1left); :} 
-			   ;
+MethodDecl ::= (MethodDeclaration) MethodTypeName:M1 LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDeclaration(M1, F2, V3, S4); RESULT.setLine(M1left); :}
+			   |
+			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName:M1 LPAREN FormPars:F2 RPAREN SEMI {: RESULT=new AbstractMethodDeclaration(M1, F2); RESULT.setLine(M1left); :}
+;
 
 MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :}
 ;
