@@ -1,0 +1,58 @@
+// generated with ast extension for cup
+// version 0.8
+// 10/11/2019 23:23:12
+
+
+package rs.ac.bg.etf.pp1.ast;
+
+public class VarDeclClass extends VarDecl {
+
+    private DeclClass DeclClass;
+
+    public VarDeclClass (DeclClass DeclClass) {
+        this.DeclClass=DeclClass;
+        if(DeclClass!=null) DeclClass.setParent(this);
+    }
+
+    public DeclClass getDeclClass() {
+        return DeclClass;
+    }
+
+    public void setDeclClass(DeclClass DeclClass) {
+        this.DeclClass=DeclClass;
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public void childrenAccept(Visitor visitor) {
+        if(DeclClass!=null) DeclClass.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(DeclClass!=null) DeclClass.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(DeclClass!=null) DeclClass.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("VarDeclClass(\n");
+
+        if(DeclClass!=null)
+            buffer.append(DeclClass.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [VarDeclClass]");
+        return buffer.toString();
+    }
+}

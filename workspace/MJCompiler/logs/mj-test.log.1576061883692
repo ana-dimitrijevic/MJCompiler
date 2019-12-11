@@ -1,0 +1,70 @@
+INFO  10:24:41,831 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  10:24:41,861 - #13 program
+INFO  10:24:41,861 - #45 MJProgram
+INFO  10:24:41,861 - #45 int
+INFO  10:24:41,863 - #45 x
+INFO  10:24:41,864 - #7 ;
+INFO  10:24:41,864 - #45 int
+INFO  10:24:41,866 - #45 y
+INFO  10:24:41,867 - #7 ;
+INFO  10:24:41,867 - #11 {
+INFO  10:24:41,868 - #45 int
+INFO  10:24:41,869 - #45 k
+INFO  10:24:41,870 - #10 (
+INFO  10:24:41,870 - #5 )
+INFO  10:24:41,871 - #45 int
+INFO  10:24:41,871 - #45 c
+INFO  10:24:41,871 - #7 ;
+INFO  10:24:41,872 - #11 {
+INFO  10:24:41,872 - #45 c
+INFO  10:24:41,872 - #6 =
+INFO  10:24:41,873 - #44 1
+INFO  10:24:41,873 - #7 ;
+INFO  10:24:41,874 - #8 return
+INFO  10:24:41,875 - #45 c
+INFO  10:24:41,875 - #3 +
+INFO  10:24:41,876 - #44 2
+INFO  10:24:41,876 - #7 ;
+INFO  10:24:41,877 - #4 }
+INFO  10:24:41,877 - #45 int
+INFO  10:24:41,878 - #45 main
+INFO  10:24:41,878 - #10 (
+INFO  10:24:41,878 - #5 )
+INFO  10:24:41,878 - #11 {
+INFO  10:24:41,878 - #45 y
+INFO  10:24:41,878 - #6 =
+INFO  10:24:41,878 - #44 2
+INFO  10:24:41,878 - #7 ;
+INFO  10:24:41,878 - #45 x
+INFO  10:24:41,879 - #6 =
+INFO  10:24:41,879 - #45 y
+INFO  10:24:41,879 - #3 +
+INFO  10:24:41,879 - #44 2
+INFO  10:24:41,880 - #7 ;
+INFO  10:24:41,882 - #45 y
+INFO  10:24:41,883 - #6 =
+INFO  10:24:41,883 - #45 k
+INFO  10:24:41,893 - #10 (
+INFO  10:24:41,896 - #5 )
+INFO  10:24:41,897 - #3 +
+INFO  10:24:41,897 - #44 3
+INFO  10:24:41,897 - #7 ;
+INFO  10:24:41,898 - #14 print
+INFO  10:24:41,898 - #10 (
+INFO  10:24:41,898 - #45 y
+INFO  10:24:41,898 - #5 )
+INFO  10:24:41,899 - #7 ;
+INFO  10:24:41,900 - #8 return
+INFO  10:24:41,900 - #44 0
+INFO  10:24:41,901 - #7 ;
+INFO  10:24:41,901 - #4 }
+INFO  10:24:41,907 - #4 }
+INFO  10:24:41,926 - Deklarisana promenljiva x na liniji 2
+INFO  10:24:41,926 - Deklarisana promenljiva y na liniji 2
+INFO  10:24:41,926 - Obradjuje se funkcija k na liniji 5
+INFO  10:24:41,926 - Deklarisana promenljiva c na liniji 5
+INFO  10:24:41,926 - Obradjuje se funkcija main na liniji 10
+INFO  10:24:41,927 - Pronadjen poziv funkcije k na liniji 13
+INFO  10:24:41,927 - Print calls = 1
+INFO  10:24:41,928 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  10:24:41,931 - Parsiranje uspesno zavrseno!
