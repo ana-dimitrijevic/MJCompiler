@@ -1,35 +1,56 @@
-program MJProgram
-	int x; const int y = 1;
-	abstract class Tab{
-		int size;
-		{
-		abstract int getp();
-		abstract int getn(int i[]);
-		int getSize() { return size;}
-		}
-	}
-	class Table extends Tab{
-		int pos[]; int neg[];
-	{
- 		int putp (int a, int idx) { }
- 		int putn (int a, int idx) { }
- 		int getp (int idx) { }
- 		void getn (int idx) { }
-	}
-}
-	
+program P
+const int size = 10;
+abstract class Tab{
+int size;
 {
-	
-	int k () int c; {
-		c = 1;
-		return c+2;
-	}
-	
-	int main() {
-		//y = 2;
-		x = y + 2;
-		//y = k() + 3;
-		print(y);
-		return 0;
-	}
+abstract int getp(int i);
+abstract int getn(int i);
+int getSize() { return size;}
+}
+}
+class Table extends Tab{
+int pos[], neg[];
+{
+ void putp (int a, int idx) { this.pos[idx]=a; }
+ void putn (int a, int idx) { this.neg[idx]=a; }
+ int getp (int idx) { return pos[idx]; }
+ int getn (int idx) { return neg[idx]; }
+}
+}
+Table val;
+{
+void f(char ch, int a, int arg)
+int x;
+{
+x = arg;
+}
+void
+main()
+int x, i;
+char c;
+{ //---------- Initialize val
+val = new Table;
+val.pos = new int [size];
+val.neg = new int [size];
+for (i = 0; i<size; i++)
+{
+val.putp(0,i);
+ val.putn(0,i);
+}
+f(c, x, i);
+//---------- Read values
+read(x);
+for (;x > 0;)
+{
+if (0 <= x && x < size)
+{
+val.putp(val.getp(x)+1);
+} else
+ if (-size < x && x < 0)
+ {
+val.putn(val.getn(-x)+1);
+ }
+read(x);
+
+} }
 }

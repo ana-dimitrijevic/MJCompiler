@@ -10,7 +10,6 @@ INDEX VERSION 1.130+D:\Projekat pp\workspace\.metadata\.plugins\org.eclipse.jdt.
 1303184529.index
 2111512668.index
 963485355.index
-267254768.index
 2205290751.index
 1713172528.index
 3421819425.index

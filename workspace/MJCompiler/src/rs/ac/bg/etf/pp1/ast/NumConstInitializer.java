@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/11/2019 19:32:20
+// 13/11/2019 21:53:47
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NumConstInitializer extends Init {
+public class NumConstInitializer extends Initializer {
 
     private String name;
     private Integer val;
