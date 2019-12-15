@@ -1,0 +1,19 @@
+INFO  18:58:56,105 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:58:56,168 - #13 program
+INFO  18:58:56,168 - #45 P
+INFO  18:58:56,168 - #45 int
+INFO  18:58:56,168 - #45 x
+INFO  18:58:56,168 - #7 ;
+INFO  18:58:56,168 - #11 {
+INFO  18:58:56,168 - #45 int
+INFO  18:58:56,168 - #45 k
+INFO  18:58:56,168 - #10 (
+INFO  18:58:56,168 - #5 )
+INFO  18:58:56,168 - #11 {
+INFO  18:58:56,168 - #4 }
+INFO  18:58:56,168 - #4 }
+INFO  18:58:56,199 - Deklarisana promenljiva x na liniji 2
+INFO  18:58:56,199 - Obradjuje se funkcija k na liniji 4
+INFO  18:58:56,199 - Print calls = 0
+INFO  18:58:56,199 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  18:58:56,262 - Parsiranje uspesno zavrseno!

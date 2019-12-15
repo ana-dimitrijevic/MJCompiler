@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormalParamList"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormPars"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CodeGenerator"/>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormalParamDecl"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor.VarCounter"/>
@@ -19,8 +18,13 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.Assignment"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FuncCall"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MethodDecl"/>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDecl"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ConstDeclaration"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VisitorAdaptor"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SymbolTable"/>
+<fullyQualifiedTypeName name="java.lang.Number"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
 </qualifiedTypeNameHistroy>

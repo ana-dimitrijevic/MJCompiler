@@ -1,0 +1,13 @@
+program P
+int x;
+{	
+	int k () {
+		return;
+	}
+	
+	void main() {
+		
+	}
+	
+	
+}

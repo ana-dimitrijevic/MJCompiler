@@ -1,0 +1,8 @@
+INFO  18:04:57,243 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:04:57,352 - #13 program
+INFO  18:04:57,352 - #45 P
+INFO  18:04:57,352 - #11 {
+INFO  18:04:57,352 - #4 }
+INFO  18:04:57,383 - Print calls = 0
+INFO  18:04:57,383 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  18:04:57,383 - Parsiranje uspesno zavrseno!

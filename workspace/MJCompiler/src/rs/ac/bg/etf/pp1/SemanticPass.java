@@ -1,25 +1,12 @@
 package rs.ac.bg.etf.pp1;
+
 import org.apache.log4j.Logger;
 
-import rs.ac.bg.etf.pp1.ast.AddExpr;
-import rs.ac.bg.etf.pp1.ast.Assignment;
-import rs.ac.bg.etf.pp1.ast.Const;
-import rs.ac.bg.etf.pp1.ast.Designator;
-import rs.ac.bg.etf.pp1.ast.FuncCall;
-import rs.ac.bg.etf.pp1.ast.MethodDecl;
-import rs.ac.bg.etf.pp1.ast.MethodTypeName;
-import rs.ac.bg.etf.pp1.ast.PrintStmt;
-import rs.ac.bg.etf.pp1.ast.ProcCall;
-import rs.ac.bg.etf.pp1.ast.ProgName;
-import rs.ac.bg.etf.pp1.ast.Program;
-import rs.ac.bg.etf.pp1.ast.ReturnExpr;
-import rs.ac.bg.etf.pp1.ast.SyntaxNode;
-import rs.ac.bg.etf.pp1.ast.Term;
-import rs.ac.bg.etf.pp1.ast.TermExpr;
-import rs.ac.bg.etf.pp1.ast.Type;
-import rs.ac.bg.etf.pp1.ast.Var;
-import rs.ac.bg.etf.pp1.ast.VarDecl;
-import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
+
+import rs.ac.bg.etf.pp1.ast.*;
+import rs.etf.pp1.symboltable.concepts.*;
+import java.util.function.Function;
+
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
@@ -31,7 +18,10 @@ public class SemanticPass extends VisitorAdaptor {
 	Obj currentMethod = null;
 	boolean returnFound = false;
 	int nVars;
-
+	Struct currentVariableDeclarationType = null;
+	Struct currentMethodReturnType = null;
+	
+	
 	Logger log = Logger.getLogger(getClass());
 
 	public void report_error(String message, SyntaxNode info) {
@@ -41,6 +31,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (line != 0)
 			msg.append (" na liniji ").append(line);
 		log.error(msg.toString());
+		
 	}
 
 	public void report_info(String message, SyntaxNode info) {
@@ -51,22 +42,36 @@ public class SemanticPass extends VisitorAdaptor {
 		log.info(msg.toString());
 	}
 	
+	@Override
 	public void visit(Program program) {		
 		nVars = Tab.currentScope.getnVars();
 		Tab.chainLocalSymbols(program.getProgName().obj);
 		Tab.closeScope();
 	}
 
+	@Override
 	public void visit(ProgName progName) {
 		progName.obj = Tab.insert(Obj.Prog, progName.getPName(), Tab.noType);
 		Tab.openScope();     	
+	}	
+	
+	
+	@Override
+	public void visit(VariableDeclaration variableDeclaration) {
+		
+		
+		super.visit(variableDeclaration);
 	}
 
-	public void visit(VarDecl varDecl) {
-		report_info("Deklarisana promenljiva "+ varDecl.getVarName(), varDecl);
-		Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), varDecl.getType().struct);
+	@Override
+	public void visit(SingleVariableIdent singleVariableIdent) {
+			
+		report_info("Deklarisana promenljiva "+ singleVariableIdent.getName(), singleVariableIdent);
+		Obj varNode = Tab.insert(Obj.Var, singleVariableIdent.getName(), currentVariableDeclarationType);		
+		super.visit(singleVariableIdent);
 	}
-
+	
+	@Override
 	public void visit(Type type) {
 		Obj typeNode = Tab.find(type.getTypeName());
 		if (typeNode == Tab.noObj) {
@@ -82,43 +87,114 @@ public class SemanticPass extends VisitorAdaptor {
 				type.struct = Tab.noType;
 			}
 		}  
+		
+		currentVariableDeclarationType = type.struct;
 	}
+	
+	
 
-	public void visit(MethodDecl methodDecl) {
+	@Override
+	public void visit(MethodDeclaration methodDeclaration) {
+		
+		
 		if (!returnFound && currentMethod.getType() != Tab.noType) {
-			report_error("Semanticka greska na liniji " + methodDecl.getLine() + ": funcija " + currentMethod.getName() + " nema return iskaz!", null);
+			report_error("Semanticka greska na liniji " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName() + " nema return iskaz!", null);
 		}
+		
 		
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		
 		returnFound = false;
 		currentMethod = null;
+		super.visit(methodDeclaration);
 	}
 
+	// apstraktna
+
+	@Override
 	public void visit(MethodTypeName methodTypeName) {
-		currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), methodTypeName.getType().struct);
+		currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
 		methodTypeName.obj = currentMethod;
 		Tab.openScope();
 		report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
 	}
+	
 
+	@Override
+	public void visit(ReturnType returnType) {
+		currentMethodReturnType = returnType.getType().struct;
+		super.visit(returnType);
+	}
+	
+	@Override
+	public void visit(VoidReturnType voidReturnType) {
+		currentMethodReturnType = Tab.noType;
+		super.visit(voidReturnType);
+	}
+	
+	@Override
+	public void visit(ReturnExpressionStatement returnExpressionStatement) {
+		returnFound = true;
+		Struct currMethType = currentMethod.getType();
+		if (!currMethType.compatibleWith(returnExpressionStatement.getExpr().struct)) {
+			report_error("Greska na liniji " + returnExpressionStatement.getLine() + " : " + "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+		}	
+		super.visit(returnExpressionStatement);
+	}
+
+	@Override
+	public void visit(ReturnStatement returnStatement) {
+		returnFound = true;
+		Struct currMethType = currentMethod.getType();
+		if (!currMethType.compatibleWith(Tab.noType)) {
+			report_error("Greska na liniji " + returnStatement.getLine() + " : " + "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+		}	
+		super.visit(returnStatement);
+	}
+	
+	@Override
+	public void visit(PrintStatement printStatement){
+		printCallCount++;    	
+	}
+
+	@Override
+	public void visit(NumberConstFactor numberConstFactor) {
+		numberConstFactor.struct = Tab.intType;
+		super.visit(numberConstFactor);
+	}
+
+	@Override
+	public void visit(SingleFactor singleFactor) {
+		singleFactor.struct = singleFactor.getFactor().struct;
+		super.visit(singleFactor);
+	}
+
+	@Override
+	public void visit(SingleAddopTerm singleAddopTerm) {
+		singleAddopTerm.struct = singleAddopTerm.getTerm().struct;
+		super.visit(singleAddopTerm);
+	}
+
+	@Override
+	public void visit(PositiveExpression positiveExpression) {
+		positiveExpression.struct = positiveExpression.getAddopExpr().struct;
+		super.visit(positiveExpression);
+	}
+	
+	
+	public boolean passed() {
+		return !errorDetected;
+	}
+/*
 	public void visit(Assignment assignment) {
 		if (!assignment.getExpr().struct.assignableTo(assignment.getDesignator().obj.getType()))
 			report_error("Greska na liniji " + assignment.getLine() + " : " + " nekompatibilni tipovi u dodeli vrednosti ", null);
 	}
 
-	public void visit(PrintStmt printStmt){
-		printCallCount++;    	
-	}
 
-	public void visit(ReturnExpr returnExpr){
-		returnFound = true;
-		Struct currMethType = currentMethod.getType();
-		if (!currMethType.compatibleWith(returnExpr.getExpr().struct)) {
-			report_error("Greska na liniji " + returnExpr.getLine() + " : " + "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
-		}			  	     	
-	}
+
+
 
 	public void visit(ProcCall procCall){
 		Obj func = procCall.getDesignator().obj;
@@ -179,11 +255,9 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		designator.obj = obj;
 	}
-	
-	public boolean passed() {
-		return !errorDetected;
-	}
-	
-	
+
+	*/
+
+
 }
 

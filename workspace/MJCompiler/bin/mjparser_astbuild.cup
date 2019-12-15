@@ -57,7 +57,8 @@ terminal Integer NUMBERCONST;
 terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, Factor, VarDeclList; 
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
+Factor; 
 
 
 nonterminal MethodDeclList MethodDeclList;
@@ -78,9 +79,7 @@ nonterminal ClassExtends ClassExtends;
 nonterminal ClassVarDeclList ClassVarDeclList;
 nonterminal ClassMethDeclList ClassMethDeclList;
 nonterminal
-RetType RetType;
-nonterminal DeclVarList DeclVarList;
-nonterminal AddopExpr AddopExpr;
+DeclVarList DeclVarList;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;

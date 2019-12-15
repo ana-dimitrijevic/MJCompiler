@@ -1,0 +1,31 @@
+INFO  20:37:34,569 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  20:37:34,631 - #13 program
+INFO  20:37:34,631 - #45 P
+INFO  20:37:34,631 - #45 int
+INFO  20:37:34,631 - #45 x
+INFO  20:37:34,631 - #7 ;
+INFO  20:37:34,631 - #11 {
+INFO  20:37:34,631 - #45 int
+INFO  20:37:34,631 - #45 k
+INFO  20:37:34,631 - #10 (
+INFO  20:37:34,647 - #5 )
+INFO  20:37:34,647 - #11 {
+INFO  20:37:34,647 - #8 return
+INFO  20:37:34,647 - #44 5
+INFO  20:37:34,647 - #7 ;
+INFO  20:37:34,647 - #4 }
+INFO  20:37:34,647 - #15 void
+INFO  20:37:34,647 - #45 main
+INFO  20:37:34,647 - #10 (
+INFO  20:37:34,647 - #5 )
+INFO  20:37:34,647 - #11 {
+INFO  20:37:34,647 - #8 return
+INFO  20:37:34,647 - #7 ;
+INFO  20:37:34,647 - #4 }
+INFO  20:37:34,647 - #4 }
+INFO  20:37:34,663 - Deklarisana promenljiva x na liniji 2
+INFO  20:37:34,663 - Obradjuje se funkcija k na liniji 4
+ERROR 20:37:34,663 - Greska na liniji 5 : tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije k
+INFO  20:37:34,663 - Obradjuje se funkcija main na liniji 8
+INFO  20:37:34,663 - Print calls = 0
+ERROR 20:37:34,678 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,9 @@
+INFO  18:17:03,624 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:17:03,687 - #13 program
+INFO  18:17:03,687 - #45 P
+INFO  18:17:03,687 - #45 int
+INFO  18:17:03,702 - #45 x
+INFO  18:17:03,702 - #7 ;
+INFO  18:17:03,702 - #11 {
+INFO  18:17:03,702 - #4 }
+INFO  18:17:03,718 - Deklarisana promenljiva x na liniji 2

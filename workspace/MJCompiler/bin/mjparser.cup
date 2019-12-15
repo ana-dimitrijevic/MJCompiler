@@ -57,12 +57,13 @@ terminal Integer NUMBERCONST;
 terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, Factor, VarDeclList; 
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
+Factor; 
 
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
-RetType, DeclVarList, AddopExpr, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, FuncCall, ActualParamsList,
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, FuncCall, ActualParamsList,
 ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, DesignatorList, ElsePart;
 
 
