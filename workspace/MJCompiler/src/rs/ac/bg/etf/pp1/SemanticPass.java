@@ -175,6 +175,24 @@ public class SemanticPass extends VisitorAdaptor {
 		singleAddopTerm.struct = singleAddopTerm.getTerm().struct;
 		super.visit(singleAddopTerm);
 	}
+	
+	
+
+	@Override
+	public void visit(MultipleAddopTerm multipleAddopTerm) {
+		
+		Struct rightTerm = multipleAddopTerm.getTerm().struct;
+		Struct leftTerm = multipleAddopTerm.getAddopExpr().struct;
+		
+		if (rightTerm.equals(leftTerm) && rightTerm == Tab.intType)
+			multipleAddopTerm.struct = rightTerm;
+		else {
+			report_error("Greska na liniji "+ multipleAddopTerm.getLine()+" : nekompatibilni tipovi u izrazu.", null);
+			multipleAddopTerm.struct = Tab.noType;
+		} 
+		
+		super.visit(multipleAddopTerm);
+	}
 
 	@Override
 	public void visit(PositiveExpression positiveExpression) {
@@ -182,58 +200,31 @@ public class SemanticPass extends VisitorAdaptor {
 		super.visit(positiveExpression);
 	}
 	
+
+	
 	
 	public boolean passed() {
 		return !errorDetected;
 	}
-/*
-	public void visit(Assignment assignment) {
-		if (!assignment.getExpr().struct.assignableTo(assignment.getDesignator().obj.getType()))
-			report_error("Greska na liniji " + assignment.getLine() + " : " + " nekompatibilni tipovi u dodeli vrednosti ", null);
-	}
 
-
-
-
-
-	public void visit(ProcCall procCall){
-		Obj func = procCall.getDesignator().obj;
-		if (Obj.Meth == func.getKind()) { 
-			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + procCall.getLine(), null);
-			//RESULT = func.getType();
-		} 
-		else {
-			report_error("Greska na liniji " + procCall.getLine()+" : ime " + func.getName() + " nije funkcija!", null);
-			//RESULT = Tab.noType;
-		}     	
-	}    
-
-	public void visit(AddExpr addExpr) {
-		Struct te = addExpr.getExpr().struct;
-		Struct t = addExpr.getTerm().struct;
-		if (te.equals(t) && te == Tab.intType)
-			addExpr.struct = te;
-		else {
-			report_error("Greska na liniji "+ addExpr.getLine()+" : nekompatibilni tipovi u izrazu za sabiranje.", null);
-			addExpr.struct = Tab.noType;
-		} 
-	}
-
-	public void visit(TermExpr termExpr) {
-		termExpr.struct = termExpr.getTerm().struct;
-	}
-
-	public void visit(Term term) {
-		term.struct = term.getFactor().struct;    	
-	}
-
-	public void visit(Const cnst){
-		cnst.struct = Tab.intType;    	
+	public void visit(AssignStatement assignStatement) {
+		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
+			report_error("Greska na liniji " + assignStatement.getLine() + " : " + " nekompatibilni tipovi u dodeli vrednosti ", null);
 	}
 	
-	public void visit(Var var) {
-		var.struct = var.getDesignator().obj.getType();
+	public void visit(Designator designator){
+		Obj obj = Tab.find(designator.getDesignatorName());
+		if (obj == Tab.noObj) { 
+			report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getDesignatorName()+" nije deklarisano! ", null);
+		}
+		designator.obj = obj;
 	}
+	
+	@Override
+	public void visit(DesignatorFactor designatorFactor) {
+		designatorFactor.struct = designatorFactor.getDesignator().obj.getType();
+	}
+
 
 	public void visit(FuncCall funcCall){
 		Obj func = funcCall.getDesignator().obj;
@@ -247,16 +238,26 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 
 	}
+	
 
-	public void visit(Designator designator){
-		Obj obj = Tab.find(designator.getName());
-		if (obj == Tab.noObj) { 
-			report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getName()+" nije deklarisano! ", null);
-		}
-		designator.obj = obj;
-	}
+	public void visit(ProcCall procCall){
+		Obj func = procCall.getDesignator().obj;
+		if (Obj.Meth == func.getKind()) { 
+			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + procCall.getLine(), null);
+			//RESULT = func.getType();
+		} 
+		else {
+			report_error("Greska na liniji " + procCall.getLine()+" : ime " + func.getName() + " nije funkcija!", null);
+			//RESULT = Tab.noType;
+		}     	
+	}    
 
-	*/
+	
+
+
+
+
+
 
 
 }

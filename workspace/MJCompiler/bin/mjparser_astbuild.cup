@@ -86,7 +86,6 @@ nonterminal Mulop Mulop;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal ForCond ForCond;
 nonterminal AssignStmnt AssignStmnt;
-nonterminal FuncCall FuncCall;
 nonterminal ActualParamsList ActualParamsList;
 nonterminal
 ActualParams ActualParams;
@@ -241,6 +240,9 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :}
               |
               (BlockOfStatements) LBRACE Statements:S1 RBRACE {: RESULT=new BlockOfStatements(S1); RESULT.setLine(S1left); :}
+              |
+              (ProcCall) Designator:func LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}
+              
 ;       
 
 Expr  ::= (PositiveExpression) AddopExpr:A1 {: RESULT=new PositiveExpression(A1); RESULT.setLine(A1left); :}
@@ -261,13 +263,13 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val {: RESULT=new NumberConstFactor(v
             |
            (BoolConstFactor) BOOLCONST:val {: RESULT=new BoolConstFactor(); :}
             |
-			(DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
+		   (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
             |
            (NewObjectFactor) NEW Type:T1 {: RESULT=new NewObjectFactor(T1); RESULT.setLine(T1left); :}
             |
            (NewObjectArrayFactor) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new NewObjectArrayFactor(T1, E2); RESULT.setLine(T1left); :}
             |
-           (FuncCallFactor) FuncCall:F1 {: RESULT=new FuncCallFactor(F1); RESULT.setLine(F1left); :}
+           (FuncCall) Designator:func LPAREN ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :}
             |
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
@@ -286,18 +288,13 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator:D1 INC {: RESULT=new
                          |
                         (DecDesignatorStatement) Designator:D1 DEC {: RESULT=new DecDesignatorStatement(D1); RESULT.setLine(D1left); :}
                          |
-						(AssignDesignatorStatement) AssignStmnt:A1 {: RESULT=new AssignDesignatorStatement(A1); RESULT.setLine(A1left); :}
-                         |
-                        (FuncCallDesignatorStatement) FuncCall:F1 {: RESULT=new FuncCallDesignatorStatement(F1); RESULT.setLine(F1left); :}            
+						(AssignDesignatorStatement) AssignStmnt:A1 {: RESULT=new AssignDesignatorStatement(A1); RESULT.setLine(A1left); :}         
 ;
 
 AssignStmnt ::= (AssignStatement) Designator:D1 ASSIGN Expr:E2 {: RESULT=new AssignStatement(D1, E2); RESULT.setLine(D1left); :}
                  |
                 (AssignStatementError) error
                 {: parser.report_info("assign statement error recovery: successful", null); :} {: RESULT=new AssignStatementError(); :}
-;
-
-FuncCall ::= (FunctionCall) Designator:D1 LPAREN ActualParamsList:A2 RPAREN {: RESULT=new FunctionCall(D1, A2); RESULT.setLine(D1left); :}
 ;
 
 ActualParamsList ::= (ActualParametersList) ActualParams:A1 {: RESULT=new ActualParametersList(A1); RESULT.setLine(A1left); :}

@@ -1,37 +1,78 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/11/2019 21:58:32
+// 16/11/2019 12:47:7
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class FuncCall implements SyntaxNode {
+public class FuncCall extends Factor {
 
-    private SyntaxNode parent;
+    private Designator Designator;
+    private ActualParamsList ActualParamsList;
 
-    private int line;
-
-    public SyntaxNode getParent() {
-        return parent;
+    public FuncCall (Designator Designator, ActualParamsList ActualParamsList) {
+        this.Designator=Designator;
+        if(Designator!=null) Designator.setParent(this);
+        this.ActualParamsList=ActualParamsList;
+        if(ActualParamsList!=null) ActualParamsList.setParent(this);
     }
 
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
+    public Designator getDesignator() {
+        return Designator;
     }
 
-    public int getLine() {
-        return line;
+    public void setDesignator(Designator Designator) {
+        this.Designator=Designator;
     }
 
-    public void setLine(int line) {
-        this.line=line;
+    public ActualParamsList getActualParamsList() {
+        return ActualParamsList;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void setActualParamsList(ActualParamsList ActualParamsList) {
+        this.ActualParamsList=ActualParamsList;
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public void childrenAccept(Visitor visitor) {
+        if(Designator!=null) Designator.accept(visitor);
+        if(ActualParamsList!=null) ActualParamsList.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(ActualParamsList!=null) ActualParamsList.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(ActualParamsList!=null) ActualParamsList.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("FuncCall(\n");
+
+        if(Designator!=null)
+            buffer.append(Designator.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ActualParamsList!=null)
+            buffer.append(ActualParamsList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [FuncCall]");
+        return buffer.toString();
+    }
 }

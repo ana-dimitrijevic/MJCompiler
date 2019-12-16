@@ -1,0 +1,29 @@
+INFO  11:15:32,182 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  11:15:32,307 - #13 program
+INFO  11:15:32,307 - #45 P
+INFO  11:15:32,307 - #45 int
+INFO  11:15:32,307 - #45 x
+INFO  11:15:32,307 - #7 ;
+INFO  11:15:32,307 - #11 {
+INFO  11:15:32,307 - #45 int
+INFO  11:15:32,307 - #45 k
+INFO  11:15:32,307 - #10 (
+INFO  11:15:32,307 - #5 )
+INFO  11:15:32,307 - #11 {
+INFO  11:15:32,322 - #8 return
+INFO  11:15:32,322 - #44 5
+INFO  11:15:32,322 - #3 +
+INFO  11:15:32,322 - #45 a
+INFO  11:15:32,322 - #7 ;
+INFO  11:15:32,338 - #4 }
+INFO  11:15:32,338 - #15 void
+INFO  11:15:32,338 - #45 main
+INFO  11:15:32,338 - #10 (
+INFO  11:15:32,338 - #5 )
+INFO  11:15:32,338 - #11 {
+INFO  11:15:32,338 - #8 return
+INFO  11:15:32,338 - #7 ;
+INFO  11:15:32,338 - #4 }
+INFO  11:15:32,338 - #4 }
+INFO  11:15:32,369 - Deklarisana promenljiva x na liniji 2
+INFO  11:15:32,369 - Obradjuje se funkcija k na liniji 4

@@ -1,0 +1,80 @@
+INFO  13:05:27,551 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  13:05:27,613 - #13 program
+INFO  13:05:27,613 - #45 P
+INFO  13:05:27,613 - #45 int
+INFO  13:05:27,613 - #45 a
+INFO  13:05:27,613 - #7 ;
+INFO  13:05:27,613 - #11 {
+INFO  13:05:27,613 - #45 int
+INFO  13:05:27,613 - #45 k
+INFO  13:05:27,613 - #10 (
+INFO  13:05:27,613 - #5 )
+INFO  13:05:27,613 - #45 int
+INFO  13:05:27,613 - #45 x
+INFO  13:05:27,629 - #7 ;
+INFO  13:05:27,629 - #11 {
+INFO  13:05:27,629 - #45 x
+INFO  13:05:27,629 - #6 =
+INFO  13:05:27,629 - #44 3
+INFO  13:05:27,629 - #7 ;
+INFO  13:05:27,629 - #14 print
+INFO  13:05:27,629 - #10 (
+INFO  13:05:27,629 - #45 x
+INFO  13:05:27,629 - #5 )
+INFO  13:05:27,629 - #7 ;
+INFO  13:05:27,644 - #14 print
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #45 x
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #14 print
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #45 x
+INFO  13:05:27,644 - #3 +
+INFO  13:05:27,644 - #44 12
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #8 return
+INFO  13:05:27,644 - #44 5
+INFO  13:05:27,644 - #3 +
+INFO  13:05:27,644 - #44 1
+INFO  13:05:27,644 - #3 +
+INFO  13:05:27,644 - #44 2
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #4 }
+INFO  13:05:27,644 - #15 void
+INFO  13:05:27,644 - #45 main
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #11 {
+INFO  13:05:27,644 - #14 print
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #45 k
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #44 3
+ERROR 13:05:27,644 - 
+Sintaksna greska na liniji 14
+INFO  13:05:27,644 - #3 +
+INFO  13:05:27,644 - #45 k
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #45 k
+INFO  13:05:27,644 - #10 (
+INFO  13:05:27,644 - #5 )
+INFO  13:05:27,644 - assign statement error recovery: successful
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,644 - #8 return
+INFO  13:05:27,644 - #7 ;
+INFO  13:05:27,660 - #4 }
+INFO  13:05:27,660 - #4 }
+INFO  13:05:27,676 - Deklarisana promenljiva a na liniji 2
+INFO  13:05:27,676 - Obradjuje se funkcija k na liniji 4
+INFO  13:05:27,676 - Deklarisana promenljiva x na liniji 4
+INFO  13:05:27,676 - Obradjuje se funkcija main na liniji 12
+INFO  13:05:27,676 - Pronadjen poziv funkcije k na liniji 15
+INFO  13:05:27,676 - Print calls = 3
+ERROR 13:05:27,676 - Parsiranje NIJE uspesno zavrseno!

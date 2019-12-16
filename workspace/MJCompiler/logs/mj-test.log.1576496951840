@@ -1,0 +1,68 @@
+INFO  12:47:41,690 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:47:41,737 - #13 program
+INFO  12:47:41,737 - #45 P
+INFO  12:47:41,737 - #11 {
+INFO  12:47:41,737 - #45 int
+INFO  12:47:41,737 - #45 k
+INFO  12:47:41,737 - #10 (
+INFO  12:47:41,737 - #5 )
+INFO  12:47:41,737 - #45 int
+INFO  12:47:41,753 - #45 x
+INFO  12:47:41,753 - #7 ;
+INFO  12:47:41,753 - #11 {
+INFO  12:47:41,753 - #45 x
+INFO  12:47:41,753 - #6 =
+INFO  12:47:41,753 - #44 3
+INFO  12:47:41,753 - #7 ;
+INFO  12:47:41,753 - #14 print
+INFO  12:47:41,753 - #10 (
+INFO  12:47:41,753 - #45 x
+INFO  12:47:41,753 - #5 )
+INFO  12:47:41,753 - #7 ;
+INFO  12:47:41,753 - #14 print
+INFO  12:47:41,753 - #10 (
+INFO  12:47:41,753 - #45 x
+INFO  12:47:41,768 - #5 )
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #14 print
+INFO  12:47:41,768 - #10 (
+INFO  12:47:41,768 - #45 x
+INFO  12:47:41,768 - #3 +
+INFO  12:47:41,768 - #44 12
+INFO  12:47:41,768 - #5 )
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #8 return
+INFO  12:47:41,768 - #44 5
+INFO  12:47:41,768 - #3 +
+INFO  12:47:41,768 - #44 1
+INFO  12:47:41,768 - #3 +
+INFO  12:47:41,768 - #44 2
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #4 }
+INFO  12:47:41,768 - #15 void
+INFO  12:47:41,768 - #45 main
+INFO  12:47:41,768 - #10 (
+INFO  12:47:41,768 - #5 )
+INFO  12:47:41,768 - #11 {
+INFO  12:47:41,768 - #45 k
+INFO  12:47:41,768 - #10 (
+INFO  12:47:41,768 - #5 )
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #44 3
+ERROR 12:47:41,768 - 
+Sintaksna greska na liniji 14
+INFO  12:47:41,768 - #3 +
+INFO  12:47:41,768 - #45 k
+INFO  12:47:41,768 - #10 (
+INFO  12:47:41,768 - #5 )
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #8 return
+INFO  12:47:41,768 - #7 ;
+INFO  12:47:41,768 - #4 }
+INFO  12:47:41,768 - assign statement error recovery: successful
+INFO  12:47:41,784 - #4 }
+INFO  12:47:41,800 - Obradjuje se funkcija k na liniji 3
+INFO  12:47:41,800 - Deklarisana promenljiva x na liniji 3
+INFO  12:47:41,800 - Obradjuje se funkcija main na liniji 11
+INFO  12:47:41,800 - Print calls = 3
+ERROR 12:47:41,800 - Parsiranje NIJE uspesno zavrseno!

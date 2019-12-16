@@ -92,9 +92,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	@Override
 	public void visit(Designator Designator) {
 		SyntaxNode parent = Designator.getParent();
-		if (Assignment.class != parent.getClass() && FuncCall.class != parent.getClass()) {
-			Code.load(Designator.obj);
-		}
+		//if (Assignment.class != parent.getClass() && FuncCall.class != parent.getClass()) {
+			//Code.load(Designator.obj);
+		//}
 	}
 	
 	@Override

@@ -1,0 +1,35 @@
+INFO  11:15:47,113 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  11:15:47,176 - #13 program
+INFO  11:15:47,176 - #45 P
+INFO  11:15:47,176 - #45 int
+INFO  11:15:47,176 - #45 x
+INFO  11:15:47,176 - #7 ;
+INFO  11:15:47,176 - #11 {
+INFO  11:15:47,176 - #45 int
+INFO  11:15:47,176 - #45 k
+INFO  11:15:47,176 - #10 (
+INFO  11:15:47,176 - #5 )
+INFO  11:15:47,176 - #11 {
+INFO  11:15:47,176 - #8 return
+INFO  11:15:47,176 - #44 5
+INFO  11:15:47,176 - #3 +
+INFO  11:15:47,176 - #7 ;
+ERROR 11:15:47,176 - 
+Sintaksna greska na liniji 5
+INFO  11:15:47,176 - #4 }
+INFO  11:15:47,176 - #15 void
+INFO  11:15:47,176 - #45 main
+INFO  11:15:47,176 - assign statement error recovery: successful
+INFO  11:15:47,191 - #10 (
+INFO  11:15:47,191 - #5 )
+INFO  11:15:47,191 - #11 {
+INFO  11:15:47,191 - #8 return
+INFO  11:15:47,191 - #7 ;
+INFO  11:15:47,191 - #4 }
+INFO  11:15:47,191 - #4 }
+INFO  11:15:47,207 - Deklarisana promenljiva x na liniji 2
+INFO  11:15:47,207 - Obradjuje se funkcija k na liniji 4
+ERROR 11:15:47,207 - Semanticka greska na liniji 4: funcija k nema return iskaz!
+INFO  11:15:47,207 - Obradjuje se funkcija main na liniji 8
+INFO  11:15:47,207 - Print calls = 0
+ERROR 11:15:47,207 - Parsiranje NIJE uspesno zavrseno!

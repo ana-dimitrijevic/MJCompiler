@@ -1,0 +1,13 @@
+program P
+const int x = 3;
+{	
+	int k () {
+		return 5 + 1 +2;
+	}
+	
+	void main() {
+		return;
+	}
+	
+	
+}

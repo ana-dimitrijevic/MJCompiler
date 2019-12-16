@@ -63,7 +63,7 @@ Factor;
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
-DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, FuncCall, ActualParamsList,
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, ActualParamsList,
 ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, DesignatorList, ElsePart;
 
 
@@ -209,6 +209,8 @@ Statement ::= (ReturnStatement) RETURN SEMI
               (StatementDesignator) DesignatorStatement SEMI
               |
               (BlockOfStatements) LBRACE Statements RBRACE
+              |
+              (ProcCall) Designator:func LPAREN ActualParamsList RPAREN SEMI          
 ;       
 
 Expr  ::= (PositiveExpression) AddopExpr
@@ -229,13 +231,13 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val
             |
            (BoolConstFactor) BOOLCONST:val
             |
-			(DesignatorFactor) Designator
+		   (DesignatorFactor) Designator
             |
            (NewObjectFactor) NEW Type
             |
            (NewObjectArrayFactor) NEW Type LBRACKET Expr RBRACKET
             |
-           (FuncCallFactor) FuncCall
+           (FuncCall) Designator:func LPAREN ActualParamsList RPAREN
             |
            (ParenFactor) LPAREN Expr RPAREN
 ;
@@ -254,18 +256,13 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator INC
                          |
                         (DecDesignatorStatement) Designator DEC
                          |
-						(AssignDesignatorStatement) AssignStmnt
-                         |
-                        (FuncCallDesignatorStatement) FuncCall            
+						(AssignDesignatorStatement) AssignStmnt         
 ;
 
 AssignStmnt ::= (AssignStatement) Designator ASSIGN Expr
                  |
                 (AssignStatementError) error
                 {: parser.report_info("assign statement error recovery: successful", null); :}
-;
-
-FuncCall ::= (FunctionCall) Designator LPAREN ActualParamsList RPAREN
 ;
 
 ActualParamsList ::= (ActualParametersList) ActualParams

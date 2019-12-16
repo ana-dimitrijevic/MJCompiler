@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/11/2019 21:58:32
+// 16/11/2019 12:47:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,7 +17,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ActualParamsList ActualParamsList) { }
     public void visit(VarDeclar VarDeclar) { }
     public void visit(Addop Addop) { }
-    public void visit(FuncCall FuncCall) { }
     public void visit(Factor Factor) { }
     public void visit(CondTerm CondTerm) { }
     public void visit(ClassVarDeclList ClassVarDeclList) { }
@@ -77,10 +76,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MultipleActualParameters MultipleActualParameters) { visit(); }
     public void visit(NoActualParametersList NoActualParametersList) { visit(); }
     public void visit(ActualParametersList ActualParametersList) { visit(); }
-    public void visit(FunctionCall FunctionCall) { visit(); }
     public void visit(AssignStatementError AssignStatementError) { visit(); }
     public void visit(AssignStatement AssignStatement) { visit(); }
-    public void visit(FuncCallDesignatorStatement FuncCallDesignatorStatement) { visit(); }
     public void visit(AssignDesignatorStatement AssignDesignatorStatement) { visit(); }
     public void visit(DecDesignatorStatement DecDesignatorStatement) { visit(); }
     public void visit(IncDesignatorStatement IncDesignatorStatement) { visit(); }
@@ -89,7 +86,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorListDot DesignatorListDot) { visit(); }
     public void visit(Designator Designator) { visit(); }
     public void visit(ParenFactor ParenFactor) { visit(); }
-    public void visit(FuncCallFactor FuncCallFactor) { visit(); }
+    public void visit(FuncCall FuncCall) { visit(); }
     public void visit(NewObjectArrayFactor NewObjectArrayFactor) { visit(); }
     public void visit(NewObjectFactor NewObjectFactor) { visit(); }
     public void visit(DesignatorFactor DesignatorFactor) { visit(); }
@@ -102,6 +99,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MultipleAddopTerm MultipleAddopTerm) { visit(); }
     public void visit(NegativeExpression NegativeExpression) { visit(); }
     public void visit(PositiveExpression PositiveExpression) { visit(); }
+    public void visit(ProcCall ProcCall) { visit(); }
     public void visit(BlockOfStatements BlockOfStatements) { visit(); }
     public void visit(StatementDesignator StatementDesignator) { visit(); }
     public void visit(ForStatement ForStatement) { visit(); }

@@ -1,20 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/11/2019 19:32:20
+// 16/11/2019 12:47:7
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ProcCall extends Matched {
+public class ProcCall extends Statement {
 
     private Designator Designator;
-    private ActualPars ActualPars;
+    private ActualParamsList ActualParamsList;
 
-    public ProcCall (Designator Designator, ActualPars ActualPars) {
+    public ProcCall (Designator Designator, ActualParamsList ActualParamsList) {
         this.Designator=Designator;
         if(Designator!=null) Designator.setParent(this);
-        this.ActualPars=ActualPars;
-        if(ActualPars!=null) ActualPars.setParent(this);
+        this.ActualParamsList=ActualParamsList;
+        if(ActualParamsList!=null) ActualParamsList.setParent(this);
     }
 
     public Designator getDesignator() {
@@ -25,12 +25,12 @@ public class ProcCall extends Matched {
         this.Designator=Designator;
     }
 
-    public ActualPars getActualPars() {
-        return ActualPars;
+    public ActualParamsList getActualParamsList() {
+        return ActualParamsList;
     }
 
-    public void setActualPars(ActualPars ActualPars) {
-        this.ActualPars=ActualPars;
+    public void setActualParamsList(ActualParamsList ActualParamsList) {
+        this.ActualParamsList=ActualParamsList;
     }
 
     public void accept(Visitor visitor) {
@@ -39,18 +39,18 @@ public class ProcCall extends Matched {
 
     public void childrenAccept(Visitor visitor) {
         if(Designator!=null) Designator.accept(visitor);
-        if(ActualPars!=null) ActualPars.accept(visitor);
+        if(ActualParamsList!=null) ActualParamsList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Designator!=null) Designator.traverseTopDown(visitor);
-        if(ActualPars!=null) ActualPars.traverseTopDown(visitor);
+        if(ActualParamsList!=null) ActualParamsList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Designator!=null) Designator.traverseBottomUp(visitor);
-        if(ActualPars!=null) ActualPars.traverseBottomUp(visitor);
+        if(ActualParamsList!=null) ActualParamsList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -65,8 +65,8 @@ public class ProcCall extends Matched {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ActualPars!=null)
-            buffer.append(ActualPars.toString("  "+tab));
+        if(ActualParamsList!=null)
+            buffer.append(ActualParamsList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

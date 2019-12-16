@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/11/2019 21:58:32
+// 16/11/2019 12:47:7
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,7 +17,6 @@ public interface Visitor {
     public void visit(ActualParamsList ActualParamsList);
     public void visit(VarDeclar VarDeclar);
     public void visit(Addop Addop);
-    public void visit(FuncCall FuncCall);
     public void visit(Factor Factor);
     public void visit(CondTerm CondTerm);
     public void visit(ClassVarDeclList ClassVarDeclList);
@@ -77,10 +76,8 @@ public interface Visitor {
     public void visit(MultipleActualParameters MultipleActualParameters);
     public void visit(NoActualParametersList NoActualParametersList);
     public void visit(ActualParametersList ActualParametersList);
-    public void visit(FunctionCall FunctionCall);
     public void visit(AssignStatementError AssignStatementError);
     public void visit(AssignStatement AssignStatement);
-    public void visit(FuncCallDesignatorStatement FuncCallDesignatorStatement);
     public void visit(AssignDesignatorStatement AssignDesignatorStatement);
     public void visit(DecDesignatorStatement DecDesignatorStatement);
     public void visit(IncDesignatorStatement IncDesignatorStatement);
@@ -89,7 +86,7 @@ public interface Visitor {
     public void visit(DesignatorListDot DesignatorListDot);
     public void visit(Designator Designator);
     public void visit(ParenFactor ParenFactor);
-    public void visit(FuncCallFactor FuncCallFactor);
+    public void visit(FuncCall FuncCall);
     public void visit(NewObjectArrayFactor NewObjectArrayFactor);
     public void visit(NewObjectFactor NewObjectFactor);
     public void visit(DesignatorFactor DesignatorFactor);
@@ -102,6 +99,7 @@ public interface Visitor {
     public void visit(MultipleAddopTerm MultipleAddopTerm);
     public void visit(NegativeExpression NegativeExpression);
     public void visit(PositiveExpression PositiveExpression);
+    public void visit(ProcCall ProcCall);
     public void visit(BlockOfStatements BlockOfStatements);
     public void visit(StatementDesignator StatementDesignator);
     public void visit(ForStatement ForStatement);

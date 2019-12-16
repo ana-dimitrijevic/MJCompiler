@@ -1,0 +1,61 @@
+INFO  12:30:22,983 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:30:23,043 - #13 program
+INFO  12:30:23,044 - #45 P
+INFO  12:30:23,044 - #11 {
+INFO  12:30:23,045 - #45 int
+INFO  12:30:23,046 - #45 k
+INFO  12:30:23,047 - #10 (
+INFO  12:30:23,048 - #5 )
+INFO  12:30:23,049 - #45 int
+INFO  12:30:23,050 - #45 x
+INFO  12:30:23,050 - #7 ;
+INFO  12:30:23,051 - #11 {
+INFO  12:30:23,051 - #45 x
+INFO  12:30:23,052 - #6 =
+INFO  12:30:23,054 - #44 3
+INFO  12:30:23,054 - #7 ;
+INFO  12:30:23,055 - #14 print
+INFO  12:30:23,056 - #10 (
+INFO  12:30:23,056 - #45 x
+INFO  12:30:23,056 - #5 )
+INFO  12:30:23,057 - #7 ;
+INFO  12:30:23,057 - #14 print
+INFO  12:30:23,057 - #10 (
+INFO  12:30:23,057 - #45 x
+INFO  12:30:23,088 - #5 )
+INFO  12:30:23,088 - #7 ;
+INFO  12:30:23,088 - #14 print
+INFO  12:30:23,088 - #10 (
+INFO  12:30:23,088 - #45 x
+INFO  12:30:23,088 - #3 +
+INFO  12:30:23,089 - #44 12
+INFO  12:30:23,090 - #5 )
+INFO  12:30:23,090 - #7 ;
+INFO  12:30:23,090 - #8 return
+INFO  12:30:23,090 - #44 5
+INFO  12:30:23,090 - #3 +
+INFO  12:30:23,090 - #44 1
+INFO  12:30:23,090 - #3 +
+INFO  12:30:23,090 - #44 2
+INFO  12:30:23,090 - #7 ;
+INFO  12:30:23,091 - #4 }
+INFO  12:30:23,091 - #15 void
+INFO  12:30:23,091 - #45 main
+INFO  12:30:23,092 - #10 (
+INFO  12:30:23,092 - #5 )
+INFO  12:30:23,092 - #11 {
+INFO  12:30:23,092 - #45 k
+INFO  12:30:23,092 - #10 (
+INFO  12:30:23,092 - #5 )
+INFO  12:30:23,093 - #7 ;
+INFO  12:30:23,093 - #8 return
+INFO  12:30:23,093 - #7 ;
+INFO  12:30:23,093 - #4 }
+INFO  12:30:23,094 - #4 }
+INFO  12:30:23,105 - Obradjuje se funkcija k na liniji 3
+INFO  12:30:23,105 - Deklarisana promenljiva x na liniji 3
+INFO  12:30:23,105 - Obradjuje se funkcija main na liniji 11
+INFO  12:30:23,105 - Pronadjen poziv funkcije k na liniji 13
+INFO  12:30:23,106 - Print calls = 3
+INFO  12:30:23,113 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  12:30:23,120 - Parsiranje uspesno zavrseno!

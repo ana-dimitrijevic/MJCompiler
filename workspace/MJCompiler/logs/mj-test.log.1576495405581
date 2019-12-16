@@ -1,0 +1,44 @@
+INFO  12:23:12,712 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:23:12,774 - #13 program
+INFO  12:23:12,774 - #45 P
+INFO  12:23:12,774 - #11 {
+INFO  12:23:12,774 - #45 int
+INFO  12:23:12,774 - #45 k
+INFO  12:23:12,774 - #10 (
+INFO  12:23:12,774 - #5 )
+INFO  12:23:12,774 - #45 int
+INFO  12:23:12,774 - #45 x
+INFO  12:23:12,774 - #7 ;
+INFO  12:23:12,774 - #11 {
+INFO  12:23:12,774 - #45 x
+INFO  12:23:12,774 - #6 =
+INFO  12:23:12,774 - #44 3
+INFO  12:23:12,774 - #7 ;
+INFO  12:23:12,774 - #14 print
+INFO  12:23:12,774 - #10 (
+INFO  12:23:12,774 - #45 x
+INFO  12:23:12,790 - #5 )
+INFO  12:23:12,790 - #7 ;
+INFO  12:23:12,790 - #8 return
+INFO  12:23:12,790 - #44 5
+INFO  12:23:12,790 - #3 +
+INFO  12:23:12,790 - #44 1
+INFO  12:23:12,790 - #3 +
+INFO  12:23:12,790 - #44 2
+INFO  12:23:12,790 - #7 ;
+INFO  12:23:12,790 - #4 }
+INFO  12:23:12,790 - #15 void
+INFO  12:23:12,790 - #45 main
+INFO  12:23:12,790 - #10 (
+INFO  12:23:12,790 - #5 )
+INFO  12:23:12,790 - #11 {
+INFO  12:23:12,790 - #8 return
+INFO  12:23:12,790 - #7 ;
+INFO  12:23:12,790 - #4 }
+INFO  12:23:12,790 - #4 }
+INFO  12:23:12,805 - Obradjuje se funkcija k na liniji 3
+INFO  12:23:12,805 - Deklarisana promenljiva x na liniji 3
+INFO  12:23:12,805 - Obradjuje se funkcija main na liniji 9
+INFO  12:23:12,805 - Print calls = 1
+INFO  12:23:12,805 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  12:23:12,821 - Parsiranje uspesno zavrseno!

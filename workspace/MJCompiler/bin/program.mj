@@ -1,11 +1,19 @@
 program P
-int x;
+int a;
 {	
-	int k () {
-		return 5;
+	int k (int p, int z) int x; {
+		x = 3;
+		print(x);
+		print(x);
+		print(x + 12);
+		return 5 + 1 + 2;
 	}
 	
 	void main() {
+		k(7, 9);
+		print(k());
+		k();
+		a = 3 + k();
 		return;
 	}
 	

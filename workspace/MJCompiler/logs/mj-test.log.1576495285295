@@ -1,0 +1,39 @@
+INFO  12:20:55,948 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:20:56,022 - #13 program
+INFO  12:20:56,022 - #45 P
+INFO  12:20:56,023 - #11 {
+INFO  12:20:56,025 - #45 int
+INFO  12:20:56,026 - #45 k
+INFO  12:20:56,027 - #10 (
+INFO  12:20:56,029 - #5 )
+INFO  12:20:56,030 - #17 const
+ERROR 12:20:56,030 - 
+Sintaksna greska na liniji 3
+INFO  12:20:56,030 - #45 int
+INFO  12:20:56,030 - #45 x
+INFO  12:20:56,030 - #6 =
+INFO  12:20:56,031 - #44 3
+INFO  12:20:56,031 - #7 ;
+INFO  12:20:56,031 - #11 {
+INFO  12:20:56,031 - #8 return
+INFO  12:20:56,032 - #44 5
+INFO  12:20:56,032 - #3 +
+INFO  12:20:56,032 - #44 1
+INFO  12:20:56,032 - #3 +
+INFO  12:20:56,032 - #44 2
+INFO  12:20:56,032 - #7 ;
+INFO  12:20:56,033 - #4 }
+INFO  12:20:56,033 - #15 void
+INFO  12:20:56,033 - #45 main
+INFO  12:20:56,033 - #10 (
+INFO  12:20:56,033 - #5 )
+INFO  12:20:56,033 - #11 {
+INFO  12:20:56,033 - #8 return
+INFO  12:20:56,033 - #7 ;
+INFO  12:20:56,033 - formal parameter error recovery: successful
+INFO  12:20:56,035 - #4 }
+INFO  12:20:56,036 - #4 }
+INFO  12:20:56,057 - Obradjuje se funkcija k na liniji 3
+ERROR 12:20:56,058 - Greska na liniji 0 : tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije k
+INFO  12:20:56,058 - Print calls = 0
+ERROR 12:20:56,059 - Parsiranje NIJE uspesno zavrseno!
