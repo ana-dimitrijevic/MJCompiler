@@ -1,0 +1,95 @@
+INFO  11:02:02,845 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  11:02:02,912 - #13 program
+INFO  11:02:02,912 - #45 P
+INFO  11:02:02,913 - #45 int
+INFO  11:02:02,916 - #45 a
+INFO  11:02:02,918 - #7 ;
+INFO  11:02:02,918 - #11 {
+INFO  11:02:02,920 - #45 int
+INFO  11:02:02,923 - #45 k
+INFO  11:02:02,923 - #10 (
+INFO  11:02:02,924 - #45 int
+INFO  11:02:02,925 - #45 p
+INFO  11:02:02,925 - #12 ,
+INFO  11:02:02,925 - #45 int
+INFO  11:02:02,926 - #45 z
+INFO  11:02:02,928 - #5 )
+INFO  11:02:02,928 - #45 int
+INFO  11:02:02,929 - #45 x
+INFO  11:02:02,930 - #7 ;
+INFO  11:02:02,930 - #11 {
+INFO  11:02:02,931 - #45 x
+INFO  11:02:02,932 - #6 =
+INFO  11:02:02,933 - #44 3
+INFO  11:02:02,934 - #7 ;
+INFO  11:02:02,935 - #14 print
+INFO  11:02:02,935 - #10 (
+INFO  11:02:02,935 - #45 x
+INFO  11:02:02,935 - #5 )
+INFO  11:02:02,935 - #7 ;
+INFO  11:02:02,935 - #14 print
+INFO  11:02:02,936 - #10 (
+INFO  11:02:02,936 - #45 x
+INFO  11:02:02,936 - #5 )
+INFO  11:02:02,936 - #7 ;
+INFO  11:02:02,936 - #14 print
+INFO  11:02:02,936 - #10 (
+INFO  11:02:02,936 - #45 x
+INFO  11:02:02,936 - #3 +
+INFO  11:02:02,936 - #44 12
+INFO  11:02:02,938 - #5 )
+INFO  11:02:02,938 - #7 ;
+INFO  11:02:02,938 - #8 return
+INFO  11:02:02,938 - #44 5
+INFO  11:02:02,938 - #3 +
+INFO  11:02:02,938 - #44 1
+INFO  11:02:02,938 - #3 +
+INFO  11:02:02,939 - #44 2
+INFO  11:02:02,939 - #7 ;
+INFO  11:02:02,939 - #4 }
+INFO  11:02:02,939 - #15 void
+INFO  11:02:02,939 - #45 mainnnn
+INFO  11:02:02,940 - #10 (
+INFO  11:02:02,940 - #45 int
+INFO  11:02:02,941 - #45 z
+INFO  11:02:02,941 - #5 )
+INFO  11:02:02,941 - #11 {
+INFO  11:02:02,941 - #45 k
+INFO  11:02:02,941 - #10 (
+INFO  11:02:02,941 - #44 7
+INFO  11:02:02,942 - #12 ,
+INFO  11:02:02,951 - #44 9
+INFO  11:02:02,951 - #5 )
+INFO  11:02:02,952 - #7 ;
+INFO  11:02:02,952 - #14 print
+INFO  11:02:02,953 - #10 (
+INFO  11:02:02,953 - #45 k
+INFO  11:02:02,953 - #10 (
+INFO  11:02:02,953 - #5 )
+INFO  11:02:02,954 - #5 )
+INFO  11:02:02,954 - #7 ;
+INFO  11:02:02,954 - #45 k
+INFO  11:02:02,955 - #10 (
+INFO  11:02:02,955 - #5 )
+INFO  11:02:02,955 - #7 ;
+INFO  11:02:02,955 - #45 a
+INFO  11:02:02,955 - #6 =
+INFO  11:02:02,956 - #44 3
+INFO  11:02:02,956 - #3 +
+INFO  11:02:02,956 - #45 k
+INFO  11:02:02,956 - #10 (
+INFO  11:02:02,958 - #5 )
+INFO  11:02:02,959 - #7 ;
+INFO  11:02:02,960 - #8 return
+INFO  11:02:02,960 - #7 ;
+INFO  11:02:02,961 - #4 }
+INFO  11:02:02,962 - #4 }
+INFO  11:02:02,984 - Deklarisana promenljiva a na liniji 2
+INFO  11:02:02,984 - Obradjuje se funkcija k na liniji 4
+INFO  11:02:02,984 - Deklarisana promenljiva x na liniji 4
+INFO  11:02:02,984 - Obradjuje se funkcija mainnnn na liniji 12
+INFO  11:02:02,985 - Pronadjen poziv funkcije k na liniji 13
+INFO  11:02:02,985 - Pronadjen poziv funkcije k na liniji 14
+INFO  11:02:02,985 - Pronadjen poziv funkcije k na liniji 15
+INFO  11:02:02,985 - Pronadjen poziv funkcije k na liniji 16
+ERROR 11:02:02,985 - Greska: 'P' main metoda ne postoji 

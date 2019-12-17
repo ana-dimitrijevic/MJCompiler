@@ -179,9 +179,9 @@ FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					
 FormalParamDecl ::= (SimpleFormalParameter) Type IDENT:name
                      |
-                     (ArrayFormalParameter) Type IDENT:name LBRACKET RBRACKET
+                    (ArrayFormalParameter) Type IDENT:name LBRACKET RBRACKET
                      |
-                     (FormalParameterError) error
+                    (FormalParameterError) error
                      {: parser.report_info("formal parameter error recovery: successful", null); :}
 ;
 

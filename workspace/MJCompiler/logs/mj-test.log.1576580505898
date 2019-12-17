@@ -1,0 +1,97 @@
+INFO  12:01:10,085 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  12:01:10,161 - #13 program
+INFO  12:01:10,162 - #45 P
+INFO  12:01:10,162 - #45 int
+INFO  12:01:10,164 - #45 a
+INFO  12:01:10,165 - #7 ;
+INFO  12:01:10,166 - #11 {
+INFO  12:01:10,167 - #45 int
+INFO  12:01:10,169 - #45 k
+INFO  12:01:10,170 - #10 (
+INFO  12:01:10,171 - #45 int
+INFO  12:01:10,171 - #45 p
+INFO  12:01:10,172 - #12 ,
+INFO  12:01:10,172 - #45 int
+INFO  12:01:10,172 - #45 p
+INFO  12:01:10,173 - #36 [
+INFO  12:01:10,173 - #37 ]
+INFO  12:01:10,173 - #5 )
+INFO  12:01:10,174 - #45 int
+INFO  12:01:10,174 - #45 x
+INFO  12:01:10,175 - #7 ;
+INFO  12:01:10,176 - #11 {
+INFO  12:01:10,176 - #45 x
+INFO  12:01:10,177 - #6 =
+INFO  12:01:10,182 - #44 3
+INFO  12:01:10,182 - #7 ;
+INFO  12:01:10,183 - #14 print
+INFO  12:01:10,184 - #10 (
+INFO  12:01:10,184 - #45 x
+INFO  12:01:10,184 - #5 )
+INFO  12:01:10,184 - #7 ;
+INFO  12:01:10,184 - #14 print
+INFO  12:01:10,184 - #10 (
+INFO  12:01:10,184 - #45 x
+INFO  12:01:10,185 - #5 )
+INFO  12:01:10,185 - #7 ;
+INFO  12:01:10,185 - #14 print
+INFO  12:01:10,185 - #10 (
+INFO  12:01:10,185 - #45 x
+INFO  12:01:10,185 - #3 +
+INFO  12:01:10,186 - #44 12
+INFO  12:01:10,189 - #5 )
+INFO  12:01:10,189 - #7 ;
+INFO  12:01:10,189 - #8 return
+INFO  12:01:10,190 - #44 5
+INFO  12:01:10,190 - #3 +
+INFO  12:01:10,190 - #44 1
+INFO  12:01:10,190 - #3 +
+INFO  12:01:10,190 - #44 2
+INFO  12:01:10,190 - #7 ;
+INFO  12:01:10,190 - #4 }
+INFO  12:01:10,192 - #15 void
+INFO  12:01:10,200 - #45 main
+INFO  12:01:10,202 - #10 (
+INFO  12:01:10,202 - #5 )
+INFO  12:01:10,205 - #11 {
+INFO  12:01:10,206 - #45 k
+INFO  12:01:10,207 - #10 (
+INFO  12:01:10,207 - #44 7
+INFO  12:01:10,207 - #12 ,
+INFO  12:01:10,215 - #44 9
+INFO  12:01:10,216 - #5 )
+INFO  12:01:10,216 - #7 ;
+INFO  12:01:10,216 - #14 print
+INFO  12:01:10,217 - #10 (
+INFO  12:01:10,217 - #45 k
+INFO  12:01:10,217 - #10 (
+INFO  12:01:10,217 - #5 )
+INFO  12:01:10,219 - #5 )
+INFO  12:01:10,219 - #7 ;
+INFO  12:01:10,219 - #45 k
+INFO  12:01:10,219 - #10 (
+INFO  12:01:10,219 - #5 )
+INFO  12:01:10,219 - #7 ;
+INFO  12:01:10,219 - #45 a
+INFO  12:01:10,219 - #6 =
+INFO  12:01:10,219 - #44 3
+INFO  12:01:10,219 - #3 +
+INFO  12:01:10,220 - #45 k
+INFO  12:01:10,220 - #10 (
+INFO  12:01:10,220 - #5 )
+INFO  12:01:10,220 - #7 ;
+INFO  12:01:10,220 - #8 return
+INFO  12:01:10,220 - #7 ;
+INFO  12:01:10,221 - #4 }
+INFO  12:01:10,222 - #4 }
+INFO  12:01:10,234 - Deklarisana promenljiva a na liniji 2
+INFO  12:01:10,234 - Obradjuje se funkcija k na liniji 4
+ERROR 12:01:10,234 - Greska: 'p' je vec deklarisan na liniji 4
+INFO  12:01:10,234 - Deklarisana promenljiva x na liniji 4
+INFO  12:01:10,234 - Obradjuje se funkcija main na liniji 12
+INFO  12:01:10,234 - Pronadjen poziv funkcije k na liniji 13
+INFO  12:01:10,235 - Pronadjen poziv funkcije k na liniji 14
+INFO  12:01:10,235 - Pronadjen poziv funkcije k na liniji 15
+INFO  12:01:10,235 - Pronadjen poziv funkcije k na liniji 16
+INFO  12:01:10,236 - Print calls = 4
+ERROR 12:01:10,239 - Parsiranje NIJE uspesno zavrseno!

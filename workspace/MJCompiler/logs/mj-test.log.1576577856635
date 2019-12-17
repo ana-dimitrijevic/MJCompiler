@@ -1,0 +1,107 @@
+INFO  11:17:14,343 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  11:17:14,450 - #13 program
+INFO  11:17:14,451 - #45 P
+INFO  11:17:14,451 - #45 int
+INFO  11:17:14,452 - #45 a
+INFO  11:17:14,453 - #7 ;
+INFO  11:17:14,454 - #11 {
+INFO  11:17:14,454 - #45 int
+INFO  11:17:14,455 - #45 k
+INFO  11:17:14,456 - #10 (
+INFO  11:17:14,457 - #45 int
+INFO  11:17:14,457 - #45 p
+INFO  11:17:14,457 - #12 ,
+INFO  11:17:14,458 - #45 int
+INFO  11:17:14,458 - #45 z
+INFO  11:17:14,458 - #5 )
+INFO  11:17:14,459 - #45 int
+INFO  11:17:14,460 - #45 x
+INFO  11:17:14,460 - #7 ;
+INFO  11:17:14,460 - #11 {
+INFO  11:17:14,461 - #45 x
+INFO  11:17:14,462 - #6 =
+INFO  11:17:14,463 - #44 3
+INFO  11:17:14,464 - #7 ;
+INFO  11:17:14,465 - #14 print
+INFO  11:17:14,465 - #10 (
+INFO  11:17:14,465 - #45 x
+INFO  11:17:14,465 - #5 )
+INFO  11:17:14,466 - #7 ;
+INFO  11:17:14,466 - #14 print
+INFO  11:17:14,466 - #10 (
+INFO  11:17:14,466 - #45 x
+INFO  11:17:14,466 - #5 )
+INFO  11:17:14,466 - #7 ;
+INFO  11:17:14,466 - #14 print
+INFO  11:17:14,466 - #10 (
+INFO  11:17:14,466 - #45 x
+INFO  11:17:14,467 - #3 +
+INFO  11:17:14,467 - #44 12
+INFO  11:17:14,468 - #5 )
+INFO  11:17:14,468 - #7 ;
+INFO  11:17:14,468 - #8 return
+INFO  11:17:14,469 - #44 5
+INFO  11:17:14,469 - #3 +
+INFO  11:17:14,469 - #44 1
+INFO  11:17:14,469 - #3 +
+INFO  11:17:14,469 - #44 2
+INFO  11:17:14,469 - #7 ;
+INFO  11:17:14,469 - #4 }
+INFO  11:17:14,469 - #45 int
+INFO  11:17:14,470 - #45 k
+INFO  11:17:14,470 - #10 (
+INFO  11:17:14,470 - #45 int
+INFO  11:17:14,470 - #45 p
+INFO  11:17:14,470 - #12 ,
+INFO  11:17:14,470 - #45 int
+INFO  11:17:14,471 - #45 z
+INFO  11:17:14,471 - #5 )
+INFO  11:17:14,471 - #7 ;
+ERROR 11:17:14,471 - 
+Sintaksna greska na liniji 12
+INFO  11:17:14,478 - #15 void
+INFO  11:17:14,479 - #45 main
+INFO  11:17:14,479 - #10 (
+INFO  11:17:14,480 - #45 int
+INFO  11:17:14,480 - #45 z
+INFO  11:17:14,480 - #5 )
+INFO  11:17:14,480 - #11 {
+INFO  11:17:14,480 - #45 k
+INFO  11:17:14,480 - #10 (
+INFO  11:17:14,480 - formal parameter error recovery: successful
+INFO  11:17:14,485 - #44 7
+INFO  11:17:14,485 - #12 ,
+INFO  11:17:14,485 - #44 9
+INFO  11:17:14,485 - #5 )
+INFO  11:17:14,485 - #7 ;
+INFO  11:17:14,485 - #14 print
+INFO  11:17:14,486 - #10 (
+INFO  11:17:14,486 - #45 k
+INFO  11:17:14,486 - #10 (
+INFO  11:17:14,486 - #5 )
+INFO  11:17:14,486 - #5 )
+INFO  11:17:14,486 - #7 ;
+INFO  11:17:14,487 - #45 k
+INFO  11:17:14,487 - #10 (
+INFO  11:17:14,487 - #5 )
+INFO  11:17:14,487 - #7 ;
+INFO  11:17:14,487 - #45 a
+INFO  11:17:14,487 - #6 =
+INFO  11:17:14,487 - #44 3
+INFO  11:17:14,487 - #3 +
+INFO  11:17:14,487 - #45 k
+INFO  11:17:14,487 - #10 (
+INFO  11:17:14,488 - #5 )
+INFO  11:17:14,488 - #7 ;
+INFO  11:17:14,488 - #8 return
+INFO  11:17:14,488 - #7 ;
+INFO  11:17:14,488 - #4 }
+INFO  11:17:14,488 - #4 }
+INFO  11:17:14,512 - Deklarisana promenljiva a na liniji 2
+INFO  11:17:14,513 - Obradjuje se funkcija k na liniji 4
+INFO  11:17:14,514 - Deklarisana promenljiva x na liniji 4
+ERROR 11:17:14,514 - Greska: 'k' je vec deklarisana na liniji 12
+INFO  11:17:14,514 - Pronadjen poziv funkcije k na liniji 15
+INFO  11:17:14,514 - Pronadjen poziv funkcije k na liniji 16
+INFO  11:17:14,515 - Pronadjen poziv funkcije k na liniji 17
+INFO  11:17:14,515 - Pronadjen poziv funkcije k na liniji 18

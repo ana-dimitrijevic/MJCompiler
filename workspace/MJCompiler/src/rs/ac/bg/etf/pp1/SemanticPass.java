@@ -15,6 +15,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 	boolean errorDetected = false;
 	int printCallCount = 0;
+	int formalParametersCount = 0;
 	Obj currentMethod = null;
 	boolean returnFound = false;
 	int nVars;
@@ -43,7 +44,23 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 	
 	@Override
-	public void visit(Program program) {		
+	public void visit(Program program) {
+		
+        Obj main = Tab.currentScope.findSymbol("main");
+        
+        if (main == null) {
+        	report_error("Greska: '" + program.getProgName().getPName() + "' main metoda ne postoji ", null);
+        }
+        else {
+        	if (main.getType() != Tab.noType) {
+            report_error("Greska: '" + program.getProgName().getPName() + "' povratna vrednost mora biti tipa void ", null);
+        	}
+        	if (main.getLevel() > 0) {
+            report_error("Greska: '" + program.getProgName().getPName() + "' ne sme imati parametre ", null);
+        	}
+        }
+
+		
 		nVars = Tab.currentScope.getnVars();
 		Tab.chainLocalSymbols(program.getProgName().obj);
 		Tab.closeScope();
@@ -58,8 +75,6 @@ public class SemanticPass extends VisitorAdaptor {
 	
 	@Override
 	public void visit(VariableDeclaration variableDeclaration) {
-		
-		
 		super.visit(variableDeclaration);
 	}
 
@@ -96,7 +111,11 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(MethodDeclaration methodDeclaration) {
 		
-		
+		// ako neko pokusa da redefinise vec  deklarisan
+		if (currentMethod == null) {
+	            return;
+	    }
+
 		if (!returnFound && currentMethod.getType() != Tab.noType) {
 			report_error("Semanticka greska na liniji " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName() + " nema return iskaz!", null);
 		}
@@ -105,8 +124,12 @@ public class SemanticPass extends VisitorAdaptor {
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
 		
+		currentMethod.setLevel(formalParametersCount);
+		
 		returnFound = false;
 		currentMethod = null;
+		formalParametersCount = 0;
+
 		super.visit(methodDeclaration);
 	}
 
@@ -114,11 +137,62 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(MethodTypeName methodTypeName) {
-		currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
-		methodTypeName.obj = currentMethod;
-		Tab.openScope();
-		report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
+		
+		// javi ovo ali jer mu nije namesten currentMethod
+		if (Tab.currentScope.findSymbol(methodTypeName.getMethName()) != null) {
+            report_error("Greska: '" + methodTypeName.getMethName() + "' je vec deklarisana", methodTypeName);
+            return;
+        }
+		else {
+			
+			RetType retType = methodTypeName.getRetType();
+	        if (retType instanceof VoidReturnType)
+	            retType.struct = Tab.noType;
+	        else
+	            retType.struct = ((ReturnType)retType).getType().struct;
+
+			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
+			methodTypeName.obj = currentMethod;
+			Tab.openScope();
+			report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);				
+		}
+		
 	}
+	
+    @Override
+    public void visit(SimpleFormalParameter simpleFormalParameter) {
+    	
+        if (currentVariableDeclarationType == Tab.noType)
+            return;
+        
+        if (Tab.currentScope.findSymbol(simpleFormalParameter.getName()) != null) {
+            report_error("Greska: '" + simpleFormalParameter.getName() + "' je vec deklarisan", simpleFormalParameter);
+            return;
+        }
+        else {
+        	Obj objNode = Tab.insert(Obj.Var, simpleFormalParameter.getName(), currentVariableDeclarationType);
+            objNode.setFpPos(formalParametersCount++);
+        }
+    }
+
+    @Override
+    public void visit(ArrayFormalParameter arrayFormalParameter) {
+    	
+
+        if (currentVariableDeclarationType == Tab.noType)
+            return;
+
+        if (Tab.currentScope.findSymbol(arrayFormalParameter.getName()) != null) {
+            report_error("Greska: '" + arrayFormalParameter.getName() + "' je vec deklarisan", arrayFormalParameter);
+            return;
+        }
+        else {
+            Obj arrayTypeObjNode = Tab.find(arrayFormalParameter.getType().getTypeName() + "[]");
+            Obj objNode = Tab.insert(Obj.Var,  arrayFormalParameter.getName(), arrayTypeObjNode.getType());
+            objNode.setFpPos(formalParametersCount++);
+        }
+        
+    }
 	
 
 	@Override
@@ -135,16 +209,31 @@ public class SemanticPass extends VisitorAdaptor {
 	
 	@Override
 	public void visit(ReturnExpressionStatement returnExpressionStatement) {
+		
+        if (currentMethod == null) {
+            report_error("Greska: return van funkcije", returnExpressionStatement);
+            return;
+        }
+		
 		returnFound = true;
+	
 		Struct currMethType = currentMethod.getType();
 		if (!currMethType.compatibleWith(returnExpressionStatement.getExpr().struct)) {
 			report_error("Greska na liniji " + returnExpressionStatement.getLine() + " : " + "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
 		}	
+		
 		super.visit(returnExpressionStatement);
+		
 	}
 
 	@Override
 	public void visit(ReturnStatement returnStatement) {
+		
+        if (currentMethod == null) {
+            report_error("Greska: return van funkcije", returnStatement);
+            return;
+        }
+		
 		returnFound = true;
 		Struct currMethType = currentMethod.getType();
 		if (!currMethType.compatibleWith(Tab.noType)) {

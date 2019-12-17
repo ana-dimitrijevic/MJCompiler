@@ -1,0 +1,97 @@
+INFO  10:59:43,491 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  10:59:43,583 - #13 program
+INFO  10:59:43,583 - #45 P
+INFO  10:59:43,583 - #45 int
+INFO  10:59:43,585 - #45 a
+INFO  10:59:43,586 - #7 ;
+INFO  10:59:43,586 - #11 {
+INFO  10:59:43,587 - #45 int
+INFO  10:59:43,590 - #45 k
+INFO  10:59:43,591 - #10 (
+INFO  10:59:43,591 - #45 int
+INFO  10:59:43,591 - #45 p
+INFO  10:59:43,591 - #12 ,
+INFO  10:59:43,592 - #45 int
+INFO  10:59:43,592 - #45 z
+INFO  10:59:43,592 - #5 )
+INFO  10:59:43,593 - #45 int
+INFO  10:59:43,594 - #45 x
+INFO  10:59:43,594 - #7 ;
+INFO  10:59:43,594 - #11 {
+INFO  10:59:43,595 - #45 x
+INFO  10:59:43,598 - #6 =
+INFO  10:59:43,599 - #44 3
+INFO  10:59:43,600 - #7 ;
+INFO  10:59:43,601 - #14 print
+INFO  10:59:43,602 - #10 (
+INFO  10:59:43,602 - #45 x
+INFO  10:59:43,602 - #5 )
+INFO  10:59:43,602 - #7 ;
+INFO  10:59:43,602 - #14 print
+INFO  10:59:43,602 - #10 (
+INFO  10:59:43,602 - #45 x
+INFO  10:59:43,602 - #5 )
+INFO  10:59:43,602 - #7 ;
+INFO  10:59:43,602 - #14 print
+INFO  10:59:43,603 - #10 (
+INFO  10:59:43,603 - #45 x
+INFO  10:59:43,603 - #3 +
+INFO  10:59:43,603 - #44 12
+INFO  10:59:43,605 - #5 )
+INFO  10:59:43,605 - #7 ;
+INFO  10:59:43,605 - #8 return
+INFO  10:59:43,605 - #44 5
+INFO  10:59:43,605 - #3 +
+INFO  10:59:43,605 - #44 1
+INFO  10:59:43,606 - #3 +
+INFO  10:59:43,606 - #44 2
+INFO  10:59:43,606 - #7 ;
+INFO  10:59:43,606 - #4 }
+INFO  10:59:43,606 - #15 void
+INFO  10:59:43,607 - #45 main
+INFO  10:59:43,610 - #10 (
+INFO  10:59:43,610 - #45 int
+INFO  10:59:43,611 - #45 z
+INFO  10:59:43,611 - #5 )
+INFO  10:59:43,611 - #11 {
+INFO  10:59:43,611 - #45 k
+INFO  10:59:43,612 - #10 (
+INFO  10:59:43,612 - #44 7
+INFO  10:59:43,612 - #12 ,
+INFO  10:59:43,612 - #44 9
+INFO  10:59:43,612 - #5 )
+INFO  10:59:43,613 - #7 ;
+INFO  10:59:43,613 - #14 print
+INFO  10:59:43,613 - #10 (
+INFO  10:59:43,613 - #45 k
+INFO  10:59:43,613 - #10 (
+INFO  10:59:43,613 - #5 )
+INFO  10:59:43,614 - #5 )
+INFO  10:59:43,614 - #7 ;
+INFO  10:59:43,614 - #45 k
+INFO  10:59:43,614 - #10 (
+INFO  10:59:43,614 - #5 )
+INFO  10:59:43,614 - #7 ;
+INFO  10:59:43,615 - #45 a
+INFO  10:59:43,615 - #6 =
+INFO  10:59:43,615 - #44 3
+INFO  10:59:43,615 - #3 +
+INFO  10:59:43,615 - #45 k
+INFO  10:59:43,615 - #10 (
+INFO  10:59:43,615 - #5 )
+INFO  10:59:43,615 - #7 ;
+INFO  10:59:43,616 - #8 return
+INFO  10:59:43,616 - #7 ;
+INFO  10:59:43,616 - #4 }
+INFO  10:59:43,617 - #4 }
+INFO  10:59:43,637 - Deklarisana promenljiva a na liniji 2
+INFO  10:59:43,638 - Obradjuje se funkcija k na liniji 4
+INFO  10:59:43,638 - Deklarisana promenljiva x na liniji 4
+INFO  10:59:43,638 - Obradjuje se funkcija main na liniji 12
+INFO  10:59:43,638 - Pronadjen poziv funkcije k na liniji 13
+INFO  10:59:43,638 - Pronadjen poziv funkcije k na liniji 14
+INFO  10:59:43,638 - Pronadjen poziv funkcije k na liniji 15
+INFO  10:59:43,639 - Pronadjen poziv funkcije k na liniji 16
+INFO  10:59:43,639 - Print calls = 4
+INFO  10:59:43,640 - Generating bytecode file: D:\Projekat pp\workspace\MJCompiler\test\program.obj
+INFO  10:59:43,669 - Parsiranje uspesno zavrseno!
