@@ -94,7 +94,6 @@ nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
 nonterminal PrintExpression PrintExpression;
 nonterminal ForDesignatorStm ForDesignatorStm;
-nonterminal DesignatorList DesignatorList;
 nonterminal ElsePart ElsePart;
 
 
@@ -210,9 +209,9 @@ FormalParamList ::= (FormalParamDecls) FormalParamList:F1 COMMA FormalParamDecl:
 					
 FormalParamDecl ::= (SimpleFormalParameter) Type:T1 IDENT:name {: RESULT=new SimpleFormalParameter(T1, name); RESULT.setLine(T1left); :}
                      |
-                     (ArrayFormalParameter) Type:T1 IDENT:name LBRACKET RBRACKET {: RESULT=new ArrayFormalParameter(T1, name); RESULT.setLine(T1left); :}
+                    (ArrayFormalParameter) Type:T1 IDENT:name LBRACKET RBRACKET {: RESULT=new ArrayFormalParameter(T1, name); RESULT.setLine(T1left); :}
                      |
-                     (FormalParameterError) error
+                    (FormalParameterError) error
                      {: parser.report_info("formal parameter error recovery: successful", null); :} {: RESULT=new FormalParameterError(); :}
 ;
 
@@ -241,8 +240,7 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (BlockOfStatements) LBRACE Statements:S1 RBRACE {: RESULT=new BlockOfStatements(S1); RESULT.setLine(S1left); :}
               |
-              (ProcCall) Designator:func LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}
-              
+              (ProcCall) Designator:func LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}          
 ;       
 
 Expr  ::= (PositiveExpression) AddopExpr:A1 {: RESULT=new PositiveExpression(A1); RESULT.setLine(A1left); :}
@@ -274,15 +272,13 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val {: RESULT=new NumberConstFactor(v
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
 
-Designator ::= (Designator) IDENT:designatorName DesignatorList:D1 {: RESULT=new Designator(designatorName, D1); RESULT.setLine(designatorNameleft); :}
-;
-
-DesignatorList ::= (DesignatorListDot) DesignatorList:D1 DOT IDENT:designatorId {: RESULT=new DesignatorListDot(D1, designatorId); RESULT.setLine(D1left); :}
-					| 
-					(DesignatorListExpr) DesignatorList:D1 LBRACKET Expr:E2 RBRACKET {: RESULT=new DesignatorListExpr(D1, E2); RESULT.setLine(D1left); :}
-					|
-					(NoDesignatorList) {: RESULT=new NoDesignatorList(); :} /* epsilon */
-;
+Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
+               |
+               (ArrayDesignator) IDENT:name LBRACKET Expr:arrExp RBRACKET {: RESULT=new ArrayDesignator(name, arrExp); RESULT.setLine(nameleft); :}
+               |
+               (SimpleDesignator) IDENT:name {: RESULT=new SimpleDesignator(name); RESULT.setLine(nameleft); :}
+               ;
+               
 
 DesignatorStatement ::= (IncDesignatorStatement) Designator:D1 INC {: RESULT=new IncDesignatorStatement(D1); RESULT.setLine(D1left); :}
                          |
@@ -290,7 +286,7 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator:D1 INC {: RESULT=new
                          |
 						(AssignDesignatorStatement) AssignStmnt:A1 {: RESULT=new AssignDesignatorStatement(A1); RESULT.setLine(A1left); :}         
 ;
-
+                            
 AssignStmnt ::= (AssignStatement) Designator:D1 ASSIGN Expr:E2 {: RESULT=new AssignStatement(D1, E2); RESULT.setLine(D1left); :}
                  |
                 (AssignStatementError) error

@@ -1,0 +1,340 @@
+package rs.ac.bg.etf.pp1;
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+	
+	boolean errorDetected = false;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+    
+    public void report_info(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.info(msg.toString());
+    }
+    
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal ELSE, PLUS, RBRACE, RPAREN, ASSIGN, SEMI, RETURN, IF, LPAREN, LBRACE,
+COMMA, PROG, PRINT, VOID, BREAK, CONST, NEW, READ, FOR, CONTINUE, INC, DEC,
+MINUS, MUL, DIV, MOD, AND, OR, EQ, NOTEQ, GR, GEQ, LS, LEQ, LBRACKET, RBRACKET,
+DOT, BOOLCONST, CHARCONST, CLASS, ABSTRACT, EXTENDS;
+terminal Integer NUMBERCONST;
+terminal String IDENT;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
+Factor; 
+
+
+nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
+FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, ActualParamsList,
+ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, DesignatorList, ElsePart;
+
+
+precedence left ELSE;
+
+
+Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE 
+;
+
+ProgName ::= (ProgName) IDENT:pName
+;
+
+VarDeclList ::= (VarDeclarations) VarDeclList VarDeclar  
+				|
+				(NoVarDeclarations)/* epsilon */ 
+;
+			
+VarDeclar ::= (VarDeclConst) CONST Type ConstInitializer SEMI
+			  | 
+			  (VarDeclNonConst) DeclVar
+			  |
+			  (VarDeclClass) AbstractModif CLASS IDENT ClassExtends LBRACE ClassVarDeclList ClassMethDeclList RBRACE
+;
+
+DeclVar ::= (VariableDeclaration) Type VarIdentList SEMI
+            |
+            (VariableDeclarationError) error SEMI
+            {: parser.report_info("GRESKA: deklaracija promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
+;
+
+VarIdentList ::= (MultipleVariableIdentList) VarIdentList COMMA VarIdent
+                 |
+                 (SingleVariableIdentList) VarIdent
+;
+
+VarIdent ::= (SingleVariableIdent) IDENT:name
+              |
+              (ArrayVariableIdent) IDENT:name LBRACKET RBRACKET
+              |
+              (VariableIdentError) error
+              {: parser.report_info("GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!", null);  :}
+;
+
+        
+DeclVarList ::= (VariableDeclarationList) DeclVarList DeclVar
+                |
+                (NoVariableDeclarationList) /* epsilon */
+;
+
+AbstractModif ::= (AbstractModifer) ABSTRACT
+				  |
+				  (NoAbstractModifer) /* epsilon */
+;
+
+ClassExtends ::= (Extension) EXTENDS Type
+				|
+				(NoExtesion) /* epsilon */
+;
+				
+ClassVarDeclList ::= (ClassVarDeclarationList) ClassVarDeclList VarDeclar
+					|
+					(NoClassVarDeclarationList) /* epsilon */
+;	
+
+ClassMethDeclList ::= (ClassMethodDeclList) LBRACE MethodDeclList RBRACE
+					|
+					(NoClassMethodDeclList) /* epsilon */
+;
+
+Type ::= (Type) IDENT:typeName 
+;
+
+ConstInitializer ::= (ConstInitializerList) ConstInitializer COMMA Initializer
+             		 |
+             		 (SingleConstInitializer) Initializer
+;
+             
+Initializer ::= (NumConstInitializer) IDENT:name ASSIGN NUMBERCONST:val
+				|
+          		(CharConstInitializer) IDENT:name ASSIGN CHARCONST:val
+          		|
+          		(BoolConstInitializer) IDENT:name ASSIGN BOOLCONST:val
+;
+
+
+MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
+					|
+					(NoMethodDeclarations)/* epsilon */
+;
+
+MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN DeclVarList LBRACE Statements RBRACE
+			   |
+			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName LPAREN FormPars RPAREN SEMI
+;
+
+MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName
+;
+
+RetType ::= (VoidReturnType) VOID
+             |
+            (ReturnType) Type
+;
+                            
+FormPars ::= (FormParams) FormalParamList 
+			 | 
+			(NoFormParam) /* epsilon */ 
+;
+
+FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
+					|
+					(SingleFormalParamDecl) FormalParamDecl
+;
+					
+FormalParamDecl ::= (SimpleFormalParameter) Type IDENT:name
+                     |
+                    (ArrayFormalParameter) Type IDENT:name LBRACKET RBRACKET
+                     |
+                    (FormalParameterError) error
+                     {: parser.report_info("formal parameter error recovery: successful", null); :}
+;
+
+Statements ::= (StatementsList) Statements Statement 
+				|
+			   (NoStatementsList) /* epsilon */
+;
+
+Statement ::= (ReturnStatement) RETURN SEMI
+			  |
+			  (BreakStatement) BREAK SEMI
+              |
+              (ContinueStatement) CONTINUE SEMI
+              |
+              (ReturnExpressionStatement) RETURN Expr SEMI
+              |
+              (ReadStatement) READ LPAREN Designator RPAREN SEMI
+              |
+              (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMI
+              |
+              (IfStatement) IF LPAREN Condition RPAREN Statement ElsePart
+              |
+          	  (ForStatement) FOR LPAREN ForDesignatorStm SEMI ForCond SEMI ForDesignatorStm RPAREN Statement
+              |
+              (StatementDesignator) DesignatorStatement SEMI
+              |
+              (BlockOfStatements) LBRACE Statements RBRACE
+              |
+              (ProcCall) Designator:func LPAREN ActualParamsList RPAREN SEMI          
+;       
+
+Expr  ::= (PositiveExpression) AddopExpr
+          |
+          (NegativeExpression) MINUS AddopExpr;
+
+AddopExpr ::= (MultipleAddopTerm) AddopExpr Addop Term
+               |
+              (SingleAddopTerm) Term;
+
+Term ::= (MultipleFactor) Term Mulop Factor
+          |
+         (SingleFactor) Factor;
+
+Factor ::= (NumberConstFactor) NUMBERCONST:val
+            |
+           (CharConstFactor) CHARCONST:val
+            |
+           (BoolConstFactor) BOOLCONST:val
+            |
+		   (DesignatorFactor) Designator
+            |
+           (NewObjectFactor) NEW Type
+            |
+           (NewObjectArrayFactor) NEW Type LBRACKET Expr RBRACKET
+            |
+           (FuncCall) Designator:func LPAREN ActualParamsList RPAREN
+            |
+           (ParenFactor) LPAREN Expr RPAREN
+;
+
+Designator ::= (Designator) IDENT:designatorName DesignatorList
+;
+
+DesignatorList ::= (DesignatorListDot) DesignatorList DOT IDENT:designatorId
+					| 
+					(DesignatorListExpr) DesignatorList LBRACKET Expr RBRACKET
+					|
+					(NoDesignatorList) /* epsilon */
+;
+
+DesignatorStatement ::= (IncDesignatorStatement) Designator INC
+                         |
+                        (DecDesignatorStatement) Designator DEC
+                         |
+						(AssignDesignatorStatement) AssignStmnt         
+;
+
+AssignStmnt ::= (AssignStatement) Designator ASSIGN Expr
+                 |
+                (AssignStatementError) error
+                {: parser.report_info("assign statement error recovery: successful", null); :}
+;
+
+ActualParamsList ::= (ActualParametersList) ActualParams
+                  	  |
+                 	 (NoActualParametersList) /* epsilon */
+;
+                            
+ActualParams ::= (MultipleActualParameters) ActualParams COMMA Expr
+             	 |
+            	 (SingleActualParameter) Expr
+;
+
+PrintExpression ::= (SinglePrintExpression) Expr:exp
+                    |
+                    (MultiplePrintExpression) Expr:exp COMMA NUMBERCONST:val
+;
+
+ElsePart ::= (ElseStatement) ELSE Statement
+			 | 
+			 (NoElseStatement) /* epsilon */
+;
+
+ForDesignatorStm ::= (ForDesignatorStatement) DesignatorStatement
+                      |
+                     (NoForDesignatorStatement) /* epsilon */
+;
+                     
+ForCond ::= (ForCondition) Condition
+             |
+            (NoForCondition) /* epsilon */
+;
+
+Condition ::= (MultipleCondition) Condition OR CondTerm
+               |
+              (SingleCondition) CondTerm
+               |
+              (IllegalConditionError) error
+             {: parser.report_info("illegal condition error recovery: successful", null); :}
+;
+
+CondTerm ::= (MultipleFactorConditionTerm) CondTerm AND CondFact
+              |
+             (SingleFactorConditionTerm) CondFact
+;
+
+CondFact ::= (ExprConditionFactor) Expr
+              |
+             (RelopExprConditionFactor) Expr Relop Expr
+;
+             
+Addop  ::= (AddopADD) PLUS
+           |
+           (AddopSUB) MINUS
+;
+
+Mulop  ::= (MulopMUL) MUL
+            |
+           (MulopDIV) DIV
+            |
+           (MulopMOD) MOD
+;
+             
+Relop ::= (RelopEQ) EQ
+           |
+          (RelopNOTEQ) NOTEQ
+           |
+          (RelopGR) GR
+           |
+          (RelopGEQ) GEQ
+           |
+          (RelopLS) LS
+           |
+          (RelopLEQ) LEQ
+;
+

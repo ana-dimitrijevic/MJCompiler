@@ -64,7 +64,7 @@ Factor;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, DesignatorList, ElsePart;
+ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, ElsePart;
 
 
 precedence left ELSE;
@@ -242,15 +242,13 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val
            (ParenFactor) LPAREN Expr RPAREN
 ;
 
-Designator ::= (Designator) IDENT:designatorName DesignatorList
-;
-
-DesignatorList ::= (DesignatorListDot) DesignatorList DOT IDENT:designatorId
-					| 
-					(DesignatorListExpr) DesignatorList LBRACKET Expr RBRACKET
-					|
-					(NoDesignatorList) /* epsilon */
-;
+Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName
+               |
+               (ArrayDesignator) IDENT:name LBRACKET Expr:arrExp RBRACKET
+               |
+               (SimpleDesignator) IDENT:name
+               ;
+               
 
 DesignatorStatement ::= (IncDesignatorStatement) Designator INC
                          |
@@ -258,7 +256,7 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator INC
                          |
 						(AssignDesignatorStatement) AssignStmnt         
 ;
-
+                            
 AssignStmnt ::= (AssignStatement) Designator ASSIGN Expr
                  |
                 (AssignStatementError) error

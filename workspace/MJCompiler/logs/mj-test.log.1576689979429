@@ -1,0 +1,101 @@
+INFO  18:26:01,197 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:26:01,260 - #13 program
+INFO  18:26:01,260 - #45 P
+INFO  18:26:01,260 - #45 int
+INFO  18:26:01,275 - #45 a
+INFO  18:26:01,275 - #7 ;
+INFO  18:26:01,275 - #11 {
+INFO  18:26:01,275 - #45 int
+INFO  18:26:01,275 - #45 k
+INFO  18:26:01,275 - #10 (
+INFO  18:26:01,275 - #45 int
+INFO  18:26:01,275 - #45 p
+INFO  18:26:01,275 - #12 ,
+INFO  18:26:01,275 - #45 int
+INFO  18:26:01,275 - #45 q
+INFO  18:26:01,275 - #36 [
+INFO  18:26:01,275 - #37 ]
+INFO  18:26:01,275 - #5 )
+INFO  18:26:01,275 - #45 int
+INFO  18:26:01,275 - #45 x
+INFO  18:26:01,275 - #7 ;
+INFO  18:26:01,275 - #11 {
+INFO  18:26:01,275 - #45 x
+INFO  18:26:01,275 - #6 =
+INFO  18:26:01,275 - #44 3
+INFO  18:26:01,275 - #7 ;
+INFO  18:26:01,275 - #14 print
+INFO  18:26:01,275 - #10 (
+INFO  18:26:01,275 - #45 q
+INFO  18:26:01,275 - #36 [
+INFO  18:26:01,275 - #37 ]
+ERROR 18:26:01,275 - 
+Sintaksna greska na liniji 6
+INFO  18:26:01,275 - #5 )
+INFO  18:26:01,275 - #7 ;
+INFO  18:26:01,275 - #14 print
+INFO  18:26:01,275 - #10 (
+INFO  18:26:01,275 - #45 x
+INFO  18:26:01,291 - assign statement error recovery: successful
+INFO  18:26:01,291 - #5 )
+INFO  18:26:01,291 - #7 ;
+INFO  18:26:01,291 - #14 print
+INFO  18:26:01,291 - #10 (
+INFO  18:26:01,291 - #45 x
+INFO  18:26:01,291 - #3 +
+INFO  18:26:01,291 - #44 12
+INFO  18:26:01,291 - #5 )
+INFO  18:26:01,291 - #7 ;
+INFO  18:26:01,291 - #8 return
+INFO  18:26:01,291 - #44 5
+INFO  18:26:01,291 - #3 +
+INFO  18:26:01,291 - #44 1
+INFO  18:26:01,291 - #3 +
+INFO  18:26:01,291 - #44 2
+INFO  18:26:01,291 - #7 ;
+INFO  18:26:01,291 - #4 }
+INFO  18:26:01,291 - #15 void
+INFO  18:26:01,291 - #45 main
+INFO  18:26:01,291 - #10 (
+INFO  18:26:01,291 - #5 )
+INFO  18:26:01,291 - #11 {
+INFO  18:26:01,307 - #45 k
+INFO  18:26:01,307 - #10 (
+INFO  18:26:01,307 - #44 7
+INFO  18:26:01,307 - #12 ,
+INFO  18:26:01,307 - #44 9
+INFO  18:26:01,307 - #5 )
+INFO  18:26:01,307 - #7 ;
+INFO  18:26:01,307 - #14 print
+INFO  18:26:01,307 - #10 (
+INFO  18:26:01,307 - #45 k
+INFO  18:26:01,307 - #10 (
+INFO  18:26:01,307 - #5 )
+INFO  18:26:01,307 - #5 )
+INFO  18:26:01,307 - #7 ;
+INFO  18:26:01,307 - #45 k
+INFO  18:26:01,307 - #10 (
+INFO  18:26:01,307 - #5 )
+INFO  18:26:01,307 - #7 ;
+INFO  18:26:01,307 - #45 a
+INFO  18:26:01,307 - #6 =
+INFO  18:26:01,307 - #44 3
+INFO  18:26:01,307 - #3 +
+INFO  18:26:01,307 - #45 k
+INFO  18:26:01,307 - #10 (
+INFO  18:26:01,307 - #5 )
+INFO  18:26:01,307 - #7 ;
+INFO  18:26:01,307 - #8 return
+INFO  18:26:01,307 - #7 ;
+INFO  18:26:01,307 - #4 }
+INFO  18:26:01,307 - #4 }
+INFO  18:26:01,338 - Deklarisana promenljiva a na liniji 2
+INFO  18:26:01,338 - Obradjuje se funkcija k na liniji 4
+INFO  18:26:01,338 - Deklarisana promenljiva x na liniji 4
+INFO  18:26:01,338 - Obradjuje se funkcija main na liniji 12
+INFO  18:26:01,338 - Pronadjen poziv funkcije k na liniji 13
+INFO  18:26:01,338 - Pronadjen poziv funkcije k na liniji 14
+INFO  18:26:01,338 - Pronadjen poziv funkcije k na liniji 15
+INFO  18:26:01,338 - Pronadjen poziv funkcije k na liniji 16
+INFO  18:26:01,338 - Print calls = 3
+ERROR 18:26:01,338 - Parsiranje NIJE uspesno zavrseno!

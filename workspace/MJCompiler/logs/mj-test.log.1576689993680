@@ -1,0 +1,100 @@
+INFO  18:26:19,429 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:26:19,492 - #13 program
+INFO  18:26:19,492 - #45 P
+INFO  18:26:19,492 - #45 int
+INFO  18:26:19,492 - #45 a
+INFO  18:26:19,492 - #7 ;
+INFO  18:26:19,492 - #11 {
+INFO  18:26:19,492 - #45 int
+INFO  18:26:19,492 - #45 k
+INFO  18:26:19,492 - #10 (
+INFO  18:26:19,492 - #45 int
+INFO  18:26:19,492 - #45 p
+INFO  18:26:19,492 - #12 ,
+INFO  18:26:19,492 - #45 int
+INFO  18:26:19,492 - #45 q
+INFO  18:26:19,492 - #36 [
+INFO  18:26:19,492 - #37 ]
+INFO  18:26:19,492 - #5 )
+INFO  18:26:19,492 - #45 int
+INFO  18:26:19,492 - #45 x
+INFO  18:26:19,492 - #7 ;
+INFO  18:26:19,507 - #11 {
+INFO  18:26:19,507 - #45 x
+INFO  18:26:19,507 - #6 =
+INFO  18:26:19,507 - #44 3
+INFO  18:26:19,507 - #7 ;
+INFO  18:26:19,507 - #14 print
+INFO  18:26:19,507 - #10 (
+INFO  18:26:19,507 - #45 z
+INFO  18:26:19,507 - #36 [
+INFO  18:26:19,507 - #44 3
+INFO  18:26:19,507 - #37 ]
+INFO  18:26:19,507 - #5 )
+INFO  18:26:19,507 - #7 ;
+INFO  18:26:19,507 - #14 print
+INFO  18:26:19,507 - #10 (
+INFO  18:26:19,507 - #45 x
+INFO  18:26:19,507 - #5 )
+INFO  18:26:19,507 - #7 ;
+INFO  18:26:19,507 - #14 print
+INFO  18:26:19,507 - #10 (
+INFO  18:26:19,507 - #45 x
+INFO  18:26:19,507 - #3 +
+INFO  18:26:19,507 - #44 12
+INFO  18:26:19,507 - #5 )
+INFO  18:26:19,507 - #7 ;
+INFO  18:26:19,507 - #8 return
+INFO  18:26:19,507 - #44 5
+INFO  18:26:19,507 - #3 +
+INFO  18:26:19,507 - #44 1
+INFO  18:26:19,507 - #3 +
+INFO  18:26:19,507 - #44 2
+INFO  18:26:19,507 - #7 ;
+INFO  18:26:19,507 - #4 }
+INFO  18:26:19,507 - #15 void
+INFO  18:26:19,507 - #45 main
+INFO  18:26:19,507 - #10 (
+INFO  18:26:19,507 - #5 )
+INFO  18:26:19,507 - #11 {
+INFO  18:26:19,507 - #45 k
+INFO  18:26:19,523 - #10 (
+INFO  18:26:19,523 - #44 7
+INFO  18:26:19,523 - #12 ,
+INFO  18:26:19,523 - #44 9
+INFO  18:26:19,523 - #5 )
+INFO  18:26:19,523 - #7 ;
+INFO  18:26:19,523 - #14 print
+INFO  18:26:19,523 - #10 (
+INFO  18:26:19,523 - #45 k
+INFO  18:26:19,523 - #10 (
+INFO  18:26:19,523 - #5 )
+INFO  18:26:19,523 - #5 )
+INFO  18:26:19,523 - #7 ;
+INFO  18:26:19,523 - #45 k
+INFO  18:26:19,523 - #10 (
+INFO  18:26:19,523 - #5 )
+INFO  18:26:19,523 - #7 ;
+INFO  18:26:19,523 - #45 a
+INFO  18:26:19,523 - #6 =
+INFO  18:26:19,523 - #44 3
+INFO  18:26:19,523 - #3 +
+INFO  18:26:19,523 - #45 k
+INFO  18:26:19,523 - #10 (
+INFO  18:26:19,523 - #5 )
+INFO  18:26:19,523 - #7 ;
+INFO  18:26:19,523 - #8 return
+INFO  18:26:19,523 - #7 ;
+INFO  18:26:19,523 - #4 }
+INFO  18:26:19,523 - #4 }
+INFO  18:26:19,554 - Deklarisana promenljiva a na liniji 2
+INFO  18:26:19,554 - Obradjuje se funkcija k na liniji 4
+INFO  18:26:19,554 - Deklarisana promenljiva x na liniji 4
+ERROR 18:26:19,554 - Greska na liniji 6 : ime z nije deklarisano  na liniji 6
+INFO  18:26:19,554 - Obradjuje se funkcija main na liniji 12
+INFO  18:26:19,554 - Pronadjen poziv funkcije k na liniji 13
+INFO  18:26:19,554 - Pronadjen poziv funkcije k na liniji 14
+INFO  18:26:19,554 - Pronadjen poziv funkcije k na liniji 15
+INFO  18:26:19,554 - Pronadjen poziv funkcije k na liniji 16
+INFO  18:26:19,554 - Print calls = 4
+ERROR 18:26:19,554 - Parsiranje NIJE uspesno zavrseno!

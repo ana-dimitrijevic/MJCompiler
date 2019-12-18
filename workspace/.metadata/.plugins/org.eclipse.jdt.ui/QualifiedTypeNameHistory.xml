@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SymbolTable"/>
 <fullyQualifiedTypeName name="java.lang.Number"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MemberDesignator"/>
 </qualifiedTypeNameHistroy>

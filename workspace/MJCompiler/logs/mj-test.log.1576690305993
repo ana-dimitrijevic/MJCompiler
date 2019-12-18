@@ -1,0 +1,101 @@
+INFO  18:31:39,826 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  18:31:39,889 - #13 program
+INFO  18:31:39,889 - #45 P
+INFO  18:31:39,889 - #45 int
+INFO  18:31:39,905 - #45 a
+INFO  18:31:39,905 - #7 ;
+INFO  18:31:39,905 - #11 {
+INFO  18:31:39,905 - #45 int
+INFO  18:31:39,905 - #45 k
+INFO  18:31:39,905 - #10 (
+INFO  18:31:39,905 - #45 int
+INFO  18:31:39,905 - #45 p
+INFO  18:31:39,905 - #12 ,
+INFO  18:31:39,905 - #45 int
+INFO  18:31:39,905 - #45 q
+INFO  18:31:39,905 - #36 [
+INFO  18:31:39,905 - #37 ]
+INFO  18:31:39,905 - #5 )
+INFO  18:31:39,905 - #45 int
+INFO  18:31:39,905 - #45 x
+INFO  18:31:39,905 - #7 ;
+INFO  18:31:39,905 - #11 {
+INFO  18:31:39,905 - #45 x
+INFO  18:31:39,905 - #6 =
+INFO  18:31:39,905 - #44 3
+INFO  18:31:39,905 - #7 ;
+INFO  18:31:39,905 - #14 print
+INFO  18:31:39,920 - #10 (
+INFO  18:31:39,920 - #45 q
+INFO  18:31:39,920 - #36 [
+INFO  18:31:39,920 - #45 ana
+INFO  18:31:39,920 - #37 ]
+INFO  18:31:39,920 - #5 )
+INFO  18:31:39,920 - #7 ;
+INFO  18:31:39,920 - #14 print
+INFO  18:31:39,920 - #10 (
+INFO  18:31:39,920 - #45 x
+INFO  18:31:39,920 - #5 )
+INFO  18:31:39,920 - #7 ;
+INFO  18:31:39,920 - #14 print
+INFO  18:31:39,920 - #10 (
+INFO  18:31:39,920 - #45 x
+INFO  18:31:39,920 - #3 +
+INFO  18:31:39,920 - #44 12
+INFO  18:31:39,920 - #5 )
+INFO  18:31:39,920 - #7 ;
+INFO  18:31:39,920 - #8 return
+INFO  18:31:39,920 - #44 5
+INFO  18:31:39,920 - #3 +
+INFO  18:31:39,920 - #44 1
+INFO  18:31:39,920 - #3 +
+INFO  18:31:39,920 - #44 2
+INFO  18:31:39,920 - #7 ;
+INFO  18:31:39,920 - #4 }
+INFO  18:31:39,920 - #15 void
+INFO  18:31:39,920 - #45 main
+INFO  18:31:39,920 - #10 (
+INFO  18:31:39,920 - #5 )
+INFO  18:31:39,920 - #11 {
+INFO  18:31:39,920 - #45 k
+INFO  18:31:39,936 - #10 (
+INFO  18:31:39,936 - #44 7
+INFO  18:31:39,936 - #12 ,
+INFO  18:31:39,936 - #44 9
+INFO  18:31:39,936 - #5 )
+INFO  18:31:39,936 - #7 ;
+INFO  18:31:39,936 - #14 print
+INFO  18:31:39,936 - #10 (
+INFO  18:31:39,936 - #45 k
+INFO  18:31:39,936 - #10 (
+INFO  18:31:39,936 - #5 )
+INFO  18:31:39,936 - #5 )
+INFO  18:31:39,936 - #7 ;
+INFO  18:31:39,936 - #45 k
+INFO  18:31:39,936 - #10 (
+INFO  18:31:39,936 - #5 )
+INFO  18:31:39,936 - #7 ;
+INFO  18:31:39,936 - #45 a
+INFO  18:31:39,936 - #6 =
+INFO  18:31:39,936 - #44 3
+INFO  18:31:39,936 - #3 +
+INFO  18:31:39,936 - #45 k
+INFO  18:31:39,936 - #10 (
+INFO  18:31:39,936 - #5 )
+INFO  18:31:39,936 - #7 ;
+INFO  18:31:39,936 - #8 return
+INFO  18:31:39,936 - #7 ;
+INFO  18:31:39,936 - #4 }
+INFO  18:31:39,936 - #4 }
+INFO  18:31:39,967 - Deklarisana promenljiva a na liniji 2
+INFO  18:31:39,967 - Obradjuje se funkcija k na liniji 4
+INFO  18:31:39,967 - Deklarisana promenljiva x na liniji 4
+ERROR 18:31:39,967 - Greska na liniji 6 : ime ana nije deklarisano!  na liniji 6
+ERROR 18:31:39,967 - Greska na liniji 6 : izraz u zagradama mora biti celobrojnog tipa  na liniji 6
+INFO  18:31:39,967 - Obradjuje se funkcija main na liniji 12
+INFO  18:31:39,967 - Pronadjen poziv funkcije k na liniji 13
+INFO  18:31:39,967 - Pronadjen poziv funkcije k na liniji 14
+INFO  18:31:39,967 - Pronadjen poziv funkcije k na liniji 15
+INFO  18:31:39,967 - Pronadjen poziv funkcije k na liniji 16
+INFO  18:31:39,967 - Print calls = 4
+ERROR 18:31:39,967 - Parsiranje NIJE uspesno zavrseno!
