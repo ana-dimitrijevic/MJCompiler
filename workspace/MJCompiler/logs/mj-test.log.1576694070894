@@ -1,0 +1,132 @@
+INFO  19:34:07,246 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  19:34:07,402 - #13 program
+INFO  19:34:07,402 - #45 P
+INFO  19:34:07,402 - #45 int
+INFO  19:34:07,402 - #45 a
+INFO  19:34:07,402 - #7 ;
+INFO  19:34:07,402 - #11 {
+INFO  19:34:07,402 - #45 int
+INFO  19:34:07,402 - #45 k
+INFO  19:34:07,402 - #10 (
+INFO  19:34:07,402 - #45 int
+INFO  19:34:07,402 - #45 p
+INFO  19:34:07,402 - #12 ,
+INFO  19:34:07,402 - #45 int
+INFO  19:34:07,402 - #45 q
+INFO  19:34:07,402 - #36 [
+INFO  19:34:07,402 - #37 ]
+INFO  19:34:07,402 - #5 )
+INFO  19:34:07,402 - #45 int
+INFO  19:34:07,402 - #45 x
+INFO  19:34:07,402 - #7 ;
+INFO  19:34:07,402 - #11 {
+INFO  19:34:07,402 - #45 x
+INFO  19:34:07,418 - #6 =
+INFO  19:34:07,418 - #44 3
+INFO  19:34:07,418 - #7 ;
+INFO  19:34:07,418 - #14 print
+INFO  19:34:07,418 - #10 (
+INFO  19:34:07,418 - #45 q
+INFO  19:34:07,418 - #36 [
+INFO  19:34:07,418 - #45 a
+INFO  19:34:07,418 - #3 +
+INFO  19:34:07,418 - #44 1
+INFO  19:34:07,418 - #37 ]
+INFO  19:34:07,418 - #5 )
+INFO  19:34:07,418 - #7 ;
+INFO  19:34:07,418 - #14 print
+INFO  19:34:07,418 - #10 (
+INFO  19:34:07,418 - #45 x
+INFO  19:34:07,418 - #5 )
+INFO  19:34:07,418 - #7 ;
+INFO  19:34:07,418 - #14 print
+INFO  19:34:07,418 - #10 (
+INFO  19:34:07,418 - #45 x
+INFO  19:34:07,418 - #3 +
+INFO  19:34:07,418 - #44 12
+INFO  19:34:07,418 - #12 ,
+INFO  19:34:07,418 - #44 1
+INFO  19:34:07,418 - #5 )
+INFO  19:34:07,418 - #7 ;
+INFO  19:34:07,418 - #19 read
+INFO  19:34:07,418 - #10 (
+INFO  19:34:07,434 - #45 q
+INFO  19:34:07,434 - #36 [
+INFO  19:34:07,434 - #44 1
+INFO  19:34:07,434 - #37 ]
+INFO  19:34:07,434 - #5 )
+INFO  19:34:07,434 - #7 ;
+INFO  19:34:07,434 - #45 q
+INFO  19:34:07,434 - #36 [
+INFO  19:34:07,449 - #44 0
+INFO  19:34:07,449 - #37 ]
+INFO  19:34:07,449 - #22 ++
+INFO  19:34:07,449 - #7 ;
+INFO  19:34:07,449 - #45 q
+INFO  19:34:07,449 - #36 [
+INFO  19:34:07,449 - #44 0
+INFO  19:34:07,449 - #37 ]
+INFO  19:34:07,449 - #23 --
+INFO  19:34:07,449 - #7 ;
+INFO  19:34:07,449 - #45 x
+INFO  19:34:07,449 - #23 --
+INFO  19:34:07,449 - #7 ;
+INFO  19:34:07,449 - #44 1
+ERROR 19:34:07,449 - 
+Sintaksna greska na liniji 13
+INFO  19:34:07,449 - #23 --
+INFO  19:34:07,449 - #7 ;
+INFO  19:34:07,449 - #8 return
+INFO  19:34:07,449 - #44 5
+INFO  19:34:07,449 - #3 +
+INFO  19:34:07,449 - assign statement error recovery: successful
+INFO  19:34:07,449 - #44 1
+INFO  19:34:07,449 - #3 +
+INFO  19:34:07,449 - #44 2
+INFO  19:34:07,449 - #7 ;
+INFO  19:34:07,449 - #4 }
+INFO  19:34:07,449 - #15 void
+INFO  19:34:07,465 - #45 main
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #11 {
+INFO  19:34:07,465 - #45 k
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #44 7
+INFO  19:34:07,465 - #12 ,
+INFO  19:34:07,465 - #44 9
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #7 ;
+INFO  19:34:07,465 - #14 print
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #45 k
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #7 ;
+INFO  19:34:07,465 - #45 k
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #7 ;
+INFO  19:34:07,465 - #45 a
+INFO  19:34:07,465 - #6 =
+INFO  19:34:07,465 - #44 3
+INFO  19:34:07,465 - #3 +
+INFO  19:34:07,465 - #45 k
+INFO  19:34:07,465 - #10 (
+INFO  19:34:07,465 - #5 )
+INFO  19:34:07,465 - #7 ;
+INFO  19:34:07,465 - #8 return
+INFO  19:34:07,465 - #7 ;
+INFO  19:34:07,465 - #4 }
+INFO  19:34:07,465 - #4 }
+INFO  19:34:07,496 - Deklarisana promenljiva a na liniji 2
+INFO  19:34:07,496 - Obradjuje se funkcija k na liniji 4
+INFO  19:34:07,496 - Deklarisana promenljiva x na liniji 4
+INFO  19:34:07,496 - Obradjuje se funkcija main na liniji 17
+INFO  19:34:07,496 - Pronadjen poziv funkcije k na liniji 18
+INFO  19:34:07,496 - Pronadjen poziv funkcije k na liniji 19
+INFO  19:34:07,496 - Pronadjen poziv funkcije k na liniji 20
+INFO  19:34:07,496 - Pronadjen poziv funkcije k na liniji 21
+INFO  19:34:07,496 - Print calls = 4
+ERROR 19:34:07,496 - Parsiranje NIJE uspesno zavrseno!

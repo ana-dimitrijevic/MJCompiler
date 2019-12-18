@@ -250,9 +250,9 @@ Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName
                ;
                
 
-DesignatorStatement ::= (IncDesignatorStatement) Designator INC
+DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC
                          |
-                        (DecDesignatorStatement) Designator DEC
+                        (DecDesignatorStatement) Designator:des DEC
                          |
 						(AssignDesignatorStatement) AssignStmnt         
 ;

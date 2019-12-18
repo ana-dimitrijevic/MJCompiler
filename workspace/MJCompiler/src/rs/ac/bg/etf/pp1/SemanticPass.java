@@ -313,13 +313,6 @@ public class SemanticPass extends VisitorAdaptor {
 					+ " nije deklarisano! ", simpleDesignator);
 		}
 
-		if (currentMethod != Tab.noObj) {
-			if (simpleDesignator.obj.getLevel() > 0 && simpleDesignator.obj.getAdr() < currentMethod.getLevel()) {
-				report_error("Parameter used! Parameter name " + simpleDesignator.obj.getName() + ". Obj: "
-						+ simpleDesignator.obj.toString(), simpleDesignator);
-			}
-		}
-
 	}
 
 	@Override
@@ -354,9 +347,51 @@ public class SemanticPass extends VisitorAdaptor {
 		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getName(), arrayDesignator.obj.getType().getElemType());
 	}
 
+	// MEMBER DESIGNATOR
+
 	@Override
 	public void visit(DesignatorFactor designatorFactor) {
 		designatorFactor.struct = designatorFactor.getDesignator().obj.getType();
+	}
+
+	@Override
+	public void visit(IncDesignatorStatement incDesignatorStatement) {
+
+		if (incDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
+				&& incDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error(
+					"Greska na liniji " + incDesignatorStatement.getLine() + " : ime "
+							+ incDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					incDesignatorStatement);
+			return;
+		}
+		if (incDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
+			report_error(
+					"Greska na liniji " + incDesignatorStatement.getLine() + " : "
+							+ incDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					incDesignatorStatement);
+
+		}
+	}
+
+	@Override
+	public void visit(DecDesignatorStatement decDesignatorStatement) {
+
+		if (decDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
+				&& decDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error(
+					"Greska na liniji " + decDesignatorStatement.getLine() + " : ime "
+							+ decDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					decDesignatorStatement);
+			return;
+		}
+		if (decDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
+			report_error(
+					"Greska na liniji " + decDesignatorStatement.getLine() + " : "
+							+ decDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					decDesignatorStatement);
+
+		}
 	}
 
 	@Override

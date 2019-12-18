@@ -1,11 +1,17 @@
 program P
 int a;
+bool prom;
 {	
 	int k (int p, int q[]) int x; {
 		x = 3;
 		print(q[a + 1]);
 		print(x);
-		print(x + 12);
+		print(x + 12, 1);
+		read(q[1]);
+		q[0]++;
+		q[0]--;
+		x--;
+		//prom--;
 		return 5 + 1 + 2;
 	}
 

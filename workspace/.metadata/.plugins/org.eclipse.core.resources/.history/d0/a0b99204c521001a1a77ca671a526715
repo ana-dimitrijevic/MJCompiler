@@ -1,0 +1,26 @@
+program P
+int a;
+{	
+	int k (int p, int q[]) int x; {
+		x = 3;
+		print(q[a + 1]);
+		print(x);
+		print(x + 12, 1);
+		read(q[1]);
+		q[0]++;
+		q[0]--;
+		x--;
+		1--;
+		return 5 + 1 + 2;
+	}
+
+	void main() {
+		k(7, 9);
+		print(k());
+		k();
+		a = 3 + k();
+		return;
+	}
+	
+	
+}

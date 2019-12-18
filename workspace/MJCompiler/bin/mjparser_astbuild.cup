@@ -280,9 +280,9 @@ Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName {: RESULT=new 
                ;
                
 
-DesignatorStatement ::= (IncDesignatorStatement) Designator:D1 INC {: RESULT=new IncDesignatorStatement(D1); RESULT.setLine(D1left); :}
+DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC {: RESULT=new IncDesignatorStatement(des); RESULT.setLine(desleft); :}
                          |
-                        (DecDesignatorStatement) Designator:D1 DEC {: RESULT=new DecDesignatorStatement(D1); RESULT.setLine(D1left); :}
+                        (DecDesignatorStatement) Designator:des DEC {: RESULT=new DecDesignatorStatement(des); RESULT.setLine(desleft); :}
                          |
 						(AssignDesignatorStatement) AssignStmnt:A1 {: RESULT=new AssignDesignatorStatement(A1); RESULT.setLine(A1left); :}         
 ;

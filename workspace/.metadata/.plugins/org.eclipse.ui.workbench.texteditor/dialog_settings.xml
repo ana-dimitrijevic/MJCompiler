@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="kompatibilni"/>
 			<item value="SimpleFormalParameter"/>
 			<item value="INTTYPE"/>
 			<item value="designator"/>
@@ -15,7 +16,6 @@
 			<item value="Meh"/>
 			<item value="Factor"/>
 			<item value="BREAK"/>
-			<item value="NEW"/>
 		</list>
 		<list key="replacehistory">
 		</list>
