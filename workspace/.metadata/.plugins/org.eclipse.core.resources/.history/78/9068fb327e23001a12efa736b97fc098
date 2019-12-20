@@ -12,7 +12,6 @@ bool prom;
 		q[0]--;
 		x--;
 		prom=true;
-		//prom--
 		return 5 + 1 + 2;
 	}
 

@@ -1,0 +1,134 @@
+INFO  00:12:11,134 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  00:12:11,184 - #13 program
+INFO  00:12:11,185 - #45 P
+INFO  00:12:11,185 - #45 int
+INFO  00:12:11,187 - #45 a
+INFO  00:12:11,188 - #7 ;
+INFO  00:12:11,189 - #45 bool
+INFO  00:12:11,190 - #45 prom
+INFO  00:12:11,190 - #7 ;
+INFO  00:12:11,190 - #11 {
+INFO  00:12:11,191 - #45 int
+INFO  00:12:11,191 - #45 k
+INFO  00:12:11,192 - #10 (
+INFO  00:12:11,192 - #45 int
+INFO  00:12:11,193 - #45 p
+INFO  00:12:11,193 - #12 ,
+INFO  00:12:11,193 - #45 int
+INFO  00:12:11,193 - #45 q
+INFO  00:12:11,193 - #36 [
+INFO  00:12:11,194 - #37 ]
+INFO  00:12:11,194 - #5 )
+INFO  00:12:11,194 - #45 int
+INFO  00:12:11,195 - #45 x
+INFO  00:12:11,195 - #7 ;
+INFO  00:12:11,196 - #11 {
+INFO  00:12:11,196 - #45 x
+INFO  00:12:11,197 - #6 =
+INFO  00:12:11,198 - #44 3
+INFO  00:12:11,199 - #7 ;
+INFO  00:12:11,199 - #14 print
+INFO  00:12:11,200 - #10 (
+INFO  00:12:11,200 - #45 q
+INFO  00:12:11,200 - #36 [
+INFO  00:12:11,200 - #45 a
+INFO  00:12:11,200 - #3 +
+INFO  00:12:11,200 - #44 1
+INFO  00:12:11,202 - #37 ]
+INFO  00:12:11,202 - #5 )
+INFO  00:12:11,203 - #7 ;
+INFO  00:12:11,203 - #14 print
+INFO  00:12:11,203 - #10 (
+INFO  00:12:11,204 - #45 x
+INFO  00:12:11,204 - #5 )
+INFO  00:12:11,204 - #7 ;
+INFO  00:12:11,204 - #14 print
+INFO  00:12:11,204 - #10 (
+INFO  00:12:11,204 - #45 x
+INFO  00:12:11,204 - #3 +
+INFO  00:12:11,205 - #44 12
+INFO  00:12:11,205 - #12 ,
+INFO  00:12:11,205 - #44 1
+INFO  00:12:11,205 - #5 )
+INFO  00:12:11,206 - #7 ;
+INFO  00:12:11,206 - #19 read
+INFO  00:12:11,206 - #10 (
+INFO  00:12:11,206 - #45 q
+INFO  00:12:11,206 - #36 [
+INFO  00:12:11,206 - #44 1
+INFO  00:12:11,206 - #37 ]
+INFO  00:12:11,207 - #5 )
+INFO  00:12:11,207 - #7 ;
+INFO  00:12:11,207 - #45 q
+INFO  00:12:11,207 - #36 [
+INFO  00:12:11,207 - #44 0
+INFO  00:12:11,207 - #37 ]
+INFO  00:12:11,208 - #22 ++
+INFO  00:12:11,208 - #7 ;
+INFO  00:12:11,208 - #45 q
+INFO  00:12:11,208 - #36 [
+INFO  00:12:11,208 - #44 0
+INFO  00:12:11,208 - #37 ]
+INFO  00:12:11,209 - #23 --
+INFO  00:12:11,211 - #7 ;
+INFO  00:12:11,211 - #45 x
+INFO  00:12:11,211 - #23 --
+INFO  00:12:11,211 - #7 ;
+INFO  00:12:11,212 - #45 prom
+INFO  00:12:11,212 - #23 --
+INFO  00:12:11,212 - #7 ;
+INFO  00:12:11,212 - #8 return
+INFO  00:12:11,212 - #44 5
+INFO  00:12:11,213 - #3 +
+INFO  00:12:11,214 - #44 1
+INFO  00:12:11,214 - #3 +
+INFO  00:12:11,214 - #44 2
+INFO  00:12:11,215 - #7 ;
+INFO  00:12:11,215 - #4 }
+INFO  00:12:11,215 - #15 void
+INFO  00:12:11,216 - #45 main
+INFO  00:12:11,217 - #10 (
+INFO  00:12:11,217 - #5 )
+INFO  00:12:11,218 - #11 {
+INFO  00:12:11,218 - #45 k
+INFO  00:12:11,218 - #10 (
+INFO  00:12:11,219 - #44 7
+INFO  00:12:11,219 - #12 ,
+INFO  00:12:11,219 - #44 9
+INFO  00:12:11,219 - #5 )
+INFO  00:12:11,220 - #7 ;
+INFO  00:12:11,220 - #14 print
+INFO  00:12:11,220 - #10 (
+INFO  00:12:11,220 - #45 k
+INFO  00:12:11,220 - #10 (
+INFO  00:12:11,220 - #5 )
+INFO  00:12:11,221 - #5 )
+INFO  00:12:11,221 - #7 ;
+INFO  00:12:11,222 - #45 k
+INFO  00:12:11,222 - #10 (
+INFO  00:12:11,222 - #5 )
+INFO  00:12:11,222 - #7 ;
+INFO  00:12:11,223 - #45 a
+INFO  00:12:11,223 - #6 =
+INFO  00:12:11,223 - #44 3
+INFO  00:12:11,223 - #3 +
+INFO  00:12:11,224 - #45 k
+INFO  00:12:11,224 - #10 (
+INFO  00:12:11,224 - #5 )
+INFO  00:12:11,224 - #7 ;
+INFO  00:12:11,224 - #8 return
+INFO  00:12:11,224 - #7 ;
+INFO  00:12:11,224 - #4 }
+INFO  00:12:11,225 - #4 }
+INFO  00:12:11,247 - Deklarisana promenljiva a na liniji 2
+INFO  00:12:11,252 - Deklarisana promenljiva prom na liniji 3
+INFO  00:12:11,253 - Obradjuje se funkcija k na liniji 5
+INFO  00:12:11,253 - Deklarisana promenljiva x na liniji 5
+ERROR 00:12:11,253 - Greska na liniji 14 : prom' nije celobrojnog tipa  na liniji 14
+INFO  00:12:11,253 - Obradjuje se funkcija main na liniji 18
+INFO  00:12:11,253 - Pronadjen poziv funkcije k na liniji 19
+INFO  00:12:11,253 - Pronadjen poziv funkcije k na liniji 20
+INFO  00:12:11,254 - Pronadjen poziv funkcije k na liniji 21
+INFO  00:12:11,254 - Pronadjen poziv funkcije k na liniji 22
+INFO  00:12:11,254 - Print calls = 4
+ERROR 00:12:11,255 - Parsiranje NIJE uspesno zavrseno!

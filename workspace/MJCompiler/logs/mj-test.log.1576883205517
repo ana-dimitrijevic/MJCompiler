@@ -1,0 +1,127 @@
+INFO  23:46:27,089 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  23:46:27,136 - #13 program
+INFO  23:46:27,136 - #45 P
+INFO  23:46:27,136 - #45 int
+INFO  23:46:27,136 - #45 a
+INFO  23:46:27,136 - #7 ;
+INFO  23:46:27,136 - #11 {
+INFO  23:46:27,136 - #45 int
+INFO  23:46:27,136 - #45 k
+INFO  23:46:27,152 - #10 (
+INFO  23:46:27,152 - #45 int
+INFO  23:46:27,152 - #45 p
+INFO  23:46:27,152 - #12 ,
+INFO  23:46:27,152 - #45 int
+INFO  23:46:27,152 - #45 q
+INFO  23:46:27,152 - #36 [
+INFO  23:46:27,152 - #37 ]
+INFO  23:46:27,152 - #5 )
+INFO  23:46:27,152 - #45 int
+INFO  23:46:27,152 - #45 x
+INFO  23:46:27,152 - #7 ;
+INFO  23:46:27,152 - #11 {
+INFO  23:46:27,152 - #45 x
+INFO  23:46:27,152 - #6 =
+INFO  23:46:27,152 - #44 3
+INFO  23:46:27,152 - #7 ;
+INFO  23:46:27,152 - #14 print
+INFO  23:46:27,152 - #10 (
+INFO  23:46:27,152 - #45 q
+INFO  23:46:27,152 - #36 [
+INFO  23:46:27,152 - #45 a
+INFO  23:46:27,152 - #3 +
+INFO  23:46:27,152 - #44 1
+INFO  23:46:27,167 - #37 ]
+INFO  23:46:27,167 - #5 )
+INFO  23:46:27,167 - #7 ;
+INFO  23:46:27,167 - #14 print
+INFO  23:46:27,167 - #10 (
+INFO  23:46:27,167 - #45 x
+INFO  23:46:27,167 - #5 )
+INFO  23:46:27,167 - #7 ;
+INFO  23:46:27,167 - #14 print
+INFO  23:46:27,167 - #10 (
+INFO  23:46:27,167 - #45 x
+INFO  23:46:27,167 - #3 +
+INFO  23:46:27,167 - #44 12
+INFO  23:46:27,167 - #12 ,
+INFO  23:46:27,167 - #44 1
+INFO  23:46:27,167 - #5 )
+INFO  23:46:27,167 - #7 ;
+INFO  23:46:27,167 - #19 read
+INFO  23:46:27,167 - #10 (
+INFO  23:46:27,167 - #45 q
+INFO  23:46:27,167 - #36 [
+INFO  23:46:27,167 - #44 1
+INFO  23:46:27,167 - #37 ]
+INFO  23:46:27,167 - #5 )
+INFO  23:46:27,167 - #7 ;
+INFO  23:46:27,167 - #45 q
+INFO  23:46:27,167 - #36 [
+INFO  23:46:27,183 - #44 0
+INFO  23:46:27,183 - #37 ]
+INFO  23:46:27,183 - #22 ++
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #45 q
+INFO  23:46:27,183 - #36 [
+INFO  23:46:27,183 - #44 0
+INFO  23:46:27,183 - #37 ]
+INFO  23:46:27,183 - #23 --
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #45 x
+INFO  23:46:27,183 - #23 --
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #8 return
+INFO  23:46:27,183 - #44 5
+INFO  23:46:27,183 - #3 +
+INFO  23:46:27,183 - #44 1
+INFO  23:46:27,183 - #3 +
+INFO  23:46:27,183 - #44 2
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #4 }
+INFO  23:46:27,183 - #15 void
+INFO  23:46:27,183 - #45 main
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #11 {
+INFO  23:46:27,183 - #45 k
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #44 7
+INFO  23:46:27,183 - #12 ,
+INFO  23:46:27,183 - #44 9
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #14 print
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #45 k
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #45 k
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #45 a
+INFO  23:46:27,183 - #6 =
+INFO  23:46:27,183 - #44 3
+INFO  23:46:27,183 - #3 +
+INFO  23:46:27,183 - #45 k
+INFO  23:46:27,183 - #10 (
+INFO  23:46:27,183 - #5 )
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #8 return
+INFO  23:46:27,183 - #7 ;
+INFO  23:46:27,183 - #4 }
+INFO  23:46:27,183 - #4 }
+INFO  23:46:27,214 - Deklarisana promenljiva a na liniji 2
+INFO  23:46:27,214 - Obradjuje se funkcija k na liniji 5
+INFO  23:46:27,214 - Deklarisana promenljiva x na liniji 5
+INFO  23:46:27,214 - Obradjuje se funkcija main na liniji 18
+INFO  23:46:27,214 - Pronadjen poziv funkcije k na liniji 19
+INFO  23:46:27,214 - Pronadjen poziv funkcije k na liniji 20
+INFO  23:46:27,214 - Pronadjen poziv funkcije k na liniji 21
+INFO  23:46:27,214 - Pronadjen poziv funkcije k na liniji 22
+INFO  23:46:27,214 - Print calls = 4
+INFO  23:46:27,214 - Generating bytecode file: D:\Marko pp\workspace\MJCompiler\test\program.obj
+INFO  23:46:27,230 - Parsiranje uspesno zavrseno!
