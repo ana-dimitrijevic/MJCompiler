@@ -1,6 +1,6 @@
 program P
 int a;
-bool prom;
+//bool prom;
 {	
 	int k (int p, int q[]) int x; {
 		x = 3;

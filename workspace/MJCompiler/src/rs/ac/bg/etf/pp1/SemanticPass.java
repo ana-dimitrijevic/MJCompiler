@@ -318,16 +318,16 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(ArrayDesignator arrayDesignator) {
 
-		arrayDesignator.obj = Tab.find(arrayDesignator.getName());
+		arrayDesignator.obj = Tab.find(arrayDesignator.getDesignator().obj.getName());
 
 		if (arrayDesignator.obj == Tab.noObj) {
-			report_error("Greska na liniji " + arrayDesignator.getLine() + " : ime " + arrayDesignator.getName()
+			report_error("Greska na liniji " + arrayDesignator.getLine() + " : ime " + arrayDesignator.getDesignator().obj.getName()
 					+ " nije deklarisano ", arrayDesignator);
 			return;
 		}
 
 		if (arrayDesignator.obj.getKind() != Obj.Var) {
-			report_error("Greska na liniji " + arrayDesignator.getLine() + " : ime " + arrayDesignator.getName()
+			report_error("Greska na liniji " + arrayDesignator.getLine() + " : ime " + arrayDesignator.getDesignator().obj.getName()
 					+ " nije promenljiva ", arrayDesignator);
 			return;
 		}
@@ -344,7 +344,7 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 
-		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getName(), arrayDesignator.obj.getType().getElemType());
+		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getDesignator().obj.getName(), arrayDesignator.obj.getType().getElemType());
 	}
 
 	// MEMBER DESIGNATOR

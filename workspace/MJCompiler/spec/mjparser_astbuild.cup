@@ -272,9 +272,9 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val {: RESULT=new NumberConstFactor(v
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
 
-Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
+Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
                |
-               (ArrayDesignator) IDENT:name LBRACKET Expr:arrExp RBRACKET {: RESULT=new ArrayDesignator(name, arrExp); RESULT.setLine(nameleft); :}
+               (ArrayDesignator) Designator:name LBRACKET Expr:arrExp RBRACKET {: RESULT=new ArrayDesignator(name, arrExp); RESULT.setLine(nameleft); :}
                |
                (SimpleDesignator) IDENT:name {: RESULT=new SimpleDesignator(name); RESULT.setLine(nameleft); :}
                ;

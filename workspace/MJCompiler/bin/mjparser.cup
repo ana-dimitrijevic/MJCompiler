@@ -242,9 +242,9 @@ Factor ::= (NumberConstFactor) NUMBERCONST:val
            (ParenFactor) LPAREN Expr RPAREN
 ;
 
-Designator ::= (MemberDesignator) IDENT:name DOT IDENT:memberName
+Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName
                |
-               (ArrayDesignator) IDENT:name LBRACKET Expr:arrExp RBRACKET
+               (ArrayDesignator) Designator:name LBRACKET Expr:arrExp RBRACKET
                |
                (SimpleDesignator) IDENT:name
                ;

@@ -1,0 +1,135 @@
+INFO  19:34:30,909 - Compiling source file: D:\Projekat pp\workspace\MJCompiler\test\program.mj
+INFO  19:34:30,972 - #13 program
+INFO  19:34:30,972 - #45 P
+INFO  19:34:30,972 - #45 int
+INFO  19:34:30,987 - #45 a
+INFO  19:34:30,987 - #7 ;
+INFO  19:34:30,987 - #45 bool
+INFO  19:34:30,987 - #45 prom
+INFO  19:34:30,987 - #7 ;
+INFO  19:34:30,987 - #11 {
+INFO  19:34:30,987 - #45 int
+INFO  19:34:30,987 - #45 k
+INFO  19:34:30,987 - #10 (
+INFO  19:34:30,987 - #45 int
+INFO  19:34:30,987 - #45 p
+INFO  19:34:30,987 - #12 ,
+INFO  19:34:30,987 - #45 int
+INFO  19:34:30,987 - #45 q
+INFO  19:34:30,987 - #36 [
+INFO  19:34:30,987 - #37 ]
+INFO  19:34:30,987 - #5 )
+INFO  19:34:30,987 - #45 int
+INFO  19:34:30,987 - #45 x
+INFO  19:34:31,003 - #7 ;
+INFO  19:34:31,003 - #11 {
+INFO  19:34:31,003 - #45 x
+INFO  19:34:31,003 - #6 =
+INFO  19:34:31,003 - #44 3
+INFO  19:34:31,003 - #7 ;
+INFO  19:34:31,003 - #14 print
+INFO  19:34:31,003 - #10 (
+INFO  19:34:31,003 - #45 q
+INFO  19:34:31,003 - #36 [
+INFO  19:34:31,003 - #45 a
+INFO  19:34:31,003 - #3 +
+INFO  19:34:31,003 - #44 1
+INFO  19:34:31,003 - #37 ]
+INFO  19:34:31,003 - #5 )
+INFO  19:34:31,003 - #7 ;
+INFO  19:34:31,003 - #14 print
+INFO  19:34:31,003 - #10 (
+INFO  19:34:31,003 - #45 x
+INFO  19:34:31,003 - #5 )
+INFO  19:34:31,003 - #7 ;
+INFO  19:34:31,003 - #14 print
+INFO  19:34:31,003 - #10 (
+INFO  19:34:31,003 - #45 x
+INFO  19:34:31,003 - #3 +
+INFO  19:34:31,003 - #44 12
+INFO  19:34:31,003 - #12 ,
+INFO  19:34:31,003 - #44 1
+INFO  19:34:31,003 - #5 )
+INFO  19:34:31,003 - #7 ;
+INFO  19:34:31,003 - #19 read
+INFO  19:34:31,003 - #10 (
+INFO  19:34:31,003 - #45 q
+INFO  19:34:31,003 - #36 [
+INFO  19:34:31,003 - #44 1
+INFO  19:34:31,003 - #37 ]
+INFO  19:34:31,003 - #5 )
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #45 q
+INFO  19:34:31,019 - #36 [
+INFO  19:34:31,019 - #44 0
+INFO  19:34:31,019 - #37 ]
+INFO  19:34:31,019 - #22 ++
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #45 q
+INFO  19:34:31,019 - #36 [
+INFO  19:34:31,019 - #44 0
+INFO  19:34:31,019 - #37 ]
+INFO  19:34:31,019 - #23 --
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #45 x
+INFO  19:34:31,019 - #23 --
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #45 prom
+INFO  19:34:31,019 - #23 --
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #8 return
+INFO  19:34:31,019 - #44 5
+INFO  19:34:31,019 - #3 +
+INFO  19:34:31,019 - #44 1
+INFO  19:34:31,019 - #3 +
+INFO  19:34:31,019 - #44 2
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #4 }
+INFO  19:34:31,019 - #15 void
+INFO  19:34:31,019 - #45 main
+INFO  19:34:31,019 - #10 (
+INFO  19:34:31,019 - #5 )
+INFO  19:34:31,019 - #11 {
+INFO  19:34:31,019 - #45 k
+INFO  19:34:31,019 - #10 (
+INFO  19:34:31,019 - #44 7
+INFO  19:34:31,019 - #12 ,
+INFO  19:34:31,019 - #44 9
+INFO  19:34:31,019 - #5 )
+INFO  19:34:31,019 - #7 ;
+INFO  19:34:31,019 - #14 print
+INFO  19:34:31,019 - #10 (
+INFO  19:34:31,019 - #45 k
+INFO  19:34:31,019 - #10 (
+INFO  19:34:31,019 - #5 )
+INFO  19:34:31,034 - #5 )
+INFO  19:34:31,034 - #7 ;
+INFO  19:34:31,034 - #45 k
+INFO  19:34:31,034 - #10 (
+INFO  19:34:31,034 - #5 )
+INFO  19:34:31,034 - #7 ;
+INFO  19:34:31,034 - #45 a
+INFO  19:34:31,034 - #6 =
+INFO  19:34:31,034 - #44 3
+INFO  19:34:31,034 - #3 +
+INFO  19:34:31,034 - #45 k
+INFO  19:34:31,034 - #10 (
+INFO  19:34:31,034 - #5 )
+INFO  19:34:31,034 - #7 ;
+INFO  19:34:31,034 - #8 return
+INFO  19:34:31,034 - #7 ;
+INFO  19:34:31,034 - #4 }
+INFO  19:34:31,034 - #4 }
+INFO  19:34:31,050 - Deklarisana promenljiva a na liniji 2
+ERROR 19:34:31,050 - Nije pronadjen tip bool u tabeli simbola
+INFO  19:34:31,050 - Deklarisana promenljiva prom na liniji 3
+INFO  19:34:31,050 - Obradjuje se funkcija k na liniji 5
+INFO  19:34:31,050 - Deklarisana promenljiva x na liniji 5
+ERROR 19:34:31,050 - Greska na liniji 14 : prom' nije celobrojnog tipa  na liniji 14
+INFO  19:34:31,050 - Obradjuje se funkcija main na liniji 18
+INFO  19:34:31,050 - Pronadjen poziv funkcije k na liniji 19
+INFO  19:34:31,050 - Pronadjen poziv funkcije k na liniji 20
+INFO  19:34:31,050 - Pronadjen poziv funkcije k na liniji 21
+INFO  19:34:31,065 - Pronadjen poziv funkcije k na liniji 22
+INFO  19:34:31,065 - Print calls = 4
+ERROR 19:34:31,065 - Parsiranje NIJE uspesno zavrseno!

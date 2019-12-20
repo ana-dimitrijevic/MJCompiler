@@ -1,0 +1,131 @@
+INFO  23:45:37,200 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  23:45:37,263 - #13 program
+INFO  23:45:37,263 - #45 P
+INFO  23:45:37,263 - #45 int
+INFO  23:45:37,263 - #45 a
+INFO  23:45:37,263 - #7 ;
+INFO  23:45:37,263 - #45 bool
+INFO  23:45:37,263 - #45 prom
+INFO  23:45:37,263 - #7 ;
+INFO  23:45:37,263 - #11 {
+INFO  23:45:37,263 - #45 int
+INFO  23:45:37,263 - #45 k
+INFO  23:45:37,263 - #10 (
+INFO  23:45:37,263 - #45 int
+INFO  23:45:37,263 - #45 p
+INFO  23:45:37,263 - #12 ,
+INFO  23:45:37,263 - #45 int
+INFO  23:45:37,263 - #45 q
+INFO  23:45:37,263 - #36 [
+INFO  23:45:37,263 - #37 ]
+INFO  23:45:37,263 - #5 )
+INFO  23:45:37,263 - #45 int
+INFO  23:45:37,278 - #45 x
+INFO  23:45:37,278 - #7 ;
+INFO  23:45:37,278 - #11 {
+INFO  23:45:37,278 - #45 x
+INFO  23:45:37,278 - #6 =
+INFO  23:45:37,278 - #44 3
+INFO  23:45:37,278 - #7 ;
+INFO  23:45:37,278 - #14 print
+INFO  23:45:37,278 - #10 (
+INFO  23:45:37,278 - #45 q
+INFO  23:45:37,278 - #36 [
+INFO  23:45:37,278 - #45 a
+INFO  23:45:37,278 - #3 +
+INFO  23:45:37,278 - #44 1
+INFO  23:45:37,278 - #37 ]
+INFO  23:45:37,278 - #5 )
+INFO  23:45:37,278 - #7 ;
+INFO  23:45:37,278 - #14 print
+INFO  23:45:37,278 - #10 (
+INFO  23:45:37,278 - #45 x
+INFO  23:45:37,278 - #5 )
+INFO  23:45:37,278 - #7 ;
+INFO  23:45:37,278 - #14 print
+INFO  23:45:37,278 - #10 (
+INFO  23:45:37,278 - #45 x
+INFO  23:45:37,278 - #3 +
+INFO  23:45:37,278 - #44 12
+INFO  23:45:37,278 - #12 ,
+INFO  23:45:37,278 - #44 1
+INFO  23:45:37,278 - #5 )
+INFO  23:45:37,278 - #7 ;
+INFO  23:45:37,278 - #19 read
+INFO  23:45:37,278 - #10 (
+INFO  23:45:37,278 - #45 q
+INFO  23:45:37,278 - #36 [
+INFO  23:45:37,278 - #44 1
+INFO  23:45:37,278 - #37 ]
+INFO  23:45:37,278 - #5 )
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #45 q
+INFO  23:45:37,294 - #36 [
+INFO  23:45:37,294 - #44 0
+INFO  23:45:37,294 - #37 ]
+INFO  23:45:37,294 - #22 ++
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #45 q
+INFO  23:45:37,294 - #36 [
+INFO  23:45:37,294 - #44 0
+INFO  23:45:37,294 - #37 ]
+INFO  23:45:37,294 - #23 --
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #45 x
+INFO  23:45:37,294 - #23 --
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #8 return
+INFO  23:45:37,294 - #44 5
+INFO  23:45:37,294 - #3 +
+INFO  23:45:37,294 - #44 1
+INFO  23:45:37,294 - #3 +
+INFO  23:45:37,294 - #44 2
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #4 }
+INFO  23:45:37,294 - #15 void
+INFO  23:45:37,294 - #45 main
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #11 {
+INFO  23:45:37,294 - #45 k
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #44 7
+INFO  23:45:37,294 - #12 ,
+INFO  23:45:37,294 - #44 9
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #14 print
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #45 k
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #45 k
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #45 a
+INFO  23:45:37,294 - #6 =
+INFO  23:45:37,294 - #44 3
+INFO  23:45:37,294 - #3 +
+INFO  23:45:37,294 - #45 k
+INFO  23:45:37,294 - #10 (
+INFO  23:45:37,294 - #5 )
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #8 return
+INFO  23:45:37,294 - #7 ;
+INFO  23:45:37,294 - #4 }
+INFO  23:45:37,294 - #4 }
+INFO  23:45:37,325 - Deklarisana promenljiva a na liniji 2
+ERROR 23:45:37,325 - Nije pronadjen tip bool u tabeli simbola
+INFO  23:45:37,325 - Deklarisana promenljiva prom na liniji 3
+INFO  23:45:37,325 - Obradjuje se funkcija k na liniji 5
+INFO  23:45:37,325 - Deklarisana promenljiva x na liniji 5
+INFO  23:45:37,325 - Obradjuje se funkcija main na liniji 18
+INFO  23:45:37,325 - Pronadjen poziv funkcije k na liniji 19
+INFO  23:45:37,325 - Pronadjen poziv funkcije k na liniji 20
+INFO  23:45:37,325 - Pronadjen poziv funkcije k na liniji 21
+INFO  23:45:37,325 - Pronadjen poziv funkcije k na liniji 22
+INFO  23:45:37,325 - Print calls = 4
+ERROR 23:45:37,325 - Parsiranje NIJE uspesno zavrseno!
