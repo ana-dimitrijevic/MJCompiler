@@ -237,7 +237,7 @@ Factor ::= (DesignatorFactor) Designator
             |
            (NewObjectFactor) NEW Type
             |
-           (NewObjectArrayFactor) NEW Type LBRACKET Expr RBRACKET
+           (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr RBRACKET
             |
            (FuncCall) Designator:func LPAREN ActualParamsList RPAREN
             |

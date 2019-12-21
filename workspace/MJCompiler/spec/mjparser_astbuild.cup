@@ -267,7 +267,7 @@ Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); 
             |
            (NewObjectFactor) NEW Type:T1 {: RESULT=new NewObjectFactor(T1); RESULT.setLine(T1left); :}
             |
-           (NewObjectArrayFactor) NEW Type:T1 LBRACKET Expr:E2 RBRACKET {: RESULT=new NewObjectArrayFactor(T1, E2); RESULT.setLine(T1left); :}
+           (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr:E1 RBRACKET {: RESULT=new NewObjectArrayFactor(typeName, E1); RESULT.setLine(typeNameleft); :}
             |
            (FuncCall) Designator:func LPAREN ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :}
             |
