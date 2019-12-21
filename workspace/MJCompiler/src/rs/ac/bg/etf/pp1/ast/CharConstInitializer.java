@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/11/2019 23:45:29
+// 21/11/2019 20:46:40
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,9 +8,11 @@ package rs.ac.bg.etf.pp1.ast;
 public class CharConstInitializer extends Initializer {
 
     private String name;
+    private Character val;
 
-    public CharConstInitializer (String name) {
+    public CharConstInitializer (String name, Character val) {
         this.name=name;
+        this.val=val;
     }
 
     public String getName() {
@@ -19,6 +21,14 @@ public class CharConstInitializer extends Initializer {
 
     public void setName(String name) {
         this.name=name;
+    }
+
+    public Character getVal() {
+        return val;
+    }
+
+    public void setVal(Character val) {
+        this.val=val;
     }
 
     public void accept(Visitor visitor) {
@@ -42,6 +52,9 @@ public class CharConstInitializer extends Initializer {
         buffer.append("CharConstInitializer(\n");
 
         buffer.append(" "+tab+name);
+        buffer.append("\n");
+
+        buffer.append(" "+tab+val);
         buffer.append("\n");
 
         buffer.append(tab);

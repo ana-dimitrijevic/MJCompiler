@@ -52,8 +52,10 @@ scan with {:
 terminal ELSE, PLUS, RBRACE, RPAREN, ASSIGN, SEMI, RETURN, IF, LPAREN, LBRACE,
 COMMA, PROG, PRINT, VOID, BREAK, CONST, NEW, READ, FOR, CONTINUE, INC, DEC,
 MINUS, MUL, DIV, MOD, AND, OR, EQ, NOTEQ, GR, GEQ, LS, LEQ, LBRACKET, RBRACKET,
-DOT, BOOLCONST, CHARCONST, CLASS, ABSTRACT, EXTENDS;
+DOT, CLASS, ABSTRACT, EXTENDS;
 terminal Integer NUMBERCONST;
+terminal Boolean BOOLCONST;
+terminal Character CHARCONST;
 terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
@@ -225,13 +227,13 @@ Term ::= (MultipleFactor) Term Mulop Factor
           |
          (SingleFactor) Factor;
 
-Factor ::= (NumberConstFactor) NUMBERCONST:val
+Factor ::= (DesignatorFactor) Designator
+			|
+			(NumberConstFactor) NUMBERCONST:val
             |
            (CharConstFactor) CHARCONST:val
             |
            (BoolConstFactor) BOOLCONST:val
-            |
-		   (DesignatorFactor) Designator
             |
            (NewObjectFactor) NEW Type
             |

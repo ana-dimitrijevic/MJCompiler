@@ -1,0 +1,16 @@
+INFO  20:07:45,535 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  20:07:45,593 - #13 program
+INFO  20:07:45,594 - #45 P
+INFO  20:07:45,594 - #45 int
+INFO  20:07:45,595 - #45 a
+INFO  20:07:45,596 - #7 ;
+INFO  20:07:45,596 - #11 {
+INFO  20:07:45,597 - #45 int
+INFO  20:07:45,598 - #45 fun
+INFO  20:07:45,598 - #10 (
+INFO  20:07:45,599 - #5 )
+INFO  20:07:45,600 - #11 {
+INFO  20:07:45,601 - #45 a
+INFO  20:07:45,602 - #6 =
+INFO  20:07:45,602 - #44 5
+INFO  20:07:45,603 - #7 ;

@@ -1,0 +1,172 @@
+INFO  11:04:39,541 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  11:04:39,635 - #13 program
+INFO  11:04:39,635 - #45 P
+INFO  11:04:39,635 - #45 int
+INFO  11:04:39,651 - #45 a
+INFO  11:04:39,651 - #7 ;
+INFO  11:04:39,651 - #45 bool
+INFO  11:04:39,651 - #45 prom
+INFO  11:04:39,651 - #7 ;
+INFO  11:04:39,651 - #45 int
+INFO  11:04:39,651 - #45 l
+INFO  11:04:39,651 - #36 [
+INFO  11:04:39,651 - #37 ]
+INFO  11:04:39,651 - #7 ;
+INFO  11:04:39,651 - #11 {
+INFO  11:04:39,651 - #45 int
+INFO  11:04:39,651 - #45 k
+INFO  11:04:39,651 - #10 (
+INFO  11:04:39,651 - #45 int
+INFO  11:04:39,651 - #45 p
+INFO  11:04:39,651 - #12 ,
+INFO  11:04:39,651 - #45 int
+INFO  11:04:39,666 - #45 q
+INFO  11:04:39,666 - #36 [
+INFO  11:04:39,666 - #37 ]
+INFO  11:04:39,666 - #5 )
+INFO  11:04:39,666 - #45 int
+INFO  11:04:39,666 - #45 x
+INFO  11:04:39,666 - #7 ;
+INFO  11:04:39,666 - #11 {
+INFO  11:04:39,666 - #45 x
+INFO  11:04:39,666 - #6 =
+INFO  11:04:39,666 - #44 3
+INFO  11:04:39,666 - #7 ;
+INFO  11:04:39,666 - #14 print
+INFO  11:04:39,666 - #10 (
+INFO  11:04:39,666 - #45 q
+INFO  11:04:39,666 - #36 [
+INFO  11:04:39,666 - #45 a
+INFO  11:04:39,666 - #3 +
+INFO  11:04:39,666 - #44 1
+INFO  11:04:39,666 - #37 ]
+INFO  11:04:39,666 - #5 )
+INFO  11:04:39,666 - #7 ;
+INFO  11:04:39,666 - #14 print
+INFO  11:04:39,666 - #10 (
+INFO  11:04:39,666 - #45 x
+INFO  11:04:39,666 - #5 )
+INFO  11:04:39,666 - #7 ;
+INFO  11:04:39,666 - #14 print
+INFO  11:04:39,666 - #10 (
+INFO  11:04:39,666 - #45 x
+INFO  11:04:39,666 - #3 +
+INFO  11:04:39,666 - #44 12
+INFO  11:04:39,666 - #12 ,
+INFO  11:04:39,666 - #44 1
+INFO  11:04:39,666 - #5 )
+INFO  11:04:39,666 - #7 ;
+INFO  11:04:39,682 - #19 read
+INFO  11:04:39,682 - #10 (
+INFO  11:04:39,682 - #45 q
+INFO  11:04:39,682 - #36 [
+INFO  11:04:39,682 - #44 1
+INFO  11:04:39,682 - #37 ]
+INFO  11:04:39,682 - #5 )
+INFO  11:04:39,682 - #7 ;
+INFO  11:04:39,682 - #45 q
+INFO  11:04:39,682 - #36 [
+INFO  11:04:39,682 - #44 0
+INFO  11:04:39,682 - #37 ]
+INFO  11:04:39,682 - #22 ++
+INFO  11:04:39,682 - #7 ;
+INFO  11:04:39,682 - #45 q
+INFO  11:04:39,682 - #36 [
+INFO  11:04:39,682 - #44 0
+INFO  11:04:39,682 - #37 ]
+INFO  11:04:39,682 - #23 --
+INFO  11:04:39,682 - #7 ;
+INFO  11:04:39,682 - #45 x
+INFO  11:04:39,682 - #23 --
+INFO  11:04:39,682 - #7 ;
+INFO  11:04:39,698 - #45 l
+INFO  11:04:39,698 - #36 [
+INFO  11:04:39,698 - #44 1
+INFO  11:04:39,698 - #37 ]
+INFO  11:04:39,698 - #6 =
+INFO  11:04:39,698 - #45 p
+INFO  11:04:39,698 - #36 [
+INFO  11:04:39,698 - #44 1
+INFO  11:04:39,698 - #37 ]
+INFO  11:04:39,698 - #7 ;
+INFO  11:04:39,698 - #45 prom
+INFO  11:04:39,698 - #6 =
+INFO  11:04:39,698 - #39 true
+INFO  11:04:39,698 - #7 ;
+INFO  11:04:39,713 - #45 a
+INFO  11:04:39,717 - #6 =
+INFO  11:04:39,717 - #45 q
+INFO  11:04:39,717 - #36 [
+INFO  11:04:39,717 - #44 1
+INFO  11:04:39,717 - #37 ]
+INFO  11:04:39,717 - #7 ;
+INFO  11:04:39,717 - #45 a
+INFO  11:04:39,717 - #6 =
+INFO  11:04:39,717 - #45 q
+INFO  11:04:39,718 - #36 [
+INFO  11:04:39,718 - #44 1
+INFO  11:04:39,718 - #37 ]
+INFO  11:04:39,718 - #3 +
+INFO  11:04:39,718 - #45 q
+INFO  11:04:39,718 - #36 [
+INFO  11:04:39,718 - #44 2
+INFO  11:04:39,718 - #37 ]
+INFO  11:04:39,718 - #7 ;
+INFO  11:04:39,718 - #8 return
+INFO  11:04:39,718 - #44 5
+INFO  11:04:39,718 - #3 +
+INFO  11:04:39,718 - #44 1
+INFO  11:04:39,719 - #3 +
+INFO  11:04:39,719 - #44 2
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #4 }
+INFO  11:04:39,719 - #15 void
+INFO  11:04:39,719 - #45 main
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #11 {
+INFO  11:04:39,719 - #45 k
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #44 7
+INFO  11:04:39,719 - #12 ,
+INFO  11:04:39,719 - #44 9
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #14 print
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #45 k
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #45 k
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #45 a
+INFO  11:04:39,719 - #6 =
+INFO  11:04:39,719 - #44 3
+INFO  11:04:39,719 - #3 +
+INFO  11:04:39,719 - #45 k
+INFO  11:04:39,719 - #10 (
+INFO  11:04:39,719 - #5 )
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #8 return
+INFO  11:04:39,719 - #7 ;
+INFO  11:04:39,719 - #4 }
+INFO  11:04:39,719 - #4 }
+INFO  11:04:39,750 - Deklarisana promenljiva a na liniji 2
+INFO  11:04:39,750 - Deklarisana promenljiva prom na liniji 3
+INFO  11:04:39,750 - Obradjuje se funkcija k na liniji 6
+INFO  11:04:39,750 - Deklarisana promenljiva x na liniji 6
+ERROR 11:04:39,750 - Greska na liniji 17 : ime l nije deklarisano!  na liniji 17
+ERROR 11:04:39,750 - Greska na liniji 17 : ime noObj nije deklarisano  na liniji 17
+ERROR 11:04:39,750 - Greska na liniji 17 : ocekuje se nizovski tip na liniji 17
+ERROR 11:04:39,750 - Greska na liniji 17 :  nekompatibilni tipovi u dodeli vrednosti 
+INFO  11:04:39,750 - Obradjuje se funkcija main na liniji 25
+INFO  11:04:39,750 - Pronadjen poziv funkcije k na liniji 26
+INFO  11:04:39,750 - Pronadjen poziv funkcije k na liniji 27
+INFO  11:04:39,750 - Pronadjen poziv funkcije k na liniji 28
+INFO  11:04:39,750 - Pronadjen poziv funkcije k na liniji 29
+INFO  11:04:39,750 - Print calls = 4
+ERROR 11:04:39,750 - Parsiranje NIJE uspesno zavrseno!

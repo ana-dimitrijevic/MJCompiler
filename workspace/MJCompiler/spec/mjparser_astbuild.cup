@@ -52,8 +52,10 @@ scan with {:
 terminal ELSE, PLUS, RBRACE, RPAREN, ASSIGN, SEMI, RETURN, IF, LPAREN, LBRACE,
 COMMA, PROG, PRINT, VOID, BREAK, CONST, NEW, READ, FOR, CONTINUE, INC, DEC,
 MINUS, MUL, DIV, MOD, AND, OR, EQ, NOTEQ, GR, GEQ, LS, LEQ, LBRACKET, RBRACKET,
-DOT, BOOLCONST, CHARCONST, CLASS, ABSTRACT, EXTENDS;
+DOT, CLASS, ABSTRACT, EXTENDS;
 terminal Integer NUMBERCONST;
+terminal Boolean BOOLCONST;
+terminal Character CHARCONST;
 terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
@@ -173,9 +175,9 @@ ConstInitializer ::= (ConstInitializerList) ConstInitializer:C1 COMMA Initialize
              
 Initializer ::= (NumConstInitializer) IDENT:name ASSIGN NUMBERCONST:val {: RESULT=new NumConstInitializer(name, val); RESULT.setLine(nameleft); :}
 				|
-          		(CharConstInitializer) IDENT:name ASSIGN CHARCONST:val {: RESULT=new CharConstInitializer(name); RESULT.setLine(nameleft); :}
+          		(CharConstInitializer) IDENT:name ASSIGN CHARCONST:val {: RESULT=new CharConstInitializer(name, val); RESULT.setLine(nameleft); :}
           		|
-          		(BoolConstInitializer) IDENT:name ASSIGN BOOLCONST:val {: RESULT=new BoolConstInitializer(name); RESULT.setLine(nameleft); :}
+          		(BoolConstInitializer) IDENT:name ASSIGN BOOLCONST:val {: RESULT=new BoolConstInitializer(name, val); RESULT.setLine(nameleft); :}
 ;
 
 
@@ -255,13 +257,13 @@ Term ::= (MultipleFactor) Term:T1 Mulop:M2 Factor:F3 {: RESULT=new MultipleFacto
           |
          (SingleFactor) Factor:F1 {: RESULT=new SingleFactor(F1); RESULT.setLine(F1left); :};
 
-Factor ::= (NumberConstFactor) NUMBERCONST:val {: RESULT=new NumberConstFactor(val); RESULT.setLine(valleft); :}
+Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
+			|
+			(NumberConstFactor) NUMBERCONST:val {: RESULT=new NumberConstFactor(val); RESULT.setLine(valleft); :}
             |
-           (CharConstFactor) CHARCONST:val {: RESULT=new CharConstFactor(); :}
+           (CharConstFactor) CHARCONST:val {: RESULT=new CharConstFactor(val); RESULT.setLine(valleft); :}
             |
-           (BoolConstFactor) BOOLCONST:val {: RESULT=new BoolConstFactor(); :}
-            |
-		   (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
+           (BoolConstFactor) BOOLCONST:val {: RESULT=new BoolConstFactor(val); RESULT.setLine(valleft); :}
             |
            (NewObjectFactor) NEW Type:T1 {: RESULT=new NewObjectFactor(T1); RESULT.setLine(T1left); :}
             |

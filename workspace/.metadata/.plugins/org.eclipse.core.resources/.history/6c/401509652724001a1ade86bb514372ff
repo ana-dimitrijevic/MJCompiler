@@ -1,0 +1,42 @@
+program P
+int a;
+//int l[];
+{	
+	int fun(int i) {
+		
+		return a;
+	} 
+	
+	int k (int p[], int z, int x) {
+	
+		p = null;
+		//z = null;
+		p[3] = p[3];
+		p[3] = x;
+		p[3] = 3;
+		x = p[3];
+		a = fun();
+		//a = c;
+		//l[1] = p[1]; 
+		//p[3] = true; 
+	    z = p[3]; 
+	    z = p[2] + 4 + p[3] + p[3] + 5; // ne radi
+	    //z = 3; 
+	    //z = p[y]; // radi, ali bool y kaze nije pronadjen bool u tab simbola
+
+	    // z = l[true]; //glupo javlja greske
+		print(x);
+		print(x + 12);
+		return 5;
+	}
+	
+	void main() {
+	//	k(7, 9);
+	//	print(k());
+	//	k();
+	//	a = 3;
+	//	return;
+	}
+	
+	
+}
