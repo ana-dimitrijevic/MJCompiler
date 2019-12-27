@@ -3,7 +3,7 @@
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SemanticPass.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ForStatement.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/ast/ForStatement.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/ast/ForStatement.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;sym.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/sym.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/sym.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;program.mj&quot; tooltip=&quot;MJCompiler/test/program.mj&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/test/program.mj&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjparser.cup&quot; tooltip=&quot;MJCompiler/spec/mjparser.cup&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/spec/mjparser.cup&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;Tab.class&quot; tooltip=&quot;rs.etf.pp1.symboltable.Tab&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=MJCompiler/lib\/symboltable.jar&amp;lt;rs.etf.pp1.symboltable(Tab.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;BoolConstInitializer.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/ast/BoolConstInitializer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/ast/BoolConstInitializer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjparser_astbuild.cup&quot; tooltip=&quot;MJCompiler/spec/mjparser_astbuild.cup&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/spec/mjparser_astbuild.cup&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjlexer.flex&quot; tooltip=&quot;MJCompiler/spec/mjlexer.flex&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/spec/mjlexer.flex&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.jdt.ui.ClassFileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.ClassFileEditor&quot; name=&quot;lr_parser.class&quot; tooltip=&quot;java_cup.runtime.lr_parser&quot;>&#xD;&#xA;&lt;persistable org.eclipse.jdt.ui.ClassFileIdentifier=&quot;=MJCompiler/lib\/cup_v10k.jar&amp;lt;java_cup.runtime(lr_parser.class&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MJParser.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/MJParser.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/MJParser.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MJParserTest.java&quot; tooltip=&quot;MJCompiler/test/rs/ac/bg/etf/pp1/MJParserTest.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/test/rs/ac/bg/etf/pp1/MJParserTest.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MJTest.java&quot; tooltip=&quot;MJCompiler/test/rs/ac/bg/etf/pp1/MJTest.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/test/rs/ac/bg/etf/pp1/MJTest.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Designator.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/ast/Designator.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/ast/Designator.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ArrayDesignator.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/ast/ArrayDesignator.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/ast/ArrayDesignator.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_Xic2ISPxEeqc7r3LZ_FilA" selectedElement="_Xic2IiPxEeqc7r3LZ_FilA" x="373" y="0" width="1024" height="651">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_Xic2ISPxEeqc7r3LZ_FilA" selectedElement="_Xic2IiPxEeqc7r3LZ_FilA" x="952" y="0" width="976" height="1038">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -391,60 +391,6 @@
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_Xic3vyPxEeqc7r3LZ_FilA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="mjlexer.flex" iconURI="platform:/plugin/org.eclipse.ui.editors/icons/full/obj16/file_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjlexer.flex&quot; partName=&quot;mjlexer.flex&quot; title=&quot;mjlexer.flex&quot; tooltip=&quot;MJCompiler/spec/mjlexer.flex&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/spec/mjlexer.flex&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3040&quot; selectionTopPixel=&quot;1848&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.ui.DefaultTextEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3wCPxEeqc7r3LZ_FilA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3wSPxEeqc7r3LZ_FilA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3wiPxEeqc7r3LZ_FilA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3wyPxEeqc7r3LZ_FilA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3xCPxEeqc7r3LZ_FilA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3xSPxEeqc7r3LZ_FilA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3xiPxEeqc7r3LZ_FilA" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3xyPxEeqc7r3LZ_FilA" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:org.eclipse.ui.DefaultTextEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_Xic3yCPxEeqc7r3LZ_FilA" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
         <children xsi:type="basic:Part" xmi:id="_Xic3ySPxEeqc7r3LZ_FilA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="sym.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;sym.java&quot; partName=&quot;sym.java&quot; title=&quot;sym.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/sym.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/sym.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;6&quot; selectionOffset=&quot;955&quot; selectionTopPixel=&quot;589&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -624,7 +570,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Xic36iPxEeqc7r3LZ_FilA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="mjparser.cup" iconURI="platform:/plugin/org.eclipse.ui.editors/icons/full/obj16/file_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjparser.cup&quot; partName=&quot;mjparser.cup&quot; title=&quot;mjparser.cup&quot; tooltip=&quot;MJCompiler/spec/mjparser.cup&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/spec/mjparser.cup&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1347&quot; selectionTopPixel=&quot;516&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;mjparser.cup&quot; partName=&quot;mjparser.cup&quot; title=&quot;mjparser.cup&quot; tooltip=&quot;MJCompiler/spec/mjparser.cup&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/spec/mjparser.cup&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;16&quot; selectionOffset=&quot;7277&quot; selectionTopPixel=&quot;4380&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.ui.DefaultTextEditor</tags>
           <tags>removeOnHide</tags>
@@ -1026,7 +972,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Xic4ZiPxEeqc7r3LZ_FilA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="SemanticPass.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SemanticPass.java&quot; partName=&quot;SemanticPass.java&quot; title=&quot;SemanticPass.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;16590&quot; selectionTopPixel=&quot;12309&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;SemanticPass.java&quot; partName=&quot;SemanticPass.java&quot; title=&quot;SemanticPass.java&quot; tooltip=&quot;MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/MJCompiler/src/rs/ac/bg/etf/pp1/SemanticPass.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1396&quot; selectionTopPixel=&quot;495&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -1644,7 +1590,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Xic5JSPxEeqc7r3LZ_FilA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_EEYwZyjSEeqQpqBX1uvcgA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_XidCmyPxEeqc7r3LZ_FilA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_hM_ZECjkEeqTBKM1yAzUxA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_XidCmyPxEeqc7r3LZ_FilA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Xic5MiPxEeqc7r3LZ_FilA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1680,7 +1626,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Xic5hyPxEeqc7r3LZ_FilA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_EEh6UyjSEeqQpqBX1uvcgA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_XidCEiPxEeqc7r3LZ_FilA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_hNGGwCjkEeqTBKM1yAzUxA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_XidCEiPxEeqc7r3LZ_FilA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Xic5lCPxEeqc7r3LZ_FilA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

@@ -21,6 +21,7 @@ public class SemanticPass extends VisitorAdaptor {
 	int nVars;
 	Struct currentVariableDeclarationType = null;
 	Struct currentMethodReturnType = null;
+
 	Logger log = Logger.getLogger(getClass());
 	int forLoopDepth = 0;
 
@@ -159,7 +160,8 @@ public class SemanticPass extends VisitorAdaptor {
 		if (currentMethod != null) {
 
 			if (!returnFound && currentMethod.getType() != Tab.noType) {
-				report_error("Greska: " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName() + " nema return iskaz!", null);
+				report_error("Semanticka greska na liniji " + methodDeclaration.getLine() + ": funcija "
+						+ currentMethod.getName() + " nema return iskaz!", null);
 			}
 
 			Tab.chainLocalSymbols(currentMethod);
@@ -199,7 +201,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
 		}
 
-		super.visit(methodTypeName);
 	}
 
 	@Override
@@ -228,11 +229,10 @@ public class SemanticPass extends VisitorAdaptor {
 			if (Tab.currentScope.findSymbol(arrayFormalParameter.getName()) != null) {
 				report_error("Greska: Parametar '" + arrayFormalParameter.getName() + "' je vec deklarisan",
 						arrayFormalParameter);
-				// return;
+				//return;
 			} else {
 
-				// Obj arrayTypeObjNode = Tab.find(arrayFormalParameter.getType().getTypeName()
-				// + "[]");
+				//Obj arrayTypeObjNode = Tab.find(arrayFormalParameter.getType().getTypeName() + "[]");
 				Obj objNode = Tab.insert(Obj.Var, arrayFormalParameter.getName(),
 						new Struct(Struct.Array, currentVariableDeclarationType));
 				objNode.setFpPos(formalParametersCount++);
@@ -264,7 +264,9 @@ public class SemanticPass extends VisitorAdaptor {
 
 			Struct currMethType = currentMethod.getType();
 			if (!currMethType.compatibleWith(returnExpressionStatement.getExpr().struct)) {
-				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+				report_error("Greska na liniji " + returnExpressionStatement.getLine() + " : "
+						+ "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
+						+ currentMethod.getName(), null);
 			}
 
 		} else {
@@ -284,7 +286,9 @@ public class SemanticPass extends VisitorAdaptor {
 			returnFound = true;
 			Struct currMethType = currentMethod.getType();
 			if (!currMethType.compatibleWith(Tab.noType)) {
-				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+				report_error("Greska na liniji " + returnStatement.getLine() + " : "
+						+ "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
+						+ currentMethod.getName(), null);
 			}
 		} else {
 			// javice parser?
@@ -310,10 +314,10 @@ public class SemanticPass extends VisitorAdaptor {
 		Obj booleanType = Tab.find("bool");
 
 		if (!type.compatibleWith(Tab.intType) && type != Tab.charType && type != booleanType.getType()) {
-			report_error("Greska:  Neispravan izraz za print", printStatement);
+			report_error("Greska na liniji " + printStatement.getLine() + " :  Neispravan izraz za print",
+					printStatement);
 		}
 
-		super.visit(printStatement);
 	}
 
 	@Override
@@ -358,7 +362,8 @@ public class SemanticPass extends VisitorAdaptor {
 		if (rightTerm.equals(leftTerm) && rightTerm == Tab.intType)
 			multipleAddopTerm.struct = rightTerm;
 		else {
-			report_error("Greska: nekompatibilni tipovi u izrazu", null);
+			report_error("Greska na liniji " + multipleAddopTerm.getLine() + " : nekompatibilni tipovi u izrazu.",
+					null);
 			multipleAddopTerm.struct = Tab.noType;
 		}
 
@@ -377,12 +382,14 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (negativeExpression.getAddopExpr().struct == Tab.intType) {
 			negativeExpression.struct = negativeExpression.getAddopExpr().struct;
-		} else {
+		}
+		else {
 			negativeExpression.struct = Tab.noType;
-			report_error("Greska: izraz mora biti celobrojnog tipa.", negativeExpression);
-			// return;
+			report_error("Greska: izraz mora biti celobrojnog tipa.", negativeExpression);			
+			//return;
 		}
 
+		
 		super.visit(negativeExpression);
 	}
 
@@ -411,9 +418,8 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(AssignStatement assignStatement) {
 
 		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
-			report_error("Greska: nekompatibilni tipovi u dodeli vrednosti ", null);
-		
-		super.visit(assignStatement);
+			report_error("Greska na liniji " + assignStatement.getLine() + " : "
+					+ " nekompatibilni tipovi u dodeli vrednosti ", null);
 	}
 
 	@Override
@@ -421,10 +427,10 @@ public class SemanticPass extends VisitorAdaptor {
 
 		simpleDesignator.obj = Tab.find(simpleDesignator.getName());
 		if (simpleDesignator.obj == Tab.noObj) {
-			report_error("Greska: " + simpleDesignator.getName() + " nije deklarisano! ", simpleDesignator);
+			report_error("Greska na liniji " + simpleDesignator.getLine() + " : ime " + simpleDesignator.getName()
+					+ " nije deklarisano! ", simpleDesignator);
 		}
 
-		super.visit(simpleDesignator);
 	}
 
 	@Override
@@ -433,14 +439,12 @@ public class SemanticPass extends VisitorAdaptor {
 		arrayDesignator.obj = Tab.find(arrayDesignator.getDesignator().obj.getName());
 
 		if (arrayDesignator.obj == Tab.noObj) {
-			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije deklarisano ",
-					arrayDesignator);
+			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije deklarisano ", arrayDesignator);
 			return;
 		}
 
 		if (arrayDesignator.obj.getKind() != Obj.Var) {
-			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije promenljiva ",
-					arrayDesignator);
+			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije promenljiva ", arrayDesignator);
 			return;
 		}
 
@@ -456,8 +460,6 @@ public class SemanticPass extends VisitorAdaptor {
 
 		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getDesignator().obj.getName(),
 				arrayDesignator.obj.getType().getElemType());
-	
-		super.visit(arrayDesignator);
 	}
 
 	// MEMBER DESIGNATOR
@@ -465,7 +467,6 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(DesignatorFactor designatorFactor) {
 		designatorFactor.struct = designatorFactor.getDesignator().obj.getType();
-		super.visit(designatorFactor);
 	}
 
 	@Override
@@ -474,15 +475,18 @@ public class SemanticPass extends VisitorAdaptor {
 		if (incDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
 				&& incDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
 			report_error(
-					"Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ", incDesignatorStatement);
+					"Greska na liniji " + incDesignatorStatement.getLine() + " : ime "
+							+ incDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					incDesignatorStatement);
 			return;
 		}
 		if (incDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
 			report_error(
-					"Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ", incDesignatorStatement);
+					"Greska na liniji " + incDesignatorStatement.getLine() + " : "
+							+ incDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					incDesignatorStatement);
 
 		}
-		super.visit(incDesignatorStatement);
 	}
 
 	@Override
@@ -491,15 +495,18 @@ public class SemanticPass extends VisitorAdaptor {
 		if (decDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
 				&& decDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
 			report_error(
-					"Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ", decDesignatorStatement);
+					"Greska na liniji " + decDesignatorStatement.getLine() + " : ime "
+							+ decDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					decDesignatorStatement);
 			return;
 		}
 		if (decDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
 			report_error(
-					"Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ", decDesignatorStatement);
+					"Greska na liniji " + decDesignatorStatement.getLine() + " : "
+							+ decDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					decDesignatorStatement);
 
 		}
-		super.visit(decDesignatorStatement);
 	}
 
 	@Override
@@ -539,7 +546,6 @@ public class SemanticPass extends VisitorAdaptor {
 				}
 			}
 		}
-		super.visit(boolConstInitializer);
 
 	}
 
@@ -569,7 +575,6 @@ public class SemanticPass extends VisitorAdaptor {
 
 		}
 
-		super.visit(numConstInitializer);
 	}
 
 	@Override
@@ -599,17 +604,16 @@ public class SemanticPass extends VisitorAdaptor {
 
 		}
 
-		super.visit(charConstInitializer);
 	}
 
 	@Override
 	public void visit(NewObjectFactor newObjectFactor) {
 
-		if (newObjectFactor.getType().struct != Tab.noType) {
+		if (newObjectFactor.getType().struct == Tab.noType)
+			return;
 
+		else
 			newObjectFactor.struct = newObjectFactor.getType().struct;
-
-		}
 
 		super.visit(newObjectFactor);
 	}
@@ -617,26 +621,26 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(NewObjectArrayFactor newObjectArrayFactor) {
 
-		if (newObjectArrayFactor.getType().struct != Tab.noType) {
+		if (newObjectArrayFactor.getType().struct == Tab.noType)
+			return;
 
-			if (newObjectArrayFactor.getExpr().struct == Tab.intType) {
-				Obj newObjArray = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
-				newObjectArrayFactor.struct = newObjArray.getType();
-			} else {
-				report_error("Greska: duzina niza mora biti celobrojan tip ", newObjectArrayFactor);
-				newObjectArrayFactor.struct = Tab.noType;
-				// return;
-			}
-
+		if (newObjectArrayFactor.getExpr().struct != Tab.intType) {
+			report_error(
+					"Greska na liniji " + newObjectArrayFactor.getLine() + " : duzina niza mora biti celobrojan tip ",
+					newObjectArrayFactor);
+			newObjectArrayFactor.struct = Tab.noType;
+			return;
 		}
-		super.visit(newObjectArrayFactor);
+		Obj typeObjNode = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
+		newObjectArrayFactor.struct = typeObjNode.getType();
 	}
+	
+    @Override
+    public void visit(ParenFactor parenFactor) {
+    	parenFactor.struct = parenFactor.getExpr().struct;
+    	super.visit(parenFactor);
+    }
 
-	@Override
-	public void visit(ParenFactor parenFactor) {
-		parenFactor.struct = parenFactor.getExpr().struct;
-		super.visit(parenFactor);
-	}
 
 	@Override
 	public void visit(ForStatementBegin forStatementBegin) {
@@ -655,7 +659,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (readStatement.getDesignator().obj.getKind() != Obj.Var
 				&& readStatement.getDesignator().obj.getKind() != Obj.Elem) {
-			report_error("Greska: " + readStatement.getDesignator().obj.getName() + "' nije promenljiva ", readStatement);
+			report_error("Greska na liniji " + readStatement.getLine() + " : "
+					+ readStatement.getDesignator().obj.getName() + "' nije promenljiva ", readStatement);
 
 			return;
 		}
@@ -663,10 +668,9 @@ public class SemanticPass extends VisitorAdaptor {
 		Struct type = readStatement.getDesignator().obj.getType();
 
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
-			report_error("Greska: promenljiva sme biti celobrojnog, char ili boolean tipa ", readStatement);
+			report_error("Greska na liniji " + readStatement.getLine()
+					+ " : promenljiva sme biti celobrojnog, karakter ili boolean tipa ", readStatement);
 		}
-		
-		super.visit(readStatement);
 	}
 
 	@Override
@@ -675,7 +679,6 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Continue mora biti u for petlji", continueStatement);
 		}
 
-		super.visit(continueStatement);
 	}
 
 	@Override
@@ -684,26 +687,25 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Break mora biti u for petlji", breakStatement);
 		}
 
-		super.visit(breakStatement);
 	}
 
 	@Override
 	public void visit(FuncCall funcCall) {
 		Obj func = funcCall.getDesignator().obj;
 		if (Obj.Meth == func.getKind()) {
-			
+			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + funcCall.getLine(), null);
 
 			if (func.getType() == Tab.noType) {
-				report_error("Greska: povratna vrednost funkcije " + func.getName() + " ne moze biti deo izraza", null);
+				report_error("Greska na liniji " + funcCall.getLine() + " : povratna vrednost funkcije "
+						+ func.getName() + " ne moze biti deo izraza", null);
 			}
 
 			funcCall.struct = func.getType();
 		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
+			report_error("Greska na liniji " + funcCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
 					null);
 			funcCall.struct = Tab.noType;
 		}
-		super.visit(funcCall);
 
 	}
 
@@ -711,14 +713,13 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(ProcCall procCall) {
 		Obj func = procCall.getDesignator().obj;
 		if (Obj.Meth == func.getKind()) {
-			
+			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + procCall.getLine(), null);
 			// RESULT = func.getType();
 		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
+			report_error("Greska na liniji " + procCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
 					null);
 			// RESULT = Tab.noType;
 		}
-		super.visit(procCall);
 	}
 
 	// actual poziv fje

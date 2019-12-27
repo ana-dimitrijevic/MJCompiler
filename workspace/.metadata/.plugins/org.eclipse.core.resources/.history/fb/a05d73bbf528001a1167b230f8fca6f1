@@ -421,7 +421,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		simpleDesignator.obj = Tab.find(simpleDesignator.getName());
 		if (simpleDesignator.obj == Tab.noObj) {
-			report_error("Greska: " + simpleDesignator.getName() + " nije deklarisano! ", simpleDesignator);
+			report_error("Greska na liniji " + simpleDesignator.getLine() + " : ime " + simpleDesignator.getName()
+					+ " nije deklarisano! ", simpleDesignator);
 		}
 
 		super.visit(simpleDesignator);
@@ -623,7 +624,8 @@ public class SemanticPass extends VisitorAdaptor {
 				Obj newObjArray = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
 				newObjectArrayFactor.struct = newObjArray.getType();
 			} else {
-				report_error("Greska: duzina niza mora biti celobrojan tip ", newObjectArrayFactor);
+				report_error("Greska na liniji " + newObjectArrayFactor.getLine()
+						+ " : duzina niza mora biti celobrojan tip ", newObjectArrayFactor);
 				newObjectArrayFactor.struct = Tab.noType;
 				// return;
 			}
@@ -663,7 +665,8 @@ public class SemanticPass extends VisitorAdaptor {
 		Struct type = readStatement.getDesignator().obj.getType();
 
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
-			report_error("Greska: promenljiva sme biti celobrojnog, char ili boolean tipa ", readStatement);
+			report_error("Greska na liniji " + readStatement.getLine()
+					+ " : promenljiva sme biti celobrojnog, karakter ili boolean tipa ", readStatement);
 		}
 		
 		super.visit(readStatement);
@@ -694,12 +697,13 @@ public class SemanticPass extends VisitorAdaptor {
 			
 
 			if (func.getType() == Tab.noType) {
-				report_error("Greska: povratna vrednost funkcije " + func.getName() + " ne moze biti deo izraza", null);
+				report_error("Greska na liniji " + funcCall.getLine() + " : povratna vrednost funkcije "
+						+ func.getName() + " ne moze biti deo izraza", null);
 			}
 
 			funcCall.struct = func.getType();
 		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
+			report_error("Greska na liniji " + funcCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
 					null);
 			funcCall.struct = Tab.noType;
 		}
@@ -714,7 +718,7 @@ public class SemanticPass extends VisitorAdaptor {
 			
 			// RESULT = func.getType();
 		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
+			report_error("Greska na liniji " + procCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
 					null);
 			// RESULT = Tab.noType;
 		}
