@@ -21,12 +21,13 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDecl"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ConstDeclaration"/>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VisitorAdaptor"/>
 <fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SymbolTable"/>
 <fullyQualifiedTypeName name="java.lang.Number"/>
-<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MemberDesignator"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NewObjectArrayFactor"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 </qualifiedTypeNameHistroy>

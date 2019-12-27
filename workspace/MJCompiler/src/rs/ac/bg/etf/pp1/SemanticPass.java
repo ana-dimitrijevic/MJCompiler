@@ -49,30 +49,35 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(Program program) {
 
-		Obj main = Tab.currentScope.findSymbol("main");
+		Obj mainObj = Tab.currentScope.findSymbol("main");
 
-		if (main == null) {
-			report_error("Greska: '" + program.getProgName().getPName() + "' main metoda ne postoji ", null);
+		if (mainObj == null) {
+			report_error("Greska: '" + program.getProgName().getPName() + "' main metoda ne postoji ", program);
 		} else {
-			if (main.getType() != Tab.noType) {
+
+			if (mainObj.getLevel() > 0) {
+				report_error("Greska: '" + program.getProgName().getPName() + "' ne sme imati parametre ", program);
+			}
+			if (mainObj.getType() != Tab.noType) {
 				report_error(
 						"Greska: '" + program.getProgName().getPName() + "' povratna vrednost mora biti tipa void ",
-						null);
-			}
-			if (main.getLevel() > 0) {
-				report_error("Greska: '" + program.getProgName().getPName() + "' ne sme imati parametre ", null);
+						program);
 			}
 		}
 
 		nVars = Tab.currentScope.getnVars();
 		Tab.chainLocalSymbols(program.getProgName().obj);
 		Tab.closeScope();
+
+		super.visit(program);
 	}
 
 	@Override
 	public void visit(ProgName progName) {
 		progName.obj = Tab.insert(Obj.Prog, progName.getPName(), Tab.noType);
 		Tab.openScope();
+
+		super.visit(progName);
 	}
 
 	@Override
@@ -83,55 +88,68 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(SingleVariableIdent singleVariableIdent) {
 
-		if (currentVariableDeclarationType == Tab.noType)
-			return;
-
-		if (Tab.currentScope.findSymbol(singleVariableIdent.getName()) != null) {
-			report_error("Greska: Promenljiva " + singleVariableIdent.getName() + " je vec deklarisana ", singleVariableIdent);
-			return;
+		if (currentVariableDeclarationType != Tab.noType) {
+			
+			if (Tab.currentScope.findSymbol(singleVariableIdent.getName()) != null) {
+				report_error("Greska: Promenljiva " + singleVariableIdent.getName() + " je vec deklarisana! ",
+						singleVariableIdent);
+				return;
+			}
+			
+			else {
+				report_info("Deklarisana promenljiva " + singleVariableIdent.getName(), singleVariableIdent);
+				Obj varDeclObj = Tab.insert(Obj.Var, singleVariableIdent.getName(), currentVariableDeclarationType);
+				varDeclObj.setFpPos(-1);
+			}
+			
 		}
 
-		report_info("Deklarisana promenljiva " + singleVariableIdent.getName(), singleVariableIdent);
-		Obj varDeclObj = Tab.insert(Obj.Var, singleVariableIdent.getName(), currentVariableDeclarationType);
-		//varDeclObj.setFpPos(-1);
 		super.visit(singleVariableIdent);
 	}
-	
-	@Override
-    public void visit(ArrayVariableIdent arrayVariableIdent) {
-		
-        if (currentVariableDeclarationType == Tab.noType)
-            return;
-        
-        if (Tab.currentScope.findSymbol(arrayVariableIdent.getName()) != null) {
-			report_error("Greska: Promenljiva " + arrayVariableIdent.getName() + " je vec deklarisana ", arrayVariableIdent);
-			return;
-		}
-        
-        Obj arrayTypeObjNode = Tab.find(currentVariableDeclarationType + "[]");
-        Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), arrayTypeObjNode.getType());
-        //objNode.setFpPos(FP_POS_INVALID_VALUE);
-	}
 
+	@Override
+	public void visit(ArrayVariableIdent arrayVariableIdent) {
+
+		if (currentVariableDeclarationType != Tab.noType) {
+			
+			if (Tab.currentScope.findSymbol(arrayVariableIdent.getName()) != null) {
+				report_error("Greska: Promenljiva " + arrayVariableIdent.getName() + " je vec deklarisana! ",
+						arrayVariableIdent);
+				return;
+			}
+			else {
+				Obj arrayTypeObj = Tab.find(currentVariableDeclarationType + "[]");
+				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), arrayTypeObj.getType());
+				varDeclObj.setFpPos(-1);
+			}
+
+		}
+
+	}
 
 	@Override
 	public void visit(Type type) {
-		
+
 		Obj typeObj = Tab.find(type.getTypeName());
-		
-		if (typeObj == Tab.noObj) {
-			report_error("Nije pronadjen tip " + type.getTypeName() + " u tabeli simbola", null);
-			type.struct = Tab.noType;
-		} else {
+
+		if (typeObj != Tab.noObj) {
+
 			if (Obj.Type == typeObj.getKind()) {
 				type.struct = typeObj.getType();
 			} else {
-				report_error("Greska: Ime " + type.getTypeName() + " ne predstavlja tip ", type);
 				type.struct = Tab.noType;
+				report_error("Greska: Ime " + type.getTypeName() + " ne predstavlja tip ", type);
 			}
+
+		} else {
+
+			type.struct = Tab.noType;
+			report_error("Greska: Nije pronadjen tip " + type.getTypeName() + " u tabeli simbola", null);
 		}
 
 		currentVariableDeclarationType = type.struct;
+
+		super.visit(type);
 	}
 
 	@Override
@@ -168,13 +186,16 @@ public class SemanticPass extends VisitorAdaptor {
 		if (Tab.currentScope.findSymbol(methodTypeName.getMethName()) != null) {
 			report_error("Greska: '" + methodTypeName.getMethName() + "' je vec deklarisana", methodTypeName);
 			return;
-		} else {
+		} 
+		else {
 
 			RetType retType = methodTypeName.getRetType();
-			if (retType instanceof VoidReturnType)
+			if (retType instanceof VoidReturnType) {
 				retType.struct = Tab.noType;
-			else
+			}
+			else {
 				retType.struct = ((ReturnType) retType).getType().struct;
+			}
 
 			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
 			methodTypeName.obj = currentMethod;
@@ -209,7 +230,7 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska: '" + arrayFormalParameter.getName() + "' je vec deklarisan", arrayFormalParameter);
 			return;
 		} else {
-			
+
 			Obj arrayTypeObjNode = Tab.find(arrayFormalParameter.getType().getTypeName() + "[]");
 			Obj objNode = Tab.insert(Obj.Var, arrayFormalParameter.getName(),
 					new Struct(Struct.Array, currentVariableDeclarationType));
@@ -272,25 +293,40 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(PrintStatement printStatement) {
 		printCallCount++;
+		PrintExpression printExpression = printStatement.getPrintExpression();
+		Struct type = null;
+
+		if (printExpression instanceof MultiplePrintExpression) {
+			type = ((MultiplePrintExpression) printExpression).getExpr().struct;
+		} else
+			type = ((SinglePrintExpression) printExpression).getExpr().struct;
+
+		Obj booleanType = Tab.find("bool");
+
+		if (!type.compatibleWith(Tab.intType) && type != Tab.charType && type != booleanType.getType()) {
+			report_error("Greska na liniji " + printStatement.getLine() + " :  Neispravan izraz za print",
+					printStatement);
+		}
+
 	}
 
 	@Override
 	public void visit(NumberConstFactor numberConstFactor) {
-		
+
 		numberConstFactor.struct = Tab.intType;
 		super.visit(numberConstFactor);
 	}
 
 	@Override
 	public void visit(CharConstFactor charConstFactor) {
-		
+
 		charConstFactor.struct = Tab.charType;
 		super.visit(charConstFactor);
 	}
 
 	@Override
 	public void visit(BoolConstFactor boolConstFactor) {
-		
+
 		boolConstFactor.struct = Tab.find("bool").getType();
 		super.visit(boolConstFactor);
 	}
@@ -326,54 +362,52 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(PositiveExpression positiveExpression) {
-		
+
 		positiveExpression.struct = positiveExpression.getAddopExpr().struct;
 		super.visit(positiveExpression);
 	}
-	
-    @Override
-    public void visit(NegativeExpression negativeExpression) {
-    	
-        if (negativeExpression.struct != Tab.intType) {
-            report_error("Greska na liniji " + negativeExpression.getLine() + " : izraz mora biti celobrojnog tipa.",
-            		negativeExpression);
-            negativeExpression.struct = Tab.noType;
-            return;
-        }
-        
-        negativeExpression.struct = negativeExpression.getAddopExpr().struct;
-        super.visit(negativeExpression);
-    }
-    
-    
+
+	@Override
+	public void visit(NegativeExpression negativeExpression) {
+
+		
+		if (negativeExpression.getAddopExpr().struct != Tab.intType) {
+			report_error("Greska na liniji " + negativeExpression.getLine() + " : izraz mora biti celobrojnog tipa.",
+					negativeExpression);
+			negativeExpression.struct = Tab.noType;
+			return;
+		}
+
+		negativeExpression.struct = negativeExpression.getAddopExpr().struct;
+		super.visit(negativeExpression);
+	}
 
 	@Override
 	public void visit(MultipleFactor multipleFactor) {
-		
-		Struct term = multipleFactor.getTerm().struct;
-        Struct factor = multipleFactor.getFactor().struct;
-        
-        if (term.equals(factor) && term == Tab.intType) {
-        	multipleFactor.struct = term;
-        	
-        } else {
-        	report_error("Greska na liniji " + multipleFactor.getLine() + " : neispravni tipovi u izrazu",
-        			multipleFactor);
-         
-            multipleFactor.struct = Tab.noType;
-        }
 
-		
+		Struct term = multipleFactor.getTerm().struct;
+		Struct factor = multipleFactor.getFactor().struct;
+
+		if (term.equals(factor) && term == Tab.intType) {
+			multipleFactor.struct = term;
+
+		} else {
+			report_error("Greska na liniji " + multipleFactor.getLine() + " : neispravni tipovi u izrazu",
+					multipleFactor);
+
+			multipleFactor.struct = Tab.noType;
+		}
+
 		super.visit(multipleFactor);
 	}
-	
+
 	public boolean passed() {
 		return !errorDetected;
 	}
 
 	@Override
 	public void visit(AssignStatement assignStatement) {
-		
+
 		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
 			report_error("Greska na liniji " + assignStatement.getLine() + " : "
 					+ " nekompatibilni tipovi u dodeli vrednosti ", null);
@@ -471,124 +505,163 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	@Override
-	public void visit(NumConstInitializer numConstInitializer) {
-		
-		if (currentVariableDeclarationType == Tab.noType)
-			return;
-		
-		if (currentVariableDeclarationType != Tab.intType) {
-			report_error(
-					"Greska na liniji " + numConstInitializer.getLine()
-							+ " : deklarisani tip se ne moze inicijalizovati celobrojnom vrednoscu",
-					numConstInitializer);
-			return;
+	public void visit(BoolConstInitializer boolConstInitializer) {
+
+		if (currentVariableDeclarationType != Tab.noType) {
+
+			Obj booleanType = Tab.find("bool");
+
+			if (Tab.currentScope.findSymbol(boolConstInitializer.getName()) != null) {
+				report_error("Greska : konstanta " + boolConstInitializer.getName() + "' je vec deklarisana! ",
+						boolConstInitializer);
+				return;
+			}
+
+			else {
+
+				if (currentVariableDeclarationType == booleanType.getType()) {
+
+					Obj newConst = Tab.insert(Obj.Con, boolConstInitializer.getName(), booleanType.getType());
+
+					int val;
+					if (boolConstInitializer.getVal() == true) {
+						val = 1;
+					} else {
+						val = 0;
+					}
+
+					newConst.setAdr(val);
+
+				} else {
+
+					report_error("Greska: deklarisani tip se ne moze inicijalizovati boolean vrednoscu! ",
+							boolConstInitializer);
+					return;
+
+				}
+			}
 		}
 
-		if (Tab.currentScope.findSymbol(numConstInitializer.getName()) != null) {
-			report_error("Greska na liniji " + numConstInitializer.getLine() + " : " + numConstInitializer.getName()
-					+ "' je vec deklarisan ", numConstInitializer);
-			return;
-		}
-
-		Obj initialiserObj = Tab.insert(Obj.Con, numConstInitializer.getName(), Tab.intType);
-		initialiserObj.setAdr(numConstInitializer.getVal());
 	}
 
-	/*@Override
-	public void visit(BoolConstInitializer boolConstInitializer) {
-		if (currentVariableDeclarationType == Tab.noType)
-			return;
+	@Override
+	public void visit(NumConstInitializer numConstInitializer) {
 
-		//ne moze ovako
-		SymbolDataStructure s = Tab.currentScope().getLocals();
-		Struct boolType = s.searchKey("bool").getType();
+		if (currentVariableDeclarationType != Tab.noType) {
 
-		if (currentVariableDeclarationType != boolType) {
-			report_error("Greska na liniji " + boolConstInitializer.getLine()
-					+ " : deklarisani tip se ne moze inicijalizovati boolean vrednoscu ", boolConstInitializer);
-			return;
-		}
+			if (Tab.currentScope.findSymbol(numConstInitializer.getName()) != null) {
+				report_error("Greska : konstanta " + numConstInitializer.getName() + " je vec deklarisana! ",
+						numConstInitializer);
+				return;
+			}
 
-		if (Tab.currentScope.findSymbol(boolConstInitializer.getName()) != null) {
-			report_error("Greska na liniji " + boolConstInitializer.getLine() + " : " + boolConstInitializer.getName()
-					+ "' je vec deklarisan ", boolConstInitializer);
-			return;
-		}
+			else {
 
-		Obj newConst = Tab.insert(Obj.Con, boolConstInitializer.getName(), boolType);
+				if (currentVariableDeclarationType == Tab.intType) {
+					Obj initialiserObj = Tab.insert(Obj.Con, numConstInitializer.getName(), Tab.intType);
+					initialiserObj.setAdr(numConstInitializer.getVal());
+				} else {
+					report_error("Greska : deklarisani tip se ne moze inicijalizovati celobrojnom vrednoscu!",
+							numConstInitializer);
+					return;
+				}
 
-		int val;
-		if (boolConstInitializer.getVal() == true) {
-			val = 1;
-		} else {
-			val = 0;
-		}
+			}
 
-		newConst.setAdr(val);
+		} 
 
-	}*/
+	}
 
 	@Override
 	public void visit(CharConstInitializer charConstInitializer) {
+
+		if (currentVariableDeclarationType != Tab.noType) {
+
+			if (Tab.currentScope.findSymbol(charConstInitializer.getName()) != null) {
+				report_error("Greska: konstanta " + charConstInitializer.getName() + " je vec deklarisana! ",
+						charConstInitializer);
+				return;
+			} else {
+
+				if (currentVariableDeclarationType == Tab.charType) {
+
+					Obj initialiserObj = Tab.insert(Obj.Con, charConstInitializer.getName(), Tab.charType);
+					initialiserObj.setAdr(charConstInitializer.getVal());
+
+				} else {
+
+					report_error("Greska: deklarisani tip se ne moze inicijalizovati char vrednoscu! ",
+							charConstInitializer);
+					return;
+				}
+
+			}
+
+		} 
 		
-		if (currentVariableDeclarationType == Tab.noType)
-			return;
 		
-		if (currentVariableDeclarationType != Tab.charType) {
-			report_error("Greska na liniji " + charConstInitializer.getLine()
-					+ " : deklarisani tip se ne moze inicijalizovati char vrednoscu ", charConstInitializer);
-			return;
-		}
-
-		if (Tab.currentScope.findSymbol(charConstInitializer.getName()) != null) {
-			report_error("Greska na liniji " + charConstInitializer.getLine() + " : " + charConstInitializer.getName()
-					+ "' je vec deklarisan ", charConstInitializer);
-			return;
-		}
-
-		Obj initialiserObj = Tab.insert(Obj.Con, charConstInitializer.getName(), Tab.charType);
-		initialiserObj.setAdr(charConstInitializer.getVal());
-
 	}
-	
+
 	@Override
-    public void visit(NewObjectFactor newObjectFactor) {
-		
-        if (newObjectFactor.getType().struct == Tab.noType) return;
-        
-        else newObjectFactor.struct = newObjectFactor.getType().struct;
-        
-        super.visit(newObjectFactor);
-    }
+	public void visit(NewObjectFactor newObjectFactor) {
 
-    @Override
-    public void visit(NewObjectArrayFactor newObjectArrayFactor) {
-    	
-        if (newObjectArrayFactor.getType().struct == Tab.noType) return;
+		if (newObjectFactor.getType().struct == Tab.noType)
+			return;
 
-        if (newObjectArrayFactor.getExpr().struct != Tab.intType) {
-        	report_error("Greska na liniji " + newObjectArrayFactor.getLine() + " : duzina niza mora biti celobrojan tip ", newObjectArrayFactor);
-            newObjectArrayFactor.struct = Tab.noType;
-            return;
-        }
-        Obj typeObjNode = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
-        newObjectArrayFactor.struct = typeObjNode.getType();
-    }
+		else
+			newObjectFactor.struct = newObjectFactor.getType().struct;
 
+		super.visit(newObjectFactor);
+	}
+
+	@Override
+	public void visit(NewObjectArrayFactor newObjectArrayFactor) {
+
+		if (newObjectArrayFactor.getType().struct == Tab.noType)
+			return;
+
+		if (newObjectArrayFactor.getExpr().struct != Tab.intType) {
+			report_error(
+					"Greska na liniji " + newObjectArrayFactor.getLine() + " : duzina niza mora biti celobrojan tip ",
+					newObjectArrayFactor);
+			newObjectArrayFactor.struct = Tab.noType;
+			return;
+		}
+		Obj typeObjNode = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
+		newObjectArrayFactor.struct = typeObjNode.getType();
+	}
+
+	// for statement
+
+	@Override
+	public void visit(ReadStatement readStatement) {
 	
+		if (readStatement.getDesignator().obj.getKind() != Obj.Var && readStatement.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error("Greska na liniji " + readStatement.getLine() + " : "
+					+ readStatement.getDesignator().obj.getName() + "' nije promenljiva ", readStatement);
 
-	
+			return;
+		}
+		Obj booleanType = Tab.find("bool");
+		Struct type = readStatement.getDesignator().obj.getType();
+
+		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
+			report_error("Greska na liniji " + readStatement.getLine()
+					+ " : promenljiva sme biti celobrojnog, karakter ili boolean tipa ", readStatement);
+		}
+	}
+
 	@Override
 	public void visit(FuncCall funcCall) {
 		Obj func = funcCall.getDesignator().obj;
 		if (Obj.Meth == func.getKind()) {
 			report_info("Pronadjen poziv funkcije " + func.getName() + " na liniji " + funcCall.getLine(), null);
-			
-	        if (func.getType() == Tab.noType) {
-	        	report_error("Greska na liniji " + funcCall.getLine() + " : povratna vrednost funkcije " + func.getName() + " ne moze biti deo izraza",
-						null);
-	        }
-	         
+
+			if (func.getType() == Tab.noType) {
+				report_error("Greska na liniji " + funcCall.getLine() + " : povratna vrednost funkcije "
+						+ func.getName() + " ne moze biti deo izraza", null);
+			}
+
 			funcCall.struct = func.getType();
 		} else {
 			report_error("Greska na liniji " + funcCall.getLine() + " : ime " + func.getName() + " nije funkcija!",
@@ -610,5 +683,7 @@ public class SemanticPass extends VisitorAdaptor {
 			// RESULT = Tab.noType;
 		}
 	}
+
+	// actual poziv fje
 
 }

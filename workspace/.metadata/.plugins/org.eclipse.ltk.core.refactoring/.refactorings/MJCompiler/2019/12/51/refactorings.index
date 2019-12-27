@@ -16,3 +16,8 @@
 1576962620844	Rename local variable 't2'
 1576963204622	Rename local variable 'fact'
 1576963255926	Rename local variable 'fact'
+1576964073084	Rename local variable 'statement'
+1576964453543	Rename local variable 'ex'
+1576965662147	Rename local variable 'a'
+1576966096929	Rename local variable 'main'
+1576968889006	Rename local variable 'arrayTypeObjNode'

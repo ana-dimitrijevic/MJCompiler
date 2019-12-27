@@ -1,0 +1,220 @@
+INFO  17:55:13,511 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  17:55:13,573 - #13 program
+INFO  17:55:13,573 - #45 P
+INFO  17:55:13,573 - #45 int
+INFO  17:55:13,573 - #45 a
+INFO  17:55:13,573 - #7 ;
+INFO  17:55:13,573 - #45 bool
+INFO  17:55:13,573 - #45 prom
+INFO  17:55:13,573 - #7 ;
+INFO  17:55:13,573 - #45 char
+INFO  17:55:13,573 - #45 c
+INFO  17:55:13,573 - #7 ;
+INFO  17:55:13,573 - #8 return
+ERROR 17:55:13,573 - 
+Sintaksna greska na liniji 5
+INFO  17:55:13,573 - #7 ;
+INFO  17:55:13,573 - #11 {
+INFO  17:55:13,573 - #45 int
+INFO  17:55:13,573 - #45 f
+INFO  17:55:13,589 - GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!
+INFO  17:55:13,589 - #10 (
+INFO  17:55:13,589 - #5 )
+INFO  17:55:13,589 - #11 {
+INFO  17:55:13,589 - #8 return
+INFO  17:55:13,589 - #42 4
+INFO  17:55:13,589 - #7 ;
+INFO  17:55:13,589 - #4 }
+INFO  17:55:13,589 - #45 char
+INFO  17:55:13,589 - #45 o
+INFO  17:55:13,589 - #10 (
+INFO  17:55:13,589 - #5 )
+INFO  17:55:13,589 - #45 char
+INFO  17:55:13,589 - #45 p
+INFO  17:55:13,589 - #7 ;
+INFO  17:55:13,589 - #11 {
+INFO  17:55:13,589 - #8 return
+INFO  17:55:13,589 - #45 c
+INFO  17:55:13,589 - #7 ;
+INFO  17:55:13,589 - #4 }
+INFO  17:55:13,589 - #45 int
+INFO  17:55:13,589 - #45 k
+INFO  17:55:13,589 - #10 (
+INFO  17:55:13,589 - #45 int
+INFO  17:55:13,589 - #45 p
+INFO  17:55:13,589 - #12 ,
+INFO  17:55:13,589 - #45 int
+INFO  17:55:13,589 - #45 q
+INFO  17:55:13,589 - #36 [
+INFO  17:55:13,589 - #37 ]
+INFO  17:55:13,589 - #12 ,
+INFO  17:55:13,589 - #45 char
+INFO  17:55:13,589 - #45 z
+INFO  17:55:13,589 - #36 [
+INFO  17:55:13,589 - #37 ]
+INFO  17:55:13,589 - #5 )
+INFO  17:55:13,589 - #45 int
+INFO  17:55:13,589 - #45 x
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #11 {
+INFO  17:55:13,604 - #45 p
+INFO  17:55:13,604 - #6 =
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 3
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #45 c
+INFO  17:55:13,604 - #6 =
+INFO  17:55:13,604 - #45 z
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 3
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 3
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #6 =
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 3
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #3 +
+INFO  17:55:13,604 - #42 5
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 3
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #6 =
+INFO  17:55:13,604 - #42 5
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #14 print
+INFO  17:55:13,604 - #10 (
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #45 a
+INFO  17:55:13,604 - #3 +
+INFO  17:55:13,604 - #42 1
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #5 )
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #14 print
+INFO  17:55:13,604 - #10 (
+INFO  17:55:13,604 - #45 x
+INFO  17:55:13,604 - #5 )
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #14 print
+INFO  17:55:13,604 - #10 (
+INFO  17:55:13,604 - #45 x
+INFO  17:55:13,604 - #3 +
+INFO  17:55:13,604 - #42 12
+INFO  17:55:13,604 - #12 ,
+INFO  17:55:13,604 - #42 1
+INFO  17:55:13,604 - #5 )
+INFO  17:55:13,604 - #7 ;
+INFO  17:55:13,604 - #45 q
+INFO  17:55:13,604 - #36 [
+INFO  17:55:13,604 - #42 0
+INFO  17:55:13,604 - #37 ]
+INFO  17:55:13,604 - #23 --
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 x
+INFO  17:55:13,620 - #23 --
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 q
+INFO  17:55:13,620 - #36 [
+INFO  17:55:13,620 - #42 3
+INFO  17:55:13,620 - #37 ]
+INFO  17:55:13,620 - #6 =
+INFO  17:55:13,620 - #45 f
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #42 3
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #45 q
+INFO  17:55:13,620 - #36 [
+INFO  17:55:13,620 - #42 1
+INFO  17:55:13,620 - #37 ]
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #45 x
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 prom
+INFO  17:55:13,620 - #6 =
+INFO  17:55:13,620 - #43 true
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 a
+INFO  17:55:13,620 - #6 =
+INFO  17:55:13,620 - #45 q
+INFO  17:55:13,620 - #36 [
+INFO  17:55:13,620 - #45 a
+INFO  17:55:13,620 - #37 ]
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 a
+INFO  17:55:13,620 - #6 =
+INFO  17:55:13,620 - #45 q
+INFO  17:55:13,620 - #36 [
+INFO  17:55:13,620 - #42 1
+INFO  17:55:13,620 - #37 ]
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #45 q
+INFO  17:55:13,620 - #36 [
+INFO  17:55:13,620 - #42 2
+INFO  17:55:13,620 - #37 ]
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #8 return
+INFO  17:55:13,620 - #42 5
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #42 1
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #42 2
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #4 }
+INFO  17:55:13,620 - #15 void
+INFO  17:55:13,620 - #45 k
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #11 {
+INFO  17:55:13,620 - #4 }
+INFO  17:55:13,620 - #15 void
+INFO  17:55:13,620 - #45 main
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #11 {
+INFO  17:55:13,620 - #14 print
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #45 k
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #45 a
+INFO  17:55:13,620 - #6 =
+INFO  17:55:13,620 - #42 3
+INFO  17:55:13,620 - #3 +
+INFO  17:55:13,620 - #45 k
+INFO  17:55:13,620 - #10 (
+INFO  17:55:13,620 - #5 )
+INFO  17:55:13,620 - #7 ;
+INFO  17:55:13,620 - #4 }
+INFO  17:55:13,620 - #4 }
+INFO  17:55:13,651 - Deklarisana promenljiva a na liniji 2
+INFO  17:55:13,651 - Deklarisana promenljiva prom na liniji 3
+INFO  17:55:13,651 - Obradjuje se funkcija f na liniji 7
+INFO  17:55:13,651 - Obradjuje se funkcija o na liniji 11
+INFO  17:55:13,651 - Deklarisana promenljiva p na liniji 11
+ERROR 17:55:13,651 - Greska na liniji 12 : ime c nije deklarisano!  na liniji 12
+ERROR 17:55:13,651 - Greska na liniji 12 : tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije o
+INFO  17:55:13,651 - Obradjuje se funkcija k na liniji 15
+INFO  17:55:13,651 - Deklarisana promenljiva x na liniji 15
+ERROR 17:55:13,651 - Greska na liniji 26 : ime c nije deklarisano!  na liniji 26
+ERROR 17:55:13,651 - Greska na liniji 26 :  nekompatibilni tipovi u dodeli vrednosti 
+INFO  17:55:13,651 - Pronadjen poziv funkcije f na liniji 70
+ERROR 17:55:13,651 - Greska: 'k' je vec deklarisana na liniji 79
+INFO  17:55:13,651 - Obradjuje se funkcija main na liniji 81
+INFO  17:55:13,651 - Pronadjen poziv funkcije k na liniji 83
+INFO  17:55:13,651 - Pronadjen poziv funkcije k na liniji 86
+INFO  17:55:13,651 - Print calls = 4
+ERROR 17:55:13,651 - Parsiranje NIJE uspesno zavrseno!

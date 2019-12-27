@@ -1,0 +1,459 @@
+INFO  17:41:30,846 - Compiling source file: D:\Marko pp\workspace\MJCompiler\test\program.mj
+INFO  17:41:30,908 - #13 program
+INFO  17:41:30,908 - #45 P
+INFO  17:41:30,908 - #45 int
+INFO  17:41:30,908 - #45 a
+INFO  17:41:30,908 - #7 ;
+INFO  17:41:30,908 - #45 bool
+INFO  17:41:30,908 - #45 prom
+INFO  17:41:30,908 - #7 ;
+INFO  17:41:30,908 - #45 char
+INFO  17:41:30,908 - #45 c
+INFO  17:41:30,908 - #7 ;
+INFO  17:41:30,908 - #45 int
+INFO  17:41:30,908 - #45 novi
+INFO  17:41:30,908 - #36 [
+INFO  17:41:30,908 - #37 ]
+INFO  17:41:30,908 - #7 ;
+INFO  17:41:30,908 - #11 {
+INFO  17:41:30,908 - #45 int
+INFO  17:41:30,924 - #45 f
+INFO  17:41:30,924 - #10 (
+INFO  17:41:30,924 - #5 )
+INFO  17:41:30,924 - #11 {
+INFO  17:41:30,924 - #8 return
+INFO  17:41:30,924 - #42 4
+INFO  17:41:30,924 - #7 ;
+INFO  17:41:30,924 - #4 }
+INFO  17:41:30,924 - #45 char
+INFO  17:41:30,924 - #45 o
+INFO  17:41:30,924 - #10 (
+INFO  17:41:30,924 - #5 )
+INFO  17:41:30,924 - #45 char
+INFO  17:41:30,924 - #45 p
+INFO  17:41:30,924 - #7 ;
+INFO  17:41:30,924 - #11 {
+INFO  17:41:30,924 - #8 return
+INFO  17:41:30,924 - #45 c
+INFO  17:41:30,924 - #7 ;
+INFO  17:41:30,924 - #4 }
+INFO  17:41:30,924 - #45 int
+INFO  17:41:30,924 - #45 k
+INFO  17:41:30,924 - #10 (
+INFO  17:41:30,924 - #45 int
+INFO  17:41:30,924 - #45 p
+INFO  17:41:30,924 - #12 ,
+INFO  17:41:30,924 - #45 int
+INFO  17:41:30,924 - #45 q
+INFO  17:41:30,924 - #36 [
+INFO  17:41:30,924 - #37 ]
+INFO  17:41:30,924 - #12 ,
+INFO  17:41:30,924 - #45 char
+INFO  17:41:30,924 - #45 z
+INFO  17:41:30,924 - #36 [
+INFO  17:41:30,924 - #37 ]
+INFO  17:41:30,924 - #5 )
+INFO  17:41:30,924 - #45 int
+INFO  17:41:30,924 - #45 a
+INFO  17:41:30,924 - #7 ;
+INFO  17:41:30,924 - #11 {
+INFO  17:41:30,924 - #45 q
+INFO  17:41:30,924 - #6 =
+INFO  17:41:30,924 - #45 novi
+INFO  17:41:30,924 - #7 ;
+INFO  17:41:30,924 - #45 x
+INFO  17:41:30,924 - #6 =
+INFO  17:41:30,924 - #42 5
+INFO  17:41:30,924 - #3 +
+INFO  17:41:30,924 - #45 o
+INFO  17:41:30,924 - #10 (
+INFO  17:41:30,924 - #5 )
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 x
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 c
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 c
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 x
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 x
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 null
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 p
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 p
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 p
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 z
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 c
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 z
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 c
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #3 +
+INFO  17:41:30,940 - #42 5
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 x
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 z
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 2
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #3 +
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 x
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 2
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #3 +
+INFO  17:41:30,940 - #45 z
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 c
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 p
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 q
+INFO  17:41:30,940 - #36 [
+INFO  17:41:30,940 - #42 3
+INFO  17:41:30,940 - #37 ]
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,940 - #45 null
+INFO  17:41:30,940 - #7 ;
+INFO  17:41:30,940 - #45 p
+INFO  17:41:30,940 - #6 =
+INFO  17:41:30,955 - #45 null
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #45 c
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 5
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #45 c
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #45 c
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #42 5
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #42 5
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 x
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #43 true
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 0
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #43 true
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #14 print
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #45 a
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #14 print
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 x
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #14 print
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 x
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 12
+INFO  17:41:30,955 - #12 ,
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #19 read
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 z
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 0
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #22 ++
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 z
+INFO  17:41:30,955 - #22 ++
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 z
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 0
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #23 --
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 0
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #23 --
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 x
+INFO  17:41:30,955 - #23 --
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 f
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #45 x
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #43 true
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 c
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 prom
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #43 true
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 prom
+INFO  17:41:30,955 - #23 --
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 a
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #45 a
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 a
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #45 q
+INFO  17:41:30,955 - #36 [
+INFO  17:41:30,955 - #42 2
+INFO  17:41:30,955 - #37 ]
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #8 return
+INFO  17:41:30,955 - #42 5
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 1
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #42 2
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #4 }
+INFO  17:41:30,955 - #15 void
+INFO  17:41:30,955 - #45 k
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #11 {
+INFO  17:41:30,955 - #4 }
+INFO  17:41:30,955 - #45 int
+INFO  17:41:30,955 - #45 main
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 int
+INFO  17:41:30,955 - #45 argument
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #11 {
+INFO  17:41:30,955 - #45 k
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #42 7
+INFO  17:41:30,955 - #12 ,
+INFO  17:41:30,955 - #42 9
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #14 print
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #45 k
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 k
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #45 a
+INFO  17:41:30,955 - #6 =
+INFO  17:41:30,955 - #42 3
+INFO  17:41:30,955 - #3 +
+INFO  17:41:30,955 - #45 k
+INFO  17:41:30,955 - #10 (
+INFO  17:41:30,955 - #5 )
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #8 return
+INFO  17:41:30,955 - #7 ;
+INFO  17:41:30,955 - #4 }
+INFO  17:41:30,955 - #4 }
+INFO  17:41:30,971 - Deklarisana promenljiva a na liniji 2
+INFO  17:41:30,971 - Deklarisana promenljiva prom na liniji 3
+INFO  17:41:30,971 - Deklarisana promenljiva c na liniji 4
+INFO  17:41:30,971 - Obradjuje se funkcija f na liniji 7
+INFO  17:41:30,971 - Obradjuje se funkcija o na liniji 11
+INFO  17:41:30,971 - Deklarisana promenljiva p na liniji 11
+INFO  17:41:30,971 - Obradjuje se funkcija k na liniji 15
+INFO  17:41:30,971 - Deklarisana promenljiva a na liniji 15
+ERROR 17:41:30,971 - Greska na liniji 18 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 19 : ime x nije deklarisano!  na liniji 19
+INFO  17:41:30,971 - Pronadjen poziv funkcije o na liniji 19
+ERROR 17:41:30,971 - Greska na liniji 19 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 20 : ime x nije deklarisano!  na liniji 20
+ERROR 17:41:30,971 - Greska na liniji 20 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 21 : ime x nije deklarisano!  na liniji 21
+ERROR 17:41:30,971 - Greska na liniji 21 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 22 : ime x nije deklarisano!  na liniji 22
+ERROR 17:41:30,971 - Greska na liniji 22 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 24 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 27 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 29 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 30 : ime x nije deklarisano!  na liniji 30
+ERROR 17:41:30,971 - Greska na liniji 30 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 34 : ime x nije deklarisano!  na liniji 34
+ERROR 17:41:30,971 - Greska na liniji 34 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 37 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 40 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 41 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 45 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 48 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 50 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 50 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 53 : izraz u zagradama mora biti celobrojnog tipa  na liniji 53
+ERROR 17:41:30,971 - Greska na liniji 53 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 55 : izraz u zagradama mora biti celobrojnog tipa  na liniji 55
+ERROR 17:41:30,971 - Greska na liniji 55 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 60 : ime x nije deklarisano!  na liniji 60
+ERROR 17:41:30,971 - Greska na liniji 60 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 61 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 63 : ime x nije deklarisano!  na liniji 63
+ERROR 17:41:30,971 - Greska na liniji 63 :  Neispravan izraz za print na liniji 63
+ERROR 17:41:30,971 - Greska na liniji 64 : ime x nije deklarisano!  na liniji 64
+ERROR 17:41:30,971 - Greska na liniji 64 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 64 :  Neispravan izraz za print na liniji 64
+ERROR 17:41:30,971 - Greska na liniji 65 : q' nije promenljiva  na liniji 65
+ERROR 17:41:30,971 - Greska na liniji 66 : z' nije celobrojnog tipa  na liniji 66
+ERROR 17:41:30,971 - Greska na liniji 67 : z' nije celobrojnog tipa  na liniji 67
+ERROR 17:41:30,971 - Greska na liniji 68 : z' nije celobrojnog tipa  na liniji 68
+ERROR 17:41:30,971 - Greska na liniji 70 : ime x nije deklarisano!  na liniji 70
+ERROR 17:41:30,971 - Greska na liniji 70 : noObj' nije celobrojnog tipa  na liniji 70
+INFO  17:41:30,971 - Pronadjen poziv funkcije f na liniji 72
+ERROR 17:41:30,971 - Greska na liniji 72 : ime x nije deklarisano!  na liniji 72
+ERROR 17:41:30,971 - Greska na liniji 72 : nekompatibilni tipovi u izrazu.
+ERROR 17:41:30,971 - Greska na liniji 72 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 73 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 74 :  nekompatibilni tipovi u dodeli vrednosti 
+ERROR 17:41:30,971 - Greska na liniji 76 : prom' nije celobrojnog tipa  na liniji 76
+ERROR 17:41:30,971 - Greska: 'k' je vec deklarisana na liniji 81
+INFO  17:41:30,971 - Obradjuje se funkcija main na liniji 83
+INFO  17:41:30,971 - Pronadjen poziv funkcije k na liniji 84
+INFO  17:41:30,971 - Pronadjen poziv funkcije k na liniji 85
+INFO  17:41:30,971 - Pronadjen poziv funkcije k na liniji 86
+INFO  17:41:30,971 - Pronadjen poziv funkcije k na liniji 87
+ERROR 17:41:30,971 - Greska na liniji 0 : tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije main
+ERROR 17:41:30,971 - Greska: 'P' ne sme imati parametre  na liniji 1
+ERROR 17:41:30,971 - Greska: 'P' povratna vrednost mora biti tipa void  na liniji 1
+INFO  17:41:30,971 - Print calls = 4
+ERROR 17:41:30,987 - Parsiranje NIJE uspesno zavrseno!
