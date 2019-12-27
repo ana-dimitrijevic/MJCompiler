@@ -65,7 +65,7 @@ Factor;
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
-DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForCond, AssignStmnt, ActualParamsList,
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
 ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, ElsePart;
 
 
@@ -206,7 +206,7 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (IfStatement) IF LPAREN Condition RPAREN Statement ElsePart
               |
-          	  (ForStatement) FOR LPAREN ForDesignatorStm SEMI ForCond SEMI ForDesignatorStm RPAREN Statement
+          	  (ForStatement) ForStmBegin LPAREN ForDesignatorStm SEMI ForCond SEMI ForDesignatorStm RPAREN Statement
               |
               (StatementDesignator) DesignatorStatement SEMI
               |
@@ -284,6 +284,8 @@ ElsePart ::= (ElseStatement) ELSE Statement
 			 | 
 			 (NoElseStatement) /* epsilon */
 ;
+
+ForStmBegin  ::= (ForStatementBegin) FOR;
 
 ForDesignatorStm ::= (ForDesignatorStatement) DesignatorStatement
                       |

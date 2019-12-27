@@ -23,6 +23,7 @@ public class SemanticPass extends VisitorAdaptor {
 	Struct currentMethodReturnType = null;
 
 	Logger log = Logger.getLogger(getClass());
+	int forLoopDepth = 0;
 
 	SemanticPass() {
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", new Struct(5)));
@@ -631,7 +632,19 @@ public class SemanticPass extends VisitorAdaptor {
 		newObjectArrayFactor.struct = typeObjNode.getType();
 	}
 
-	// for statement
+	
+
+	@Override
+	public void visit(ForStatementBegin forStatementBegin) {
+		forLoopDepth++;
+		super.visit(forStatementBegin);
+	}
+	
+    @Override
+    public void visit(ForStatement forStatement) {
+    	forLoopDepth--;
+    	super.visit(forStatement);
+    }
 
 	@Override
 	public void visit(ReadStatement readStatement) {
@@ -650,6 +663,24 @@ public class SemanticPass extends VisitorAdaptor {
 					+ " : promenljiva sme biti celobrojnog, karakter ili boolean tipa ", readStatement);
 		}
 	}
+	
+	 @Override
+	    public void visit(ContinueStatement continueStatement) {
+	        if (forLoopDepth == 0) {
+	        	report_error("Continue mora biti u for petlji", continueStatement);
+	        }
+
+	        
+	    }
+
+	    @Override
+	    public void visit(BreakStatement breakStatement) {
+	        if (forLoopDepth == 0) {
+	        	report_error("Break mora biti u for petlji", breakStatement);
+	        }
+
+	     
+	    }
 
 	@Override
 	public void visit(FuncCall funcCall) {

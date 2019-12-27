@@ -1,18 +1,21 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/11/2019 17:8:17
+// 27/11/2019 19:21:12
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ForStatement extends Statement {
 
+    private ForStmBegin ForStmBegin;
     private ForDesignatorStm ForDesignatorStm;
     private ForCond ForCond;
     private ForDesignatorStm ForDesignatorStm1;
     private Statement Statement;
 
-    public ForStatement (ForDesignatorStm ForDesignatorStm, ForCond ForCond, ForDesignatorStm ForDesignatorStm1, Statement Statement) {
+    public ForStatement (ForStmBegin ForStmBegin, ForDesignatorStm ForDesignatorStm, ForCond ForCond, ForDesignatorStm ForDesignatorStm1, Statement Statement) {
+        this.ForStmBegin=ForStmBegin;
+        if(ForStmBegin!=null) ForStmBegin.setParent(this);
         this.ForDesignatorStm=ForDesignatorStm;
         if(ForDesignatorStm!=null) ForDesignatorStm.setParent(this);
         this.ForCond=ForCond;
@@ -21,6 +24,14 @@ public class ForStatement extends Statement {
         if(ForDesignatorStm1!=null) ForDesignatorStm1.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
+    }
+
+    public ForStmBegin getForStmBegin() {
+        return ForStmBegin;
+    }
+
+    public void setForStmBegin(ForStmBegin ForStmBegin) {
+        this.ForStmBegin=ForStmBegin;
     }
 
     public ForDesignatorStm getForDesignatorStm() {
@@ -60,6 +71,7 @@ public class ForStatement extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(ForStmBegin!=null) ForStmBegin.accept(visitor);
         if(ForDesignatorStm!=null) ForDesignatorStm.accept(visitor);
         if(ForCond!=null) ForCond.accept(visitor);
         if(ForDesignatorStm1!=null) ForDesignatorStm1.accept(visitor);
@@ -68,6 +80,7 @@ public class ForStatement extends Statement {
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(ForStmBegin!=null) ForStmBegin.traverseTopDown(visitor);
         if(ForDesignatorStm!=null) ForDesignatorStm.traverseTopDown(visitor);
         if(ForCond!=null) ForCond.traverseTopDown(visitor);
         if(ForDesignatorStm1!=null) ForDesignatorStm1.traverseTopDown(visitor);
@@ -75,6 +88,7 @@ public class ForStatement extends Statement {
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(ForStmBegin!=null) ForStmBegin.traverseBottomUp(visitor);
         if(ForDesignatorStm!=null) ForDesignatorStm.traverseBottomUp(visitor);
         if(ForCond!=null) ForCond.traverseBottomUp(visitor);
         if(ForDesignatorStm1!=null) ForDesignatorStm1.traverseBottomUp(visitor);
@@ -86,6 +100,12 @@ public class ForStatement extends Statement {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ForStatement(\n");
+
+        if(ForStmBegin!=null)
+            buffer.append(ForStmBegin.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
 
         if(ForDesignatorStm!=null)
             buffer.append(ForDesignatorStm.toString("  "+tab));

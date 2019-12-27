@@ -86,6 +86,7 @@ nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal DesignatorStatement DesignatorStatement;
+nonterminal ForStmBegin ForStmBegin;
 nonterminal ForCond ForCond;
 nonterminal AssignStmnt AssignStmnt;
 nonterminal ActualParamsList ActualParamsList;
@@ -236,7 +237,7 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ElsePart:E3 {: RESULT=new IfStatement(C1, S2, E3); RESULT.setLine(C1left); :}
               |
-          	  (ForStatement) FOR LPAREN ForDesignatorStm:F1 SEMI ForCond:F2 SEMI ForDesignatorStm:F3 RPAREN Statement:S4 {: RESULT=new ForStatement(F1, F2, F3, S4); RESULT.setLine(F1left); :}
+          	  (ForStatement) ForStmBegin:F1 LPAREN ForDesignatorStm:F2 SEMI ForCond:F3 SEMI ForDesignatorStm:F4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, F2, F3, F4, S5); RESULT.setLine(F1left); :}
               |
               (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :}
               |
@@ -314,6 +315,8 @@ ElsePart ::= (ElseStatement) ELSE Statement:S1 {: RESULT=new ElseStatement(S1); 
 			 | 
 			 (NoElseStatement) {: RESULT=new NoElseStatement(); :} /* epsilon */
 ;
+
+ForStmBegin  ::= (ForStatementBegin) FOR {: RESULT=new ForStatementBegin(); :};
 
 ForDesignatorStm ::= (ForDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForDesignatorStatement(D1); RESULT.setLine(D1left); :}
                       |

@@ -94,6 +94,17 @@ char c;
 		
 		//k();
 		a = 3 + k();
+		
+		for(a=0; a<5; a++) {
+		
+			for(; ; ) {
+		
+
+			}
+		}
+		
+		//break;
+		
 		//return;
 	}
 	
