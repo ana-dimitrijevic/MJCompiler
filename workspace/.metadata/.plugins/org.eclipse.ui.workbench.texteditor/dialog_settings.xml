@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="na liniji" key="selection"/>
+		<item value="FuncCallStart" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="na liniji"/>
-			<item value="chainLocalSymbols"/>
-			<item value="SingleAddopTerm"/>
-			<item value="left"/>
-			<item value="addop"/>
-			<item value="ParenFactor"/>
-			<item value="initializer"/>
-			<item value="number"/>
+			<item value="assignable"/>
+			<item value="ArrayDequeue"/>
+			<item value="designator"/>
+			<item value="SingleFactor"/>
+			<item value="NumberConstFactor"/>
+			<item value="currentVariableDeclarationType"/>
+			<item value="NumConstInitializer"/>
+			<item value="arraydesignator"/>
 		</list>
 		<list key="replacehistory">
 		</list>

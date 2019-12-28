@@ -2,6 +2,8 @@ program P
 int a;
 bool prom;
 char c;
+const int kons = 5;
+const int kons = 'a';
 {	
 	int f() {
 		return 4;
@@ -102,6 +104,8 @@ char c;
 
 			}
 		}
+		
+		print(a,2);
 		
 		//break;
 		
