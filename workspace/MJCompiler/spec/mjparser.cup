@@ -66,7 +66,7 @@ Factor;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, ElsePart;
+ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, ElsePart, FuncCallStart, ProcCallStart;
 
 
 precedence left ELSE;
@@ -212,8 +212,11 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (BlockOfStatements) LBRACE Statements RBRACE
               |
-              (ProcCall) Designator:func LPAREN ActualParamsList RPAREN SEMI          
+              (ProcCall) ProcCallStart:des ActualParamsList RPAREN SEMI          
 ;       
+
+ProcCallStart ::= (ProcCallStart) Designator:des LPAREN
+;
 
 Expr  ::= (PositiveExpression) AddopExpr
           |
@@ -239,10 +242,14 @@ Factor ::= (DesignatorFactor) Designator
             |
            (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr RBRACKET
             |
-           (FuncCall) Designator:func LPAREN ActualParamsList RPAREN
+           (FuncCall) FuncCallStart:des ActualParamsList RPAREN
             |
            (ParenFactor) LPAREN Expr RPAREN
 ;
+
+FuncCallStart ::= (FuncCallStart) Designator:des LPAREN
+;
+
 
 Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName
                |

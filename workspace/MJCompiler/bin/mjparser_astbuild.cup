@@ -58,7 +58,7 @@ terminal Boolean BOOLCONST;
 terminal Character CHARCONST;
 terminal String IDENT;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName, FuncCallDesignator, ProcCallDesignator; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
 Factor; 
 
@@ -243,8 +243,11 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (BlockOfStatements) LBRACE Statements:S1 RBRACE {: RESULT=new BlockOfStatements(S1); RESULT.setLine(S1left); :}
               |
-              (ProcCall) Designator:func LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}          
+              (ProcCall) ProcCallDesignator:des ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(des, A1); RESULT.setLine(desleft); :}          
 ;       
+
+ProcCallDesignator ::= (ProcCallDesignator) Designator:des LPAREN {: RESULT=new ProcCallDesignator(des); RESULT.setLine(desleft); :}
+;
 
 Expr  ::= (PositiveExpression) AddopExpr:A1 {: RESULT=new PositiveExpression(A1); RESULT.setLine(A1left); :}
           |
@@ -270,10 +273,14 @@ Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); 
             |
            (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr:E1 RBRACKET {: RESULT=new NewObjectArrayFactor(typeName, E1); RESULT.setLine(typeNameleft); :}
             |
-           (FuncCall) Designator:func LPAREN ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :}
+           (FuncCall) FuncCallDesignator:des ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(des, A1); RESULT.setLine(desleft); :}
             |
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
+
+FuncCallDesignator ::= (FuncCallDesignator) Designator:des LPAREN {: RESULT=new FuncCallDesignator(des); RESULT.setLine(desleft); :}
+;
+
 
 Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
                |

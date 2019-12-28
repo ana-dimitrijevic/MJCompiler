@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2019 13:6:8
+// 28/11/2019 22:21:52
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class FuncCall extends Factor {
 
-    private Designator Designator;
+    private FuncCallStart FuncCallStart;
     private ActualParamsList ActualParamsList;
 
-    public FuncCall (Designator Designator, ActualParamsList ActualParamsList) {
-        this.Designator=Designator;
-        if(Designator!=null) Designator.setParent(this);
+    public FuncCall (FuncCallStart FuncCallStart, ActualParamsList ActualParamsList) {
+        this.FuncCallStart=FuncCallStart;
+        if(FuncCallStart!=null) FuncCallStart.setParent(this);
         this.ActualParamsList=ActualParamsList;
         if(ActualParamsList!=null) ActualParamsList.setParent(this);
     }
 
-    public Designator getDesignator() {
-        return Designator;
+    public FuncCallStart getFuncCallStart() {
+        return FuncCallStart;
     }
 
-    public void setDesignator(Designator Designator) {
-        this.Designator=Designator;
+    public void setFuncCallStart(FuncCallStart FuncCallStart) {
+        this.FuncCallStart=FuncCallStart;
     }
 
     public ActualParamsList getActualParamsList() {
@@ -38,18 +38,18 @@ public class FuncCall extends Factor {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Designator!=null) Designator.accept(visitor);
+        if(FuncCallStart!=null) FuncCallStart.accept(visitor);
         if(ActualParamsList!=null) ActualParamsList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(FuncCallStart!=null) FuncCallStart.traverseTopDown(visitor);
         if(ActualParamsList!=null) ActualParamsList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(FuncCallStart!=null) FuncCallStart.traverseBottomUp(visitor);
         if(ActualParamsList!=null) ActualParamsList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class FuncCall extends Factor {
         buffer.append(tab);
         buffer.append("FuncCall(\n");
 
-        if(Designator!=null)
-            buffer.append(Designator.toString("  "+tab));
+        if(FuncCallStart!=null)
+            buffer.append(FuncCallStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

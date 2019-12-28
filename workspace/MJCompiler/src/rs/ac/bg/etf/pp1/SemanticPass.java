@@ -4,6 +4,12 @@ import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.symboltable.concepts.*;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.function.Function;
 
 import rs.etf.pp1.symboltable.Tab;
@@ -18,11 +24,15 @@ public class SemanticPass extends VisitorAdaptor {
 	int formalParametersCount = 0;
 	Obj currentMethod = null;
 	boolean returnFound = false;
+	boolean isAFuncCall = false, isAProcCall=false;
 	int nVars;
 	Struct currentVariableDeclarationType = null;
 	Struct currentMethodReturnType = null;
 	Logger log = Logger.getLogger(getClass());
 	int forDepth = 0;
+
+	ArrayList<Struct> currCallArgTypes = new ArrayList<>();
+	private Deque<ArrayList<Struct>> functionStack = new ArrayDeque<>();
 
 	SemanticPass() {
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", new Struct(5)));
@@ -159,14 +169,15 @@ public class SemanticPass extends VisitorAdaptor {
 		if (currentMethod != null) {
 
 			if (!returnFound && currentMethod.getType() != Tab.noType) {
-				report_error("Greska: " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName() + " nema return iskaz!", null);
+				report_error("Greska: " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName()
+						+ " nema return iskaz!", null);
 			}
 
 			Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
 
 			currentMethod.setLevel(formalParametersCount);
-
+		
 			returnFound = false;
 			currentMethod = null;
 			formalParametersCount = 0;
@@ -196,7 +207,7 @@ public class SemanticPass extends VisitorAdaptor {
 			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
 			methodTypeName.obj = currentMethod;
 			Tab.openScope();
-			report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
+			
 		}
 
 		super.visit(methodTypeName);
@@ -264,7 +275,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 			Struct currMethType = currentMethod.getType();
 			if (!currMethType.compatibleWith(returnExpressionStatement.getExpr().struct)) {
-				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
+						+ currentMethod.getName(), null);
 			}
 
 		} else {
@@ -284,7 +296,8 @@ public class SemanticPass extends VisitorAdaptor {
 			returnFound = true;
 			Struct currMethType = currentMethod.getType();
 			if (!currMethType.compatibleWith(Tab.noType)) {
-				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
+				report_error("Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
+						+ currentMethod.getName(), null);
 			}
 		} else {
 			// javice parser?
@@ -298,7 +311,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(PrintStatement printStatement) {
-		
+
 		printCallCount++;
 		PrintExpression printExpression = printStatement.getPrintExpression();
 		Struct type = null;
@@ -410,15 +423,16 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(AssignStatement assignStatement) {
-		
-		
-	   if (assignStatement.getDesignator().obj.getKind() != Obj.Var && assignStatement.getDesignator().obj.getKind() != Obj.Elem) {
-	            report_error("Greska: '" + assignStatement.getDesignator().obj.getName() + "' nije promenljiva", assignStatement);
-	            return;
-	    }
+
+		if (assignStatement.getDesignator().obj.getKind() != Obj.Var
+				&& assignStatement.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error("Greska: '" + assignStatement.getDesignator().obj.getName() + "' nije promenljiva",
+					assignStatement);
+			return;
+		}
 		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
 			report_error("Greska: nekompatibilni tipovi u dodeli vrednosti ", assignStatement);
-		
+
 		super.visit(assignStatement);
 	}
 
@@ -462,7 +476,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getDesignator().obj.getName(),
 				arrayDesignator.obj.getType().getElemType());
-	
+
 		super.visit(arrayDesignator);
 	}
 
@@ -479,13 +493,13 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (incDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
 				&& incDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
-			report_error(
-					"Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ", incDesignatorStatement);
+			report_error("Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					incDesignatorStatement);
 			return;
 		}
 		if (incDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
-			report_error(
-					"Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ", incDesignatorStatement);
+			report_error("Greska: " + incDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					incDesignatorStatement);
 
 		}
 		super.visit(incDesignatorStatement);
@@ -496,13 +510,13 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (decDesignatorStatement.getDesignator().obj.getKind() != Obj.Var
 				&& decDesignatorStatement.getDesignator().obj.getKind() != Obj.Elem) {
-			report_error(
-					"Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ", decDesignatorStatement);
+			report_error("Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					decDesignatorStatement);
 			return;
 		}
 		if (decDesignatorStatement.getDesignator().obj.getType() != Tab.intType) {
-			report_error(
-					"Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ", decDesignatorStatement);
+			report_error("Greska: " + decDesignatorStatement.getDesignator().obj.getName() + "' nije celobrojnog tipa ",
+					decDesignatorStatement);
 
 		}
 		super.visit(decDesignatorStatement);
@@ -611,7 +625,7 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(NewObjectFactor newObjectFactor) {
 
-		if (newObjectFactor.getType().struct != Tab.noType) 
+		if (newObjectFactor.getType().struct != Tab.noType)
 			newObjectFactor.struct = newObjectFactor.getType().struct;
 
 		super.visit(newObjectFactor);
@@ -657,7 +671,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (readStatement.getDesignator().obj.getKind() != Obj.Var
 				&& readStatement.getDesignator().obj.getKind() != Obj.Elem) {
-			report_error("Greska: " + readStatement.getDesignator().obj.getName() + "' nije promenljiva ", readStatement);
+			report_error("Greska: " + readStatement.getDesignator().obj.getName() + "' nije promenljiva ",
+					readStatement);
 
 			return;
 		}
@@ -667,7 +682,7 @@ public class SemanticPass extends VisitorAdaptor {
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
 			report_error("Greska: promenljiva sme biti celobrojnog, char ili boolean tipa ", readStatement);
 		}
-		
+
 		super.visit(readStatement);
 	}
 
@@ -690,20 +705,124 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	@Override
-	public void visit(FuncCall funcCall) {
-		Obj func = funcCall.getDesignator().obj;
-		if (Obj.Meth == func.getKind()) {
-			
-
-			if (func.getType() == Tab.noType) {
-				report_error("Greska: povratna vrednost funkcije " + func.getName() + " ne moze biti deo izraza", null);
-			}
-
-			funcCall.struct = func.getType();
+	public void visit(FuncCallStart funcCallStart) {
+		
+		
+		//isproveravaj ove uslove 
+		
+		Obj findResult = Tab.find(funcCallStart.getDesignator().obj.getName());
+		if (findResult.equals(Tab.noObj)) {
+			report_error("Nije pronadjena metoda imena " + funcCallStart.getDesignator().obj.getName(), funcCallStart);
+			errorDetected = true;
+			isAFuncCall = false;
+			return;
 		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
-					null);
-			funcCall.struct = Tab.noType;
+			if (Obj.Meth == findResult.getKind()) {
+				if (findResult.getType() == Tab.noType) {
+					  report_error("Greska: povratna vrednost funkcije " + findResult.getName() +
+					  " ne moze biti deo izraza", null); 
+					  errorDetected = true;
+					  isAFuncCall = false;
+					  return;
+				}
+			}
+			else {
+				report_error("Dezignator imena " + funcCallStart.getDesignator().obj.getName() + " nije metoda ", funcCallStart);
+				errorDetected = true;
+				isAFuncCall = false;
+				return;
+			}
+			
+			
+		}
+
+		// detektovao je poziv fje, kreni da punis njegovu listu
+		isAFuncCall = true;
+		functionStack.addLast(new ArrayList<>());
+		super.visit(funcCallStart);
+	}
+
+	@Override
+	public void visit(ProcCallStart procCallStart) {
+
+		Obj findResult = Tab.find(procCallStart.getDesignator().obj.getName());
+		if (findResult.equals(Tab.noObj)) {
+			report_error("Nije pronadjena metoda imena " + procCallStart.getDesignator().obj.getName(), procCallStart);
+			errorDetected = true;
+			isAProcCall = false;
+			return;
+		} else if (findResult.getKind() != Obj.Meth) {
+			report_error("Dezignator imena " + procCallStart.getDesignator().obj.getName() + " nije metoda ", procCallStart);
+			errorDetected = true;
+			isAProcCall = false;
+			return;
+		}
+
+		// detektovao je poziv fje, kreni da punis njegovu listu
+		isAProcCall = true;
+		functionStack.addLast(new ArrayList<>());
+		super.visit(procCallStart);
+	}
+
+	@Override
+	public void visit(SingleActualParameter singleActualParameter) {
+		functionStack.getLast().add(singleActualParameter.getExpr().struct);
+	}
+
+	@Override
+	public void visit(MultipleActualParameters multipleActualParameters) {
+		functionStack.getLast().add(multipleActualParameters.getExpr().struct);
+	}
+
+	@Override
+	public void visit(FuncCall funcCall) {
+		
+		if (isAFuncCall) {
+			
+		Obj funcCallDesignator = funcCall.getFuncCallStart().getDesignator().obj;
+
+		currCallArgTypes = functionStack.removeLast();
+		
+		if (funcCallDesignator.getLevel() != currCallArgTypes.size()) {
+			report_error("Greska: Ocekivano " + funcCallDesignator.getLevel() + " argumenata, a pri pozivu prosledjeno " + currCallArgTypes.size(),
+					funcCall);
+			errorDetected = true;
+			return;
+		}
+		
+		Collection<Obj> currCallFormalArgTypes = funcCallDesignator.getLocalSymbols();
+		
+		// provera da li je dobar set argumenata prosledjen, osim ako se fja zove "len"
+		if (funcCallDesignator.getName().equals("len")) {
+			// proveriti samo da li je argument niz int-ova ili char-ova
+			Struct argtype = currCallArgTypes.get(0);
+			if (argtype.getKind() != Struct.Array || (argtype.getElemType().getKind() != Struct.Int
+					&& argtype.getElemType().getKind() != Struct.Char)) {
+				// report_error("Kind: "+ argtype.getElemType().getKind(), null);
+				report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta ", funcCall);
+				errorDetected = true;
+				return;
+			}
+		} else {
+
+			int cnt = 0;
+			for (Obj obj : currCallFormalArgTypes) {
+				if (cnt >= currCallArgTypes.size())
+					break;
+				Struct foundType = currCallArgTypes.get(cnt);
+				if (!foundType.assignableTo(obj.getType()) || !foundType.compatibleWith(obj.getType())) {
+					report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/" + currCallArgTypes.size(),
+							funcCall);
+					errorDetected = true;
+					return;
+				}
+				cnt++;
+			}
+		}
+	
+
+		funcCall.struct = funcCall.getFuncCallStart().getDesignator().obj.getType();
+		isAFuncCall = false;
 		}
 		super.visit(funcCall);
 
@@ -711,18 +830,39 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(ProcCall procCall) {
-		Obj func = procCall.getDesignator().obj;
-		if (Obj.Meth == func.getKind()) {
+		
+		Obj method = procCall.getProcCallStart().getDesignator().obj;
+
+		
+		if (isAProcCall) {
 			
-			// RESULT = func.getType();
-		} else {
-			report_error("Greska: " + func.getName() + " nije funkcija!",
-					null);
-			// RESULT = Tab.noType;
+		currCallArgTypes = functionStack.removeLast();
+
+		if (method.getLevel() != currCallArgTypes.size()) {
+			report_error("Ocekivano " + method.getLevel() + " argumenata, a pri pozivu prosledjeno " + currCallArgTypes.size(),
+					procCall);
+			errorDetected = true;
+			return;
+		}
+	
+		Collection<Obj> currCallFormalArgTypes = method.getLocalSymbols();
+		int cnt = 0;
+		for (Obj obj : currCallFormalArgTypes) {
+			if (cnt >= currCallArgTypes.size())
+				break;
+			Struct foundType = currCallArgTypes.get(cnt);
+			if (!foundType.assignableTo(obj.getType()) || !foundType.compatibleWith(obj.getType())) {
+				report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/" + currCallArgTypes.size(),
+						procCall);
+				errorDetected = true;
+				return;
+			}
+			cnt++;
+		}
+		isAProcCall = false;
 		}
 		super.visit(procCall);
 	}
 
-	// actual poziv fje
 
 }

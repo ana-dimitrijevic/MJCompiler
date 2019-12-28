@@ -98,6 +98,8 @@ nonterminal CondFact CondFact;
 nonterminal PrintExpression PrintExpression;
 nonterminal ForDesignatorStm ForDesignatorStm;
 nonterminal ElsePart ElsePart;
+nonterminal FuncCallStart FuncCallStart;
+nonterminal ProcCallStart ProcCallStart;
 
 
 precedence left ELSE;
@@ -243,8 +245,11 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (BlockOfStatements) LBRACE Statements:S1 RBRACE {: RESULT=new BlockOfStatements(S1); RESULT.setLine(S1left); :}
               |
-              (ProcCall) Designator:func LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}          
+              (ProcCall) ProcCallStart:des ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(des, A1); RESULT.setLine(desleft); :}          
 ;       
+
+ProcCallStart ::= (ProcCallStart) Designator:des LPAREN {: RESULT=new ProcCallStart(des); RESULT.setLine(desleft); :}
+;
 
 Expr  ::= (PositiveExpression) AddopExpr:A1 {: RESULT=new PositiveExpression(A1); RESULT.setLine(A1left); :}
           |
@@ -270,10 +275,14 @@ Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); 
             |
            (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr:E1 RBRACKET {: RESULT=new NewObjectArrayFactor(typeName, E1); RESULT.setLine(typeNameleft); :}
             |
-           (FuncCall) Designator:func LPAREN ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(func, A1); RESULT.setLine(funcleft); :}
+           (FuncCall) FuncCallStart:des ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(des, A1); RESULT.setLine(desleft); :}
             |
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
+
+FuncCallStart ::= (FuncCallStart) Designator:des LPAREN {: RESULT=new FuncCallStart(des); RESULT.setLine(desleft); :}
+;
+
 
 Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
                |

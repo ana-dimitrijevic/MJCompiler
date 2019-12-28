@@ -1,2 +1,8 @@
 1577483966886	Rename local variable 'typeObjNode'
 1577486161485	Rename field 'forLoopDepth'
+1577570752553	Rename local variable 'method'
+1577570776828	Rename field 'currentFunctionCallArgumentTypes'
+1577570793957	Rename field 'callHandlerStack'
+1577570902375	Rename local variable 'expectedArgs'
+1577571055856	Rename local variable 'currFormalArgTypes'
+1577571075775	Rename local variable 'expectedArgs'

@@ -3,10 +3,16 @@ int a;
 bool prom;
 char c;
 const int kons = 5;
-const int kons = 'a';
+//const int kons = 'a';
 {	
 	int f() {
 		return 4;
+	}
+	
+	int myfun(int abv, int myarg) {
+	
+		myarg++;
+		return myarg;
 	}
 	
 	char o() int p; {
@@ -79,7 +85,7 @@ const int kons = 'a';
 		q[0]--;
 		x--;
 		
-		q[3] = f() + 3 + q[1] + x;
+	//	q[3] = f() + 3 + q[1] + x;
 		//q[3] = true;
 		//q[3] = c;
 		prom=true;
@@ -92,10 +98,10 @@ const int kons = 'a';
 	
 	void main() {
 		//k(7, 9);
-		print(k());
+		//print(k()); PUCA
 		
 		//k();
-		a = 3 + k();
+		//a = 3 + k(); PUCA
 		
 		for(a=0; a<5; a++) {
 		
@@ -107,6 +113,12 @@ const int kons = 'a';
 		
 		print(a,2);
 		
+	//	myfun(1); 
+	//	myfun(1,myfun(1,1)); //puca codegenerator sto je ok
+	
+		//myfun(1, f()); //puca codegenerator sto je ok
+	//	myfun(1,o());
+	//	myfun(1,f());  //puca codegenerator sto je ok
 		//break;
 		
 		//return;

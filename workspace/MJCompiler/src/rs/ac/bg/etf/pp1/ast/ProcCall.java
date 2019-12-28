@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2019 13:6:8
+// 28/11/2019 22:21:52
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ProcCall extends Statement {
 
-    private Designator Designator;
+    private ProcCallStart ProcCallStart;
     private ActualParamsList ActualParamsList;
 
-    public ProcCall (Designator Designator, ActualParamsList ActualParamsList) {
-        this.Designator=Designator;
-        if(Designator!=null) Designator.setParent(this);
+    public ProcCall (ProcCallStart ProcCallStart, ActualParamsList ActualParamsList) {
+        this.ProcCallStart=ProcCallStart;
+        if(ProcCallStart!=null) ProcCallStart.setParent(this);
         this.ActualParamsList=ActualParamsList;
         if(ActualParamsList!=null) ActualParamsList.setParent(this);
     }
 
-    public Designator getDesignator() {
-        return Designator;
+    public ProcCallStart getProcCallStart() {
+        return ProcCallStart;
     }
 
-    public void setDesignator(Designator Designator) {
-        this.Designator=Designator;
+    public void setProcCallStart(ProcCallStart ProcCallStart) {
+        this.ProcCallStart=ProcCallStart;
     }
 
     public ActualParamsList getActualParamsList() {
@@ -38,18 +38,18 @@ public class ProcCall extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Designator!=null) Designator.accept(visitor);
+        if(ProcCallStart!=null) ProcCallStart.accept(visitor);
         if(ActualParamsList!=null) ActualParamsList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(ProcCallStart!=null) ProcCallStart.traverseTopDown(visitor);
         if(ActualParamsList!=null) ActualParamsList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(ProcCallStart!=null) ProcCallStart.traverseBottomUp(visitor);
         if(ActualParamsList!=null) ActualParamsList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class ProcCall extends Statement {
         buffer.append(tab);
         buffer.append("ProcCall(\n");
 
-        if(Designator!=null)
-            buffer.append(Designator.toString("  "+tab));
+        if(ProcCallStart!=null)
+            buffer.append(ProcCallStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
