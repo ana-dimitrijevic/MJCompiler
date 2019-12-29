@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Obradjuje se funkcija" key="selection"/>
+		<item value="Array" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Obradjuje se funkcija"/>
-			<item value="SET LEVEL METHOD DECLARATION"/>
-			<item value="SETLEVEL"/>
-			<item value="setLevel"/>
-			<item value="setlevel"/>
-			<item value="NoActualParametersList"/>
-			<item value="currentFunctionCallArgumentTypes"/>
-			<item value="procCall"/>
+			<item value="ARRAY"/>
+			<item value="nekompatibilni"/>
+			<item value="Nije pronadjena metoda imena"/>
+			<item value="if (currentMethod"/>
+			<item value="VISIT(RETURN"/>
+			<item value="!"/>
+			<item value="ifDepth"/>
+			<item value="bool"/>
 		</list>
 		<list key="replacehistory">
 		</list>

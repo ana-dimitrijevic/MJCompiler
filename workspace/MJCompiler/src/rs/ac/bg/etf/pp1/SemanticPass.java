@@ -29,10 +29,11 @@ public class SemanticPass extends VisitorAdaptor {
 	Struct currentVariableDeclarationType = null;
 	Struct currentMethodReturnType = null;
 	Logger log = Logger.getLogger(getClass());
-	int forDepth = 0;
+	int forDepth = 0, ifDepth = 0;
 
 	ArrayList<Struct> currCallArgTypes = new ArrayList<>();
-	private Deque<ArrayList<Struct>> functionStack = new ArrayDeque<>();
+	Deque<ArrayList<Struct>> functionStack = new ArrayDeque<>();
+
 
 	SemanticPass() {
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", new Struct(5)));
@@ -128,7 +129,8 @@ public class SemanticPass extends VisitorAdaptor {
 				return;
 			} else {
 				Obj arrayTypeObj = Tab.find(currentVariableDeclarationType + "[]");
-				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), arrayTypeObj.getType());
+				//Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), arrayTypeObj.getType());
+				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), new Struct(Struct.Array, currentVariableDeclarationType));
 				varDeclObj.setFpPos(-1);
 			}
 
@@ -766,11 +768,13 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(SingleActualParameter singleActualParameter) {
+		if (isAFuncCall || isAProcCall)
 		functionStack.getLast().add(singleActualParameter.getExpr().struct);
 	}
 
 	@Override
 	public void visit(MultipleActualParameters multipleActualParameters) {
+		if (isAFuncCall || isAProcCall)
 		functionStack.getLast().add(multipleActualParameters.getExpr().struct);
 	}
 
@@ -864,5 +868,87 @@ public class SemanticPass extends VisitorAdaptor {
 		super.visit(procCall);
 	}
 
+	@Override
+    public void visit(IfStartStatement ifStartStatement) {
+        ifDepth++;
+        
+        
+    }
 
+    @Override
+    public void visit(IfStatement ifStatement) {
+
+        if (--ifDepth < 0) {
+            report_error("Greska: IfLevel error", ifStatement);
+        }
+
+       
+    }
+    
+    @Override
+    public void visit(MultipleCondition cond) {
+        Struct t1 = cond.getCondition().struct;
+        Struct t2 = cond.getCondTerm().struct;
+        if (t1.equals(t2)) {
+            cond.struct = t1;
+        } else {
+            report_error("Error: incompatible types in condition.", cond);
+            cond.struct = Tab.noType;
+        }
+    }
+
+    @Override
+    public void visit(SingleCondition cond) {
+        cond.struct = cond.getCondTerm().struct;
+    }
+
+    @Override
+    public void visit(MultipleFactorConditionTerm term) {
+        Struct t1 = term.getCondTerm().struct;
+        Struct t2 = term.getCondFact().struct;
+        if (t1.equals(t2)) {
+            term.struct = t1;
+        } else {
+            report_error("Error: incompatible types in condition.", term);
+            term.struct = Tab.noType;
+        }
+    }
+
+    @Override
+    public void visit(SingleFactorConditionTerm term) {
+        term.struct = term.getCondFact().struct;
+    }
+
+    @Override
+    public void visit(ExprConditionFactor fact) {
+        Struct t = fact.getExpr().struct;
+        if (t == Tab.find("bool").getType()) {
+            fact.struct = t;
+        } else {
+            report_error("Error: condition must be of type 'bool'.", fact);
+            fact.struct = Tab.noType;
+        }
+    }
+
+    @Override
+    public void visit(RelopExprConditionFactor fact) {
+        Struct t1 = fact.getExpr().struct;
+        Struct t2 = fact.getExpr1().struct;
+        Relop relop = fact.getRelop();
+        if (t1.compatibleWith(t2)) {
+            if ((t1.getKind() == Struct.Array) &&
+                    (!(relop instanceof RelopEQ) && !(relop instanceof RelopNOTEQ))) {
+                report_error("Error: illegal relational operator used with array operands", fact);
+                fact.struct = Tab.noType;
+                return;
+            }
+            fact.struct = Tab.find("bool").getType();
+        } else {
+            report_error("Error: incompatible types in condition.", fact);
+            fact.struct = Tab.noType;
+        }
+    }
+
+
+ 
 }

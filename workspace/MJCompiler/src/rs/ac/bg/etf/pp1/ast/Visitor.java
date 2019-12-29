@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 28/11/2019 22:21:52
+// 29/11/2019 13:18:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,6 +9,7 @@ public interface Visitor {
 
     public void visit(Mulop Mulop);
     public void visit(MethodDecl MethodDecl);
+    public void visit(IfStart IfStart);
     public void visit(VarIdent VarIdent);
     public void visit(AddopExpr AddopExpr);
     public void visit(Relop Relop);
@@ -72,6 +73,7 @@ public interface Visitor {
     public void visit(ForStatementBegin ForStatementBegin);
     public void visit(NoElseStatement NoElseStatement);
     public void visit(ElseStatement ElseStatement);
+    public void visit(IfStartStatement IfStartStatement);
     public void visit(MultiplePrintExpression MultiplePrintExpression);
     public void visit(SinglePrintExpression SinglePrintExpression);
     public void visit(SingleActualParameter SingleActualParameter);

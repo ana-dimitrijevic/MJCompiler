@@ -60,46 +60,13 @@ terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
-Factor; 
+Factor, Condition, CondTerm, CondFact; 
 
 
-nonterminal MethodDeclList MethodDeclList;
-nonterminal VarDeclar VarDeclar;
-nonterminal DeclVar DeclVar;
-nonterminal ConstInitializer ConstInitializer;
-nonterminal Initializer Initializer;
-nonterminal VarIdentList VarIdentList;
-nonterminal VarIdent VarIdent;
-nonterminal FormalParamList FormalParamList;
-nonterminal
-FormalParamDecl FormalParamDecl;
-nonterminal FormPars FormPars;
-nonterminal Statements Statements;
-nonterminal Statement Statement;
-nonterminal AbstractModif AbstractModif;
-nonterminal ClassExtends ClassExtends;
-nonterminal ClassVarDeclList ClassVarDeclList;
-nonterminal ClassMethDeclList ClassMethDeclList;
-nonterminal
-DeclVarList DeclVarList;
-nonterminal Relop Relop;
-nonterminal Addop Addop;
-nonterminal Mulop Mulop;
-nonterminal DesignatorStatement DesignatorStatement;
-nonterminal ForStmBegin ForStmBegin;
-nonterminal ForCond ForCond;
-nonterminal AssignStmnt AssignStmnt;
-nonterminal ActualParamsList ActualParamsList;
-nonterminal
-ActualParams ActualParams;
-nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
-nonterminal PrintExpression PrintExpression;
-nonterminal ForDesignatorStm ForDesignatorStm;
-nonterminal ElsePart ElsePart;
-nonterminal FuncCallStart FuncCallStart;
-nonterminal ProcCallStart ProcCallStart;
+nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
+FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
+ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart;
 
 
 precedence left ELSE;
@@ -237,7 +204,7 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (PrintStatement) PRINT LPAREN PrintExpression:P1 RPAREN SEMI {: RESULT=new PrintStatement(P1); RESULT.setLine(P1left); :}
               |
-              (IfStatement) IF LPAREN Condition:C1 RPAREN Statement:S2 ElsePart:E3 {: RESULT=new IfStatement(C1, S2, E3); RESULT.setLine(C1left); :}
+              (IfStatement) IfStart:I1 LPAREN Condition:C2 RPAREN Statement:S3 ElsePart:E4 {: RESULT=new IfStatement(I1, C2, S3, E4); RESULT.setLine(I1left); :}
               |
           	  (ForStatement) ForStmBegin:F1 LPAREN ForDesignatorStm:F2 SEMI ForCond:F3 SEMI ForDesignatorStm:F4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, F2, F3, F4, S5); RESULT.setLine(F1left); :}
               |
@@ -245,10 +212,10 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (BlockOfStatements) LBRACE Statements:S1 RBRACE {: RESULT=new BlockOfStatements(S1); RESULT.setLine(S1left); :}
               |
-              (ProcCall) ProcCallStart:des ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(des, A1); RESULT.setLine(desleft); :}          
+              (ProcCall) ProcCallStart:des LPAREN ActualParamsList:A1 RPAREN SEMI {: RESULT=new ProcCall(des, A1); RESULT.setLine(desleft); :}          
 ;       
 
-ProcCallStart ::= (ProcCallStart) Designator:des LPAREN {: RESULT=new ProcCallStart(des); RESULT.setLine(desleft); :}
+ProcCallStart ::= (ProcCallStart) Designator:des {: RESULT=new ProcCallStart(des); RESULT.setLine(desleft); :}
 ;
 
 Expr  ::= (PositiveExpression) AddopExpr:A1 {: RESULT=new PositiveExpression(A1); RESULT.setLine(A1left); :}
@@ -275,12 +242,12 @@ Factor ::= (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); 
             |
            (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr:E1 RBRACKET {: RESULT=new NewObjectArrayFactor(typeName, E1); RESULT.setLine(typeNameleft); :}
             |
-           (FuncCall) FuncCallStart:des ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(des, A1); RESULT.setLine(desleft); :}
+           (FuncCall) FuncCallStart:des LPAREN ActualParamsList:A1 RPAREN {: RESULT=new FuncCall(des, A1); RESULT.setLine(desleft); :}
             |
            (ParenFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ParenFactor(E1); RESULT.setLine(E1left); :}
 ;
 
-FuncCallStart ::= (FuncCallStart) Designator:des LPAREN {: RESULT=new FuncCallStart(des); RESULT.setLine(desleft); :}
+FuncCallStart ::= (FuncCallStart) Designator:des {: RESULT=new FuncCallStart(des); RESULT.setLine(desleft); :} 
 ;
 
 
@@ -318,6 +285,9 @@ ActualParams ::= (MultipleActualParameters) ActualParams:A1 COMMA Expr:E2 {: RES
 PrintExpression ::= (SinglePrintExpression) Expr:exp {: RESULT=new SinglePrintExpression(exp); RESULT.setLine(expleft); :}
                     |
                     (MultiplePrintExpression) Expr:exp COMMA NUMBERCONST:val {: RESULT=new MultiplePrintExpression(exp, val); RESULT.setLine(expleft); :}
+;
+
+IfStart ::= (IfStartStatement) IF {: RESULT=new IfStartStatement(); :}
 ;
 
 ElsePart ::= (ElseStatement) ELSE Statement:S1 {: RESULT=new ElseStatement(S1); RESULT.setLine(S1left); :}

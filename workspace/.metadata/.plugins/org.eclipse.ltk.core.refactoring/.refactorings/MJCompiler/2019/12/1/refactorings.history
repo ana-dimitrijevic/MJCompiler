@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;ifLevel&apos; in &apos;rs.ac.bg.etf.pp1.SemanticPass&apos; to &apos;ifDepth&apos;&#x0D;&#x0A;- Original project: &apos;MJCompiler&apos;&#x0D;&#x0A;- Original element: &apos;rs.ac.bg.etf.pp1.SemanticPass.ifLevel&apos;&#x0D;&#x0A;- Renamed element: &apos;rs.ac.bg.etf.pp1.SemanticPass.ifDepth&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;ifLevel&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;rs.ac.bg.etf.pp1{SemanticPass.java[SemanticPass^ifLevel" name="ifDepth" references="true" setter="false" stamp="1577621000146" textual="false" version="1.0"/>
+</session>

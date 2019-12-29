@@ -60,13 +60,13 @@ terminal String IDENT;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
-Factor; 
+Factor, Condition, CondTerm, CondFact,; 
 
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, Condition, CondTerm, CondFact, PrintExpression, ForDesignatorStm, ElsePart, FuncCallStart, ProcCallStart;
+ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart;
 
 
 precedence left ELSE;
@@ -204,7 +204,7 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMI
               |
-              (IfStatement) IF LPAREN Condition RPAREN Statement ElsePart
+              (IfStatement) IfStart LPAREN Condition RPAREN Statement ElsePart
               |
           	  (ForStatement) ForStmBegin LPAREN ForDesignatorStm SEMI ForCond SEMI ForDesignatorStm RPAREN Statement
               |
@@ -212,10 +212,10 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (BlockOfStatements) LBRACE Statements RBRACE
               |
-              (ProcCall) ProcCallStart:des ActualParamsList RPAREN SEMI          
+              (ProcCall) ProcCallStart:des LPAREN ActualParamsList RPAREN SEMI          
 ;       
 
-ProcCallStart ::= (ProcCallStart) Designator:des LPAREN
+ProcCallStart ::= (ProcCallStart) Designator:des
 ;
 
 Expr  ::= (PositiveExpression) AddopExpr
@@ -242,12 +242,12 @@ Factor ::= (DesignatorFactor) Designator
             |
            (NewObjectArrayFactor) NEW Type:typeName LBRACKET Expr RBRACKET
             |
-           (FuncCall) FuncCallStart:des ActualParamsList RPAREN
+           (FuncCall) FuncCallStart:des LPAREN ActualParamsList RPAREN
             |
            (ParenFactor) LPAREN Expr RPAREN
 ;
 
-FuncCallStart ::= (FuncCallStart) Designator:des LPAREN
+FuncCallStart ::= (FuncCallStart) Designator:des 
 ;
 
 
@@ -285,6 +285,9 @@ ActualParams ::= (MultipleActualParameters) ActualParams COMMA Expr
 PrintExpression ::= (SinglePrintExpression) Expr:exp
                     |
                     (MultiplePrintExpression) Expr:exp COMMA NUMBERCONST:val
+;
+
+IfStart ::= (IfStartStatement) IF
 ;
 
 ElsePart ::= (ElseStatement) ELSE Statement

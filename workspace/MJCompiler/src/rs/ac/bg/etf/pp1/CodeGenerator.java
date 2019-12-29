@@ -99,7 +99,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	@Override
 	public void visit(FuncCall FuncCall) {
-		Obj functionObj = FuncCall.getDesignator().obj;
+		Obj functionObj = FuncCall.getFuncCallStart().getDesignator().obj;
 		int offset = functionObj.getAdr() - Code.pc; 
 		Code.put(Code.call);
 		Code.put2(offset);

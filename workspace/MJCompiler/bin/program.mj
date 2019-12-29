@@ -1,17 +1,25 @@
 program P
 int a;
 bool prom;
+int nizz[];
 char c;
-const int kons = 5;
+const int kons = 5, kon2 = 7;
 //const int kons = 'a';
 {	
 	int f() {
 		return 4;
 	}
 	
+	 //return; 
+	 
+	// return 5;
+	
+	// break;
+	
 	int myfun(int abv, int myarg) {
 	
 		myarg++;
+		// myfun(1,3); da li treba rekurzija
 		return myarg;
 	}
 	
@@ -20,12 +28,22 @@ const int kons = 5;
 		return 'a';
 	}
 	
+	bool b() {
+	return true;
+	}
+	
 	int k (int p, int q[], char z[]) int x; {
+	
+		print(q[0],2);
 	
 		//x = 5 + o();
 		//x = c; 
 		//c = x;
 		//x = null;
+		
+		nizz = null; 
+		q = null;
+		nizz = q;
 		 
 		//nedeklarisana(); 
 		//q['a'] = 8;
@@ -35,7 +53,7 @@ const int kons = 5;
 		//p[0] = 1;
 		//p = p[1];
 		 
-		 x = -5 + 15 * q[3]; //  Greska na liniji 21 :  nekompatibilni tipovi u dodeli vrednosti kad je -5
+		 x = -5 + 15 * q[3]; 
 		 x = -p * 12;
 		//q = p;
 		
@@ -71,7 +89,7 @@ const int kons = 5;
 		//q[c] = 5; 
 		
 		
-		q[3] = 5; //radi
+		q[3] = 5; 
 		
 		//x = true;
 		//q[0] = true;
@@ -85,11 +103,11 @@ const int kons = 5;
 		q[0]--;
 		x--;
 		
-	//	q[3] = f() + 3 + q[1] + x;
+		q[3] = f() + 3 + q[1] + x;
 		//q[3] = true;
 		//q[3] = c;
 		prom=true;
-		//prom--
+		//prom--;
 		a = q[a];
 		a = q[1] + q[2];
 		return 5 + 1 + 2;
@@ -98,10 +116,10 @@ const int kons = 5;
 	
 	void main() {
 		//k(7, 9);
-		//print(k()); PUCA
+		//print(k());
 		
 		//k();
-		//a = 3 + k(); PUCA
+		//a = 3 + k(); 
 		
 		for(a=0; a<5; a++) {
 		
@@ -111,17 +129,33 @@ const int kons = 5;
 			}
 		}
 		
-		print(a,2);
+		nizz = nizz;
+		
+		print(nizz[0],2); // Neispravan izraz za print na liniji 123
+		
+		print(b(),2);
 		
 	//	myfun(1); 
-	//	myfun(1,myfun(1,1)); //puca codegenerator sto je ok
+		myfun(1,myfun(1,1));
 	
-		//myfun(1, f()); //puca codegenerator sto je ok
+		myfun(1, f()); 
 	//	myfun(1,o());
-	//	myfun(1,f());  //puca codegenerator sto je ok
+	
+	//&&
+		if(true) {
+		}
+		else if(a == 0 && true != true && b()) {
+			a++;
+		}
+		else if (nizz==nizz) {
+			return;
+		}
+		else {}
+		
+		
 		//break;
 		
-		//return;
+		
 	}
 	
 	
