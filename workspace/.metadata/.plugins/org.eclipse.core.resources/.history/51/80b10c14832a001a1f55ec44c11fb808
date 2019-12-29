@@ -1,0 +1,150 @@
+program P
+int i;
+char c;
+bool b;
+int arri[];
+bool arrb[];
+char arrc[];
+
+const int consti = 1;
+const char constc = 'a';
+const bool constb = true;
+{
+
+
+	void f(int ii, char cc, bool bb, int arrii[], bool arrbb[], char arrcc[]) {
+	
+		i = ii;
+		c = cc;
+		b = bb;
+		arri = arrii;
+		arrb = arrbb;
+		arrc = arrcc;
+		
+		ii = i;
+		cc = c;
+		bb = b;
+		arrii = arri;
+		arrbb = arrb;
+		arrcc = arrc;
+		
+		ii = arrii[0];
+		ii = arri[0];
+		
+		cc = arrcc[0];
+		cc = arrc[0];
+		
+		bb = arrbb[0];
+		bb = arrb[0];
+		
+		ii = consti;
+		cc = constc;
+		bb = constb;
+		
+		arrii[0] = i;
+		arrii[0] = ii;
+		arrii[0] = consti;
+		arrii[0] = arrii[0];
+		
+		arrcc[0] = c;
+		arrcc[0] = cc;
+		arrcc[0] = constc;
+		arrcc[0] = arrcc[0];
+		
+		arrbb[0] = b;
+		arrbb[0] = bb;
+		arrbb[0] = constb;
+		arrbb[0] = arrbb[0];
+		
+	}
+	
+	void g() int ii; char cc; bool bb; int arrii[]; bool arrbb[]; char arrcc[]; {
+	
+		i = ii;
+		c = cc;
+		b = bb;
+		arri = arrii;
+		arrb = arrbb;
+		arrc = arrcc;
+		
+		ii = i;
+		cc = c;
+		bb = b;
+		arrii = arri;
+		arrbb = arrb;
+		arrcc = arrc;
+		
+		ii = arrii[0];
+		ii = arri[0];
+		
+		cc = arrcc[0];
+		cc = arrc[0];
+		
+		bb = arrbb[0];
+		bb = arrb[0];
+		
+		ii = consti;
+		cc = constc;
+		bb = constb;
+		
+		arrii[0] = i;
+		arrii[0] = ii;
+		arrii[0] = consti;
+		arrii[0] = arrii[0];
+		
+		arrcc[0] = c;
+		arrcc[0] = cc;
+		arrcc[0] = constc;
+		arrcc[0] = arrcc[0];
+		
+		arrbb[0] = b;
+		arrbb[0] = bb;
+		arrbb[0] = constb;
+		arrbb[0] = arrbb[0];
+		
+	}
+	
+	void h(int iii, char ccc, bool bbb, int arriii[], bool arrbbb[], char arrccc[]) int ii; char cc; bool bb; int arrii[]; bool arrbb[]; char arrcc[]; {
+	
+		ii = iii;
+		cc = ccc;
+		bb = bbb;
+		arrii = arriii;
+		arrbb = arrbbb;
+		arrcc = arrccc;
+		
+		iii = ii;
+		ccc = cc;
+		bbb = bb;
+		arriii = arrii;
+		arrbbb = arrbb;
+		arrccc = arrcc;
+		
+		ii = arriii[0];
+		ii = arrii[0];
+		
+		cc = arrccc[0];
+		cc = arrcc[0];
+		
+		bb = arrbbb[0];
+		bb = arrbb[0];
+		
+		ii = consti;
+		cc = constc;
+		bb = constb;
+		
+		iii = consti;
+		ccc = constc;
+		bbb = constb;
+		
+	}
+	
+	
+	void main() {
+	
+	
+	}
+	
+
+	
+}

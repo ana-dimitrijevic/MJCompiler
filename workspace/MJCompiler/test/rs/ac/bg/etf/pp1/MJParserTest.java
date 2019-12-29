@@ -29,6 +29,8 @@ public class MJParserTest {
 		}
 		
 		File sourceCode = new File(args[0]);
+		//ja dodala
+		//sourceCode = new File("unit tests/program4.mj");
 		if (!sourceCode.exists()) {
 			log.error("Source file [" + sourceCode.getAbsolutePath() + "] not found!");
 			return;

@@ -1,0 +1,162 @@
+program P
+int a;
+bool prom;
+int nizz[];
+char c;
+const int kons = 5, kon2 = 7;
+//const int kons = 'a';
+{	
+	int f() {
+		return 4;
+	}
+	
+	 //return; 
+	 
+	// return 5;
+	
+	// break;
+	
+	int myfun(int abv, int myarg) {
+	
+		myarg++;
+		// myfun(1,3); //da li treba rekurzija
+		return myarg;
+	}
+	
+	char o() int p; {
+		//c= -'a';
+		return 'a';
+	}
+	
+	bool b() {
+	return true;
+	}
+	
+	int k (int p, int q[], char z[]) int x; {
+	
+		print(q[0],2);
+	
+		//x = 5 + o();
+		//x = c; 
+		//c = x;
+		//x = null;
+		
+		nizz = null; 
+		q = null;
+		nizz = q;
+		 
+		//nedeklarisana(); 
+		//q['a'] = 8;
+		//q[z[1]] = 8;
+		q[q[1]] = 5;
+		
+		//p[0] = 1;
+		//p = p[1];
+		 
+		 x = -5 + 15 * q[3]; 
+		 x = -p * 12;
+		//q = p;
+		
+		p = q[3];	
+		//p = z[3];	
+		c = z[3];
+		//c = q[3] + 5;
+		//x = z[2] + q[3]; 
+		
+		
+		
+		//x = q[2] + z[3];
+		
+		
+		//q[3] = c; 
+		
+		
+		//p = q; 
+		//q[3] = q; 
+		
+		
+		
+		//q[3] = null; 
+	
+
+		//p = null;
+		
+		//q[3] = 3 + c; 
+		q[3] = q[3] + 5;
+		
+		//q[3] = q[c];
+		
+		//q[c] = 5; 
+		
+		
+		q[3] = 5; 
+		
+		//x = true;
+		//q[0] = true;
+		print(q[a + 1]);
+		print(x);
+		print(x + 12, 1);
+		read(q[1]);
+	    //z[0]++;
+	    //z++;
+	    //z[0]--;
+		q[0]--;
+		x--;
+		
+		q[3] = f() + 3 + q[1] + x;
+		//q[3] = true;
+		//q[3] = c;
+		prom=true;
+		//prom--;
+		a = q[a];
+		a = q[1] + q[2];
+		return 5 + 1 + 2;
+	}
+	//void k() {}
+	
+	void main() {
+		//k(7, 9);
+		//print(k());
+		
+		//k();
+		//a = 3 + k(); 
+		
+		for(a=0; a<5; a++) {
+		
+			for(; ; ) {
+		
+
+			}
+		}
+		
+		nizz = nizz;
+		
+		print(nizz[0],2); // Neispravan izraz za print na liniji 123
+		
+		print(b(),2);
+		
+	//	myfun(1); 
+		myfun(1,myfun(1,1));
+	
+		myfun(1, f()); 
+	//	myfun(1,o());
+	
+	//&&
+		if(true) {
+		}
+		else if(a == 0 && true != true && b()) {
+			a++;
+		}
+		else if (nizz==nizz) {
+			return;
+		}
+		else {}
+		
+		print(eol);
+		//break;
+		
+		
+	}
+	
+	
+}

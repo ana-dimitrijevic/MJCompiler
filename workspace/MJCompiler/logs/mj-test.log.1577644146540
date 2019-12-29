@@ -1,0 +1,451 @@
+INFO  19:28:02,983 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  19:28:03,059 - #13 program
+INFO  19:28:03,060 - #45 P
+INFO  19:28:03,060 - #45 int
+INFO  19:28:03,061 - #45 a
+INFO  19:28:03,062 - #7 ;
+INFO  19:28:03,063 - #45 bool
+INFO  19:28:03,064 - #45 prom
+INFO  19:28:03,064 - #7 ;
+INFO  19:28:03,064 - #45 int
+INFO  19:28:03,064 - #45 nizz
+INFO  19:28:03,064 - #36 [
+INFO  19:28:03,064 - #37 ]
+INFO  19:28:03,065 - #7 ;
+INFO  19:28:03,065 - #45 char
+INFO  19:28:03,065 - #45 c
+INFO  19:28:03,065 - #7 ;
+INFO  19:28:03,065 - #17 const
+INFO  19:28:03,065 - #45 int
+INFO  19:28:03,066 - #45 kons
+INFO  19:28:03,066 - #6 =
+INFO  19:28:03,066 - #42 5
+INFO  19:28:03,066 - #12 ,
+INFO  19:28:03,067 - #45 kon2
+INFO  19:28:03,067 - #6 =
+INFO  19:28:03,067 - #42 7
+INFO  19:28:03,067 - #7 ;
+INFO  19:28:03,068 - #11 {
+INFO  19:28:03,069 - #45 int
+INFO  19:28:03,071 - #45 f
+INFO  19:28:03,072 - #10 (
+INFO  19:28:03,073 - #5 )
+INFO  19:28:03,074 - #11 {
+INFO  19:28:03,074 - #8 return
+INFO  19:28:03,075 - #42 4
+INFO  19:28:03,075 - #7 ;
+INFO  19:28:03,076 - #4 }
+INFO  19:28:03,076 - #45 int
+INFO  19:28:03,077 - #45 myfun
+INFO  19:28:03,077 - #10 (
+INFO  19:28:03,077 - #45 int
+INFO  19:28:03,077 - #45 abv
+INFO  19:28:03,078 - #12 ,
+INFO  19:28:03,078 - #45 int
+INFO  19:28:03,078 - #45 myarg
+INFO  19:28:03,078 - #5 )
+INFO  19:28:03,079 - #11 {
+INFO  19:28:03,079 - #45 myarg
+INFO  19:28:03,079 - #22 ++
+INFO  19:28:03,079 - #7 ;
+INFO  19:28:03,079 - #45 myfun
+INFO  19:28:03,079 - #10 (
+INFO  19:28:03,080 - #42 1
+INFO  19:28:03,080 - #12 ,
+INFO  19:28:03,081 - #42 3
+INFO  19:28:03,081 - #5 )
+INFO  19:28:03,081 - #7 ;
+INFO  19:28:03,082 - #8 return
+INFO  19:28:03,082 - #45 myarg
+INFO  19:28:03,082 - #7 ;
+INFO  19:28:03,089 - #4 }
+INFO  19:28:03,089 - #45 char
+INFO  19:28:03,090 - #45 o
+INFO  19:28:03,090 - #10 (
+INFO  19:28:03,090 - #5 )
+INFO  19:28:03,090 - #45 int
+INFO  19:28:03,091 - #45 p
+INFO  19:28:03,091 - #7 ;
+INFO  19:28:03,091 - #11 {
+INFO  19:28:03,091 - #8 return
+INFO  19:28:03,091 - #44 a
+INFO  19:28:03,091 - #7 ;
+INFO  19:28:03,092 - #4 }
+INFO  19:28:03,092 - #45 bool
+INFO  19:28:03,092 - #45 b
+INFO  19:28:03,092 - #10 (
+INFO  19:28:03,092 - #5 )
+INFO  19:28:03,092 - #11 {
+INFO  19:28:03,092 - #8 return
+INFO  19:28:03,092 - #43 true
+INFO  19:28:03,092 - #7 ;
+INFO  19:28:03,092 - #4 }
+INFO  19:28:03,093 - #45 int
+INFO  19:28:03,093 - #45 k
+INFO  19:28:03,093 - #10 (
+INFO  19:28:03,093 - #45 int
+INFO  19:28:03,093 - #45 p
+INFO  19:28:03,093 - #12 ,
+INFO  19:28:03,093 - #45 int
+INFO  19:28:03,093 - #45 q
+INFO  19:28:03,093 - #36 [
+INFO  19:28:03,094 - #37 ]
+INFO  19:28:03,094 - #12 ,
+INFO  19:28:03,094 - #45 char
+INFO  19:28:03,094 - #45 z
+INFO  19:28:03,094 - #36 [
+INFO  19:28:03,094 - #37 ]
+INFO  19:28:03,094 - #5 )
+INFO  19:28:03,094 - #45 int
+INFO  19:28:03,094 - #45 x
+INFO  19:28:03,094 - #7 ;
+INFO  19:28:03,094 - #11 {
+INFO  19:28:03,095 - #14 print
+INFO  19:28:03,095 - #10 (
+INFO  19:28:03,095 - #45 q
+INFO  19:28:03,095 - #36 [
+INFO  19:28:03,095 - #42 0
+INFO  19:28:03,095 - #37 ]
+INFO  19:28:03,095 - #12 ,
+INFO  19:28:03,095 - #42 2
+INFO  19:28:03,095 - #5 )
+INFO  19:28:03,096 - #7 ;
+INFO  19:28:03,096 - #45 nizz
+INFO  19:28:03,096 - #6 =
+INFO  19:28:03,096 - #45 null
+INFO  19:28:03,096 - #7 ;
+INFO  19:28:03,096 - #45 q
+INFO  19:28:03,096 - #6 =
+INFO  19:28:03,097 - #45 null
+INFO  19:28:03,097 - #7 ;
+INFO  19:28:03,097 - #45 nizz
+INFO  19:28:03,097 - #6 =
+INFO  19:28:03,097 - #45 q
+INFO  19:28:03,097 - #7 ;
+INFO  19:28:03,098 - #45 q
+INFO  19:28:03,098 - #36 [
+INFO  19:28:03,098 - #45 q
+INFO  19:28:03,098 - #36 [
+INFO  19:28:03,098 - #42 1
+INFO  19:28:03,099 - #37 ]
+INFO  19:28:03,099 - #37 ]
+INFO  19:28:03,099 - #6 =
+INFO  19:28:03,099 - #42 5
+INFO  19:28:03,099 - #7 ;
+INFO  19:28:03,099 - #45 x
+INFO  19:28:03,099 - #6 =
+INFO  19:28:03,099 - #24 -
+INFO  19:28:03,099 - #42 5
+INFO  19:28:03,099 - #3 +
+INFO  19:28:03,100 - #42 15
+INFO  19:28:03,101 - #25 *
+INFO  19:28:03,101 - #45 q
+INFO  19:28:03,102 - #36 [
+INFO  19:28:03,103 - #42 3
+INFO  19:28:03,103 - #37 ]
+INFO  19:28:03,103 - #7 ;
+INFO  19:28:03,103 - #45 x
+INFO  19:28:03,104 - #6 =
+INFO  19:28:03,104 - #24 -
+INFO  19:28:03,104 - #45 p
+INFO  19:28:03,104 - #25 *
+INFO  19:28:03,104 - #42 12
+INFO  19:28:03,104 - #7 ;
+INFO  19:28:03,104 - #45 p
+INFO  19:28:03,104 - #6 =
+INFO  19:28:03,104 - #45 q
+INFO  19:28:03,104 - #36 [
+INFO  19:28:03,104 - #42 3
+INFO  19:28:03,104 - #37 ]
+INFO  19:28:03,105 - #7 ;
+INFO  19:28:03,105 - #45 c
+INFO  19:28:03,105 - #6 =
+INFO  19:28:03,105 - #45 z
+INFO  19:28:03,105 - #36 [
+INFO  19:28:03,105 - #42 3
+INFO  19:28:03,105 - #37 ]
+INFO  19:28:03,105 - #7 ;
+INFO  19:28:03,105 - #45 q
+INFO  19:28:03,105 - #36 [
+INFO  19:28:03,105 - #42 3
+INFO  19:28:03,105 - #37 ]
+INFO  19:28:03,106 - #6 =
+INFO  19:28:03,106 - #45 q
+INFO  19:28:03,106 - #36 [
+INFO  19:28:03,106 - #42 3
+INFO  19:28:03,106 - #37 ]
+INFO  19:28:03,106 - #3 +
+INFO  19:28:03,106 - #42 5
+INFO  19:28:03,106 - #7 ;
+INFO  19:28:03,106 - #45 q
+INFO  19:28:03,106 - #36 [
+INFO  19:28:03,106 - #42 3
+INFO  19:28:03,106 - #37 ]
+INFO  19:28:03,106 - #6 =
+INFO  19:28:03,106 - #42 5
+INFO  19:28:03,106 - #7 ;
+INFO  19:28:03,106 - #14 print
+INFO  19:28:03,106 - #10 (
+INFO  19:28:03,107 - #45 q
+INFO  19:28:03,107 - #36 [
+INFO  19:28:03,107 - #45 a
+INFO  19:28:03,107 - #3 +
+INFO  19:28:03,107 - #42 1
+INFO  19:28:03,107 - #37 ]
+INFO  19:28:03,107 - #5 )
+INFO  19:28:03,107 - #7 ;
+INFO  19:28:03,107 - #14 print
+INFO  19:28:03,107 - #10 (
+INFO  19:28:03,107 - #45 x
+INFO  19:28:03,107 - #5 )
+INFO  19:28:03,107 - #7 ;
+INFO  19:28:03,107 - #14 print
+INFO  19:28:03,108 - #10 (
+INFO  19:28:03,108 - #45 x
+INFO  19:28:03,108 - #3 +
+INFO  19:28:03,108 - #42 12
+INFO  19:28:03,108 - #12 ,
+INFO  19:28:03,108 - #42 1
+INFO  19:28:03,108 - #5 )
+INFO  19:28:03,108 - #7 ;
+INFO  19:28:03,108 - #19 read
+INFO  19:28:03,108 - #10 (
+INFO  19:28:03,108 - #45 q
+INFO  19:28:03,108 - #36 [
+INFO  19:28:03,108 - #42 1
+INFO  19:28:03,108 - #37 ]
+INFO  19:28:03,108 - #5 )
+INFO  19:28:03,108 - #7 ;
+INFO  19:28:03,108 - #45 q
+INFO  19:28:03,109 - #36 [
+INFO  19:28:03,109 - #42 0
+INFO  19:28:03,109 - #37 ]
+INFO  19:28:03,109 - #23 --
+INFO  19:28:03,109 - #7 ;
+INFO  19:28:03,109 - #45 x
+INFO  19:28:03,109 - #23 --
+INFO  19:28:03,109 - #7 ;
+INFO  19:28:03,109 - #45 q
+INFO  19:28:03,109 - #36 [
+INFO  19:28:03,109 - #42 3
+INFO  19:28:03,109 - #37 ]
+INFO  19:28:03,109 - #6 =
+INFO  19:28:03,109 - #45 f
+INFO  19:28:03,109 - #10 (
+INFO  19:28:03,110 - #5 )
+INFO  19:28:03,119 - #3 +
+INFO  19:28:03,120 - #42 3
+INFO  19:28:03,120 - #3 +
+INFO  19:28:03,120 - #45 q
+INFO  19:28:03,120 - #36 [
+INFO  19:28:03,120 - #42 1
+INFO  19:28:03,120 - #37 ]
+INFO  19:28:03,120 - #3 +
+INFO  19:28:03,121 - #45 x
+INFO  19:28:03,121 - #7 ;
+INFO  19:28:03,121 - #45 prom
+INFO  19:28:03,121 - #6 =
+INFO  19:28:03,121 - #43 true
+INFO  19:28:03,121 - #7 ;
+INFO  19:28:03,121 - #45 a
+INFO  19:28:03,121 - #6 =
+INFO  19:28:03,121 - #45 q
+INFO  19:28:03,121 - #36 [
+INFO  19:28:03,121 - #45 a
+INFO  19:28:03,121 - #37 ]
+INFO  19:28:03,121 - #7 ;
+INFO  19:28:03,122 - #45 a
+INFO  19:28:03,122 - #6 =
+INFO  19:28:03,122 - #45 q
+INFO  19:28:03,122 - #36 [
+INFO  19:28:03,122 - #42 1
+INFO  19:28:03,122 - #37 ]
+INFO  19:28:03,123 - #3 +
+INFO  19:28:03,123 - #45 q
+INFO  19:28:03,123 - #36 [
+INFO  19:28:03,123 - #42 2
+INFO  19:28:03,123 - #37 ]
+INFO  19:28:03,123 - #7 ;
+INFO  19:28:03,123 - #8 return
+INFO  19:28:03,123 - #42 5
+INFO  19:28:03,123 - #3 +
+INFO  19:28:03,124 - #42 1
+INFO  19:28:03,124 - #3 +
+INFO  19:28:03,124 - #42 2
+INFO  19:28:03,124 - #7 ;
+INFO  19:28:03,124 - #4 }
+INFO  19:28:03,124 - #15 void
+INFO  19:28:03,124 - #45 main
+INFO  19:28:03,125 - #10 (
+INFO  19:28:03,125 - #5 )
+INFO  19:28:03,126 - #11 {
+INFO  19:28:03,126 - #20 for
+INFO  19:28:03,126 - #10 (
+INFO  19:28:03,127 - #45 a
+INFO  19:28:03,127 - #6 =
+INFO  19:28:03,127 - #42 0
+INFO  19:28:03,127 - #7 ;
+INFO  19:28:03,127 - #45 a
+INFO  19:28:03,128 - #34 <
+INFO  19:28:03,128 - #42 5
+INFO  19:28:03,129 - #7 ;
+INFO  19:28:03,129 - #45 a
+INFO  19:28:03,130 - #22 ++
+INFO  19:28:03,130 - #5 )
+INFO  19:28:03,130 - #11 {
+INFO  19:28:03,130 - #20 for
+INFO  19:28:03,130 - #10 (
+INFO  19:28:03,130 - #7 ;
+INFO  19:28:03,131 - #7 ;
+INFO  19:28:03,132 - #5 )
+INFO  19:28:03,132 - #11 {
+INFO  19:28:03,132 - #4 }
+INFO  19:28:03,132 - #4 }
+INFO  19:28:03,133 - #45 nizz
+INFO  19:28:03,133 - #6 =
+INFO  19:28:03,133 - #45 nizz
+INFO  19:28:03,133 - #7 ;
+INFO  19:28:03,133 - #14 print
+INFO  19:28:03,133 - #10 (
+INFO  19:28:03,133 - #45 nizz
+INFO  19:28:03,134 - #36 [
+INFO  19:28:03,134 - #42 0
+INFO  19:28:03,134 - #37 ]
+INFO  19:28:03,134 - #12 ,
+INFO  19:28:03,134 - #42 2
+INFO  19:28:03,134 - #5 )
+INFO  19:28:03,134 - #7 ;
+INFO  19:28:03,134 - #14 print
+INFO  19:28:03,134 - #10 (
+INFO  19:28:03,134 - #45 b
+INFO  19:28:03,134 - #10 (
+INFO  19:28:03,134 - #5 )
+INFO  19:28:03,135 - #12 ,
+INFO  19:28:03,135 - #42 2
+INFO  19:28:03,135 - #5 )
+INFO  19:28:03,135 - #7 ;
+INFO  19:28:03,135 - #45 myfun
+INFO  19:28:03,135 - #10 (
+INFO  19:28:03,135 - #42 1
+INFO  19:28:03,135 - #12 ,
+INFO  19:28:03,135 - #45 myfun
+INFO  19:28:03,135 - #10 (
+INFO  19:28:03,135 - #42 1
+INFO  19:28:03,135 - #12 ,
+INFO  19:28:03,135 - #42 1
+INFO  19:28:03,135 - #5 )
+INFO  19:28:03,135 - #5 )
+INFO  19:28:03,135 - #7 ;
+INFO  19:28:03,135 - #45 myfun
+INFO  19:28:03,135 - #10 (
+INFO  19:28:03,136 - #42 1
+INFO  19:28:03,136 - #12 ,
+INFO  19:28:03,136 - #45 f
+INFO  19:28:03,136 - #10 (
+INFO  19:28:03,136 - #5 )
+INFO  19:28:03,136 - #5 )
+INFO  19:28:03,136 - #7 ;
+INFO  19:28:03,136 - #9 if
+INFO  19:28:03,136 - #10 (
+INFO  19:28:03,137 - #43 true
+INFO  19:28:03,137 - #5 )
+INFO  19:28:03,138 - #11 {
+INFO  19:28:03,138 - #4 }
+INFO  19:28:03,138 - #2 else
+INFO  19:28:03,138 - #9 if
+INFO  19:28:03,138 - #10 (
+INFO  19:28:03,138 - #45 a
+INFO  19:28:03,138 - #30 ==
+INFO  19:28:03,138 - #42 0
+INFO  19:28:03,138 - #28 &&
+INFO  19:28:03,139 - #43 true
+INFO  19:28:03,139 - #31 !=
+INFO  19:28:03,139 - #43 true
+INFO  19:28:03,139 - #28 &&
+INFO  19:28:03,140 - #45 b
+INFO  19:28:03,140 - #10 (
+INFO  19:28:03,140 - #5 )
+INFO  19:28:03,140 - #5 )
+INFO  19:28:03,140 - #11 {
+INFO  19:28:03,140 - #45 a
+INFO  19:28:03,140 - #22 ++
+INFO  19:28:03,140 - #7 ;
+INFO  19:28:03,140 - #4 }
+INFO  19:28:03,140 - #2 else
+INFO  19:28:03,140 - #9 if
+INFO  19:28:03,140 - #10 (
+INFO  19:28:03,140 - #45 nizz
+INFO  19:28:03,140 - #30 ==
+INFO  19:28:03,140 - #45 nizz
+INFO  19:28:03,141 - #5 )
+INFO  19:28:03,141 - #11 {
+INFO  19:28:03,141 - #8 return
+INFO  19:28:03,141 - #7 ;
+INFO  19:28:03,141 - #4 }
+INFO  19:28:03,141 - #2 else
+INFO  19:28:03,142 - #11 {
+INFO  19:28:03,142 - #4 }
+INFO  19:28:03,142 - #4 }
+INFO  19:28:03,142 - #4 }
+ERROR 19:28:03,154 - Greska: myarg nije deklarisano!  na liniji 21
+ERROR 19:28:03,154 - Greska: noObj' nije celobrojnog tipa  na liniji 21
+ERROR 19:28:03,155 - Greska: myarg nije deklarisano!  na liniji 23
+ERROR 19:28:03,155 - Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije myfun
+ERROR 19:28:03,155 - Greska: q nije deklarisano!  na liniji 37
+ERROR 19:28:03,155 - Greska: noObj nije deklarisano  na liniji 37
+ERROR 19:28:03,155 - Greska:  Neispravan izraz za print na liniji 37
+ERROR 19:28:03,155 - Greska: q nije deklarisano!  na liniji 45
+ERROR 19:28:03,155 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 45
+ERROR 19:28:03,155 - Greska: q nije deklarisano!  na liniji 46
+ERROR 19:28:03,155 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 46
+ERROR 19:28:03,155 - Greska: q nije deklarisano!  na liniji 51
+ERROR 19:28:03,155 - Greska: q nije deklarisano!  na liniji 51
+ERROR 19:28:03,155 - Greska: noObj nije deklarisano  na liniji 51
+ERROR 19:28:03,155 - Greska: noObj nije deklarisano  na liniji 51
+ERROR 19:28:03,155 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 51
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 56
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 56
+ERROR 19:28:03,156 - Greska: neispravni tipovi u izrazu na liniji 56
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u izrazu
+ERROR 19:28:03,156 - Greska: izraz mora biti celobrojnog tipa. na liniji 56
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 56
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 60
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 60
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 60
+ERROR 19:28:03,156 - Greska: z nije deklarisano!  na liniji 62
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 62
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 62
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 85
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 85
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 85
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 85
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u izrazu
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 92
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 92
+ERROR 19:28:03,156 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 92
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 96
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 96
+ERROR 19:28:03,156 - Greska:  Neispravan izraz za print na liniji 96
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 99
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 99
+ERROR 19:28:03,156 - Greska: promenljiva sme biti celobrojnog, char ili boolean tipa  na liniji 99
+ERROR 19:28:03,156 - Greska: q nije deklarisano!  na liniji 103
+ERROR 19:28:03,156 - Greska: noObj nije deklarisano  na liniji 103
+ERROR 19:28:03,157 - Greska: noObj' nije celobrojnog tipa  na liniji 103
+ERROR 19:28:03,157 - Greska: q nije deklarisano!  na liniji 106
+ERROR 19:28:03,157 - Greska: noObj nije deklarisano  na liniji 106
+ERROR 19:28:03,157 - Greska: q nije deklarisano!  na liniji 106
+ERROR 19:28:03,157 - Greska: noObj nije deklarisano  na liniji 106
+ERROR 19:28:03,157 - Greska: nekompatibilni tipovi u izrazu
+ERROR 19:28:03,157 - Greska: nekompatibilni tipovi u izrazu
+ERROR 19:28:03,157 - Greska: q nije deklarisano!  na liniji 111
+ERROR 19:28:03,157 - Greska: noObj nije deklarisano  na liniji 111
+ERROR 19:28:03,157 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 111
+ERROR 19:28:03,157 - Greska: q nije deklarisano!  na liniji 112
+ERROR 19:28:03,157 - Greska: noObj nije deklarisano  na liniji 112
+ERROR 19:28:03,157 - Greska: q nije deklarisano!  na liniji 112
+ERROR 19:28:03,157 - Greska: noObj nije deklarisano  na liniji 112
+ERROR 19:28:03,157 - Greska: nekompatibilni tipovi u izrazu
+ERROR 19:28:03,157 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 112
+INFO  19:28:03,158 - Print calls = 6
+ERROR 19:28:03,159 - Parsiranje NIJE uspesno zavrseno!

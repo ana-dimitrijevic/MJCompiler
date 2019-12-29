@@ -1,0 +1,53 @@
+program P
+int i;
+char c;
+bool b;
+int arri[];
+bool arrb[];
+char arrc[];
+
+const int consti = 1;
+const char constc = 'a';
+const bool constb = true;
+{
+
+
+	void f(int ii, char cc, bool bb, int arrii[], bool arrbb[], char arrcc[]) {
+	
+		i = ii;
+		c = cc;
+		b = bb;
+		arri = arrii;
+		arrb = arrbb;
+		arrc = arrcc;
+		
+		ii = i;
+		cc = c;
+		bb = b;
+		arrii = arri;
+		arrbb = arrb;
+		arrcc = arrc;
+		
+		
+	}
+	
+	void g() int ii; char cc; bool bb; int arrii[]; bool arrbb[]; char arrcc[]; {
+	
+		i = ii;
+		c = cc;
+		b = bb;
+		arri = arrii;
+		arrb = arrbb;
+		arrc = arrcc;
+		
+	}
+	
+	
+	void main() {
+	
+	
+	}
+	
+
+	
+}

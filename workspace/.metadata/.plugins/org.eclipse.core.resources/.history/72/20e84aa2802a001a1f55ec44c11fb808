@@ -1,0 +1,29 @@
+program P
+int i;
+char c;
+bool b;
+int arri[];
+bool arrb[];
+char arrc[];
+
+const int consti = 1;
+const char constc = 'a';
+const bool constb = true;
+
+
+int f() {
+	return 5;
+	}
+	
+void g() int ii; char cc; bool bb; int arrii[]; bool arrbb[]; char arrc[]; {
+	
+	}
+	
+	
+void main() {
+	
+	
+	}
+
+	
+}

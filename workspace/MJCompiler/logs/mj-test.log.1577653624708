@@ -1,0 +1,26 @@
+INFO  22:06:43,388 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  22:06:43,448 - #13 program
+INFO  22:06:43,449 - #45 P
+INFO  22:06:43,449 - #11 {
+INFO  22:06:43,450 - #45 int
+INFO  22:06:43,451 - #45 main
+INFO  22:06:43,452 - #10 (
+INFO  22:06:43,453 - #5 )
+INFO  22:06:43,454 - #11 {
+INFO  22:06:43,455 - #8 return
+INFO  22:06:43,456 - #42 5
+INFO  22:06:43,456 - #7 ;
+INFO  22:06:43,457 - #4 }
+INFO  22:06:43,458 - #15 void
+INFO  22:06:43,458 - #45 main
+INFO  22:06:43,459 - #10 (
+INFO  22:06:43,459 - #45 int
+INFO  22:06:43,459 - #45 a
+INFO  22:06:43,459 - #5 )
+INFO  22:06:43,460 - #11 {
+INFO  22:06:43,460 - #4 }
+INFO  22:06:43,460 - #4 }
+ERROR 22:06:43,483 - Greska: 'main' je vec deklarisana na liniji 13
+ERROR 22:06:43,484 - Greska: 'P' povratna vrednost mora biti tipa void  na liniji 1
+INFO  22:06:43,484 - Print calls = 0
+ERROR 22:06:43,484 - Parsiranje NIJE uspesno zavrseno!

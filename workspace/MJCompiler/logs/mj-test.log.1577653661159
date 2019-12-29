@@ -1,0 +1,40 @@
+INFO  22:07:04,712 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  22:07:04,773 - #13 program
+INFO  22:07:04,773 - #45 P
+INFO  22:07:04,773 - #11 {
+INFO  22:07:04,774 - #15 void
+INFO  22:07:04,775 - #45 main
+INFO  22:07:04,776 - #10 (
+INFO  22:07:04,777 - #5 )
+INFO  22:07:04,778 - #11 {
+INFO  22:07:04,779 - #4 }
+INFO  22:07:04,780 - #15 void
+INFO  22:07:04,781 - #45 main
+INFO  22:07:04,781 - #10 (
+INFO  22:07:04,781 - #5 )
+INFO  22:07:04,781 - #11 {
+INFO  22:07:04,781 - #4 }
+INFO  22:07:04,781 - #45 int
+INFO  22:07:04,782 - #45 main
+INFO  22:07:04,783 - #10 (
+INFO  22:07:04,783 - #5 )
+INFO  22:07:04,783 - #11 {
+INFO  22:07:04,783 - #8 return
+INFO  22:07:04,783 - #42 5
+INFO  22:07:04,795 - #7 ;
+INFO  22:07:04,795 - #4 }
+INFO  22:07:04,795 - #15 void
+INFO  22:07:04,795 - #45 main
+INFO  22:07:04,795 - #10 (
+INFO  22:07:04,795 - #45 int
+INFO  22:07:04,796 - #45 a
+INFO  22:07:04,796 - #5 )
+INFO  22:07:04,796 - #11 {
+INFO  22:07:04,796 - #4 }
+INFO  22:07:04,796 - #4 }
+ERROR 22:07:04,823 - Greska: 'main' je vec deklarisana na liniji 6
+ERROR 22:07:04,823 - Greska: 'main' je vec deklarisana na liniji 9
+ERROR 22:07:04,824 - Greska: return van funkcije na liniji 10
+ERROR 22:07:04,824 - Greska: 'main' je vec deklarisana na liniji 13
+INFO  22:07:04,824 - Print calls = 0
+ERROR 22:07:04,826 - Parsiranje NIJE uspesno zavrseno!

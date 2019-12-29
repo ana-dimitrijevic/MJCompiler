@@ -174,6 +174,8 @@ public class SemanticPass extends VisitorAdaptor {
 				report_error("Greska: " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName()
 						+ " nema return iskaz!", null);
 			}
+			
+			// ako treba rekurzija prebaci u FormParams i NoFormParam
 
 			Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
@@ -214,7 +216,26 @@ public class SemanticPass extends VisitorAdaptor {
 
 		super.visit(methodTypeName);
 	}
+	
+	
+/*
+	@Override
+	public void visit(FormParams formParams) {
+		Tab.chainLocalSymbols(currentMethod);
 
+		currentMethod.setLevel(formalParametersCount);
+		super.visit(formParams);
+	}
+	
+	@Override
+	public void visit(NoFormParam noFormParams) {
+		Tab.chainLocalSymbols(currentMethod);
+
+		currentMethod.setLevel(formalParametersCount);
+		super.visit(noFormParams);
+	}
+*/
+	
 	@Override
 	public void visit(SimpleFormalParameter simpleFormalParameter) {
 
@@ -371,6 +392,8 @@ public class SemanticPass extends VisitorAdaptor {
 		Struct rightTerm = multipleAddopTerm.getTerm().struct;
 		Struct leftTerm = multipleAddopTerm.getAddopExpr().struct;
 
+		if (rightTerm != null && leftTerm != null) {
+		
 		if (rightTerm.equals(leftTerm) && rightTerm == Tab.intType)
 			multipleAddopTerm.struct = rightTerm;
 		else {
@@ -378,6 +401,8 @@ public class SemanticPass extends VisitorAdaptor {
 			multipleAddopTerm.struct = Tab.noType;
 		}
 
+		}
+		
 		super.visit(multipleAddopTerm);
 	}
 
@@ -426,6 +451,8 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(AssignStatement assignStatement) {
 
+		if(assignStatement.getDesignator().obj != null && assignStatement.getExpr().struct != null) {
+		
 		if (assignStatement.getDesignator().obj.getKind() != Obj.Var
 				&& assignStatement.getDesignator().obj.getKind() != Obj.Elem) {
 			report_error("Greska: '" + assignStatement.getDesignator().obj.getName() + "' nije promenljiva",
@@ -434,6 +461,7 @@ public class SemanticPass extends VisitorAdaptor {
 		}
 		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
 			report_error("Greska: nekompatibilni tipovi u dodeli vrednosti ", assignStatement);
+		}
 
 		super.visit(assignStatement);
 	}

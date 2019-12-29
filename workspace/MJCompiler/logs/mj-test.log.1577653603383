@@ -1,0 +1,20 @@
+INFO  22:05:26,082 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  22:05:26,171 - #13 program
+INFO  22:05:26,171 - #45 P
+INFO  22:05:26,171 - #11 {
+INFO  22:05:26,173 - #15 void
+INFO  22:05:26,174 - #45 main
+INFO  22:05:26,175 - #10 (
+INFO  22:05:26,176 - #5 )
+INFO  22:05:26,179 - #11 {
+INFO  22:05:26,180 - #4 }
+INFO  22:05:26,181 - #15 void
+INFO  22:05:26,182 - #45 main
+INFO  22:05:26,182 - #10 (
+INFO  22:05:26,183 - #5 )
+INFO  22:05:26,183 - #11 {
+INFO  22:05:26,183 - #4 }
+INFO  22:05:26,183 - #4 }
+ERROR 22:05:26,235 - Greska: 'main' je vec deklarisana na liniji 6
+INFO  22:05:26,235 - Print calls = 0
+ERROR 22:05:26,238 - Parsiranje NIJE uspesno zavrseno!

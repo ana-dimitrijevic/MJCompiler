@@ -1,0 +1,12 @@
+program P
+{	
+	void main() {
+	}
+	
+	//void main() {
+	//}
+	
+	int main() {
+	}
+	
+}
