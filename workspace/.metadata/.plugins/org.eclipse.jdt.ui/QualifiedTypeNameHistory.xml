@@ -28,10 +28,10 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MemberDesignator"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NewObjectArrayFactor"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

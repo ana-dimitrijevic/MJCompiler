@@ -29,7 +29,7 @@ public class SemanticPass extends VisitorAdaptor {
 	Struct currentVariableDeclarationType = null;
 	Struct currentMethodReturnType = null;
 	Logger log = Logger.getLogger(getClass());
-	int forDepth = 0, ifDepth = 0;
+	int forDepth = 0, ifDepth = 0, recursionDepth = 0;
 
 	ArrayList<Struct> currCallArgTypes = new ArrayList<>();
 	Deque<ArrayList<Struct>> functionStack = new ArrayDeque<>();
@@ -128,8 +128,7 @@ public class SemanticPass extends VisitorAdaptor {
 						arrayVariableIdent);
 				return;
 			} else {
-				Obj arrayTypeObj = Tab.find(currentVariableDeclarationType + "[]");
-				//Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), arrayTypeObj.getType());
+			
 				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), new Struct(Struct.Array, currentVariableDeclarationType));
 				varDeclObj.setFpPos(-1);
 			}
@@ -164,7 +163,8 @@ public class SemanticPass extends VisitorAdaptor {
 
 		super.visit(type);
 	}
-
+	
+	
 	@Override
 	public void visit(MethodDeclaration methodDeclaration) {
 
@@ -177,10 +177,10 @@ public class SemanticPass extends VisitorAdaptor {
 			
 			// ako treba rekurzija prebaci u FormParams i NoFormParam
 
-			Tab.chainLocalSymbols(currentMethod);
+			//Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
 
-			currentMethod.setLevel(formalParametersCount);
+			//currentMethod.setLevel(formalParametersCount);
 		
 			returnFound = false;
 			currentMethod = null;
@@ -218,7 +218,7 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 	
 	
-/*
+// zbog rekukrzije
 	@Override
 	public void visit(FormParams formParams) {
 		Tab.chainLocalSymbols(currentMethod);
@@ -234,7 +234,7 @@ public class SemanticPass extends VisitorAdaptor {
 		currentMethod.setLevel(formalParametersCount);
 		super.visit(noFormParams);
 	}
-*/
+
 	
 	@Override
 	public void visit(SimpleFormalParameter simpleFormalParameter) {
@@ -331,6 +331,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		super.visit(returnStatement);
 	}
+	
 
 	@Override
 	public void visit(PrintStatement printStatement) {
@@ -341,11 +342,13 @@ public class SemanticPass extends VisitorAdaptor {
 
 		if (printExpression instanceof MultiplePrintExpression) {
 			type = ((MultiplePrintExpression) printExpression).getExpr().struct;
-		} else
+		} else if (printExpression instanceof SinglePrintExpression)
 			type = ((SinglePrintExpression) printExpression).getExpr().struct;
 
 		Obj booleanType = Tab.find("bool");
-
+		
+		if (type == null) System.out.println("NULL");
+		
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
 			report_error("Greska:  Neispravan izraz za print", printStatement);
 		}
@@ -664,20 +667,15 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(NewObjectArrayFactor newObjectArrayFactor) {
 
-		if (newObjectArrayFactor.getType().struct != Tab.noType) {
-
-			if (newObjectArrayFactor.getExpr().struct == Tab.intType) {
-				Obj newObjArray = Tab.find(newObjectArrayFactor.getType().getTypeName() + "[]");
-				newObjectArrayFactor.struct = newObjArray.getType();
-			} else {
-				report_error("Greska: duzina niza mora biti celobrojan tip ", newObjectArrayFactor);
-				newObjectArrayFactor.struct = Tab.noType;
-			}
-
-		}
+	
+		newObjectArrayFactor.struct = new Struct(Struct.Array, newObjectArrayFactor.getType().struct);
+	        if (!newObjectArrayFactor.getExpr().struct.compatibleWith(Tab.intType)) {
+	        	report_error("Expression in NEW statement is not int", newObjectArrayFactor);
+	        }
 		super.visit(newObjectArrayFactor);
 	}
-
+	
+	
 	@Override
 	public void visit(ParenFactor parenFactor) {
 		parenFactor.struct = parenFactor.getExpr().struct;
@@ -745,6 +743,7 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Nije pronadjena metoda imena " + funcCallStart.getDesignator().obj.getName(), funcCallStart);
 			errorDetected = true;
 			isAFuncCall = false;
+			recursionDepth = 0;
 			return;
 		} else {
 			if (Obj.Meth == findResult.getKind()) {
@@ -753,6 +752,7 @@ public class SemanticPass extends VisitorAdaptor {
 					  " ne moze biti deo izraza", null); 
 					  errorDetected = true;
 					  isAFuncCall = false;
+					  recursionDepth = 0;
 					  return;
 				}
 			}
@@ -760,6 +760,7 @@ public class SemanticPass extends VisitorAdaptor {
 				report_error("Dezignator imena " + funcCallStart.getDesignator().obj.getName() + " nije metoda ", funcCallStart);
 				errorDetected = true;
 				isAFuncCall = false;
+				recursionDepth = 0;
 				return;
 			}
 			
@@ -768,6 +769,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		// detektovao je poziv fje, kreni da punis njegovu listu
 		isAFuncCall = true;
+		recursionDepth++;
 		functionStack.addLast(new ArrayList<>());
 		super.visit(funcCallStart);
 	}
@@ -790,6 +792,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		// detektovao je poziv fje, kreni da punis njegovu listu
 		isAProcCall = true;
+		recursionDepth++;
 		functionStack.addLast(new ArrayList<>());
 		super.visit(procCallStart);
 	}
@@ -854,7 +857,8 @@ public class SemanticPass extends VisitorAdaptor {
 	
 
 		funcCall.struct = funcCall.getFuncCallStart().getDesignator().obj.getType();
-		isAFuncCall = false;
+		recursionDepth--;
+		if(recursionDepth==0) isAFuncCall = false;
 		}
 		super.visit(funcCall);
 
@@ -891,7 +895,8 @@ public class SemanticPass extends VisitorAdaptor {
 			}
 			cnt++;
 		}
-		isAProcCall = false;
+		recursionDepth--;
+		if(recursionDepth==0) isAProcCall = false;
 		}
 		super.visit(procCall);
 	}

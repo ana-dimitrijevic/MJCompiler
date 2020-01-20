@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Array" key="selection"/>
+		<item value="DeclVarList" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ARRAY"/>
-			<item value="nekompatibilni"/>
-			<item value="Nije pronadjena metoda imena"/>
-			<item value="if (currentMethod"/>
-			<item value="VISIT(RETURN"/>
-			<item value="!"/>
-			<item value="ifDepth"/>
-			<item value="bool"/>
+			<item value="identifikator promenljive; Uspesno izvrsen oporavak od greske!"/>
+			<item value="DeclVarList"/>
+			<item value="assignstatement"/>
+			<item value="arrayvariableident"/>
+			<item value="NewObjectFactor"/>
+			<item value="NEW"/>
+			<item value="FuncCallStart"/>
+			<item value="Print"/>
 		</list>
 		<list key="replacehistory">
 		</list>
