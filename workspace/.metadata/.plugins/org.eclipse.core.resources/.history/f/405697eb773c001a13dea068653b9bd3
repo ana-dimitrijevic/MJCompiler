@@ -1,0 +1,23 @@
+//Test 302
+
+program test302
+int x;
+{
+
+	int sum(int z, int d)
+	{
+		return sum(1, 2);
+	}
+	
+	
+	void main() int a, b;
+	{
+		sum (sum(0, 1), 1);
+		print(sum (sum(0, 1), 1)); 
+	
+		a = 5;
+		print(1);
+		print(a);
+	}
+}
+

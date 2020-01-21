@@ -1,0 +1,63 @@
+INFO  18:02:38,696 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  18:02:38,782 - #13 program
+INFO  18:02:38,783 - #45 test302
+INFO  18:02:38,783 - #11 {
+INFO  18:02:38,785 - #45 int
+INFO  18:02:38,786 - #45 sum
+INFO  18:02:38,787 - #10 (
+INFO  18:02:38,789 - #45 int
+INFO  18:02:38,789 - #45 z
+INFO  18:02:38,789 - #12 ,
+INFO  18:02:38,789 - #45 int
+INFO  18:02:38,789 - #45 d
+INFO  18:02:38,789 - #5 )
+INFO  18:02:38,790 - #11 {
+INFO  18:02:38,791 - #8 return
+INFO  18:02:38,792 - #45 z
+INFO  18:02:38,792 - #3 +
+INFO  18:02:38,793 - #45 d
+INFO  18:02:38,794 - #7 ;
+INFO  18:02:38,795 - #4 }
+INFO  18:02:38,795 - #15 void
+INFO  18:02:38,796 - #45 main
+INFO  18:02:38,796 - #10 (
+INFO  18:02:38,797 - #5 )
+INFO  18:02:38,797 - #45 int
+INFO  18:02:38,798 - #45 a
+INFO  18:02:38,798 - #7 ;
+INFO  18:02:38,798 - #11 {
+INFO  18:02:38,798 - #14 print
+INFO  18:02:38,798 - #10 (
+INFO  18:02:38,799 - #42 1
+INFO  18:02:38,799 - #5 )
+INFO  18:02:38,799 - #7 ;
+INFO  18:02:38,799 - #45 sum
+INFO  18:02:38,799 - #10 (
+INFO  18:02:38,800 - #45 sum
+INFO  18:02:38,800 - #10 (
+INFO  18:02:38,801 - #45 niz
+INFO  18:02:38,801 - #36 [
+INFO  18:02:38,801 - #42 0
+INFO  18:02:38,801 - #37 ]
+INFO  18:02:38,801 - #12 ,
+INFO  18:02:38,801 - #45 niz
+INFO  18:02:38,802 - #36 [
+INFO  18:02:38,802 - #42 1
+INFO  18:02:38,802 - #37 ]
+INFO  18:02:38,803 - #5 )
+INFO  18:02:38,804 - #12 ,
+INFO  18:02:38,805 - #45 niz
+INFO  18:02:38,805 - #36 [
+INFO  18:02:38,805 - #42 2
+INFO  18:02:38,805 - #37 ]
+INFO  18:02:38,805 - #5 )
+INFO  18:02:38,809 - #7 ;
+INFO  18:02:38,809 - #4 }
+INFO  18:02:38,809 - #4 }
+ERROR 18:02:38,832 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:38,832 - Greska: noObj nije deklarisano  na liniji 14
+ERROR 18:02:38,832 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:38,837 - Greska: noObj nije deklarisano  na liniji 14
+ERROR 18:02:38,838 - Ne preklapa se tip ocekivanog i stvarnog argumenta 1/2 na liniji 14
+ERROR 18:02:38,838 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:38,838 - Greska: noObj nije deklarisano  na liniji 14

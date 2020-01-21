@@ -1,0 +1,16 @@
+//Test 302
+
+program test302
+const bool x=true;
+{
+	
+	void main() char a, b;
+	{
+
+		a = 'a';
+		print(1+2);
+		print(a);
+		print(x);
+	}
+}
+

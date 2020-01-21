@@ -1,0 +1,49 @@
+INFO  19:06:27,925 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  19:06:27,987 - #13 program
+INFO  19:06:27,988 - #45 test302
+INFO  19:06:27,988 - #45 comst
+INFO  19:06:27,989 - #45 bool
+INFO  19:06:27,990 - #45 x
+ERROR 19:06:27,990 - 
+Sintaksna greska na liniji 4
+INFO  19:06:27,990 - #6 =
+INFO  19:06:27,990 - #43 true
+INFO  19:06:27,990 - #7 ;
+INFO  19:06:27,991 - #11 {
+INFO  19:06:27,991 - #15 void
+INFO  19:06:27,992 - #45 main
+INFO  19:06:27,993 - GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!
+INFO  19:06:27,994 - #10 (
+INFO  19:06:27,996 - #5 )
+INFO  19:06:27,997 - #45 char
+INFO  19:06:27,997 - #45 a
+INFO  19:06:27,997 - #12 ,
+INFO  19:06:27,998 - #45 b
+INFO  19:06:27,998 - #7 ;
+INFO  19:06:27,998 - #11 {
+INFO  19:06:27,999 - #45 a
+INFO  19:06:28,000 - #6 =
+INFO  19:06:28,001 - #44 a
+INFO  19:06:28,001 - #7 ;
+INFO  19:06:28,001 - #14 print
+INFO  19:06:28,002 - #10 (
+INFO  19:06:28,002 - #42 1
+INFO  19:06:28,002 - #5 )
+INFO  19:06:28,002 - #7 ;
+INFO  19:06:28,002 - #14 print
+INFO  19:06:28,002 - #10 (
+INFO  19:06:28,002 - #45 a
+INFO  19:06:28,002 - #5 )
+INFO  19:06:28,002 - #7 ;
+INFO  19:06:28,002 - #14 print
+INFO  19:06:28,002 - #10 (
+INFO  19:06:28,003 - #45 x
+INFO  19:06:28,003 - #5 )
+INFO  19:06:28,003 - #7 ;
+INFO  19:06:28,003 - #4 }
+INFO  19:06:28,003 - #4 }
+ERROR 19:06:28,026 - Greska: Nije pronadjen tip comst u tabeli simbola
+ERROR 19:06:28,027 - Greska: x nije deklarisano!  na liniji 13
+ERROR 19:06:28,027 - Greska:  Neispravan izraz za print na liniji 13
+INFO  19:06:28,028 - Print calls = 3
+ERROR 19:06:28,030 - Parsiranje NIJE uspesno zavrseno!

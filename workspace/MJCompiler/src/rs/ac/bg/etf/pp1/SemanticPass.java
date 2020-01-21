@@ -24,16 +24,14 @@ public class SemanticPass extends VisitorAdaptor {
 	int formalParametersCount = 0;
 	Obj currentMethod = null;
 	boolean returnFound = false;
-	boolean isAFuncCall = false, isAProcCall=false;
 	int nVars;
 	Struct currentVariableDeclarationType = null;
 	Struct currentMethodReturnType = null;
 	Logger log = Logger.getLogger(getClass());
-	int forDepth = 0, ifDepth = 0, recursionDepth = 0;
+	int forDepth = 0, ifDepth = 0;
 
 	ArrayList<Struct> currCallArgTypes = new ArrayList<>();
 	Deque<ArrayList<Struct>> functionStack = new ArrayDeque<>();
-
 
 	SemanticPass() {
 		Tab.currentScope.addToLocals(new Obj(Obj.Type, "bool", new Struct(5)));
@@ -128,8 +126,9 @@ public class SemanticPass extends VisitorAdaptor {
 						arrayVariableIdent);
 				return;
 			} else {
-			
-				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(), new Struct(Struct.Array, currentVariableDeclarationType));
+
+				Obj varDeclObj = Tab.insert(Obj.Var, arrayVariableIdent.getName(),
+						new Struct(Struct.Array, currentVariableDeclarationType));
 				varDeclObj.setFpPos(-1);
 			}
 
@@ -163,8 +162,7 @@ public class SemanticPass extends VisitorAdaptor {
 
 		super.visit(type);
 	}
-	
-	
+
 	@Override
 	public void visit(MethodDeclaration methodDeclaration) {
 
@@ -174,16 +172,18 @@ public class SemanticPass extends VisitorAdaptor {
 				report_error("Greska: " + methodDeclaration.getLine() + ": funcija " + currentMethod.getName()
 						+ " nema return iskaz!", null);
 			}
-			
+
 			// ako treba rekurzija prebaci u FormParams i NoFormParam
 
 			//Tab.chainLocalSymbols(currentMethod);
 			Tab.closeScope();
 
 			//currentMethod.setLevel(formalParametersCount);
-		
+
 			returnFound = false;
 			currentMethod = null;
+			// dodato
+			currentMethodReturnType = null;
 			formalParametersCount = 0;
 
 			super.visit(methodDeclaration);
@@ -211,30 +211,20 @@ public class SemanticPass extends VisitorAdaptor {
 			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), currentMethodReturnType);
 			methodTypeName.obj = currentMethod;
 			Tab.openScope();
-			
+
 		}
 
 		super.visit(methodTypeName);
 	}
-	
-	
-// zbog rekukrzije
+
+	// zbog rekukrzije
+
 	@Override
-	public void visit(FormParams formParams) {
-		Tab.chainLocalSymbols(currentMethod);
-
-		currentMethod.setLevel(formalParametersCount);
-		super.visit(formParams);
-	}
-	
-	@Override
-	public void visit(NoFormParam noFormParams) {
-		Tab.chainLocalSymbols(currentMethod);
-
-		currentMethod.setLevel(formalParametersCount);
-		super.visit(noFormParams);
-	}
-
+	public void visit(LeftBrace leftBrace) {
+	Tab.chainLocalSymbols(currentMethod);
+	currentMethod.setLevel(formalParametersCount);
+	super.visit(leftBrace);
+}
 	
 	@Override
 	public void visit(SimpleFormalParameter simpleFormalParameter) {
@@ -265,8 +255,6 @@ public class SemanticPass extends VisitorAdaptor {
 				// return;
 			} else {
 
-				// Obj arrayTypeObjNode = Tab.find(arrayFormalParameter.getType().getTypeName()
-				// + "[]");
 				Obj objNode = Tab.insert(Obj.Var, arrayFormalParameter.getName(),
 						new Struct(Struct.Array, currentVariableDeclarationType));
 				objNode.setFpPos(formalParametersCount++);
@@ -331,7 +319,6 @@ public class SemanticPass extends VisitorAdaptor {
 
 		super.visit(returnStatement);
 	}
-	
 
 	@Override
 	public void visit(PrintStatement printStatement) {
@@ -346,9 +333,7 @@ public class SemanticPass extends VisitorAdaptor {
 			type = ((SinglePrintExpression) printExpression).getExpr().struct;
 
 		Obj booleanType = Tab.find("bool");
-		
-		if (type == null) System.out.println("NULL");
-		
+
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
 			report_error("Greska:  Neispravan izraz za print", printStatement);
 		}
@@ -396,16 +381,16 @@ public class SemanticPass extends VisitorAdaptor {
 		Struct leftTerm = multipleAddopTerm.getAddopExpr().struct;
 
 		if (rightTerm != null && leftTerm != null) {
-		
-		if (rightTerm.equals(leftTerm) && rightTerm == Tab.intType)
-			multipleAddopTerm.struct = rightTerm;
-		else {
-			report_error("Greska: nekompatibilni tipovi u izrazu", null);
-			multipleAddopTerm.struct = Tab.noType;
-		}
+
+			if (rightTerm.compatibleWith(leftTerm) && rightTerm == Tab.intType)
+				multipleAddopTerm.struct = rightTerm;
+			else {
+				report_error("Greska: nekompatibilni tipovi u izrazu", null);
+				multipleAddopTerm.struct = Tab.noType;
+			}
 
 		}
-		
+
 		super.visit(multipleAddopTerm);
 	}
 
@@ -454,16 +439,16 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(AssignStatement assignStatement) {
 
-		if(assignStatement.getDesignator().obj != null && assignStatement.getExpr().struct != null) {
-		
-		if (assignStatement.getDesignator().obj.getKind() != Obj.Var
-				&& assignStatement.getDesignator().obj.getKind() != Obj.Elem) {
-			report_error("Greska: '" + assignStatement.getDesignator().obj.getName() + "' nije promenljiva",
-					assignStatement);
-			return;
-		}
-		if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
-			report_error("Greska: nekompatibilni tipovi u dodeli vrednosti ", assignStatement);
+		if (assignStatement.getDesignator().obj != null && assignStatement.getExpr().struct != null) {
+
+			if (assignStatement.getDesignator().obj.getKind() != Obj.Var
+					&& assignStatement.getDesignator().obj.getKind() != Obj.Elem) {
+				report_error("Greska: '" + assignStatement.getDesignator().obj.getName() + "' nije promenljiva",
+						assignStatement);
+				return;
+			}
+			if (!assignStatement.getExpr().struct.assignableTo(assignStatement.getDesignator().obj.getType()))
+				report_error("Greska: nekompatibilni tipovi u dodeli vrednosti ", assignStatement);
 		}
 
 		super.visit(assignStatement);
@@ -667,15 +652,13 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(NewObjectArrayFactor newObjectArrayFactor) {
 
-	
 		newObjectArrayFactor.struct = new Struct(Struct.Array, newObjectArrayFactor.getType().struct);
-	        if (!newObjectArrayFactor.getExpr().struct.compatibleWith(Tab.intType)) {
-	        	report_error("Expression in NEW statement is not int", newObjectArrayFactor);
-	        }
+		if (!newObjectArrayFactor.getExpr().struct.compatibleWith(Tab.intType)) {
+			report_error("Greska: duzina niza mora biti celobrojnog tipa", newObjectArrayFactor);
+		}
 		super.visit(newObjectArrayFactor);
 	}
-	
-	
+
 	@Override
 	public void visit(ParenFactor parenFactor) {
 		parenFactor.struct = parenFactor.getExpr().struct;
@@ -734,42 +717,37 @@ public class SemanticPass extends VisitorAdaptor {
 
 	@Override
 	public void visit(FuncCallStart funcCallStart) {
-		
-		
-		//isproveravaj ove uslove 
-		
+
+		// isproveravaj ove uslove
+
 		Obj findResult = Tab.find(funcCallStart.getDesignator().obj.getName());
 		if (findResult.equals(Tab.noObj)) {
 			report_error("Nije pronadjena metoda imena " + funcCallStart.getDesignator().obj.getName(), funcCallStart);
 			errorDetected = true;
-			isAFuncCall = false;
-			recursionDepth = 0;
+
 			return;
 		} else {
 			if (Obj.Meth == findResult.getKind()) {
 				if (findResult.getType() == Tab.noType) {
-					  report_error("Greska: povratna vrednost funkcije " + findResult.getName() +
-					  " ne moze biti deo izraza", null); 
-					  errorDetected = true;
-					  isAFuncCall = false;
-					  recursionDepth = 0;
-					  return;
+					report_error(
+							"Greska: povratna vrednost funkcije " + findResult.getName() + " ne moze biti deo izraza",
+							null);
+					errorDetected = true;
+
+					return;
 				}
-			}
-			else {
-				report_error("Dezignator imena " + funcCallStart.getDesignator().obj.getName() + " nije metoda ", funcCallStart);
+			} else {
+				report_error("Dezignator imena " + funcCallStart.getDesignator().obj.getName() + " nije metoda ",
+						funcCallStart);
 				errorDetected = true;
-				isAFuncCall = false;
-				recursionDepth = 0;
+
 				return;
 			}
-			
-			
+
 		}
 
 		// detektovao je poziv fje, kreni da punis njegovu listu
-		isAFuncCall = true;
-		recursionDepth++;
+
 		functionStack.addLast(new ArrayList<>());
 		super.visit(funcCallStart);
 	}
@@ -781,52 +759,50 @@ public class SemanticPass extends VisitorAdaptor {
 		if (findResult.equals(Tab.noObj)) {
 			report_error("Nije pronadjena metoda imena " + procCallStart.getDesignator().obj.getName(), procCallStart);
 			errorDetected = true;
-			isAProcCall = false;
+			// isAProcCall = false;
 			return;
 		} else if (findResult.getKind() != Obj.Meth) {
-			report_error("Dezignator imena " + procCallStart.getDesignator().obj.getName() + " nije metoda ", procCallStart);
+			report_error("Dezignator imena " + procCallStart.getDesignator().obj.getName() + " nije metoda ",
+					procCallStart);
 			errorDetected = true;
-			isAProcCall = false;
+			// isAProcCall = false;
 			return;
 		}
 
 		// detektovao je poziv fje, kreni da punis njegovu listu
-		isAProcCall = true;
-		recursionDepth++;
+
 		functionStack.addLast(new ArrayList<>());
 		super.visit(procCallStart);
 	}
 
 	@Override
 	public void visit(SingleActualParameter singleActualParameter) {
-		if (isAFuncCall || isAProcCall)
+
 		functionStack.getLast().add(singleActualParameter.getExpr().struct);
 	}
 
 	@Override
 	public void visit(MultipleActualParameters multipleActualParameters) {
-		if (isAFuncCall || isAProcCall)
+
 		functionStack.getLast().add(multipleActualParameters.getExpr().struct);
 	}
 
 	@Override
 	public void visit(FuncCall funcCall) {
-		
-		if (isAFuncCall) {
-			
+
 		Obj funcCallDesignator = funcCall.getFuncCallStart().getDesignator().obj;
 
 		currCallArgTypes = functionStack.removeLast();
-		
+
 		if (funcCallDesignator.getLevel() != currCallArgTypes.size()) {
-			report_error("Greska: Ocekivano " + funcCallDesignator.getLevel() + " argumenata, a pri pozivu prosledjeno " + currCallArgTypes.size(),
-					funcCall);
+			report_error("Greska: Ocekivano " + funcCallDesignator.getLevel() + " argumenata, a pri pozivu prosledjeno "
+					+ currCallArgTypes.size(), funcCall);
 			errorDetected = true;
 			return;
 		}
-		
+
 		Collection<Obj> currCallFormalArgTypes = funcCallDesignator.getLocalSymbols();
-		
+
 		// provera da li je dobar set argumenata prosledjen, osim ako se fja zove "len"
 		if (funcCallDesignator.getName().equals("len")) {
 			// proveriti samo da li je argument niz int-ova ili char-ova
@@ -846,41 +822,35 @@ public class SemanticPass extends VisitorAdaptor {
 					break;
 				Struct foundType = currCallArgTypes.get(cnt);
 				if (!foundType.assignableTo(obj.getType()) || !foundType.compatibleWith(obj.getType())) {
-					report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/" + currCallArgTypes.size(),
-							funcCall);
+					report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/"
+							+ currCallArgTypes.size(), funcCall);
 					errorDetected = true;
 					return;
 				}
 				cnt++;
 			}
 		}
-	
 
 		funcCall.struct = funcCall.getFuncCallStart().getDesignator().obj.getType();
-		recursionDepth--;
-		if(recursionDepth==0) isAFuncCall = false;
-		}
+
 		super.visit(funcCall);
 
 	}
 
 	@Override
 	public void visit(ProcCall procCall) {
-		
+
 		Obj method = procCall.getProcCallStart().getDesignator().obj;
 
-		
-		if (isAProcCall) {
-			
 		currCallArgTypes = functionStack.removeLast();
 
 		if (method.getLevel() != currCallArgTypes.size()) {
-			report_error("Ocekivano " + method.getLevel() + " argumenata, a pri pozivu prosledjeno " + currCallArgTypes.size(),
-					procCall);
+			report_error("Ocekivano " + method.getLevel() + " argumenata, a pri pozivu prosledjeno "
+					+ currCallArgTypes.size(), procCall);
 			errorDetected = true;
 			return;
 		}
-	
+
 		Collection<Obj> currCallFormalArgTypes = method.getLocalSymbols();
 		int cnt = 0;
 		for (Obj obj : currCallFormalArgTypes) {
@@ -888,100 +858,101 @@ public class SemanticPass extends VisitorAdaptor {
 				break;
 			Struct foundType = currCallArgTypes.get(cnt);
 			if (!foundType.assignableTo(obj.getType()) || !foundType.compatibleWith(obj.getType())) {
-				report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/" + currCallArgTypes.size(),
-						procCall);
+				report_error("Ne preklapa se tip ocekivanog i stvarnog argumenta " + (cnt + 1) + "/"
+						+ currCallArgTypes.size(), procCall);
 				errorDetected = true;
 				return;
 			}
 			cnt++;
 		}
-		recursionDepth--;
-		if(recursionDepth==0) isAProcCall = false;
-		}
+
 		super.visit(procCall);
 	}
 
 	@Override
-    public void visit(IfStartStatement ifStartStatement) {
-        ifDepth++;
-        
-        
-    }
+	public void visit(IfStartStatement ifStartStatement) {
+		ifDepth++;
 
-    @Override
-    public void visit(IfStatement ifStatement) {
+	}
 
-        if (--ifDepth < 0) {
-            report_error("Greska: IfLevel error", ifStatement);
-        }
+	@Override
+	public void visit(IfStatement ifStatement) {
 
-       
-    }
-    
-    @Override
-    public void visit(MultipleCondition cond) {
-        Struct t1 = cond.getCondition().struct;
-        Struct t2 = cond.getCondTerm().struct;
-        if (t1.equals(t2)) {
-            cond.struct = t1;
-        } else {
-            report_error("Error: incompatible types in condition.", cond);
-            cond.struct = Tab.noType;
-        }
-    }
+		if (--ifDepth < 0) {
+			report_error("Greska: Neispravan izraz za if naredbu", ifStatement);
+		}
 
-    @Override
-    public void visit(SingleCondition cond) {
-        cond.struct = cond.getCondTerm().struct;
-    }
+	}
 
-    @Override
-    public void visit(MultipleFactorConditionTerm term) {
-        Struct t1 = term.getCondTerm().struct;
-        Struct t2 = term.getCondFact().struct;
-        if (t1.equals(t2)) {
-            term.struct = t1;
-        } else {
-            report_error("Error: incompatible types in condition.", term);
-            term.struct = Tab.noType;
-        }
-    }
+	@Override
+	public void visit(MultipleCondition multipleCondition) {
+		Struct leftCondition = multipleCondition.getCondition().struct;
+		Struct rightCondition = multipleCondition.getCondTerm().struct;
+		// equals
+		if (leftCondition.compatibleWith(rightCondition)) {
+			multipleCondition.struct = leftCondition;
+		} else {
+			multipleCondition.struct = Tab.noType;
+			report_error("Greska: nekompatibilni tipovi u uslovu", multipleCondition);
+		}
+		super.visit(multipleCondition);
+	}
 
-    @Override
-    public void visit(SingleFactorConditionTerm term) {
-        term.struct = term.getCondFact().struct;
-    }
+	@Override
+	public void visit(SingleCondition singleCondition) {
+		singleCondition.struct = singleCondition.getCondTerm().struct;
+		super.visit(singleCondition);
+	}
 
-    @Override
-    public void visit(ExprConditionFactor fact) {
-        Struct t = fact.getExpr().struct;
-        if (t == Tab.find("bool").getType()) {
-            fact.struct = t;
-        } else {
-            report_error("Error: condition must be of type 'bool'.", fact);
-            fact.struct = Tab.noType;
-        }
-    }
+	@Override
+	public void visit(MultipleFactorConditionTerm multipleFactorConditionTerm) {
+		Struct leftCondition = multipleFactorConditionTerm.getCondTerm().struct;
+		Struct rightCondition = multipleFactorConditionTerm.getCondFact().struct;
+		// equals
+		if (leftCondition.compatibleWith(rightCondition)) {
+			multipleFactorConditionTerm.struct = leftCondition;
+		} else {
+			multipleFactorConditionTerm.struct = Tab.noType;
+			report_error("Greska: nekompatibilni tipovi u uslovu", multipleFactorConditionTerm);
+		}
+		super.visit(multipleFactorConditionTerm);
+	}
 
-    @Override
-    public void visit(RelopExprConditionFactor fact) {
-        Struct t1 = fact.getExpr().struct;
-        Struct t2 = fact.getExpr1().struct;
-        Relop relop = fact.getRelop();
-        if (t1.compatibleWith(t2)) {
-            if ((t1.getKind() == Struct.Array) &&
-                    (!(relop instanceof RelopEQ) && !(relop instanceof RelopNOTEQ))) {
-                report_error("Error: illegal relational operator used with array operands", fact);
-                fact.struct = Tab.noType;
-                return;
-            }
-            fact.struct = Tab.find("bool").getType();
-        } else {
-            report_error("Error: incompatible types in condition.", fact);
-            fact.struct = Tab.noType;
-        }
-    }
+	@Override
+	public void visit(SingleFactorConditionTerm singleFactorConditionTerm) {
+		singleFactorConditionTerm.struct = singleFactorConditionTerm.getCondFact().struct;
+		super.visit(singleFactorConditionTerm);
+	}
 
+	@Override
+	public void visit(ExprConditionFactor exprConditionFactor) {
+		Struct t = exprConditionFactor.getExpr().struct;
+		if (t == Tab.find("bool").getType()) {
+			exprConditionFactor.struct = t;
+		} else {
+			exprConditionFactor.struct = Tab.noType;
+			report_error("Error: condition must be of type 'bool'.", exprConditionFactor);
+		}
+		super.visit(exprConditionFactor);
+	}
 
- 
+	@Override
+	public void visit(RelopExprConditionFactor relopExprConditionFactor) {
+		Struct leftCondition = relopExprConditionFactor.getExpr().struct;
+		Struct rightCondition = relopExprConditionFactor.getExpr1().struct;
+		Relop relop = relopExprConditionFactor.getRelop();
+		if (leftCondition.compatibleWith(rightCondition)) {
+			if ((leftCondition.getKind() == Struct.Array)
+					&& (!(relop instanceof RelopEQ) && !(relop instanceof RelopNOTEQ))) {
+				report_error("Error: illegal relational operator used with array operands", relopExprConditionFactor);
+				relopExprConditionFactor.struct = Tab.noType;
+				return;
+			}
+			relopExprConditionFactor.struct = Tab.find("bool").getType();
+		} else {
+			report_error("Error: incompatible types in condition.", relopExprConditionFactor);
+			relopExprConditionFactor.struct = Tab.noType;
+		}
+	}
+
 }

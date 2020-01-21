@@ -1,0 +1,88 @@
+INFO  18:42:37,742 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  18:42:37,803 - #13 program
+INFO  18:42:37,803 - #45 test302
+INFO  18:42:37,803 - #45 int
+INFO  18:42:37,805 - #45 x
+INFO  18:42:37,805 - #7 ;
+INFO  18:42:37,805 - #11 {
+INFO  18:42:37,806 - #45 int
+INFO  18:42:37,807 - #45 sum
+INFO  18:42:37,807 - #10 (
+INFO  18:42:37,808 - #45 int
+INFO  18:42:37,808 - #45 z
+INFO  18:42:37,808 - #12 ,
+INFO  18:42:37,809 - #45 int
+INFO  18:42:37,809 - #45 d
+INFO  18:42:37,809 - #5 )
+INFO  18:42:37,810 - #11 {
+INFO  18:42:37,810 - #8 return
+INFO  18:42:37,811 - #45 sum
+INFO  18:42:37,811 - #10 (
+INFO  18:42:37,813 - #42 1
+INFO  18:42:37,813 - #12 ,
+INFO  18:42:37,814 - #42 2
+INFO  18:42:37,814 - #5 )
+INFO  18:42:37,815 - #7 ;
+INFO  18:42:37,815 - #4 }
+INFO  18:42:37,815 - #15 void
+INFO  18:42:37,815 - #45 main
+INFO  18:42:37,816 - #10 (
+INFO  18:42:37,816 - #5 )
+INFO  18:42:37,817 - #45 int
+INFO  18:42:37,817 - #45 a
+INFO  18:42:37,817 - #12 ,
+INFO  18:42:37,817 - #45 b
+INFO  18:42:37,817 - #7 ;
+INFO  18:42:37,817 - #11 {
+INFO  18:42:37,817 - #45 sum
+INFO  18:42:37,817 - #10 (
+INFO  18:42:37,818 - #45 sum
+INFO  18:42:37,818 - #10 (
+INFO  18:42:37,819 - #42 0
+INFO  18:42:37,819 - #12 ,
+INFO  18:42:37,819 - #42 1
+INFO  18:42:37,819 - #5 )
+INFO  18:42:37,819 - #12 ,
+INFO  18:42:37,819 - #42 1
+INFO  18:42:37,820 - #5 )
+INFO  18:42:37,820 - #7 ;
+INFO  18:42:37,820 - #14 print
+INFO  18:42:37,820 - #10 (
+INFO  18:42:37,820 - #45 sum
+INFO  18:42:37,821 - #10 (
+INFO  18:42:37,821 - #45 sum
+INFO  18:42:37,821 - #10 (
+INFO  18:42:37,821 - #42 0
+INFO  18:42:37,821 - #12 ,
+INFO  18:42:37,821 - #42 1
+INFO  18:42:37,821 - #5 )
+INFO  18:42:37,822 - #12 ,
+INFO  18:42:37,822 - #42 1
+INFO  18:42:37,828 - #5 )
+INFO  18:42:37,829 - #5 )
+INFO  18:42:37,829 - #7 ;
+INFO  18:42:37,829 - #45 a
+INFO  18:42:37,829 - #6 =
+INFO  18:42:37,829 - #42 5
+INFO  18:42:37,830 - #7 ;
+INFO  18:42:37,830 - #14 print
+INFO  18:42:37,830 - #10 (
+INFO  18:42:37,831 - #42 1
+INFO  18:42:37,831 - #5 )
+INFO  18:42:37,831 - #7 ;
+INFO  18:42:37,831 - #14 print
+INFO  18:42:37,831 - #10 (
+INFO  18:42:37,831 - #45 a
+INFO  18:42:37,831 - #5 )
+INFO  18:42:37,832 - #7 ;
+INFO  18:42:37,832 - #4 }
+INFO  18:42:37,832 - #4 }
+ERROR 18:42:37,848 - Greska: Ocekivano 0 argumenata, a pri pozivu prosledjeno 2 na liniji 9
+ERROR 18:42:37,848 - Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije sum
+ERROR 18:42:37,848 - Greska: Ocekivano 0 argumenata, a pri pozivu prosledjeno 2 na liniji 15
+ERROR 18:42:37,848 - Ocekivano 0 argumenata, a pri pozivu prosledjeno 2 na liniji 15
+ERROR 18:42:37,848 - Greska: Ocekivano 0 argumenata, a pri pozivu prosledjeno 2 na liniji 16
+ERROR 18:42:37,848 - Greska: Ocekivano 0 argumenata, a pri pozivu prosledjeno 2 na liniji 16
+ERROR 18:42:37,849 - Greska:  Neispravan izraz za print na liniji 16
+INFO  18:42:37,849 - Print calls = 3
+ERROR 18:42:37,850 - Parsiranje NIJE uspesno zavrseno!

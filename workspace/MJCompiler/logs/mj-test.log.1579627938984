@@ -1,0 +1,36 @@
+INFO  18:31:57,385 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  18:31:57,439 - #13 program
+INFO  18:31:57,440 - #45 test302
+INFO  18:31:57,440 - #11 {
+INFO  18:31:57,441 - #15 void
+INFO  18:31:57,442 - #45 main
+INFO  18:31:57,442 - #10 (
+INFO  18:31:57,443 - #5 )
+INFO  18:31:57,444 - #45 int
+INFO  18:31:57,445 - #45 a
+INFO  18:31:57,446 - #12 ,
+INFO  18:31:57,446 - #45 int
+INFO  18:31:57,446 - #45 b
+ERROR 18:31:57,446 - 
+Sintaksna greska na liniji 7
+INFO  18:31:57,447 - #7 ;
+INFO  18:31:57,447 - #11 {
+INFO  18:31:57,447 - #45 a
+INFO  18:31:57,448 - #6 =
+INFO  18:31:57,448 - GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!
+INFO  18:31:57,450 - #42 5
+INFO  18:31:57,450 - #7 ;
+INFO  18:31:57,451 - #14 print
+INFO  18:31:57,452 - #10 (
+INFO  18:31:57,452 - #42 1
+INFO  18:31:57,452 - #5 )
+INFO  18:31:57,452 - #7 ;
+INFO  18:31:57,452 - #14 print
+INFO  18:31:57,452 - #10 (
+INFO  18:31:57,452 - #45 a
+INFO  18:31:57,453 - #5 )
+INFO  18:31:57,453 - #7 ;
+INFO  18:31:57,453 - #4 }
+INFO  18:31:57,453 - #4 }
+INFO  18:31:57,475 - Print calls = 2
+ERROR 18:31:57,477 - Parsiranje NIJE uspesno zavrseno!

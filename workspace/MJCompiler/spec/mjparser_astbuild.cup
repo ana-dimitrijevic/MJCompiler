@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart;
+ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace;
 
 
 precedence left ELSE;
@@ -156,9 +156,12 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 					(NoMethodDeclarations) {: RESULT=new NoMethodDeclarations(); :}/* epsilon */
 ;
 
-MethodDecl ::= (MethodDeclaration) MethodTypeName:M1 LPAREN FormPars:F2 RPAREN DeclVarList:D3 LBRACE Statements:S4 RBRACE {: RESULT=new MethodDeclaration(M1, F2, D3, S4); RESULT.setLine(M1left); :}
+MethodDecl ::= (MethodDeclaration) MethodTypeName:M1 LPAREN FormPars:F2 RPAREN DeclVarList:D3 LeftBrace:L4 Statements:S5 RBRACE {: RESULT=new MethodDeclaration(M1, F2, D3, L4, S5); RESULT.setLine(M1left); :}
 			   |
 			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName:M1 LPAREN FormPars:F2 RPAREN SEMI {: RESULT=new AbstractMethodDeclaration(M1, F2); RESULT.setLine(M1left); :}
+;
+
+LeftBrace ::= (LeftBrace) LBRACE {: RESULT=new LeftBrace(); :}
 ;
 
 MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :}

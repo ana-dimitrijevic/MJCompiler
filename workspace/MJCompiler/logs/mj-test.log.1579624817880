@@ -1,0 +1,19 @@
+INFO  17:30:48,696 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  17:30:48,757 - #13 program
+INFO  17:30:48,758 - #45 test302
+INFO  17:30:48,758 - #11 {
+INFO  17:30:48,759 - #15 void
+INFO  17:30:48,760 - #45 main
+INFO  17:30:48,761 - #10 (
+INFO  17:30:48,763 - #5 )
+INFO  17:30:48,764 - #11 {
+INFO  17:30:48,765 - #14 print
+INFO  17:30:48,766 - #10 (
+INFO  17:30:48,766 - #42 1
+INFO  17:30:48,766 - #5 )
+INFO  17:30:48,767 - #7 ;
+INFO  17:30:48,767 - #4 }
+INFO  17:30:48,767 - #4 }
+INFO  17:30:48,792 - Print calls = 1
+INFO  17:30:48,793 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  17:30:48,797 - Parsiranje uspesno zavrseno!

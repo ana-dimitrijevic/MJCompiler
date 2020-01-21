@@ -1,0 +1,87 @@
+INFO  18:02:09,676 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  18:02:09,763 - #13 program
+INFO  18:02:09,763 - #45 test302
+INFO  18:02:09,763 - #11 {
+INFO  18:02:09,764 - #45 int
+INFO  18:02:09,765 - #45 sum
+INFO  18:02:09,766 - #10 (
+INFO  18:02:09,767 - #45 int
+INFO  18:02:09,767 - #45 z
+INFO  18:02:09,768 - #12 ,
+INFO  18:02:09,768 - #45 int
+INFO  18:02:09,768 - #45 d
+INFO  18:02:09,768 - #5 )
+INFO  18:02:09,769 - #11 {
+INFO  18:02:09,770 - #8 return
+INFO  18:02:09,770 - #45 z
+INFO  18:02:09,771 - #3 +
+INFO  18:02:09,772 - #45 d
+INFO  18:02:09,775 - #7 ;
+INFO  18:02:09,776 - #4 }
+INFO  18:02:09,777 - #15 void
+INFO  18:02:09,778 - #45 main
+INFO  18:02:09,779 - #10 (
+INFO  18:02:09,779 - #5 )
+INFO  18:02:09,780 - #45 int
+INFO  18:02:09,780 - #45 a
+INFO  18:02:09,780 - #7 ;
+INFO  18:02:09,781 - #11 {
+INFO  18:02:09,781 - #14 print
+INFO  18:02:09,781 - #10 (
+INFO  18:02:09,781 - #42 1
+INFO  18:02:09,781 - #5 )
+INFO  18:02:09,781 - #7 ;
+INFO  18:02:09,782 - #45 sum
+INFO  18:02:09,782 - #10 (
+INFO  18:02:09,782 - #45 sum
+INFO  18:02:09,782 - #10 (
+INFO  18:02:09,783 - #45 niz
+INFO  18:02:09,783 - #36 [
+INFO  18:02:09,783 - #42 0
+INFO  18:02:09,783 - #37 ]
+INFO  18:02:09,784 - #12 ,
+INFO  18:02:09,784 - #45 niz
+INFO  18:02:09,784 - #36 [
+INFO  18:02:09,784 - #42 1
+INFO  18:02:09,784 - #37 ]
+INFO  18:02:09,784 - #5 )
+INFO  18:02:09,785 - #12 ,
+INFO  18:02:09,785 - #45 niz
+INFO  18:02:09,785 - #36 [
+INFO  18:02:09,785 - #42 2
+INFO  18:02:09,785 - #37 ]
+INFO  18:02:09,785 - #5 )
+INFO  18:02:09,786 - #7 ;
+INFO  18:02:09,786 - #14 print
+INFO  18:02:09,786 - #10 (
+INFO  18:02:09,786 - #45 sum
+INFO  18:02:09,786 - #10 (
+INFO  18:02:09,786 - #45 sum
+INFO  18:02:09,787 - #10 (
+INFO  18:02:09,793 - #45 niz
+INFO  18:02:09,793 - #36 [
+INFO  18:02:09,793 - #42 0
+INFO  18:02:09,793 - #37 ]
+INFO  18:02:09,793 - #12 ,
+INFO  18:02:09,794 - #45 niz
+INFO  18:02:09,794 - #36 [
+INFO  18:02:09,794 - #42 1
+INFO  18:02:09,794 - #37 ]
+INFO  18:02:09,794 - #5 )
+INFO  18:02:09,795 - #12 ,
+INFO  18:02:09,795 - #45 niz
+INFO  18:02:09,795 - #36 [
+INFO  18:02:09,795 - #42 2
+INFO  18:02:09,795 - #37 ]
+INFO  18:02:09,795 - #5 )
+INFO  18:02:09,796 - #5 )
+INFO  18:02:09,796 - #7 ;
+INFO  18:02:09,796 - #4 }
+INFO  18:02:09,796 - #4 }
+ERROR 18:02:09,817 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:09,817 - Greska: noObj nije deklarisano  na liniji 14
+ERROR 18:02:09,817 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:09,817 - Greska: noObj nije deklarisano  na liniji 14
+ERROR 18:02:09,818 - Ne preklapa se tip ocekivanog i stvarnog argumenta 1/2 na liniji 14
+ERROR 18:02:09,818 - Greska: niz nije deklarisano!  na liniji 14
+ERROR 18:02:09,819 - Greska: noObj nije deklarisano  na liniji 14

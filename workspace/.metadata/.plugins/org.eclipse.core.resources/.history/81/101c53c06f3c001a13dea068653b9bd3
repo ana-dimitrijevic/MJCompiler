@@ -1,0 +1,12 @@
+//Test 302
+
+program test302
+
+{
+	
+	void main() int a;
+	{
+		print(1);
+	}
+}
+

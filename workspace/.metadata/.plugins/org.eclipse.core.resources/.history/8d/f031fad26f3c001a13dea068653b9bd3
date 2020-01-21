@@ -1,0 +1,18 @@
+//Test 302
+
+program test302
+
+{
+	int sum(int z, int d)
+	{
+		return z + d;
+	}
+	
+	void main() int a;
+	{
+		print(1);
+		sum (sum(niz[0], niz[1]), niz[2]);
+		print(sum (sum(niz[0], niz[1]), niz[2])); 
+	}
+}
+

@@ -1,0 +1,18 @@
+//Test 302
+
+program test302
+
+{
+	int sum(int z, int d)
+	{
+		return z + d;
+	}
+	
+	void main() int a;
+	{
+		print(1);
+		sum (sum(1, 2), 1);
+		print(sum (sum(1, 2), 1)); 
+	}
+}
+

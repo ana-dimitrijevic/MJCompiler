@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/0/2020 19:20:46
+// 21/0/2020 18:56:34
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -127,6 +127,7 @@ public interface Visitor {
     public void visit(ReturnType ReturnType);
     public void visit(VoidReturnType VoidReturnType);
     public void visit(MethodTypeName MethodTypeName);
+    public void visit(LeftBrace LeftBrace);
     public void visit(AbstractMethodDeclaration AbstractMethodDeclaration);
     public void visit(MethodDeclaration MethodDeclaration);
     public void visit(NoMethodDeclarations NoMethodDeclarations);

@@ -21,17 +21,20 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDecl"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ConstDeclaration"/>
-<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VisitorAdaptor"/>
 <fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SymbolTable"/>
 <fullyQualifiedTypeName name="java.lang.Number"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MemberDesignator"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NewObjectArrayFactor"/>
-<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
 <fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.PrintStatement"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NumberConstFactor"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.BoolConstFactor"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.CharConstFactor"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VisitorAdaptor"/>
 </qualifiedTypeNameHistroy>

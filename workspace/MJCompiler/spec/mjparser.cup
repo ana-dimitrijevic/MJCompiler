@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact,;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart;
+ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace;
 
 
 precedence left ELSE;
@@ -156,9 +156,12 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					(NoMethodDeclarations)/* epsilon */
 ;
 
-MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN DeclVarList LBRACE Statements RBRACE
+MethodDecl ::= (MethodDeclaration) MethodTypeName LPAREN FormPars RPAREN DeclVarList LeftBrace Statements RBRACE
 			   |
 			   (AbstractMethodDeclaration) ABSTRACT MethodTypeName LPAREN FormPars RPAREN SEMI
+;
+
+LeftBrace ::= (LeftBrace) LBRACE
 ;
 
 MethodTypeName ::= (MethodTypeName) RetType:retType IDENT:methName

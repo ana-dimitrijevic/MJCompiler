@@ -1,0 +1,15 @@
+//Test 302
+
+program test302
+
+const int jedan = 1;
+
+{
+	
+	
+	void main()
+	{
+		print(1);
+	}
+}
+
