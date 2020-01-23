@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal;
+ActualParams, ForStartDesignatorStm, ForEndDesignatorStm, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else;
 
 
 precedence left ELSE;
@@ -207,9 +207,11 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal:P1 RPAREN SEMI {: RESULT=new PrintStatement(exp, P1); RESULT.setLine(expleft); :}
               |
-              (IfStatement) IfStart:I1 LPAREN Condition:C2 RPAREN Statement:S3 ElsePart:E4 {: RESULT=new IfStatement(I1, C2, S3, E4); RESULT.setLine(I1left); :}
+              (IfStatement) IfStart:I1 LPAREN IfConditions:I2 RPAREN Statement:S3 {: RESULT=new IfStatement(I1, I2, S3); RESULT.setLine(I1left); :} 
               |
-          	  (ForStatement) ForStmBegin:F1 LPAREN ForDesignatorStm:F2 SEMI ForCond:F3 SEMI ForDesignatorStm:F4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, F2, F3, F4, S5); RESULT.setLine(F1left); :}
+              (IfElseStatement) IfStart:I1 LPAREN IfConditions:I2 RPAREN Statement:S3 Else:E4 Statement:S5 {: RESULT=new IfElseStatement(I1, I2, S3, E4, S5); RESULT.setLine(I1left); :}
+              |
+          	  (ForStatement) ForStmBegin:F1 LPAREN ForStartDesignatorStm:F2 SEMI ForCond:F3 SEMI ForEndDesignatorStm:F4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, F2, F3, F4, S5); RESULT.setLine(F1left); :}
               |
               (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :}
               |
@@ -295,16 +297,21 @@ PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val {: RESULT=new PrintOpti
 IfStart ::= (IfStartStatement) IF {: RESULT=new IfStartStatement(); :}
 ;
 
-ElsePart ::= (ElseStatement) ELSE Statement:S1 {: RESULT=new ElseStatement(S1); RESULT.setLine(S1left); :}
-			 | 
-			 (NoElseStatement) {: RESULT=new NoElseStatement(); :} /* epsilon */
+Else ::= (Else) ELSE {: RESULT=new Else(); :};
+
+IfConditions ::= (IfConditions) Condition:C1 {: RESULT=new IfConditions(C1); RESULT.setLine(C1left); :}
 ;
 
 ForStmBegin  ::= (ForStatementBegin) FOR {: RESULT=new ForStatementBegin(); :};
 
-ForDesignatorStm ::= (ForDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForDesignatorStatement(D1); RESULT.setLine(D1left); :}
+ForStartDesignatorStm ::= (ForStartDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForStartDesignatorStatement(D1); RESULT.setLine(D1left); :}
                       |
-                     (NoForDesignatorStatement) {: RESULT=new NoForDesignatorStatement(); :} /* epsilon */
+                     (NoForStartDesignatorStatement) {: RESULT=new NoForStartDesignatorStatement(); :} /* epsilon */
+;
+
+ForEndDesignatorStm ::= (ForEndDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForEndDesignatorStatement(D1); RESULT.setLine(D1left); :}
+                      |
+                     (NoForEndDesignatorStatement) {: RESULT=new NoForEndDesignatorStatement(); :} /* epsilon */
 ;
                      
 ForCond ::= (ForCondition) Condition:C1 {: RESULT=new ForCondition(C1); RESULT.setLine(C1left); :}

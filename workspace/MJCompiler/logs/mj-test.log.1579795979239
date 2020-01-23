@@ -1,0 +1,54 @@
+INFO  17:11:18,884 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  17:11:18,942 - #13 program
+INFO  17:11:18,942 - #45 MJProgram
+INFO  17:11:18,942 - #45 int
+INFO  17:11:18,945 - #45 y
+INFO  17:11:18,945 - #7 ;
+INFO  17:11:18,946 - #11 {
+INFO  17:11:18,946 - #15 void
+INFO  17:11:18,947 - #45 main
+INFO  17:11:18,947 - #10 (
+INFO  17:11:18,948 - #5 )
+INFO  17:11:18,949 - #45 int
+INFO  17:11:18,950 - #45 x
+INFO  17:11:18,950 - #7 ;
+INFO  17:11:18,951 - #45 int
+INFO  17:11:18,951 - #45 niz
+INFO  17:11:18,951 - #36 [
+INFO  17:11:18,951 - #37 ]
+INFO  17:11:18,951 - #7 ;
+INFO  17:11:18,952 - #11 {
+INFO  17:11:18,952 - #45 x
+INFO  17:11:18,953 - #6 =
+INFO  17:11:18,954 - #42 11
+INFO  17:11:18,955 - #7 ;
+INFO  17:11:18,956 - #9 if
+INFO  17:11:18,956 - #10 (
+INFO  17:11:18,957 - #45 x
+INFO  17:11:18,957 - #32 >
+INFO  17:11:18,957 - #42 10
+INFO  17:11:18,958 - #28 &&
+INFO  17:11:18,959 - #43 false
+INFO  17:11:18,959 - #29 ||
+INFO  17:11:18,959 - #45 x
+INFO  17:11:18,959 - #30 ==
+INFO  17:11:18,959 - #42 11
+INFO  17:11:18,960 - #5 )
+INFO  17:11:18,960 - #11 {
+INFO  17:11:18,961 - #45 x
+INFO  17:11:18,961 - #23 --
+INFO  17:11:18,961 - #7 ;
+INFO  17:11:18,961 - #4 }
+INFO  17:11:18,961 - #2 else
+INFO  17:11:18,961 - #11 {
+INFO  17:11:18,961 - #14 print
+INFO  17:11:18,961 - #10 (
+INFO  17:11:18,962 - #45 x
+INFO  17:11:18,962 - #5 )
+INFO  17:11:18,963 - #7 ;
+INFO  17:11:18,963 - #4 }
+INFO  17:11:18,963 - #4 }
+INFO  17:11:18,964 - #4 }
+INFO  17:11:18,985 - Print calls = 1
+INFO  17:11:18,986 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  17:11:18,991 - Parsiranje uspesno zavrseno!

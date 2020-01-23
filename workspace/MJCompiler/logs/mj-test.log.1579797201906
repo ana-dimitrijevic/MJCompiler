@@ -1,0 +1,88 @@
+INFO  17:33:04,683 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  17:33:04,745 - #13 program
+INFO  17:33:04,745 - #45 MJProgram
+INFO  17:33:04,745 - #45 int
+INFO  17:33:04,747 - #45 y
+INFO  17:33:04,748 - #7 ;
+INFO  17:33:04,748 - #11 {
+INFO  17:33:04,749 - #15 void
+INFO  17:33:04,750 - #45 main
+INFO  17:33:04,751 - #10 (
+INFO  17:33:04,752 - #5 )
+INFO  17:33:04,753 - #45 int
+INFO  17:33:04,754 - #45 x
+INFO  17:33:04,754 - #7 ;
+INFO  17:33:04,754 - #45 int
+INFO  17:33:04,754 - #45 niz
+INFO  17:33:04,754 - #36 [
+INFO  17:33:04,755 - #37 ]
+INFO  17:33:04,755 - #7 ;
+INFO  17:33:04,755 - #11 {
+INFO  17:33:04,755 - #45 x
+INFO  17:33:04,757 - #6 =
+INFO  17:33:04,758 - #42 11
+INFO  17:33:04,758 - #7 ;
+INFO  17:33:04,759 - #9 if
+INFO  17:33:04,759 - #10 (
+INFO  17:33:04,760 - #45 x
+INFO  17:33:04,760 - #32 >
+INFO  17:33:04,761 - #42 10
+INFO  17:33:04,762 - #28 &&
+INFO  17:33:04,762 - #43 false
+INFO  17:33:04,762 - #29 ||
+INFO  17:33:04,763 - #45 x
+INFO  17:33:04,763 - #30 ==
+INFO  17:33:04,763 - #42 11
+INFO  17:33:04,763 - #5 )
+INFO  17:33:04,764 - #11 {
+INFO  17:33:04,764 - #45 x
+INFO  17:33:04,765 - #23 --
+INFO  17:33:04,765 - #7 ;
+INFO  17:33:04,765 - #4 }
+INFO  17:33:04,765 - #2 else
+INFO  17:33:04,765 - #11 {
+INFO  17:33:04,766 - #14 print
+INFO  17:33:04,766 - #10 (
+INFO  17:33:04,766 - #45 x
+INFO  17:33:04,766 - #5 )
+INFO  17:33:04,767 - #7 ;
+INFO  17:33:04,767 - #4 }
+INFO  17:33:04,768 - #14 print
+INFO  17:33:04,768 - #10 (
+INFO  17:33:04,768 - #42 123456
+INFO  17:33:04,768 - #5 )
+INFO  17:33:04,769 - #7 ;
+INFO  17:33:04,769 - #20 for
+INFO  17:33:04,769 - #10 (
+INFO  17:33:04,770 - #45 int
+INFO  17:33:04,770 - #45 i
+ERROR 17:33:04,770 - 
+Sintaksna greska na liniji 30
+INFO  17:33:04,771 - #6 =
+INFO  17:33:04,777 - #42 0
+INFO  17:33:04,777 - #7 ;
+INFO  17:33:04,778 - #45 i
+INFO  17:33:04,778 - #34 <
+INFO  17:33:04,778 - #42 4
+INFO  17:33:04,778 - assign statement error recovery: successful
+INFO  17:33:04,779 - #7 ;
+INFO  17:33:04,779 - #45 i
+INFO  17:33:04,779 - #22 ++
+INFO  17:33:04,780 - #5 )
+INFO  17:33:04,780 - #11 {
+INFO  17:33:04,780 - #14 print
+INFO  17:33:04,780 - #10 (
+INFO  17:33:04,780 - #45 i
+INFO  17:33:04,780 - #5 )
+INFO  17:33:04,780 - #7 ;
+INFO  17:33:04,780 - #4 }
+INFO  17:33:04,780 - #4 }
+INFO  17:33:04,781 - #4 }
+ERROR 17:33:04,799 - Greska: i nije deklarisano!  na liniji 30
+ERROR 17:33:04,799 - Error: incompatible types in condition. na liniji 30
+ERROR 17:33:04,799 - Greska: i nije deklarisano!  na liniji 30
+ERROR 17:33:04,799 - Greska: noObj' nije celobrojnog tipa  na liniji 30
+ERROR 17:33:04,799 - Greska: i nije deklarisano!  na liniji 31
+ERROR 17:33:04,799 - Greska:  Neispravan izraz za print na liniji 31
+INFO  17:33:04,800 - Print calls = 3
+ERROR 17:33:04,801 - Parsiranje NIJE uspesno zavrseno!

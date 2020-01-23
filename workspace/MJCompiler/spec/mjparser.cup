@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact,;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal;
+ActualParams, ForStartDesignatorStm, ForEndDesignatorStm, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else;
 
 
 precedence left ELSE;
@@ -207,9 +207,11 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal RPAREN SEMI
               |
-              (IfStatement) IfStart LPAREN Condition RPAREN Statement ElsePart
+              (IfStatement) IfStart LPAREN IfConditions RPAREN Statement 
               |
-          	  (ForStatement) ForStmBegin LPAREN ForDesignatorStm SEMI ForCond SEMI ForDesignatorStm RPAREN Statement
+              (IfElseStatement) IfStart LPAREN IfConditions RPAREN Statement Else Statement
+              |
+          	  (ForStatement) ForStmBegin LPAREN ForStartDesignatorStm SEMI ForCond SEMI ForEndDesignatorStm RPAREN Statement
               |
               (StatementDesignator) DesignatorStatement SEMI
               |
@@ -295,16 +297,21 @@ PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val
 IfStart ::= (IfStartStatement) IF
 ;
 
-ElsePart ::= (ElseStatement) ELSE Statement
-			 | 
-			 (NoElseStatement) /* epsilon */
+Else ::= (Else) ELSE;
+
+IfConditions ::= (IfConditions) Condition
 ;
 
 ForStmBegin  ::= (ForStatementBegin) FOR;
 
-ForDesignatorStm ::= (ForDesignatorStatement) DesignatorStatement
+ForStartDesignatorStm ::= (ForStartDesignatorStatement) DesignatorStatement
                       |
-                     (NoForDesignatorStatement) /* epsilon */
+                     (NoForStartDesignatorStatement) /* epsilon */
+;
+
+ForEndDesignatorStm ::= (ForEndDesignatorStatement) DesignatorStatement
+                      |
+                     (NoForEndDesignatorStatement) /* epsilon */
 ;
                      
 ForCond ::= (ForCondition) Condition
