@@ -1,0 +1,47 @@
+INFO  21:43:41,097 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  21:43:41,165 - #13 program
+INFO  21:43:41,166 - #45 MJProgram
+INFO  21:43:41,167 - #45 int
+INFO  21:43:41,168 - #45 x
+INFO  21:43:41,169 - #7 ;
+INFO  21:43:41,169 - #45 int
+INFO  21:43:41,170 - #45 y
+INFO  21:43:41,171 - #7 ;
+INFO  21:43:41,171 - #45 int
+INFO  21:43:41,171 - #45 niz
+INFO  21:43:41,172 - #36 [
+INFO  21:43:41,172 - #37 ]
+INFO  21:43:41,173 - #7 ;
+INFO  21:43:41,174 - #11 {
+INFO  21:43:41,174 - #15 void
+INFO  21:43:41,175 - #45 main
+INFO  21:43:41,176 - #10 (
+INFO  21:43:41,177 - #5 )
+INFO  21:43:41,178 - #11 {
+INFO  21:43:41,180 - #45 niz
+INFO  21:43:41,182 - #6 =
+INFO  21:43:41,183 - #18 new
+INFO  21:43:41,183 - #45 int
+INFO  21:43:41,183 - #36 [
+INFO  21:43:41,183 - #42 3
+INFO  21:43:41,184 - #37 ]
+INFO  21:43:41,184 - #7 ;
+INFO  21:43:41,185 - #45 niz
+INFO  21:43:41,185 - #36 [
+INFO  21:43:41,186 - #42 0
+INFO  21:43:41,186 - #37 ]
+INFO  21:43:41,186 - #6 =
+INFO  21:43:41,187 - #42 5
+INFO  21:43:41,187 - #7 ;
+INFO  21:43:41,187 - #14 print
+INFO  21:43:41,187 - #10 (
+INFO  21:43:41,187 - #45 niz
+INFO  21:43:41,187 - #36 [
+INFO  21:43:41,187 - #42 0
+INFO  21:43:41,188 - #37 ]
+INFO  21:43:41,188 - #5 )
+INFO  21:43:41,189 - #7 ;
+INFO  21:43:41,189 - #4 }
+INFO  21:43:41,190 - #4 }
+INFO  21:43:41,222 - Print calls = 1
+INFO  21:43:41,224 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj

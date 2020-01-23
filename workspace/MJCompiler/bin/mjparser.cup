@@ -58,7 +58,7 @@ terminal Boolean BOOLCONST;
 terminal Character CHARCONST;
 terminal String IDENT;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName, DesignatorName; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
 Factor, Condition, CondTerm, CondFact,; 
 
@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact,;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace;
+ActualParams, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal;
 
 
 precedence left ELSE;
@@ -205,7 +205,7 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (ReadStatement) READ LPAREN Designator RPAREN SEMI
               |
-              (PrintStatement) PRINT LPAREN PrintExpression RPAREN SEMI
+              (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal RPAREN SEMI
               |
               (IfStatement) IfStart LPAREN Condition RPAREN Statement ElsePart
               |
@@ -254,13 +254,15 @@ FuncCallStart ::= (FuncCallStart) Designator:des
 ;
 
 
-Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName
+Designator ::= (MemberDesignator) DesignatorName DOT IDENT:memberName
                |
-               (ArrayDesignator) Designator:name LBRACKET Expr:arrExp RBRACKET
+               (ArrayDesignator) DesignatorName LBRACKET Expr:arrExp RBRACKET
                |
-               (SimpleDesignator) IDENT:name
+               (SimpleDesignator) DesignatorName
                ;
-               
+
+DesignatorName ::= (DesignatorName) IDENT:name
+;
 
 DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC
                          |
@@ -285,9 +287,9 @@ ActualParams ::= (MultipleActualParameters) ActualParams COMMA Expr
             	 (SingleActualParameter) Expr
 ;
 
-PrintExpression ::= (SinglePrintExpression) Expr:exp
-                    |
-                    (MultiplePrintExpression) Expr:exp COMMA NUMBERCONST:val
+PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val
+				|
+				(NoPrintOptionalVal) /* epsilon */
 ;
 
 IfStart ::= (IfStartStatement) IF

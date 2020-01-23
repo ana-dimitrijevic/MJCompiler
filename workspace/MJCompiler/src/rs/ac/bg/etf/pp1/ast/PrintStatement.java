@@ -1,25 +1,36 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2020 18:56:34
+// 22/0/2020 23:38:33
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class PrintStatement extends Statement {
 
-    private PrintExpression PrintExpression;
+    private Expr Expr;
+    private PrintOptVal PrintOptVal;
 
-    public PrintStatement (PrintExpression PrintExpression) {
-        this.PrintExpression=PrintExpression;
-        if(PrintExpression!=null) PrintExpression.setParent(this);
+    public PrintStatement (Expr Expr, PrintOptVal PrintOptVal) {
+        this.Expr=Expr;
+        if(Expr!=null) Expr.setParent(this);
+        this.PrintOptVal=PrintOptVal;
+        if(PrintOptVal!=null) PrintOptVal.setParent(this);
     }
 
-    public PrintExpression getPrintExpression() {
-        return PrintExpression;
+    public Expr getExpr() {
+        return Expr;
     }
 
-    public void setPrintExpression(PrintExpression PrintExpression) {
-        this.PrintExpression=PrintExpression;
+    public void setExpr(Expr Expr) {
+        this.Expr=Expr;
+    }
+
+    public PrintOptVal getPrintOptVal() {
+        return PrintOptVal;
+    }
+
+    public void setPrintOptVal(PrintOptVal PrintOptVal) {
+        this.PrintOptVal=PrintOptVal;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +38,19 @@ public class PrintStatement extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(PrintExpression!=null) PrintExpression.accept(visitor);
+        if(Expr!=null) Expr.accept(visitor);
+        if(PrintOptVal!=null) PrintOptVal.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(PrintExpression!=null) PrintExpression.traverseTopDown(visitor);
+        if(Expr!=null) Expr.traverseTopDown(visitor);
+        if(PrintOptVal!=null) PrintOptVal.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(PrintExpression!=null) PrintExpression.traverseBottomUp(visitor);
+        if(Expr!=null) Expr.traverseBottomUp(visitor);
+        if(PrintOptVal!=null) PrintOptVal.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +59,14 @@ public class PrintStatement extends Statement {
         buffer.append(tab);
         buffer.append("PrintStatement(\n");
 
-        if(PrintExpression!=null)
-            buffer.append(PrintExpression.toString("  "+tab));
+        if(Expr!=null)
+            buffer.append(Expr.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(PrintOptVal!=null)
+            buffer.append(PrintOptVal.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

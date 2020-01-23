@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2020 18:56:34
+// 22/0/2020 23:38:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -15,6 +15,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Relop Relop) { }
     public void visit(Initializer Initializer) { }
     public void visit(FormalParamDecl FormalParamDecl) { }
+    public void visit(PrintOptVal PrintOptVal) { }
     public void visit(ActualParamsList ActualParamsList) { }
     public void visit(VarDeclar VarDeclar) { }
     public void visit(Addop Addop) { }
@@ -23,7 +24,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondTerm CondTerm) { }
     public void visit(ClassVarDeclList ClassVarDeclList) { }
     public void visit(Designator Designator) { }
-    public void visit(PrintExpression PrintExpression) { }
     public void visit(Term Term) { }
     public void visit(RetType RetType) { }
     public void visit(Condition Condition) { }
@@ -74,8 +74,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoElseStatement NoElseStatement) { visit(); }
     public void visit(ElseStatement ElseStatement) { visit(); }
     public void visit(IfStartStatement IfStartStatement) { visit(); }
-    public void visit(MultiplePrintExpression MultiplePrintExpression) { visit(); }
-    public void visit(SinglePrintExpression SinglePrintExpression) { visit(); }
+    public void visit(NoPrintOptionalVal NoPrintOptionalVal) { visit(); }
+    public void visit(PrintOptionalVal PrintOptionalVal) { visit(); }
     public void visit(SingleActualParameter SingleActualParameter) { visit(); }
     public void visit(MultipleActualParameters MultipleActualParameters) { visit(); }
     public void visit(NoActualParametersList NoActualParametersList) { visit(); }
@@ -85,6 +85,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(AssignDesignatorStatement AssignDesignatorStatement) { visit(); }
     public void visit(DecDesignatorStatement DecDesignatorStatement) { visit(); }
     public void visit(IncDesignatorStatement IncDesignatorStatement) { visit(); }
+    public void visit(DesignatorName DesignatorName) { visit(); }
     public void visit(SimpleDesignator SimpleDesignator) { visit(); }
     public void visit(ArrayDesignator ArrayDesignator) { visit(); }
     public void visit(MemberDesignator MemberDesignator) { visit(); }

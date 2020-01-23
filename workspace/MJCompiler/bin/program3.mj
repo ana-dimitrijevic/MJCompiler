@@ -1,3 +1,8 @@
+// dodela vrednosti u obicne promenljive
+// dodela vrednosti u nizovske promenljive
+// dodela vrednosti u globalni i lokalni podatak
+// uzimanje vrednosti iz globalnog, lokalnog i argumenta funkcije
+
 program P
 int i;
 char c;

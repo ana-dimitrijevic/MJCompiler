@@ -1,0 +1,21 @@
+// program sa 2 maina
+// program sa non-void mainom
+// main sa argumentima
+
+program P
+{	
+	//void main() {
+	//}
+	
+	//void main() {
+	//}
+	
+	//int main() {
+		//return 5;
+	//}
+	
+	void main(int a) {
+	
+	}
+	
+}

@@ -58,7 +58,7 @@ terminal Boolean BOOLCONST;
 terminal Character CHARCONST;
 terminal String IDENT;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName, DesignatorName; 
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, AddopExpr, VarDeclList, RetType,
 Factor, Condition, CondTerm, CondFact; 
 
@@ -66,7 +66,7 @@ Factor, Condition, CondTerm, CondFact;
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
 DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, PrintExpression, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace;
+ActualParams, ForDesignatorStm, IfStart, ElsePart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal;
 
 
 precedence left ELSE;
@@ -205,7 +205,7 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (ReadStatement) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStatement(D1); RESULT.setLine(D1left); :}
               |
-              (PrintStatement) PRINT LPAREN PrintExpression:P1 RPAREN SEMI {: RESULT=new PrintStatement(P1); RESULT.setLine(P1left); :}
+              (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal:P1 RPAREN SEMI {: RESULT=new PrintStatement(exp, P1); RESULT.setLine(expleft); :}
               |
               (IfStatement) IfStart:I1 LPAREN Condition:C2 RPAREN Statement:S3 ElsePart:E4 {: RESULT=new IfStatement(I1, C2, S3, E4); RESULT.setLine(I1left); :}
               |
@@ -254,13 +254,15 @@ FuncCallStart ::= (FuncCallStart) Designator:des {: RESULT=new FuncCallStart(des
 ;
 
 
-Designator ::= (MemberDesignator) Designator:name DOT IDENT:memberName {: RESULT=new MemberDesignator(name, memberName); RESULT.setLine(nameleft); :}
+Designator ::= (MemberDesignator) DesignatorName:D1 DOT IDENT:memberName {: RESULT=new MemberDesignator(D1, memberName); RESULT.setLine(D1left); :}
                |
-               (ArrayDesignator) Designator:name LBRACKET Expr:arrExp RBRACKET {: RESULT=new ArrayDesignator(name, arrExp); RESULT.setLine(nameleft); :}
+               (ArrayDesignator) DesignatorName:D1 LBRACKET Expr:arrExp RBRACKET {: RESULT=new ArrayDesignator(D1, arrExp); RESULT.setLine(D1left); :}
                |
-               (SimpleDesignator) IDENT:name {: RESULT=new SimpleDesignator(name); RESULT.setLine(nameleft); :}
+               (SimpleDesignator) DesignatorName:D1 {: RESULT=new SimpleDesignator(D1); RESULT.setLine(D1left); :}
                ;
-               
+
+DesignatorName ::= (DesignatorName) IDENT:name {: RESULT=new DesignatorName(name); RESULT.setLine(nameleft); :}
+;
 
 DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC {: RESULT=new IncDesignatorStatement(des); RESULT.setLine(desleft); :}
                          |
@@ -285,9 +287,9 @@ ActualParams ::= (MultipleActualParameters) ActualParams:A1 COMMA Expr:E2 {: RES
             	 (SingleActualParameter) Expr:E1 {: RESULT=new SingleActualParameter(E1); RESULT.setLine(E1left); :}
 ;
 
-PrintExpression ::= (SinglePrintExpression) Expr:exp {: RESULT=new SinglePrintExpression(exp); RESULT.setLine(expleft); :}
-                    |
-                    (MultiplePrintExpression) Expr:exp COMMA NUMBERCONST:val {: RESULT=new MultiplePrintExpression(exp, val); RESULT.setLine(expleft); :}
+PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val {: RESULT=new PrintOptionalVal(val); RESULT.setLine(valleft); :}
+				|
+				(NoPrintOptionalVal) {: RESULT=new NoPrintOptionalVal(); :} /* epsilon */
 ;
 
 IfStart ::= (IfStartStatement) IF {: RESULT=new IfStartStatement(); :}

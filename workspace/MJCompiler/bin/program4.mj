@@ -1,3 +1,6 @@
+// dodela vrednosti u const podatak
+// dodela vrednosti neodgovarajuceg tipa
+
 program P
 int i;
 char c;

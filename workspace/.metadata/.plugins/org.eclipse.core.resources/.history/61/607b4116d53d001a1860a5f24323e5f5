@@ -1,0 +1,39 @@
+program MJProgram
+	int x; int y;
+	int niz[];
+{
+
+	int k () int c; {
+		c = 2;
+		
+		print(0);
+		
+		return c+2;
+	}
+
+	void main() {
+	
+		niz = new int[3];
+		
+		//x = 3;
+		
+		//print(1);
+		
+		
+		//y = 4 + 9 + k();
+		
+		//print(x);
+		
+		//k();
+		
+		
+		//print(y);
+		
+		read(niz[0]);
+		
+		//niz[2] = 3;
+		//niz[2]--;
+		print(niz[0], 10);
+		
+	}
+}

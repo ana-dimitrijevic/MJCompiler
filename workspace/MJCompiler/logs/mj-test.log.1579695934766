@@ -1,0 +1,23 @@
+INFO  13:23:45,152 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\test\program.mj
+INFO  13:23:45,216 - #13 program
+INFO  13:23:45,217 - #45 MJProgram
+INFO  13:23:45,217 - #11 {
+INFO  13:23:45,219 - #15 void
+INFO  13:23:45,219 - #45 main
+INFO  13:23:45,220 - #10 (
+INFO  13:23:45,221 - #5 )
+INFO  13:23:45,222 - #11 {
+INFO  13:23:45,223 - #45 niz
+INFO  13:23:45,225 - #36 [
+INFO  13:23:45,226 - #42 2
+INFO  13:23:45,226 - #37 ]
+INFO  13:23:45,227 - #6 =
+INFO  13:23:45,228 - #42 9
+INFO  13:23:45,228 - #7 ;
+INFO  13:23:45,229 - #4 }
+INFO  13:23:45,230 - #4 }
+ERROR 13:23:45,245 - Greska: niz nije deklarisano!  na liniji 12
+ERROR 13:23:45,246 - Greska: noObj nije deklarisano  na liniji 12
+ERROR 13:23:45,246 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 12
+INFO  13:23:45,247 - Print calls = 0
+ERROR 13:23:45,259 - Parsiranje NIJE uspesno zavrseno!

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/0/2020 18:56:34
+// 22/0/2020 23:38:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -15,6 +15,7 @@ public interface Visitor {
     public void visit(Relop Relop);
     public void visit(Initializer Initializer);
     public void visit(FormalParamDecl FormalParamDecl);
+    public void visit(PrintOptVal PrintOptVal);
     public void visit(ActualParamsList ActualParamsList);
     public void visit(VarDeclar VarDeclar);
     public void visit(Addop Addop);
@@ -23,7 +24,6 @@ public interface Visitor {
     public void visit(CondTerm CondTerm);
     public void visit(ClassVarDeclList ClassVarDeclList);
     public void visit(Designator Designator);
-    public void visit(PrintExpression PrintExpression);
     public void visit(Term Term);
     public void visit(RetType RetType);
     public void visit(Condition Condition);
@@ -74,8 +74,8 @@ public interface Visitor {
     public void visit(NoElseStatement NoElseStatement);
     public void visit(ElseStatement ElseStatement);
     public void visit(IfStartStatement IfStartStatement);
-    public void visit(MultiplePrintExpression MultiplePrintExpression);
-    public void visit(SinglePrintExpression SinglePrintExpression);
+    public void visit(NoPrintOptionalVal NoPrintOptionalVal);
+    public void visit(PrintOptionalVal PrintOptionalVal);
     public void visit(SingleActualParameter SingleActualParameter);
     public void visit(MultipleActualParameters MultipleActualParameters);
     public void visit(NoActualParametersList NoActualParametersList);
@@ -85,6 +85,7 @@ public interface Visitor {
     public void visit(AssignDesignatorStatement AssignDesignatorStatement);
     public void visit(DecDesignatorStatement DecDesignatorStatement);
     public void visit(IncDesignatorStatement IncDesignatorStatement);
+    public void visit(DesignatorName DesignatorName);
     public void visit(SimpleDesignator SimpleDesignator);
     public void visit(ArrayDesignator ArrayDesignator);
     public void visit(MemberDesignator MemberDesignator);

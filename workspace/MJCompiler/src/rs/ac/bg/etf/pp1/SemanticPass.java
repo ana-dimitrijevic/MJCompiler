@@ -324,14 +324,16 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(PrintStatement printStatement) {
 
 		printCallCount++;
-		PrintExpression printExpression = printStatement.getPrintExpression();
-		Struct type = null;
+		
+		//PrintExpression printExpression = printStatement.getExpression();
+		//Struct type = null;
 
-		if (printExpression instanceof MultiplePrintExpression) {
-			type = ((MultiplePrintExpression) printExpression).getExpr().struct;
-		} else if (printExpression instanceof SinglePrintExpression)
-			type = ((SinglePrintExpression) printExpression).getExpr().struct;
+//		if (printExpression instanceof MultiplePrintExpression) {
+//			type = ((MultiplePrintExpression) printExpression).getExpr().struct;
+//		} else if (printExpression instanceof SinglePrintExpression)
+//			type = ((SinglePrintExpression) printExpression).getExpr().struct;
 
+		Struct type = printStatement.getExpr().struct;
 		Obj booleanType = Tab.find("bool");
 
 		if (type != Tab.intType && type != Tab.charType && type != booleanType.getType()) {
@@ -457,10 +459,11 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(SimpleDesignator simpleDesignator) {
 
-		simpleDesignator.obj = Tab.find(simpleDesignator.getName());
+		simpleDesignator.obj = Tab.find(simpleDesignator.getDesignatorName().getName());
 		if (simpleDesignator.obj == Tab.noObj) {
-			report_error("Greska: " + simpleDesignator.getName() + " nije deklarisano! ", simpleDesignator);
+			report_error("Greska: " + simpleDesignator.getDesignatorName().getName() + " nije deklarisano! ", simpleDesignator);
 		}
+
 
 		super.visit(simpleDesignator);
 	}
@@ -468,16 +471,16 @@ public class SemanticPass extends VisitorAdaptor {
 	@Override
 	public void visit(ArrayDesignator arrayDesignator) {
 
-		arrayDesignator.obj = Tab.find(arrayDesignator.getDesignator().obj.getName());
+		arrayDesignator.obj = Tab.find(arrayDesignator.getDesignatorName().getName());
 
 		if (arrayDesignator.obj == Tab.noObj) {
-			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije deklarisano ",
+			report_error("Greska: " + arrayDesignator.getDesignatorName().getName() + " nije deklarisano ",
 					arrayDesignator);
 			return;
 		}
 
 		if (arrayDesignator.obj.getKind() != Obj.Var) {
-			report_error("Greska: " + arrayDesignator.getDesignator().obj.getName() + " nije promenljiva ",
+			report_error("Greska: " + arrayDesignator.getDesignatorName().getName() + " nije promenljiva ",
 					arrayDesignator);
 			return;
 		}
@@ -492,7 +495,7 @@ public class SemanticPass extends VisitorAdaptor {
 			return;
 		}
 
-		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getDesignator().obj.getName(),
+		arrayDesignator.obj = new Obj(Obj.Elem, arrayDesignator.getDesignatorName().getName(),
 				arrayDesignator.obj.getType().getElemType());
 
 		super.visit(arrayDesignator);
@@ -954,5 +957,13 @@ public class SemanticPass extends VisitorAdaptor {
 			relopExprConditionFactor.struct = Tab.noType;
 		}
 	}
+	
+    @Override
+    public void visit(DesignatorName arrayName) {
+        String name = arrayName.getName();
+        arrayName.obj = Tab.find(name);
+    }
+
+
 
 }

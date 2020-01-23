@@ -3,7 +3,9 @@ package rs.ac.bg.etf.pp1;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
+import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
 	
@@ -74,16 +76,44 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.load(new Obj(Obj.Con, "$", Const.struct, 0, 0));
 	}
 	
-
+    @Override
+    public void visit(DesignatorName ident) {
+        Obj objNode = ident.obj;
+        // load array pointer on the expression stack
+       // if (objNode.getType().getKind() == Struct.Array) {
+        if (ident.getParent().getClass() == ArrayDesignator.class) {
+			Code.load(objNode);
+        }
+    }
 
 	@Override
-	public void visit(SimpleDesignator simpleDesignator) {
+	public void visit(SimpleDesignator simpleDesignator) {	
+		
 		SyntaxNode parent = simpleDesignator.getParent();
-		if (AssignStatement.class != parent.getClass() && FuncCall.class != parent.getClass()) {
+
+		if (AssignStatement.class != parent.getClass() && FuncCall.class != parent.getClass() &&
+                ReadStatement.class != parent.getClass()) {
 			Code.load(simpleDesignator.obj);
 		}
+		
 	}
 	
+	@Override
+	public void visit(ArrayDesignator simpleDesignator) {
+		SyntaxNode parent = simpleDesignator.getParent();
+		
+		// Code.put(Code.pop); ?? cica ima za sad mi nije problem mozda posle bude
+
+		if (IncDesignatorStatement.class == parent.getClass() || DecDesignatorStatement.class == parent.getClass()) {
+                Code.put(Code.dup2);            
+        }
+
+    
+        if (AssignStatement.class != parent.getClass() && FuncCall.class != parent.getClass() &&
+                ReadStatement.class != parent.getClass()) {
+            Code.load(simpleDesignator.obj);
+        }
+	}
 	
 	@Override
 	public void visit(FuncCall FuncCall) {
@@ -93,14 +123,136 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put2(offset);
 	}
 
-	@Override
-	public void visit(PrintStatement printStatement) {
-		Code.put(Code.const_5);
-		Code.put(Code.print);
-	}
-	
+	 @Override
+	    public void visit(ReadStatement readStatement) {
+		 
+	        if (readStatement.getDesignator().obj.getType() == Tab.charType) {
+	            Code.put(Code.bread);
+	        } else {
+	            Code.put(Code.read);
+	        }
+	        Code.store(readStatement.getDesignator().obj);
+	    }
+	 
+	 //sta je ovo?
 	@Override
 	public void visit(MultipleAddopTerm multipleAddopTerm) {
-		Code.put(Code.add);
+		 if (multipleAddopTerm.getAddop() instanceof AddopADD) {
+	       
+	            Code.put(Code.add);
+	        } else {
+	           
+	            Code.put(Code.sub);
+	        }
 	}
+	
+    
+
+    @Override
+    public void visit(MultipleFactor multipleFactor) {
+        if (multipleFactor.getMulop() instanceof MulopMUL) {
+            Code.put(Code.mul);
+        } else if (multipleFactor.getMulop() instanceof MulopDIV) {
+            Code.put(Code.div);
+        } else {
+            Code.put(Code.rem);
+        }
+    }
+    
+    
+	
+    @Override
+    public void visit(NewObjectArrayFactor newOperator) {
+        Code.put(Code.newarray);
+        if (newOperator.getType().struct == Tab.charType) {
+            Code.put(0);
+        } else {
+            Code.put(1);
+        }
+    }
+	
+    @Override
+    public void visit(NegativeExpression negativeExpression) {
+        Code.put(Code.neg);
+    }
+
+//    @Override
+//    public void visit(SinglePrintExpression statement) {
+//        if (statement.getExpr().struct == Tab.charType) {
+//            Code.loadConst(1);
+//            Code.put(Code.bprint);
+//        } else {
+//            Code.loadConst(5);
+//            Code.put(Code.print);
+//        }
+//    }
+    
+
+
+	public void visit(PrintStatement node) {
+	    if(node.getPrintOptVal() instanceof PrintOptionalVal){
+	    	PrintOptionalVal printOptNumFieldsNode = (PrintOptionalVal) node.getPrintOptVal();
+			Code.loadConst(printOptNumFieldsNode.getVal());
+        }
+		else Code.put(Code.const_1);
+	    
+	    Obj boolType = Tab.find("bool");
+		if(node.getExpr().struct == Tab.intType || node.getExpr().struct == boolType.getType()){
+			Code.put(Code.print);
+		}
+		else if (node.getExpr().struct == Tab.charType){
+			Code.put(Code.bprint);
+		}
+	}
+			
+
+  //print ocekuje na expr steku vrijednost i sirinu(width)
+  	//Expr neterminal ce sam postaviti na expr stek svoju vrijednost
+  	//mora se jos dodati i odgovarajuca sirina (width)
+//  	public void visit(PrintStatement printStatement){
+//  		
+//  		//mora se umetnuti odgovarajuca konstanta, zavisno od toga da li je naveden opcioni izraz
+//  		
+//  		if(printStatement.getPrintOptVal() instanceof PrintOptionalVal){
+//  			//navedena sirina(width)
+//  			PrintOptionalVal yesPrintOptional = (PrintOptionalVal)printStatement.getPrintOptVal();
+//  			
+//  			int printWidth = yesPrintOptional.getVal();
+//  			Obj constObj = new Obj(Obj.Con,"name",Tab.intType,printWidth,0);
+//  			Code.load(constObj);
+//  			
+//  		}else{
+//  			//nije navedena sirina, default 2
+//  			//ako nije specificirana duzina, ide duzina 3 default
+//  			Code.loadConst(3);
+//  		}
+//  		
+//  		//ako nije ispis char-a, radi se print, inace bprint
+//  		
+//  		Struct exprType = printStatement.getExpr().struct;
+//  		
+//  		if(!(exprType.equals(Tab.charType))){
+//  			//ne ispisuje se char
+//  			Code.put(Code.print);
+//  			return;
+//  		}
+//  		//ispisuje se char
+//  		Code.put(Code.bprint);
+//  	}
+  	
+  	 @Override
+     public void visit(IncDesignatorStatement statement) {
+         Code.loadConst(1);
+         Code.put(Code.add);
+         Code.store(statement.getDesignator().obj);
+     }
+
+     @Override
+     public void visit(DecDesignatorStatement statement) {
+         Code.loadConst(-1);
+         Code.put(Code.add);
+         Code.store(statement.getDesignator().obj);
+     }
+  	
+
 }
