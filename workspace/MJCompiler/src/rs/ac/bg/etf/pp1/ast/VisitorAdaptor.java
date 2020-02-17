@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/0/2020 17:29:8
+// 29/0/2020 11:12:31
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,7 +9,6 @@ public abstract class VisitorAdaptor implements Visitor {
 
     public void visit(Mulop Mulop) { }
     public void visit(MethodDecl MethodDecl) { }
-    public void visit(IfStart IfStart) { }
     public void visit(VarIdent VarIdent) { }
     public void visit(AddopExpr AddopExpr) { }
     public void visit(Relop Relop) { }
@@ -19,7 +18,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ActualParamsList ActualParamsList) { }
     public void visit(VarDeclar VarDeclar) { }
     public void visit(Addop Addop) { }
-    public void visit(ForStmBegin ForStmBegin) { }
     public void visit(Factor Factor) { }
     public void visit(CondTerm CondTerm) { }
     public void visit(ClassVarDeclList ClassVarDeclList) { }
@@ -29,6 +27,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Condition Condition) { }
     public void visit(Statements Statements) { }
     public void visit(AbstractModif AbstractModif) { }
+    public void visit(ForEndDsgnStm ForEndDsgnStm) { }
     public void visit(ActualParams ActualParams) { }
     public void visit(ClassExtends ClassExtends) { }
     public void visit(AssignStmnt AssignStmnt) { }
@@ -38,16 +37,16 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Expr Expr) { }
     public void visit(ConstInitializer ConstInitializer) { }
     public void visit(DeclVar DeclVar) { }
+    public void visit(ForStartDsgnStm ForStartDsgnStm) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(ClassMethDeclList ClassMethDeclList) { }
-    public void visit(ForStartDesignatorStm ForStartDesignatorStm) { }
     public void visit(Statement Statement) { }
     public void visit(VarIdentList VarIdentList) { }
     public void visit(CondFact CondFact) { }
     public void visit(MethodDeclList MethodDeclList) { }
-    public void visit(ForEndDesignatorStm ForEndDesignatorStm) { }
     public void visit(ForCond ForCond) { }
     public void visit(FormPars FormPars) { }
+    public void visit(ElseOpt ElseOpt) { }
     public void visit(RelopLEQ RelopLEQ) { visit(); }
     public void visit(RelopLS RelopLS) { visit(); }
     public void visit(RelopGEQ RelopGEQ) { visit(); }
@@ -63,19 +62,26 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ExprConditionFactor ExprConditionFactor) { visit(); }
     public void visit(SingleFactorConditionTerm SingleFactorConditionTerm) { visit(); }
     public void visit(MultipleFactorConditionTerm MultipleFactorConditionTerm) { visit(); }
+    public void visit(Or Or) { visit(); }
     public void visit(IllegalConditionError IllegalConditionError) { visit(); }
     public void visit(SingleCondition SingleCondition) { visit(); }
     public void visit(MultipleCondition MultipleCondition) { visit(); }
-    public void visit(NoForCondition NoForCondition) { visit(); }
-    public void visit(ForCondition ForCondition) { visit(); }
+    public void visit(ForBodyStart ForBodyStart) { visit(); }
     public void visit(NoForEndDesignatorStatement NoForEndDesignatorStatement) { visit(); }
     public void visit(ForEndDesignatorStatement ForEndDesignatorStatement) { visit(); }
+    public void visit(NoForCondition NoForCondition) { visit(); }
+    public void visit(ForCondition ForCondition) { visit(); }
+    public void visit(ForCondEnd ForCondEnd) { visit(); }
+    public void visit(ForCondStart ForCondStart) { visit(); }
     public void visit(NoForStartDesignatorStatement NoForStartDesignatorStatement) { visit(); }
     public void visit(ForStartDesignatorStatement ForStartDesignatorStatement) { visit(); }
-    public void visit(ForStatementBegin ForStatementBegin) { visit(); }
-    public void visit(IfConditions IfConditions) { visit(); }
+    public void visit(ForStart ForStart) { visit(); }
     public void visit(Else Else) { visit(); }
-    public void visit(IfStartStatement IfStartStatement) { visit(); }
+    public void visit(NoElseOptional NoElseOptional) { visit(); }
+    public void visit(ElseOptional ElseOptional) { visit(); }
+    public void visit(Rparen Rparen) { visit(); }
+    public void visit(IfConditions IfConditions) { visit(); }
+    public void visit(IfStart IfStart) { visit(); }
     public void visit(NoPrintOptionalVal NoPrintOptionalVal) { visit(); }
     public void visit(PrintOptionalVal PrintOptionalVal) { visit(); }
     public void visit(SingleActualParameter SingleActualParameter) { visit(); }
@@ -111,7 +117,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(BlockOfStatements BlockOfStatements) { visit(); }
     public void visit(StatementDesignator StatementDesignator) { visit(); }
     public void visit(ForStatement ForStatement) { visit(); }
-    public void visit(IfElseStatement IfElseStatement) { visit(); }
     public void visit(IfStatement IfStatement) { visit(); }
     public void visit(PrintStatement PrintStatement) { visit(); }
     public void visit(ReadStatement ReadStatement) { visit(); }

@@ -1,0 +1,44 @@
+program MJProgram
+int niz[];
+int x; int y;
+const int lj;
+const char xw;	
+{											
+
+	int k () int c; {
+		 return c+x;
+	}
+	
+	int kkk (int e, int p, int z) int t; {
+		 return e+p+z+t+x+y+k();
+	}
+
+	
+	
+	void kk () int j; {
+		 return;
+	}
+
+	void main() {
+	niz = new int[3];
+
+		//x-+;
+		y=2+3;
+		x++;
+		x = k();
+		kk();
+		k();
+		
+		//for(x=0; x <<= 12; x++)
+		//	x--;
+			
+	//	kkk(niz[0]);
+		if (false && niz==null)
+		niz = new int[5];
+	//	niz[1]++;
+	//	read(niz[1]);
+	//	print(niz[1]);
+	//	k(1, 2);
+		
+	}
+}

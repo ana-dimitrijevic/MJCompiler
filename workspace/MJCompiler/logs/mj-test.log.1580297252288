@@ -1,0 +1,201 @@
+INFO  12:22:59,214 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  12:22:59,221 - =================Sintaksna analiza==================
+INFO  12:22:59,302 - #13 program
+INFO  12:22:59,302 - #45 MJProgram
+INFO  12:22:59,302 - #45 int
+INFO  12:22:59,303 - #45 niz
+INFO  12:22:59,305 - #36 [
+INFO  12:22:59,305 - #37 ]
+INFO  12:22:59,305 - #7 ;
+INFO  12:22:59,305 - #45 int
+INFO  12:22:59,306 - #45 x
+INFO  12:22:59,306 - #7 ;
+INFO  12:22:59,306 - #45 int
+INFO  12:22:59,306 - #45 y
+INFO  12:22:59,307 - #7 ;
+INFO  12:22:59,307 - #45 int
+INFO  12:22:59,307 - #45 a
+INFO  12:22:59,307 - #12 ,
+INFO  12:22:59,307 - #45 b
+INFO  12:22:59,307 - #12 ,
+INFO  12:22:59,307 - #45 c
+INFO  12:22:59,308 - #7 ;
+INFO  12:22:59,308 - #17 const
+INFO  12:22:59,308 - #45 int
+INFO  12:22:59,308 - #45 lj
+INFO  12:22:59,308 - #6 =
+INFO  12:22:59,309 - #42 15
+INFO  12:22:59,309 - #12 ,
+INFO  12:22:59,309 - #45 sdnc
+INFO  12:22:59,309 - #6 =
+INFO  12:22:59,309 - #42 20
+INFO  12:22:59,309 - #7 ;
+INFO  12:22:59,309 - #17 const
+INFO  12:22:59,309 - #45 char
+INFO  12:22:59,309 - #45 xz
+INFO  12:22:59,310 - #6 =
+INFO  12:22:59,310 - #44 a
+INFO  12:22:59,310 - #12 ,
+INFO  12:22:59,310 - #45 as
+INFO  12:22:59,310 - #6 =
+INFO  12:22:59,310 - #44 a
+INFO  12:22:59,310 - #7 ;
+INFO  12:22:59,310 - #11 {
+INFO  12:22:59,310 - #45 int
+INFO  12:22:59,311 - #45 k
+INFO  12:22:59,311 - #10 (
+INFO  12:22:59,312 - #5 )
+INFO  12:22:59,313 - #45 int
+INFO  12:22:59,313 - #45 c
+INFO  12:22:59,313 - #7 ;
+INFO  12:22:59,313 - #11 {
+INFO  12:22:59,314 - #8 return
+INFO  12:22:59,315 - #45 c
+INFO  12:22:59,315 - #3 +
+INFO  12:22:59,317 - #45 x
+INFO  12:22:59,318 - #7 ;
+INFO  12:22:59,318 - #4 }
+INFO  12:22:59,318 - #45 int
+INFO  12:22:59,319 - #45 kkk
+INFO  12:22:59,319 - #10 (
+INFO  12:22:59,324 - #45 int
+INFO  12:22:59,324 - #45 e
+INFO  12:22:59,324 - #12 ,
+INFO  12:22:59,325 - #45 int
+INFO  12:22:59,325 - #45 p
+INFO  12:22:59,325 - #12 ,
+INFO  12:22:59,325 - #45 int
+INFO  12:22:59,325 - #45 z
+INFO  12:22:59,325 - #5 )
+INFO  12:22:59,326 - #45 int
+INFO  12:22:59,326 - #45 t
+INFO  12:22:59,326 - #7 ;
+INFO  12:22:59,326 - #11 {
+INFO  12:22:59,326 - #8 return
+INFO  12:22:59,326 - #45 e
+INFO  12:22:59,326 - #3 +
+INFO  12:22:59,326 - #45 p
+INFO  12:22:59,326 - #3 +
+INFO  12:22:59,326 - #45 z
+INFO  12:22:59,326 - #3 +
+INFO  12:22:59,327 - #45 t
+INFO  12:22:59,327 - #3 +
+INFO  12:22:59,327 - #45 x
+INFO  12:22:59,327 - #3 +
+INFO  12:22:59,327 - #45 y
+INFO  12:22:59,327 - #3 +
+INFO  12:22:59,327 - #45 k
+INFO  12:22:59,327 - #10 (
+INFO  12:22:59,328 - #5 )
+INFO  12:22:59,328 - #7 ;
+INFO  12:22:59,329 - #4 }
+INFO  12:22:59,329 - #15 void
+INFO  12:22:59,329 - #45 kk
+INFO  12:22:59,330 - #10 (
+INFO  12:22:59,330 - #5 )
+INFO  12:22:59,330 - #45 int
+INFO  12:22:59,330 - #45 j
+INFO  12:22:59,330 - #7 ;
+INFO  12:22:59,330 - #11 {
+INFO  12:22:59,330 - #8 return
+INFO  12:22:59,330 - #7 ;
+INFO  12:22:59,330 - #4 }
+INFO  12:22:59,331 - #15 void
+INFO  12:22:59,331 - #45 main
+INFO  12:22:59,331 - #10 (
+INFO  12:22:59,331 - #5 )
+INFO  12:22:59,331 - #11 {
+INFO  12:22:59,331 - #45 niz
+INFO  12:22:59,331 - #6 =
+INFO  12:22:59,331 - #18 new
+INFO  12:22:59,331 - #45 int
+INFO  12:22:59,331 - #36 [
+INFO  12:22:59,331 - #42 3
+INFO  12:22:59,331 - #37 ]
+INFO  12:22:59,331 - #7 ;
+INFO  12:22:59,332 - #45 y
+INFO  12:22:59,332 - #6 =
+INFO  12:22:59,332 - #42 2
+INFO  12:22:59,332 - #3 +
+INFO  12:22:59,332 - #42 3
+INFO  12:22:59,332 - #7 ;
+INFO  12:22:59,332 - #45 x
+INFO  12:22:59,332 - #22 ++
+INFO  12:22:59,332 - #7 ;
+INFO  12:22:59,333 - #45 x
+INFO  12:22:59,333 - #6 =
+INFO  12:22:59,333 - #45 k
+INFO  12:22:59,333 - #10 (
+INFO  12:22:59,333 - #5 )
+INFO  12:22:59,333 - #7 ;
+INFO  12:22:59,333 - #45 kk
+INFO  12:22:59,333 - #10 (
+INFO  12:22:59,334 - #5 )
+INFO  12:22:59,334 - #7 ;
+INFO  12:22:59,334 - #45 k
+INFO  12:22:59,334 - #10 (
+INFO  12:22:59,335 - #5 )
+INFO  12:22:59,335 - #7 ;
+INFO  12:22:59,335 - #9 if
+INFO  12:22:59,335 - #10 (
+INFO  12:22:59,336 - #43 false
+INFO  12:22:59,336 - #28 &&
+INFO  12:22:59,336 - #45 niz
+INFO  12:22:59,336 - #30 ==
+INFO  12:22:59,336 - #45 null
+INFO  12:22:59,337 - #5 )
+INFO  12:22:59,338 - #45 niz
+INFO  12:22:59,339 - #6 =
+INFO  12:22:59,339 - #18 new
+INFO  12:22:59,339 - #45 int
+INFO  12:22:59,339 - #36 [
+INFO  12:22:59,339 - #42 5
+INFO  12:22:59,339 - #37 ]
+INFO  12:22:59,339 - #7 ;
+INFO  12:22:59,339 - #4 }
+INFO  12:22:59,340 - #4 }
+INFO  12:22:59,341 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  12:22:59,341 - =================Semanticka analiza===================
+INFO  12:22:59,349 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  12:22:59,350 - Detektovana globalna promenljiva na liniji 3
+INFO  12:22:59,350 - Detektovana globalna promenljiva na liniji 3
+INFO  12:22:59,350 - Detektovana globalna promenljiva na liniji 4
+INFO  12:22:59,350 - Detektovana globalna promenljiva na liniji 4
+INFO  12:22:59,351 - Detektovana globalna promenljiva na liniji 4
+INFO  12:22:59,351 - Detektovana deklaracija numericke konstante na liniji 5
+INFO  12:22:59,351 - Detektovana deklaracija numericke konstante na liniji 5
+INFO  12:22:59,351 - Detektovana deklaracija character konstante na liniji 6
+INFO  12:22:59,351 - Detektovana deklaracija character konstante na liniji 6
+INFO  12:22:59,351 - c fp pos= -1 na liniji 10
+INFO  12:22:59,351 - x fp pos= -1 na liniji 10
+INFO  12:22:59,352 - e fp pos= 0 na liniji 14
+INFO  12:22:59,352 - p fp pos= 1 na liniji 14
+INFO  12:22:59,352 - z fp pos= 2 na liniji 14
+INFO  12:22:59,352 - t fp pos= -1 na liniji 14
+INFO  12:22:59,352 - x fp pos= -1 na liniji 14
+INFO  12:22:59,352 - y fp pos= -1 na liniji 14
+INFO  12:22:59,352 - k fp pos= 0 na liniji 14
+INFO  12:22:59,353 - Detektovan poziv funkcije na liniji 14
+INFO  12:22:59,354 - niz fp pos= -1 na liniji 24
+INFO  12:22:59,354 - y fp pos= -1 na liniji 27
+INFO  12:22:59,354 - x fp pos= -1 na liniji 28
+INFO  12:22:59,354 - x fp pos= -1 na liniji 29
+INFO  12:22:59,354 - k fp pos= 0 na liniji 29
+INFO  12:22:59,354 - Detektovan poziv funkcije na liniji 29
+INFO  12:22:59,354 - kk fp pos= 0 na liniji 30
+INFO  12:22:59,354 - Detektovan poziv funkcije na liniji 30
+INFO  12:22:59,354 - k fp pos= 0 na liniji 31
+INFO  12:22:59,355 - Detektovan poziv funkcije na liniji 31
+INFO  12:22:59,355 - niz fp pos= -1 na liniji 37
+INFO  12:22:59,355 - null fp pos= 0 na liniji 37
+INFO  12:22:59,355 - niz fp pos= -1 na liniji 38
+INFO  12:22:59,356 - ===================================
+INFO  12:22:59,357 - 0 klasa
+INFO  12:22:59,357 - 4 metoda
+INFO  12:22:59,357 - 6 globalnih promenljivih
+INFO  12:22:59,357 - 4 globalnih konstanti
+INFO  12:22:59,357 - 4 poziva funkcija
+INFO  12:22:59,357 - 11 naredbi
+INFO  12:22:59,357 - ===================================
+INFO  12:22:59,358 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  12:22:59,362 - Parsiranje uspesno zavrseno!

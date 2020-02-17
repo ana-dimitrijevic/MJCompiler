@@ -1,0 +1,36 @@
+program MJProgram
+	int x; int y;
+{
+
+	bool deljivo (int x, int y) int z; {
+	
+	if(true) {
+		z = x%y;	
+		if (z==0) {			
+			print(z);
+			return true;
+			}
+		else {
+			print(z);
+			return false;
+		}
+		}
+	return true;
+	}
+
+	void main() int niz[]; int i; int j; {
+	
+		//ISPIS PARNIH BROJEVA 1..10
+		niz = new int[10];
+		for(i=0; i<10;) {
+			niz[i] = i;			
+			if (deljivo(niz[i], 2)) {
+				print(niz[i]);
+			}			
+			i++;	
+		}
+		
+		
+		return;
+	}
+}

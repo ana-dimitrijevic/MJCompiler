@@ -1,0 +1,45 @@
+program MJProgram
+	int x; int y;
+{
+
+	int k (int x, int y) int c; {
+		c = 2;
+		
+		print(0);
+		
+		return x+y;
+	}
+
+	void main() {
+		x = 3;
+		
+		if(x!=3 || true) {
+			
+			print(1);
+			print(1);
+			print(1);
+			
+		}
+		else {
+			print(0);
+			print(0);
+			print(0);
+		}
+
+
+		for(x=0; x<5; x++){
+			print(x);
+			if(x==4) break;
+		}
+		
+		//y = 4 + 9 + k();
+		
+		//print(x);
+		
+		//y = k(2,3);
+		
+		//print(y);
+		
+		return;
+	}
+}

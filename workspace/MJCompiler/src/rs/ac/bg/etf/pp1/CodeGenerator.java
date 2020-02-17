@@ -1,404 +1,351 @@
 package rs.ac.bg.etf.pp1;
 
-
-import java.util.ArrayDeque;
-import java.util.Deque;
-
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
-import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
-	
-	private Deque<Integer> backpathcingStack = new ArrayDeque<>();
-	private Deque<Integer> loopConditionAddressStack = new ArrayDeque<>();
-    private Deque<Integer> loopTerminatorAddressStack = new ArrayDeque<>();
-    private Deque<Integer> breakAddressStack = new ArrayDeque<>();
-    private Deque<Integer> breakCountStack = new ArrayDeque<>();
-	
-	private int mainPc;
-	
+
+	private Stack<Queue<Integer>> falseBackpatchingStack = new Stack<>();
+	private Stack<Queue<Integer>> trueBackpatchingStack = new Stack<>();
+	private Stack<Integer> skipElseBackpatchingStack = new Stack<>();
+	private Stack<Queue<Integer>> breakForBackpatchingStack = new Stack<>();
+	private Stack<Integer> designatorStatementStartAddresses = new Stack<>();
+	private int mainPc, relopCode = -1, conditionCheckForAddress = -1;
+
 	public int getMainPc() {
 		return mainPc;
 	}
-	
+
+	public int getRelOP(Relop relop) {
+		if (relop instanceof RelopEQ) 		  { return Code.eq; }
+		else if (relop instanceof RelopNOTEQ) { return Code.ne; }
+		else if (relop instanceof RelopGR) 	  {	return Code.gt; }
+		else if (relop instanceof RelopGEQ)   { return Code.ge; }
+		else if (relop instanceof RelopLS) 	  { return Code.lt; }
+		else if (relop instanceof RelopLEQ)   { return Code.le;	}
+		return Code.eq;
+	}
+
 	@Override
-	public void visit(MethodTypeName MethodTypeName) {
-		if ("main".equalsIgnoreCase(MethodTypeName.getMethName())) {
+	public void visit(ProgName progName) {
+		Tab.find("ord").setAdr(Code.pc);
+		Code.put(Code.return_);
+		Tab.find("chr").setAdr(Code.pc);
+		Code.put(Code.return_);
+		Tab.find("len").setAdr(Code.pc);
+		Code.put(Code.arraylength);
+		Code.put(Code.return_);
+	}
+
+	@Override
+	public void visit(MethodTypeName methodTypeName) {
+		if ("main".equalsIgnoreCase(methodTypeName.getMethName())) {
 			mainPc = Code.pc;
 		}
-		MethodTypeName.obj.setAdr(Code.pc);
-		
-		// Collect arguments and local variables.
-
-		// Generate the entry.
+		methodTypeName.obj.setAdr(Code.pc);
 		Code.put(Code.enter);
-		Code.put(MethodTypeName.obj.getLevel());
-		Code.put(MethodTypeName.obj.getLocalSymbols().size());
-		
-		System.out.println("level :" + MethodTypeName.obj.getLevel());
-		System.out.println("local symbols size :" + MethodTypeName.obj.getLocalSymbols().size());
+		Code.put(methodTypeName.obj.getLevel());
+		Code.put(methodTypeName.obj.getLocalSymbols().size());
 	}
-	
+
 	@Override
-	public void visit(MethodDeclaration MethodDecl) {
+	public void visit(MethodDeclaration methodDeclaration) {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
-	
-	
+
 	@Override
-	public void visit(ReturnType ReturnExpr) {
+	public void visit(ReturnType returnType) {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
-	
+
 	@Override
-	public void visit(VoidReturnType ReturnNoExpr) {
+	public void visit(VoidReturnType voidReturnType) {
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
-	
+
 	@Override
 	public void visit(AssignStatement assignStatement) {
 		Code.store(assignStatement.getDesignator().obj);
 	}
-	
-	@Override
-	public void visit(NumberConstFactor Const) {
-		Code.load(new Obj(Obj.Con, "$", Const.struct, Const.getVal(), 0));
-	}
-	
-	@Override
-	public void visit(CharConstFactor Const) {
-		Code.load(new Obj(Obj.Con, "$", Const.struct, Const.getVal(), 0));
-	}
-	
-	@Override
-	public void visit(BoolConstFactor Const) {
-		if (Const.getVal()==true)
-			Code.load(new Obj(Obj.Con, "$", Const.struct, 1, 0));
-		else 
-			Code.load(new Obj(Obj.Con, "$", Const.struct, 0, 0));
-	}
-	
-    @Override
-    public void visit(DesignatorName ident) {
-        Obj objNode = ident.obj;
-        // load array pointer on the expression stack
-       // if (objNode.getType().getKind() == Struct.Array) {
-        if (ident.getParent().getClass() == ArrayDesignator.class) {
-			Code.load(objNode);
-        }
-    }
 
 	@Override
-	public void visit(SimpleDesignator simpleDesignator) {	
-		
-		SyntaxNode parent = simpleDesignator.getParent();
+	public void visit(NumberConstFactor numberConstFactor) {
+		Code.load(new Obj(Obj.Con, "$", numberConstFactor.struct, numberConstFactor.getVal(), 0));
+	}
 
-		if (AssignStatement.class != parent.getClass() && FuncCallStart.class != parent.getClass() &&
-                ReadStatement.class != parent.getClass() && ProcCallStart.class != parent.getClass()) {
+	@Override
+	public void visit(CharConstFactor charConstFactor) {
+		Code.load(new Obj(Obj.Con, "$", charConstFactor.struct, charConstFactor.getVal(), 0));
+	}
+
+	@Override
+	public void visit(BoolConstFactor boolConstFactor) {
+		if (boolConstFactor.getVal() == true)
+			Code.load(new Obj(Obj.Con, "$", boolConstFactor.struct, 1, 0));
+		else
+			Code.load(new Obj(Obj.Con, "$", boolConstFactor.struct, 0, 0));
+	}
+
+	@Override
+	public void visit(DesignatorName designatorName) {
+		if (designatorName.getParent().getClass() == ArrayDesignator.class) {
+			Code.load(designatorName.obj);
+		}
+	}
+
+	@Override
+	public void visit(SimpleDesignator simpleDesignator) {
+		// Code.put(Code.pop);
+		if (AssignStatement.class != simpleDesignator.getParent().getClass()
+				&& FuncCallStart.class != simpleDesignator.getParent().getClass()
+				&& ReadStatement.class != simpleDesignator.getParent().getClass()
+				&& ProcCallStart.class != simpleDesignator.getParent().getClass()) {
 			Code.load(simpleDesignator.obj);
 		}
-		
 	}
-	
+
 	@Override
-	public void visit(ArrayDesignator simpleDesignator) {
-		SyntaxNode parent = simpleDesignator.getParent();
-		
-		// Code.put(Code.pop); ?? cica ima za sad mi nije problem mozda posle bude
-
-		if (IncDesignatorStatement.class == parent.getClass() || DecDesignatorStatement.class == parent.getClass()) {
-                Code.put(Code.dup2);            
-        }
-
-    
-        if (AssignStatement.class != parent.getClass() && FuncCall.class != parent.getClass() &&
-                ReadStatement.class != parent.getClass()) {
-            Code.load(simpleDesignator.obj);
-        }
+	public void visit(ArrayDesignator arrayDesignator) {
+		// Code.put(Code.pop);
+		if (IncDesignatorStatement.class == arrayDesignator.getParent().getClass()
+				|| DecDesignatorStatement.class == arrayDesignator.getParent().getClass()) {
+			Code.put(Code.dup2);
+		}
+		if (AssignStatement.class != arrayDesignator.getParent().getClass()
+				&& FuncCallStart.class != arrayDesignator.getParent().getClass()
+				&& ReadStatement.class != arrayDesignator.getParent().getClass()
+				&& ProcCallStart.class != arrayDesignator.getParent().getClass()) {
+			Code.load(arrayDesignator.obj);
+		}
 	}
-	
+
 	@Override
-	public void visit(FuncCall FuncCall) {
-		Obj functionObj = FuncCall.getFuncCallStart().getDesignator().obj;
-		int offset = functionObj.getAdr() - Code.pc; 
+	public void visit(FuncCall funcCall) {
+		int offs = funcCall.getFuncCallStart().getDesignator().obj.getAdr() - Code.pc;
 		Code.put(Code.call);
-		Code.put2(offset);
+		Code.put2(offs);
+	}
+	
+	@Override
+	public void visit(ProcCall procCall) {
+		int offs = procCall.getProcCallStart().getDesignator().obj.getAdr() - Code.pc;
+		Code.put(Code.call);
+		Code.put2(offs);
+	}
+	
+	@Override
+	public void visit(StatementsList statementList) {
+		if (statementList.getStatement() instanceof ProcCall) {
+			ProcCall procCall = (ProcCall) statementList.getStatement();
+			if (procCall.getProcCallStart().getDesignator().obj.getType() != Tab.noType) {
+	            Code.put(Code.pop);
+	    }
+	}
 	}
 
-	 @Override
-	    public void visit(ReadStatement readStatement) {
-		 
-	        if (readStatement.getDesignator().obj.getType() == Tab.charType) {
-	            Code.put(Code.bread);
-	        } else {
-	            Code.put(Code.read);
-	        }
-	        Code.store(readStatement.getDesignator().obj);
-	    }
-	 
-	
+	@Override
+	public void visit(ReadStatement readStatement) {
+		if (readStatement.getDesignator().obj.getType() == Tab.charType)
+			Code.put(Code.bread);
+		else
+			Code.put(Code.read);
+		Code.store(readStatement.getDesignator().obj);
+	}
+
 	@Override
 	public void visit(MultipleAddopTerm multipleAddopTerm) {
-		 if (multipleAddopTerm.getAddop() instanceof AddopADD) {
-	       
-	            Code.put(Code.add);
-	        } else {
-	           
-	            Code.put(Code.sub);
-	        }
+		if (multipleAddopTerm.getAddop() instanceof AddopADD)
+			Code.put(Code.add);
+		else
+			Code.put(Code.sub);
 	}
-	
-    
 
-    @Override
-    public void visit(MultipleFactor multipleFactor) {
-        if (multipleFactor.getMulop() instanceof MulopMUL) {
-            Code.put(Code.mul);
-        } else if (multipleFactor.getMulop() instanceof MulopDIV) {
-            Code.put(Code.div);
-        } else {
-            Code.put(Code.rem);
-        }
-    }
-    
-    
-	
-    @Override
-    public void visit(NewObjectArrayFactor newOperator) {
-        Code.put(Code.newarray);
-        if (newOperator.getType().struct == Tab.charType) {
-            Code.put(0);
-        } else {
-            Code.put(1);
-        }
-    }
-	
-    @Override
-    public void visit(NegativeExpression negativeExpression) {
-        Code.put(Code.neg);
-    }
+	@Override
+	public void visit(MultipleFactor multipleFactor) {
+		if (multipleFactor.getMulop() instanceof MulopMUL)
+			Code.put(Code.mul);
+		else if (multipleFactor.getMulop() instanceof MulopDIV)
+			Code.put(Code.div);
+		else
+			Code.put(Code.rem);
+	}
 
-	public void visit(PrintStatement node) {
-	    if(node.getPrintOptVal() instanceof PrintOptionalVal){
-	    	PrintOptionalVal printOptNumFieldsNode = (PrintOptionalVal) node.getPrintOptVal();
-			Code.loadConst(printOptNumFieldsNode.getVal());
-        }
-		else Code.put(Code.const_1);
-	    
-	    Obj boolType = Tab.find("bool");
-		if(node.getExpr().struct == Tab.intType || node.getExpr().struct == boolType.getType()){
+	@Override
+	public void visit(NewObjectArrayFactor newObjectArrayFactor) {
+		Code.put(Code.newarray);
+		if (newObjectArrayFactor.getType().struct == Tab.charType)
+			Code.put(0);
+		else
+			Code.put(1);
+	}
+
+	@Override
+	public void visit(NegativeExpression negativeExpression) {
+		Code.put(Code.neg);
+	}
+
+	public void visit(PrintStatement printStatement) {
+		if (printStatement.getPrintOptVal() instanceof PrintOptionalVal) {
+			PrintOptionalVal val = (PrintOptionalVal) printStatement.getPrintOptVal();
+			Code.loadConst(val.getVal());
+		} 
+		else
+			Code.put(Code.const_1);
+		Obj boolType = Tab.find("bool");
+		if (printStatement.getExpr().struct == Tab.intType 
+			|| printStatement.getExpr().struct == boolType.getType()) {
 			Code.put(Code.print);
-		}
-		else if (node.getExpr().struct == Tab.charType){
+		} 
+		else if (printStatement.getExpr().struct == Tab.charType) {
 			Code.put(Code.bprint);
 		}
 	}
-			
 
-  //print ocekuje na expr steku vrijednost i sirinu(width)
-  	//Expr neterminal ce sam postaviti na expr stek svoju vrijednost
-  	//mora se jos dodati i odgovarajuca sirina (width)
-//  	public void visit(PrintStatement printStatement){
-//  		
-//  		//mora se umetnuti odgovarajuca konstanta, zavisno od toga da li je naveden opcioni izraz
-//  		
-//  		if(printStatement.getPrintOptVal() instanceof PrintOptionalVal){
-//  			//navedena sirina(width)
-//  			PrintOptionalVal yesPrintOptional = (PrintOptionalVal)printStatement.getPrintOptVal();
-//  			
-//  			int printWidth = yesPrintOptional.getVal();
-//  			Obj constObj = new Obj(Obj.Con,"name",Tab.intType,printWidth,0);
-//  			Code.load(constObj);
-//  			
-//  		}else{
-//  			//nije navedena sirina, default 2
-//  			//ako nije specificirana duzina, ide duzina 3 default
-//  			Code.loadConst(3);
-//  		}
-//  		
-//  		//ako nije ispis char-a, radi se print, inace bprint
-//  		
-//  		Struct exprType = printStatement.getExpr().struct;
-//  		
-//  		if(!(exprType.equals(Tab.charType))){
-//  			//ne ispisuje se char
-//  			Code.put(Code.print);
-//  			return;
-//  		}
-//  		//ispisuje se char
-//  		Code.put(Code.bprint);
-//  	}
-  	
-  	 @Override
-     public void visit(IncDesignatorStatement statement) {
-         Code.loadConst(1);
-         Code.put(Code.add);
-         Code.store(statement.getDesignator().obj);
-     }
+	@Override
+	public void visit(IncDesignatorStatement incDesignatorStatement) {
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(incDesignatorStatement.getDesignator().obj);
+	}
 
-     @Override
-     public void visit(DecDesignatorStatement statement) {
-         Code.loadConst(-1);
-         Code.put(Code.add);
-         Code.store(statement.getDesignator().obj);
-     }
-  	
-     @Override
-     public void visit(RelopExprConditionFactor relopExpr) {
-         Relop relop = relopExpr.getRelop();
-         backpathcingStack.addFirst(Code.pc + 1);
-         if (relop instanceof RelopEQ) {
-             Code.putFalseJump(Code.eq, 0);
-         } else if (relop instanceof RelopNOTEQ) {
-             Code.putFalseJump(Code.ne, 0);
-         } else if (relop instanceof RelopGR) {
-             Code.putFalseJump(Code.gt, 0);
-         } else if (relop instanceof RelopGEQ) {
-             Code.putFalseJump(Code.ge, 0);
-         } else if (relop instanceof RelopLS) {
-             Code.putFalseJump(Code.lt, 0);
-         } else if (relop instanceof RelopLEQ) {
-             Code.putFalseJump(Code.le, 0);
-         }
-         Code.loadConst(1);
-         int temp = backpathcingStack.removeFirst();
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
-         Code.fixup(temp);
-         Code.loadConst(0);
-         Code.fixup(backpathcingStack.removeFirst());
-     }
+	@Override
+	public void visit(DecDesignatorStatement decDesignatorStatement) {
+		Code.loadConst(-1);
+		Code.put(Code.add);
+		Code.store(decDesignatorStatement.getDesignator().obj);
+	}
 
-     @Override
-     public void visit(MultipleFactorConditionTerm andExpr) {
-         Code.put(Code.mul); // AND
-     }
+	public void visit(Or or) {
+		Code.putJump(0);
+		int addrToPatch = Code.pc - 2;
+		trueBackpatchingStack.peek().add(addrToPatch);
+		Queue<Integer> falseIfBackpatchingStackQueue = falseBackpatchingStack.peek();
+		while (!falseIfBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(falseIfBackpatchingStackQueue.remove());
+		}
+	}
 
-     @Override
-     public void visit(MultipleCondition orExpr) {
-         // OR
-         Code.put(Code.add);
-         Code.loadConst(0);
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putFalseJump(Code.eq, 0);
-         Code.loadConst(0);
-         int temp = backpathcingStack.removeFirst();
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
-         Code.fixup(temp);
-         Code.loadConst(1);
-         Code.fixup(backpathcingStack.removeFirst());
-     }
+	public void visit(RelopExprConditionFactor relopExprConditionFactor) {
+		Relop relop = relopExprConditionFactor.getRelop();
+		relopCode = getRelOP(relop);
+		Code.putFalseJump(relopCode, 0);
+		int addrToPatch = Code.pc - 2;
+		falseBackpatchingStack.peek().add(addrToPatch);
+	}
 
-     @Override
-     public void visit(IfConditions cond) {
-         Code.loadConst(1);
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putFalseJump(Code.eq, 0);
-     }
+	public void visit(ExprConditionFactor exprConditionFactor) {
+		relopCode = Code.eq;
+		Code.loadConst(1);
+		Code.putFalseJump(relopCode, 0);
+		int addrToPatch = Code.pc - 2;
+		falseBackpatchingStack.peek().add(addrToPatch);
+	}
 
-     @Override
-     public void visit(IfStatement ifStatement) {
-         Code.fixup(backpathcingStack.removeFirst());
-     }
-     
-     @Override
-     public void visit(IfElseStatement ifElseStatement) {
-         Code.fixup(backpathcingStack.removeFirst());
-     }
+	public void visit(IfStart ifStart) {
+		falseBackpatchingStack.push(new LinkedList<Integer>());
+		trueBackpatchingStack.push(new LinkedList<Integer>());
+	}
 
-     @Override
-     public void visit(Else e) {
-         int temp = backpathcingStack.removeFirst();
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
-         Code.fixup(temp);
-     }
+	public void visit(IfStatement ifStatement) {
+		falseBackpatchingStack.pop();
+		trueBackpatchingStack.pop();
+	}
 
-     @Override
-     public void visit(NoForStartDesignatorStatement statement) {
-         // (0)
-         loopConditionAddressStack.addFirst(Code.pc);
-         breakCountStack.addFirst(0);
-     }
+	public void visit(Rparen rparen) {
+		Queue<Integer> trueIfBackpatchingStackQueue = trueBackpatchingStack.peek();
+		while (!trueIfBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(trueIfBackpatchingStackQueue.remove());
+		}
+	}
 
-     @Override
-     public void visit(ForStartDesignatorStatement statement) {
-         // (0)
-         loopConditionAddressStack.addFirst(Code.pc);
-         breakCountStack.addFirst(0);
-     }
+	public void visit(Else elseStart) {
+		Code.putJump(0);
+		int addrToPatch = Code.pc - 2;
+		skipElseBackpatchingStack.add(addrToPatch);
+		Queue<Integer> falseBackpatchingStackQueue = falseBackpatchingStack.peek();
+		while (!falseBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(falseBackpatchingStackQueue.remove());
+		}
 
-     @Override
-     public void visit(NoForCondition cond) {
-         // (1) jump inside the loop body
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
+	}
 
-         // (3)
-         loopTerminatorAddressStack.addFirst(Code.pc);
-     }
+	public void visit(ElseOptional elseOptional) {
+		Code.fixup(skipElseBackpatchingStack.pop());
+		Queue<Integer> falseBackpatchingStackQueue = falseBackpatchingStack.peek();
+		while (!falseBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(falseBackpatchingStackQueue.remove());
+		}
 
-     @Override
-     public void visit(ForCondition cond) {
-         Code.loadConst(1);
-         // (2) jump out of the loop
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putFalseJump(Code.eq, 0);
+	}
 
-         // (1) jump inside the loop body
-         backpathcingStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
+	public void visit(NoElseOptional noElseOptional) {
+		Queue<Integer> falseBackpatchingStackQueue = falseBackpatchingStack.peek();
+		while (!falseBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(falseBackpatchingStackQueue.remove());
+		}
+	}
 
-         // (3)
-         loopTerminatorAddressStack.addFirst(Code.pc);
-     }
+	public void visit(ForStart forStart) {
+		trueBackpatchingStack.push(new LinkedList<Integer>());
+		falseBackpatchingStack.push(new LinkedList<Integer>());
+		breakForBackpatchingStack.push(new LinkedList<Integer>());
+		conditionCheckForAddress = -1;
+	}
 
-     @Override
-     public void visit(NoForEndDesignatorStatement statement) {
-         Code.putJump(loopConditionAddressStack.peekFirst()); // jumps to (0)
-         Code.fixup(backpathcingStack.removeFirst()); // fixes (1)
-     }
+	public void visit(ForStatement forStatement) {
+		int adr = designatorStatementStartAddresses.peek();
+		Code.putJump(adr);
+		Queue<Integer> falseBackpatchingStackQueue = falseBackpatchingStack.peek();
+		while (!falseBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(falseBackpatchingStackQueue.remove());
+		}
+		Queue<Integer> breakForBackpatchingStackQueue = breakForBackpatchingStack.peek();
+		while (!breakForBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(breakForBackpatchingStackQueue.remove());
+		}
+		breakForBackpatchingStack.pop();
+		trueBackpatchingStack.pop();
+		falseBackpatchingStack.pop();
+		designatorStatementStartAddresses.pop();
+	}
 
-     @Override
-     public void visit(ForEndDesignatorStatement statement) {
-         Code.putJump(loopConditionAddressStack.peekFirst()); // jumps to (0)
-         Code.fixup(backpathcingStack.removeFirst()); // fixes (1)
-     }
+	public void visit(ForCondStart forCondStart) {
+		conditionCheckForAddress = Code.pc;
+	}
 
-     @Override
-     public void visit(ForStatement statement) {
-         Code.putJump(loopTerminatorAddressStack.peekFirst()); // jumps to (3)
-         if (statement.getForCond() instanceof ForCondition) {
-             Code.fixup(backpathcingStack.removeFirst()); // fixes (2)
-         }
-         loopConditionAddressStack.removeFirst();
-         loopTerminatorAddressStack.removeFirst();
-         int breakCount = breakCountStack.removeFirst();
-         while (breakCount > 0) {
-             Code.fixup(breakAddressStack.removeFirst());
-             breakCount--;
-         }
-     }
+	public void visit(ForCondEnd forCondEnd) {
+		Code.putJump(0);
+		int addrToPatch = Code.pc - 2;
+		trueBackpatchingStack.peek().add(addrToPatch);
+		addrToPatch = Code.pc;
+		designatorStatementStartAddresses.push(addrToPatch);
 
-     @Override
-     public void visit(ContinueStatement statement) {
-         Code.putJump(loopTerminatorAddressStack.peekFirst()); // jump to (3)
-     }
+	}
 
-     @Override
-     public void visit(BreakStatement statement) {
-         breakCountStack.addFirst(breakCountStack.removeFirst() + 1);
-         breakAddressStack.addFirst(Code.pc + 1);
-         Code.putJump(0);
-     }
+	public void visit(ForBodyStart forBodyStart) {
+		Code.putJump(conditionCheckForAddress);
+		Queue<Integer> trueBackpatchingStackQueue = trueBackpatchingStack.peek();
+		while (!trueBackpatchingStackQueue.isEmpty()) {
+			Code.fixup(trueBackpatchingStackQueue.remove());
+		}
+	}
 
+	public void visit(BreakStatement breakStatement) {
+		Code.putJump(0);
+		int addrToPatch = Code.pc - 2;
+		breakForBackpatchingStack.peek().add(addrToPatch);
+	}
 
+	public void visit(ContinueStatement continueStatement) {
+		Code.putJump(designatorStatementStartAddresses.peek());
+	}
 
 }

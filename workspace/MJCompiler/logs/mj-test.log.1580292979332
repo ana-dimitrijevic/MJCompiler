@@ -1,0 +1,160 @@
+INFO  11:16:00,300 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  11:16:00,307 - =================Sintaksna analiza==================
+INFO  11:16:00,372 - #13 program
+INFO  11:16:00,373 - #45 MJProgram
+INFO  11:16:00,373 - #45 int
+INFO  11:16:00,375 - #45 niz
+INFO  11:16:00,376 - #36 [
+INFO  11:16:00,376 - #37 ]
+INFO  11:16:00,376 - #7 ;
+INFO  11:16:00,376 - #45 int
+INFO  11:16:00,377 - #45 x
+INFO  11:16:00,377 - #7 ;
+INFO  11:16:00,378 - #45 int
+INFO  11:16:00,378 - #45 y
+INFO  11:16:00,378 - #7 ;
+INFO  11:16:00,378 - #11 {
+INFO  11:16:00,378 - #45 int
+INFO  11:16:00,379 - #45 kkk
+INFO  11:16:00,379 - #10 (
+INFO  11:16:00,380 - #45 int
+INFO  11:16:00,380 - #45 e
+INFO  11:16:00,380 - #12 ,
+INFO  11:16:00,380 - #45 int
+INFO  11:16:00,381 - #45 p
+INFO  11:16:00,381 - #12 ,
+INFO  11:16:00,381 - #45 int
+INFO  11:16:00,381 - #45 z
+INFO  11:16:00,381 - #5 )
+INFO  11:16:00,381 - #45 int
+INFO  11:16:00,382 - #45 c
+INFO  11:16:00,382 - #7 ;
+INFO  11:16:00,382 - #45 int
+INFO  11:16:00,382 - #45 t
+INFO  11:16:00,383 - #11 {
+ERROR 11:16:00,383 - 
+Sintaksna greska na liniji 7
+INFO  11:16:00,383 - #8 return
+INFO  11:16:00,383 - #45 e
+INFO  11:16:00,383 - #3 +
+INFO  11:16:00,383 - #45 p
+INFO  11:16:00,384 - #3 +
+INFO  11:16:00,384 - #45 z
+INFO  11:16:00,384 - #3 +
+INFO  11:16:00,384 - #45 c
+INFO  11:16:00,384 - #3 +
+INFO  11:16:00,384 - #45 t
+INFO  11:16:00,384 - #7 ;
+INFO  11:16:00,384 - #4 }
+INFO  11:16:00,384 - #45 int
+INFO  11:16:00,385 - #45 k
+INFO  11:16:00,385 - #10 (
+INFO  11:16:00,385 - #5 )
+INFO  11:16:00,385 - #45 int
+INFO  11:16:00,385 - #45 c
+INFO  11:16:00,385 - #12 ,
+INFO  11:16:00,385 - #45 x
+INFO  11:16:00,385 - #7 ;
+INFO  11:16:00,385 - #11 {
+INFO  11:16:00,386 - GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!
+INFO  11:16:00,387 - #8 return
+INFO  11:16:00,388 - #45 c
+INFO  11:16:00,393 - #3 +
+INFO  11:16:00,394 - #45 x
+INFO  11:16:00,395 - #7 ;
+INFO  11:16:00,396 - #4 }
+INFO  11:16:00,396 - #15 void
+INFO  11:16:00,397 - #45 kk
+INFO  11:16:00,397 - #10 (
+INFO  11:16:00,397 - #5 )
+INFO  11:16:00,398 - #45 int
+INFO  11:16:00,398 - #45 c
+INFO  11:16:00,398 - #7 ;
+INFO  11:16:00,399 - #11 {
+INFO  11:16:00,399 - #8 return
+INFO  11:16:00,399 - #7 ;
+INFO  11:16:00,399 - #4 }
+INFO  11:16:00,399 - #15 void
+INFO  11:16:00,399 - #45 main
+INFO  11:16:00,399 - #10 (
+INFO  11:16:00,400 - #5 )
+INFO  11:16:00,400 - #11 {
+INFO  11:16:00,400 - #45 niz
+INFO  11:16:00,400 - #6 =
+INFO  11:16:00,400 - #18 new
+INFO  11:16:00,400 - #45 int
+INFO  11:16:00,400 - #36 [
+INFO  11:16:00,400 - #42 3
+INFO  11:16:00,400 - #37 ]
+INFO  11:16:00,400 - #7 ;
+INFO  11:16:00,401 - #45 y
+INFO  11:16:00,401 - #6 =
+INFO  11:16:00,401 - #42 2
+INFO  11:16:00,401 - #3 +
+INFO  11:16:00,401 - #42 3
+INFO  11:16:00,401 - #7 ;
+INFO  11:16:00,401 - #45 x
+INFO  11:16:00,401 - #22 ++
+INFO  11:16:00,402 - #7 ;
+INFO  11:16:00,402 - #45 x
+INFO  11:16:00,402 - #6 =
+INFO  11:16:00,402 - #45 k
+INFO  11:16:00,402 - #10 (
+INFO  11:16:00,403 - #5 )
+INFO  11:16:00,404 - #7 ;
+INFO  11:16:00,404 - #45 kk
+INFO  11:16:00,404 - #10 (
+INFO  11:16:00,405 - #5 )
+INFO  11:16:00,405 - #7 ;
+INFO  11:16:00,405 - #45 k
+INFO  11:16:00,405 - #10 (
+INFO  11:16:00,405 - #5 )
+INFO  11:16:00,405 - #7 ;
+INFO  11:16:00,405 - #9 if
+INFO  11:16:00,406 - #10 (
+INFO  11:16:00,406 - #43 false
+INFO  11:16:00,406 - #28 &&
+INFO  11:16:00,407 - #45 niz
+INFO  11:16:00,407 - #30 ==
+INFO  11:16:00,407 - #45 null
+INFO  11:16:00,408 - #5 )
+INFO  11:16:00,409 - #45 niz
+INFO  11:16:00,410 - #6 =
+INFO  11:16:00,410 - #18 new
+INFO  11:16:00,410 - #45 int
+INFO  11:16:00,410 - #36 [
+INFO  11:16:00,410 - #42 5
+INFO  11:16:00,410 - #37 ]
+INFO  11:16:00,410 - #7 ;
+INFO  11:16:00,410 - #4 }
+INFO  11:16:00,411 - #4 }
+INFO  11:16:00,412 - rs.ac.bg.etf.pp1.ast.Program@7cd84586
+INFO  11:16:00,412 - =================Semanticka analiza===================
+INFO  11:16:00,436 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  11:16:00,436 - Detektovana globalna promenljiva na liniji 3
+INFO  11:16:00,436 - Detektovana globalna promenljiva na liniji 3
+INFO  11:16:00,436 - Fp pos= -1 na liniji 12
+INFO  11:16:00,437 - Fp pos= -1 na liniji 12
+INFO  11:16:00,437 - Fp pos= -1 na liniji 20
+INFO  11:16:00,437 - Fp pos= -1 na liniji 23
+INFO  11:16:00,437 - Fp pos= -1 na liniji 24
+INFO  11:16:00,437 - Fp pos= -1 na liniji 25
+INFO  11:16:00,437 - Fp pos= 0 na liniji 25
+ERROR 11:16:00,437 - Greska: k nije deklarisano!  na liniji 25
+INFO  11:16:00,437 - Fp pos= 0 na liniji 26
+INFO  11:16:00,438 - Detektovan poziv funkcije na liniji 26
+INFO  11:16:00,438 - Fp pos= 0 na liniji 27
+ERROR 11:16:00,438 - Greska: k nije deklarisano!  na liniji 27
+INFO  11:16:00,438 - Fp pos= -1 na liniji 33
+INFO  11:16:00,438 - Fp pos= 0 na liniji 33
+INFO  11:16:00,439 - Fp pos= -1 na liniji 34
+INFO  11:16:00,440 - ===================================
+INFO  11:16:00,440 - 0 klasa
+INFO  11:16:00,440 - 3 metoda
+INFO  11:16:00,440 - 5 globalnih promenljivih
+INFO  11:16:00,440 - 0 globalnih konstanti
+INFO  11:16:00,440 - 1 globalnih nizova
+INFO  11:16:00,440 - 3 poziva funkcija
+INFO  11:16:00,441 - 10 naredbi
+INFO  11:16:00,441 - ===================================
+ERROR 11:16:00,441 - Parsiranje NIJE uspesno zavrseno!

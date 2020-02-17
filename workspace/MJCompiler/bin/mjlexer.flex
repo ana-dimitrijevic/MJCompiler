@@ -105,7 +105,7 @@ import java_cup.runtime.Symbol;
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
 "'"[\040-\176]"'"     			{ return new_symbol(sym.CHARCONST, new Character(yytext().charAt(1))); }
-[^]  { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
+.  { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
 
 
 

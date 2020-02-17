@@ -1,0 +1,74 @@
+INFO  13:04:05,806 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  13:04:05,812 - =================Sintaksna analiza==================
+INFO  13:04:05,891 - #13 program
+INFO  13:04:05,891 - #45 MJProgram
+INFO  13:04:05,891 - #45 int
+INFO  13:04:05,893 - #45 niz
+INFO  13:04:05,894 - #36 [
+INFO  13:04:05,894 - #37 ]
+INFO  13:04:05,895 - #7 ;
+INFO  13:04:05,895 - #45 int
+INFO  13:04:05,896 - #45 x
+INFO  13:04:05,896 - #7 ;
+INFO  13:04:05,896 - #45 int
+INFO  13:04:05,897 - #45 y
+INFO  13:04:05,897 - #7 ;
+INFO  13:04:05,897 - #11 {
+INFO  13:04:05,897 - #45 int
+INFO  13:04:05,898 - #45 k
+INFO  13:04:05,898 - #10 (
+INFO  13:04:05,900 - #5 )
+INFO  13:04:05,900 - #45 int
+INFO  13:04:05,902 - #45 c
+INFO  13:04:05,902 - #7 ;
+INFO  13:04:05,902 - #11 {
+INFO  13:04:05,902 - #8 return
+INFO  13:04:05,904 - #42 1
+INFO  13:04:05,904 - #7 ;
+INFO  13:04:05,904 - #4 }
+INFO  13:04:05,905 - #15 void
+INFO  13:04:05,906 - #45 main
+INFO  13:04:05,906 - #10 (
+INFO  13:04:05,906 - #5 )
+INFO  13:04:05,907 - #11 {
+INFO  13:04:05,907 - #45 k
+INFO  13:04:05,907 - #10 (
+INFO  13:04:05,909 - #5 )
+INFO  13:04:05,910 - #7 ;
+INFO  13:04:05,910 - #9 if
+INFO  13:04:05,911 - #10 (
+INFO  13:04:05,913 - #43 false
+INFO  13:04:05,913 - #28 &&
+INFO  13:04:05,914 - #45 niz
+INFO  13:04:05,914 - #30 ==
+INFO  13:04:05,915 - #45 null
+INFO  13:04:05,916 - #5 )
+INFO  13:04:05,917 - #45 niz
+INFO  13:04:05,918 - #6 =
+INFO  13:04:05,918 - #18 new
+INFO  13:04:05,918 - #45 int
+INFO  13:04:05,920 - #36 [
+INFO  13:04:05,924 - #42 5
+INFO  13:04:05,924 - #37 ]
+INFO  13:04:05,925 - #7 ;
+INFO  13:04:05,925 - #4 }
+INFO  13:04:05,927 - #4 }
+INFO  13:04:05,928 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  13:04:05,928 - =================Semanticka analiza===================
+INFO  13:04:05,937 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  13:04:05,937 - Detektovana globalna promenljiva na liniji 3
+INFO  13:04:05,944 - Detektovana globalna promenljiva na liniji 3
+INFO  13:04:05,945 - Detektovana upotreba lokalne promenljive  na liniji 14
+INFO  13:04:05,946 - Detektovan poziv funkcije na liniji 14
+INFO  13:04:05,947 - Detektovana upotreba lokalne promenljive  na liniji 15
+INFO  13:04:05,948 - ===================================
+INFO  13:04:05,948 - 0 klasa
+INFO  13:04:05,949 - 2 metoda
+INFO  13:04:05,949 - 3 globalnih promenljivih
+INFO  13:04:05,949 - 0 globalnih konstanti
+INFO  13:04:05,949 - 1 globalnih nizova
+INFO  13:04:05,949 - 1 poziva funkcija
+INFO  13:04:05,949 - 4 naredbi
+INFO  13:04:05,949 - ===================================
+INFO  13:04:05,950 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  13:04:05,958 - Parsiranje uspesno zavrseno!

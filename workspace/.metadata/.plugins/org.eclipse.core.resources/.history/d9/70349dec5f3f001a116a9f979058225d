@@ -1,0 +1,20 @@
+program MJProgram
+	int x; int y;
+{
+
+	void fun () char c; {
+	
+		print('f');
+		print('u');	
+		print('n');		
+		
+	}
+	
+
+	void main() {
+	
+		fun();
+		
+		return;
+	}
+}

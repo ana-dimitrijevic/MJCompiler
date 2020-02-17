@@ -1,0 +1,12 @@
+program P
+{	
+
+	int a(int x, int y) {
+		return ((x+y) / (x-y)) % 2;
+	}
+	
+	void main() {
+	}
+	
+
+}

@@ -1,0 +1,18 @@
+program MJProgram
+	int x; int y;
+	int niz[];
+{
+
+	int k (int i, int j) int c; {
+		 i++;
+		 j++;
+		 c--;
+		 return 1;
+	}
+
+	void main() {
+	
+		k(1, 2);
+		
+	}
+}

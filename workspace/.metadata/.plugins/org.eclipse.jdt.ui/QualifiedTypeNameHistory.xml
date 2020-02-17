@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Struct"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.Program"/>
 <fullyQualifiedTypeName name="rs.etf.pp1.mj.runtime.Code"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MethodTypeName"/>
@@ -8,7 +7,6 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormalParamList"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormPars"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CodeGenerator"/>
-<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.FormalParamDecl"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor.VarCounter"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter"/>
@@ -21,12 +19,10 @@
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDecl"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ConstDeclaration"/>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SymbolTable"/>
 <fullyQualifiedTypeName name="java.lang.Number"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.MemberDesignator"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.NewObjectArrayFactor"/>
-<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -38,4 +34,22 @@
 <fullyQualifiedTypeName name="java.util.Deque"/>
 <fullyQualifiedTypeName name="java.util.ArrayDeque"/>
 <fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.IfStartStatement"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.IfStart"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopEQ"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopGR"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopNOTEQ"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopGEQ"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopLS"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.RelopLEQ"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ForCondStart"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Struct"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.VarDeclConst"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ForStart"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.ast.ForStartDesignatorStatement"/>
+<fullyQualifiedTypeName name="rs.ac.bg.etf.pp1.CounterVisitor"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.Tab"/>
+<fullyQualifiedTypeName name="rs.etf.pp1.symboltable.concepts.Obj"/>
 </qualifiedTypeNameHistroy>

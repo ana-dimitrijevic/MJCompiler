@@ -1,0 +1,67 @@
+package rs.ac.bg.etf.pp1;
+
+import rs.ac.bg.etf.pp1.ast.FormalParamDecl;
+import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
+
+public class CounterVisitor extends VisitorAdaptor {
+	
+	protected int count;
+	
+	public int getCount() {
+		return count;
+	}
+
+	@Override
+	public void visit(VarDeclConst formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(VarDeclClass formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(SingleVariableIdent formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(ArrayVariableIdent formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(MethodDeclaration formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(Statement formParamDecl1) {
+		count++;
+	}
+	
+	@Override
+	public void visit(ProcCall formParamDecl1) {
+		count++;
+	}
+		
+	@Override
+	public void visit(FuncCall formParamDecl1) {
+		count++;
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+
+}

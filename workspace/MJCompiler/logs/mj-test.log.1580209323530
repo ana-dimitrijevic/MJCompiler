@@ -1,0 +1,54 @@
+INFO  11:58:56,511 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  11:58:56,518 - =================Sintaksna analiza==================
+INFO  11:58:56,573 - #13 program
+INFO  11:58:56,574 - #45 MJProgram
+INFO  11:58:56,574 - #45 int
+INFO  11:58:56,576 - #45 niz
+INFO  11:58:56,576 - #36 [
+INFO  11:58:56,577 - #37 ]
+INFO  11:58:56,577 - #7 ;
+INFO  11:58:56,577 - #45 int
+INFO  11:58:56,578 - #45 x
+INFO  11:58:56,578 - #7 ;
+INFO  11:58:56,578 - #45 int
+INFO  11:58:56,579 - #45 y
+INFO  11:58:56,579 - #7 ;
+INFO  11:58:56,579 - #11 {
+INFO  11:58:56,579 - #15 void
+INFO  11:58:56,580 - #45 main
+INFO  11:58:56,581 - #10 (
+INFO  11:58:56,582 - #5 )
+INFO  11:58:56,583 - #11 {
+INFO  11:58:56,584 - #45 niz
+INFO  11:58:56,587 - #6 =
+INFO  11:58:56,588 - #18 new
+INFO  11:58:56,588 - #45 int
+INFO  11:58:56,588 - #36 [
+INFO  11:58:56,588 - #42 5
+INFO  11:58:56,589 - #37 ]
+INFO  11:58:56,589 - #7 ;
+INFO  11:58:56,590 - #45 niz
+INFO  11:58:56,590 - #36 [
+INFO  11:58:56,590 - #42 1
+INFO  11:58:56,591 - #37 ]
+INFO  11:58:56,591 - #22 ++
+INFO  11:58:56,591 - #7 ;
+INFO  11:58:56,591 - #4 }
+INFO  11:58:56,591 - #4 }
+INFO  11:58:56,593 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  11:58:56,593 - =================Semanticka analiza===================
+INFO  11:58:56,603 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  11:58:56,603 - Detektovana globalna promenljiva na liniji 3
+INFO  11:58:56,603 - Detektovana globalna promenljiva na liniji 3
+INFO  11:58:56,604 - Detektovan pristup elementu niza na liniji 18
+INFO  11:58:56,605 - ===================================
+INFO  11:58:56,605 - 0 klasa
+INFO  11:58:56,605 - 1 metoda
+INFO  11:58:56,605 - 2 globalnih promenljivih
+INFO  11:58:56,605 - 0 globalnih konstanti
+INFO  11:58:56,605 - 1 globalnih nizova
+INFO  11:58:56,606 - 0 poziva funkcija
+INFO  11:58:56,606 - 2 naredbi
+INFO  11:58:56,606 - ===================================
+INFO  11:58:56,607 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  11:58:56,612 - Parsiranje uspesno zavrseno!

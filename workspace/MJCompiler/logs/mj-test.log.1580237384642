@@ -1,0 +1,135 @@
+INFO  19:47:39,107 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  19:47:39,114 - =================Sintaksna analiza==================
+INFO  19:47:39,179 - #13 program
+INFO  19:47:39,179 - #45 MJProgram
+INFO  19:47:39,179 - #45 int
+INFO  19:47:39,180 - #45 niz
+INFO  19:47:39,181 - #36 [
+INFO  19:47:39,182 - #37 ]
+INFO  19:47:39,183 - #7 ;
+INFO  19:47:39,183 - #45 int
+INFO  19:47:39,184 - #45 x
+INFO  19:47:39,184 - #7 ;
+INFO  19:47:39,184 - #45 int
+INFO  19:47:39,185 - #45 y
+INFO  19:47:39,185 - #7 ;
+INFO  19:47:39,185 - #11 {
+INFO  19:47:39,185 - #45 int
+INFO  19:47:39,186 - #45 kkk
+INFO  19:47:39,186 - #10 (
+INFO  19:47:39,187 - #45 int
+INFO  19:47:39,188 - #45 e
+INFO  19:47:39,188 - #5 )
+INFO  19:47:39,189 - #45 int
+INFO  19:47:39,190 - #45 c
+INFO  19:47:39,190 - #7 ;
+INFO  19:47:39,190 - #11 {
+INFO  19:47:39,190 - #8 return
+INFO  19:47:39,191 - #45 e
+INFO  19:47:39,192 - #3 +
+INFO  19:47:39,193 - #45 c
+INFO  19:47:39,195 - #7 ;
+INFO  19:47:39,195 - #4 }
+INFO  19:47:39,195 - #45 int
+INFO  19:47:39,196 - #45 k
+INFO  19:47:39,196 - #10 (
+INFO  19:47:39,196 - #5 )
+INFO  19:47:39,197 - #45 int
+INFO  19:47:39,197 - #45 c
+INFO  19:47:39,197 - #7 ;
+INFO  19:47:39,197 - #11 {
+INFO  19:47:39,197 - #8 return
+INFO  19:47:39,198 - #42 1
+INFO  19:47:39,198 - #7 ;
+INFO  19:47:39,198 - #4 }
+INFO  19:47:39,198 - #15 void
+INFO  19:47:39,198 - #45 kk
+INFO  19:47:39,199 - #10 (
+INFO  19:47:39,199 - #5 )
+INFO  19:47:39,199 - #45 int
+INFO  19:47:39,199 - #45 c
+INFO  19:47:39,199 - #7 ;
+INFO  19:47:39,199 - #11 {
+INFO  19:47:39,200 - #8 return
+INFO  19:47:39,200 - #7 ;
+INFO  19:47:39,200 - #4 }
+INFO  19:47:39,201 - #15 void
+INFO  19:47:39,201 - #45 main
+INFO  19:47:39,201 - #10 (
+INFO  19:47:39,201 - #5 )
+INFO  19:47:39,201 - #11 {
+INFO  19:47:39,202 - #45 niz
+INFO  19:47:39,202 - #6 =
+INFO  19:47:39,202 - #18 new
+INFO  19:47:39,202 - #45 int
+INFO  19:47:39,202 - #36 [
+INFO  19:47:39,202 - #42 3
+INFO  19:47:39,203 - #37 ]
+INFO  19:47:39,203 - #7 ;
+INFO  19:47:39,203 - #45 x
+INFO  19:47:39,204 - #6 =
+INFO  19:47:39,204 - #45 k
+INFO  19:47:39,204 - #10 (
+INFO  19:47:39,205 - #5 )
+INFO  19:47:39,205 - #7 ;
+INFO  19:47:39,205 - #45 kk
+INFO  19:47:39,206 - #10 (
+INFO  19:47:39,206 - #5 )
+INFO  19:47:39,206 - #7 ;
+INFO  19:47:39,206 - #45 k
+INFO  19:47:39,207 - #10 (
+INFO  19:47:39,207 - #5 )
+INFO  19:47:39,207 - #7 ;
+INFO  19:47:39,207 - #45 kkk
+INFO  19:47:39,207 - #10 (
+INFO  19:47:39,207 - #45 niz
+INFO  19:47:39,207 - #36 [
+INFO  19:47:39,207 - #42 0
+INFO  19:47:39,207 - #37 ]
+INFO  19:47:39,208 - #5 )
+INFO  19:47:39,208 - #7 ;
+INFO  19:47:39,208 - #9 if
+INFO  19:47:39,208 - #10 (
+INFO  19:47:39,209 - #43 false
+INFO  19:47:39,209 - #28 &&
+INFO  19:47:39,210 - #45 niz
+INFO  19:47:39,210 - #30 ==
+INFO  19:47:39,211 - #45 null
+INFO  19:47:39,212 - #5 )
+INFO  19:47:39,213 - #45 niz
+INFO  19:47:39,214 - #6 =
+INFO  19:47:39,214 - #18 new
+INFO  19:47:39,214 - #45 int
+INFO  19:47:39,214 - #36 [
+INFO  19:47:39,214 - #42 5
+INFO  19:47:39,215 - #37 ]
+INFO  19:47:39,215 - #7 ;
+INFO  19:47:39,215 - #4 }
+INFO  19:47:39,215 - #4 }
+INFO  19:47:39,216 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  19:47:39,216 - =================Semanticka analiza===================
+INFO  19:47:39,224 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  19:47:39,224 - Detektovana globalna promenljiva na liniji 3
+INFO  19:47:39,224 - Detektovana globalna promenljiva na liniji 3
+INFO  19:47:39,225 - Detektovana upotreba lokalne promenljive  na liniji 8
+INFO  19:47:39,226 - Detektovana upotreba lokalne promenljive  na liniji 24
+INFO  19:47:39,226 - Detektovan poziv funkcije na liniji 24
+INFO  19:47:39,227 - Detektovana upotreba lokalne promenljive  na liniji 25
+INFO  19:47:39,227 - Detektovan poziv funkcije na liniji 25
+INFO  19:47:39,228 - Detektovana upotreba lokalne promenljive  na liniji 26
+INFO  19:47:39,228 - Detektovan poziv funkcije na liniji 26
+INFO  19:47:39,228 - Detektovana upotreba lokalne promenljive  na liniji 27
+INFO  19:47:39,228 - Detektovan poziv funkcije na liniji 27
+INFO  19:47:39,228 - Detektovan pristup elementu niza na liniji 27
+INFO  19:47:39,234 - Detektovana upotreba lokalne promenljive  na liniji 28
+INFO  19:47:39,236 - ===================================
+INFO  19:47:39,236 - 0 klasa
+INFO  19:47:39,236 - 4 metoda
+INFO  19:47:39,236 - 5 globalnih promenljivih
+INFO  19:47:39,236 - 0 globalnih konstanti
+INFO  19:47:39,236 - 1 globalnih nizova
+INFO  19:47:39,237 - 4 poziva funkcija
+INFO  19:47:39,237 - 10 naredbi
+INFO  19:47:39,237 - ===================================
+INFO  19:47:39,238 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  19:47:39,243 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,36 @@
+program MJProgram
+	int x; int y;
+{
+
+	bool deljivo (int x, int y) int z; {
+	
+		if (y != 0) {
+		z = x%y;	
+		if (z==0) {			
+			return true;
+			}
+		else {
+			return false;
+		}
+		}
+		return false;
+	}
+
+	void main() int niz[]; int i; int j; {
+	
+		niz = new int[10];
+		for(i=0; i<10;) {
+			niz[i] = i;
+			print(niz[i]);
+			i++;
+			
+			//if (niz[i] % 2 = 0) {
+			
+			//}
+		}
+		
+		
+		
+		return;
+	}
+}

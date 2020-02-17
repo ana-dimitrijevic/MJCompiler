@@ -1,0 +1,47 @@
+INFO  11:47:10,211 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  11:47:10,217 - =================Sintaksna analiza==================
+INFO  11:47:10,281 - #13 program
+INFO  11:47:10,281 - #45 MJProgram
+INFO  11:47:10,281 - #45 int
+INFO  11:47:10,282 - #45 x
+INFO  11:47:10,283 - #7 ;
+INFO  11:47:10,284 - #45 int
+INFO  11:47:10,284 - #45 y
+INFO  11:47:10,285 - #7 ;
+INFO  11:47:10,285 - #45 int
+INFO  11:47:10,285 - #45 niz
+INFO  11:47:10,285 - #36 [
+INFO  11:47:10,285 - #37 ]
+INFO  11:47:10,286 - #7 ;
+INFO  11:47:10,286 - #11 {
+INFO  11:47:10,287 - #15 void
+INFO  11:47:10,287 - #45 main
+INFO  11:47:10,288 - #10 (
+INFO  11:47:10,289 - #5 )
+INFO  11:47:10,290 - #11 {
+INFO  11:47:10,292 - #45 niz
+INFO  11:47:10,293 - #36 [
+INFO  11:47:10,294 - #42 1
+INFO  11:47:10,294 - #37 ]
+INFO  11:47:10,295 - #6 =
+INFO  11:47:10,295 - #42 0
+INFO  11:47:10,295 - #7 ;
+INFO  11:47:10,296 - #4 }
+INFO  11:47:10,296 - #4 }
+INFO  11:47:10,298 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  11:47:10,298 - =================Semanticka analiza===================
+INFO  11:47:10,324 - Detektovana globalna promenljiva na liniji 2
+INFO  11:47:10,324 - Detektovana globalna promenljiva na liniji 2
+INFO  11:47:10,324 - Detektovana globalna nizovska promenljiva na liniji 3
+INFO  11:47:10,325 - Detektovan pristup elementu niza na liniji 16
+INFO  11:47:10,326 - ===================================
+INFO  11:47:10,326 - 0 klasa
+INFO  11:47:10,327 - 1 metoda
+INFO  11:47:10,327 - 2 globalnih promenljivih
+INFO  11:47:10,327 - 0 globalnih konstanti
+INFO  11:47:10,327 - 1 globalnih nizova
+INFO  11:47:10,327 - 0 poziva funkcija
+INFO  11:47:10,327 - 1 naredbi
+INFO  11:47:10,328 - ===================================
+INFO  11:47:10,329 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  11:47:10,334 - Parsiranje uspesno zavrseno!

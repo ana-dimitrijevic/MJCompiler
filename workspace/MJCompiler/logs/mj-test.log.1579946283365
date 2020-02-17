@@ -1,0 +1,41 @@
+INFO  22:45:01,476 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\codegenerator.mj
+INFO  22:45:01,535 - #13 program
+INFO  22:45:01,536 - #45 MJProgram
+INFO  22:45:01,536 - #45 int
+INFO  22:45:01,537 - #45 x
+INFO  22:45:01,538 - #7 ;
+INFO  22:45:01,538 - #45 int
+INFO  22:45:01,539 - #45 y
+INFO  22:45:01,539 - #7 ;
+INFO  22:45:01,539 - #45 int
+INFO  22:45:01,539 - #45 niz
+INFO  22:45:01,539 - #36 [
+INFO  22:45:01,540 - #37 ]
+INFO  22:45:01,540 - #7 ;
+INFO  22:45:01,540 - #11 {
+INFO  22:45:01,540 - #15 void
+INFO  22:45:01,541 - #45 main
+INFO  22:45:01,542 - #10 (
+INFO  22:45:01,543 - #5 )
+INFO  22:45:01,544 - #11 {
+INFO  22:45:01,545 - #45 niz
+INFO  22:45:01,546 - #6 =
+INFO  22:45:01,546 - #18 new
+INFO  22:45:01,547 - #45 int
+INFO  22:45:01,547 - #36 [
+INFO  22:45:01,547 - #42 3
+INFO  22:45:01,548 - #37 ]
+INFO  22:45:01,548 - #7 ;
+INFO  22:45:01,549 - #45 niz
+INFO  22:45:01,549 - #22 ++
+INFO  22:45:01,549 - #7 ;
+INFO  22:45:01,549 - #45 niz
+INFO  22:45:01,550 - #6 =
+INFO  22:45:01,550 - #42 5
+INFO  22:45:01,550 - #7 ;
+INFO  22:45:01,550 - #4 }
+INFO  22:45:01,550 - #4 }
+ERROR 22:45:01,574 - Greska: niz' nije celobrojnog tipa  na liniji 16
+ERROR 22:45:01,574 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 18
+INFO  22:45:01,574 - Print calls = 0
+ERROR 22:45:01,575 - Parsiranje NIJE uspesno zavrseno!

@@ -1,0 +1,18 @@
+INFO  16:12:59,561 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  16:12:59,663 - #13 program
+INFO  16:12:59,663 - #45 P
+INFO  16:12:59,663 - #11 {
+INFO  16:12:59,665 - #15 void
+INFO  16:12:59,666 - #45 main
+INFO  16:12:59,668 - #10 (
+INFO  16:12:59,669 - #5 )
+INFO  16:12:59,669 - #11 {
+INFO  16:12:59,670 - #4 }
+INFO  16:12:59,671 - #15 void
+INFO  16:12:59,672 - #45 main
+INFO  16:12:59,672 - #10 (
+INFO  16:12:59,672 - #5 )
+INFO  16:12:59,672 - #11 {
+INFO  16:12:59,672 - #4 }
+INFO  16:12:59,673 - #4 }
+ERROR 16:12:59,697 - Greska: 'main' je vec deklarisana na liniji 10

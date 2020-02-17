@@ -1,0 +1,62 @@
+INFO  12:30:59,203 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  12:30:59,209 - =================Sintaksna analiza==================
+INFO  12:30:59,272 - #13 program
+INFO  12:30:59,272 - #45 MJProgram
+INFO  12:30:59,273 - #45 int
+INFO  12:30:59,274 - #45 niz
+INFO  12:30:59,276 - #36 [
+INFO  12:30:59,276 - #37 ]
+INFO  12:30:59,276 - #7 ;
+INFO  12:30:59,276 - #45 int
+INFO  12:30:59,277 - #45 x
+INFO  12:30:59,277 - #7 ;
+INFO  12:30:59,277 - #45 int
+INFO  12:30:59,278 - #45 y
+INFO  12:30:59,278 - #7 ;
+INFO  12:30:59,278 - #11 {
+INFO  12:30:59,278 - #15 void
+INFO  12:30:59,279 - #45 main
+INFO  12:30:59,281 - #10 (
+INFO  12:30:59,282 - #5 )
+INFO  12:30:59,283 - #11 {
+INFO  12:30:59,284 - #9 if
+INFO  12:30:59,285 - #10 (
+INFO  12:30:59,285 - #45 niz
+INFO  12:30:59,285 - #31 !=
+INFO  12:30:59,286 - #45 null
+INFO  12:30:59,288 - #28 &&
+INFO  12:30:59,288 - #45 niz
+INFO  12:30:59,288 - #36 [
+INFO  12:30:59,288 - #42 2
+INFO  12:30:59,288 - #37 ]
+INFO  12:30:59,288 - #30 ==
+INFO  12:30:59,288 - #42 5
+INFO  12:30:59,289 - #5 )
+INFO  12:30:59,290 - #45 niz
+INFO  12:30:59,290 - #6 =
+INFO  12:30:59,290 - #18 new
+INFO  12:30:59,290 - #45 int
+INFO  12:30:59,290 - #36 [
+INFO  12:30:59,291 - #42 5
+INFO  12:30:59,291 - #37 ]
+INFO  12:30:59,291 - #7 ;
+INFO  12:30:59,291 - #4 }
+INFO  12:30:59,293 - #4 }
+INFO  12:30:59,294 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  12:30:59,295 - =================Semanticka analiza===================
+INFO  12:30:59,323 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  12:30:59,323 - Detektovana globalna promenljiva na liniji 3
+INFO  12:30:59,324 - Detektovana globalna promenljiva na liniji 3
+INFO  12:30:59,324 - Detektovana upotreba lokalne promenljive  na liniji 17
+INFO  12:30:59,325 - Detektovan pristup elementu niza na liniji 17
+INFO  12:30:59,326 - ===================================
+INFO  12:30:59,326 - 0 klasa
+INFO  12:30:59,326 - 1 metoda
+INFO  12:30:59,326 - 2 globalnih promenljivih
+INFO  12:30:59,327 - 0 globalnih konstanti
+INFO  12:30:59,327 - 1 globalnih nizova
+INFO  12:30:59,327 - 0 poziva funkcija
+INFO  12:30:59,327 - 2 naredbi
+INFO  12:30:59,335 - ===================================
+INFO  12:30:59,337 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  12:30:59,346 - Parsiranje uspesno zavrseno!

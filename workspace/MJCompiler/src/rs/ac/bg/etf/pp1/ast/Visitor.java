@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/0/2020 17:29:8
+// 29/0/2020 11:12:31
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,7 +9,6 @@ public interface Visitor {
 
     public void visit(Mulop Mulop);
     public void visit(MethodDecl MethodDecl);
-    public void visit(IfStart IfStart);
     public void visit(VarIdent VarIdent);
     public void visit(AddopExpr AddopExpr);
     public void visit(Relop Relop);
@@ -19,7 +18,6 @@ public interface Visitor {
     public void visit(ActualParamsList ActualParamsList);
     public void visit(VarDeclar VarDeclar);
     public void visit(Addop Addop);
-    public void visit(ForStmBegin ForStmBegin);
     public void visit(Factor Factor);
     public void visit(CondTerm CondTerm);
     public void visit(ClassVarDeclList ClassVarDeclList);
@@ -29,6 +27,7 @@ public interface Visitor {
     public void visit(Condition Condition);
     public void visit(Statements Statements);
     public void visit(AbstractModif AbstractModif);
+    public void visit(ForEndDsgnStm ForEndDsgnStm);
     public void visit(ActualParams ActualParams);
     public void visit(ClassExtends ClassExtends);
     public void visit(AssignStmnt AssignStmnt);
@@ -38,16 +37,16 @@ public interface Visitor {
     public void visit(Expr Expr);
     public void visit(ConstInitializer ConstInitializer);
     public void visit(DeclVar DeclVar);
+    public void visit(ForStartDsgnStm ForStartDsgnStm);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(ClassMethDeclList ClassMethDeclList);
-    public void visit(ForStartDesignatorStm ForStartDesignatorStm);
     public void visit(Statement Statement);
     public void visit(VarIdentList VarIdentList);
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
-    public void visit(ForEndDesignatorStm ForEndDesignatorStm);
     public void visit(ForCond ForCond);
     public void visit(FormPars FormPars);
+    public void visit(ElseOpt ElseOpt);
     public void visit(RelopLEQ RelopLEQ);
     public void visit(RelopLS RelopLS);
     public void visit(RelopGEQ RelopGEQ);
@@ -63,19 +62,26 @@ public interface Visitor {
     public void visit(ExprConditionFactor ExprConditionFactor);
     public void visit(SingleFactorConditionTerm SingleFactorConditionTerm);
     public void visit(MultipleFactorConditionTerm MultipleFactorConditionTerm);
+    public void visit(Or Or);
     public void visit(IllegalConditionError IllegalConditionError);
     public void visit(SingleCondition SingleCondition);
     public void visit(MultipleCondition MultipleCondition);
-    public void visit(NoForCondition NoForCondition);
-    public void visit(ForCondition ForCondition);
+    public void visit(ForBodyStart ForBodyStart);
     public void visit(NoForEndDesignatorStatement NoForEndDesignatorStatement);
     public void visit(ForEndDesignatorStatement ForEndDesignatorStatement);
+    public void visit(NoForCondition NoForCondition);
+    public void visit(ForCondition ForCondition);
+    public void visit(ForCondEnd ForCondEnd);
+    public void visit(ForCondStart ForCondStart);
     public void visit(NoForStartDesignatorStatement NoForStartDesignatorStatement);
     public void visit(ForStartDesignatorStatement ForStartDesignatorStatement);
-    public void visit(ForStatementBegin ForStatementBegin);
-    public void visit(IfConditions IfConditions);
+    public void visit(ForStart ForStart);
     public void visit(Else Else);
-    public void visit(IfStartStatement IfStartStatement);
+    public void visit(NoElseOptional NoElseOptional);
+    public void visit(ElseOptional ElseOptional);
+    public void visit(Rparen Rparen);
+    public void visit(IfConditions IfConditions);
+    public void visit(IfStart IfStart);
     public void visit(NoPrintOptionalVal NoPrintOptionalVal);
     public void visit(PrintOptionalVal PrintOptionalVal);
     public void visit(SingleActualParameter SingleActualParameter);
@@ -111,7 +117,6 @@ public interface Visitor {
     public void visit(BlockOfStatements BlockOfStatements);
     public void visit(StatementDesignator StatementDesignator);
     public void visit(ForStatement ForStatement);
-    public void visit(IfElseStatement IfElseStatement);
     public void visit(IfStatement IfStatement);
     public void visit(PrintStatement PrintStatement);
     public void visit(ReadStatement ReadStatement);

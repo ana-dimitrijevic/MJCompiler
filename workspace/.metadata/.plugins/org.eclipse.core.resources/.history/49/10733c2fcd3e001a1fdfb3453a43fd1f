@@ -1,0 +1,84 @@
+program MJProgram
+	int x; int y;
+{
+
+	bool deljivo (int x, int y) int z; {
+		z = x%y;	
+		if (z==0) {
+			print(z);		
+			return true;
+			}
+		else {
+			return false;
+		}
+	}
+
+	void main() int niz[]; int i; {
+	
+		niz = new int[4];
+		for(i=0; i<4;) {
+			niz[i] = i;
+			i++;
+		}
+		
+		//load x
+		//load 3
+		//jne na_else
+		//load x 
+		//load 3
+		//jne na_else
+		//Statement....
+		//Na_else....
+		
+		if(x!=3 || x!=3 || true) {
+			
+			print(1);
+			print(1);
+			print(1);
+			
+		}
+		
+		
+		print(chr(65));
+		
+		//load x
+		//load 3
+		//jne statement
+		//load x 
+		//load 3
+		//jne na_else
+		//Statement....
+		//Na_else....
+		
+		
+		//if(x!=3 || x!=3) {
+			
+			//print(1);
+			//print(1);
+			//print(1);
+			
+		//}
+		//else {
+			//print(0);
+			//print(0);
+			//print(0);
+		//}
+
+
+		//for(x=0; x<5; x++){
+			//if(x==1 && true) continue;
+			//print(x);
+			//if(x==3) break;
+		//}
+		
+		//y = 4 + 9 + k();
+		
+		//print(x);
+		
+		//y = k(2,3);
+		
+		//print(y);
+		
+		return;
+	}
+}

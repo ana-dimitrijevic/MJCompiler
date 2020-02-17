@@ -669,9 +669,9 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	@Override
-	public void visit(ForStatementBegin forStatementBegin) {
+	public void visit(ForStart forStart) {
 		forDepth++;
-		super.visit(forStatementBegin);
+		super.visit(forStart);
 	}
 
 	@Override
@@ -873,9 +873,9 @@ public class SemanticPass extends VisitorAdaptor {
 	}
 
 	@Override
-	public void visit(IfStartStatement ifStartStatement) {
+	public void visit(IfStart ifStart) {
 		ifDepth++;
-
+		super.visit(ifStart);
 	}
 
 	@Override
@@ -885,6 +885,7 @@ public class SemanticPass extends VisitorAdaptor {
 			report_error("Greska: Neispravan izraz za if naredbu", ifStatement);
 		}
 
+		super.visit(ifStatement);
 	}
 
 	@Override

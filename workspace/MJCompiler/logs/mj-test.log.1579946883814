@@ -1,0 +1,54 @@
+INFO  11:05:55,723 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\codegenerator.mj
+INFO  11:05:55,788 - #13 program
+INFO  11:05:55,789 - #45 MJProgram
+INFO  11:05:55,789 - #45 int
+INFO  11:05:55,790 - #45 x
+INFO  11:05:55,791 - #7 ;
+INFO  11:05:55,792 - #45 int
+INFO  11:05:55,793 - #45 y
+INFO  11:05:55,793 - #7 ;
+INFO  11:05:55,793 - #45 int
+INFO  11:05:55,793 - #45 niz
+INFO  11:05:55,793 - #36 [
+INFO  11:05:55,794 - #37 ]
+INFO  11:05:55,794 - #7 ;
+INFO  11:05:55,794 - #11 {
+INFO  11:05:55,794 - #45 int
+INFO  11:05:55,795 - #45 kk
+INFO  11:05:55,795 - #10 (
+INFO  11:05:55,796 - #5 )
+INFO  11:05:55,797 - #45 int
+INFO  11:05:55,798 - #45 c
+INFO  11:05:55,798 - #7 ;
+INFO  11:05:55,798 - #11 {
+INFO  11:05:55,799 - #45 c
+INFO  11:05:55,800 - #6 =
+INFO  11:05:55,801 - #42 2
+INFO  11:05:55,801 - #7 ;
+INFO  11:05:55,802 - #14 print
+INFO  11:05:55,802 - #10 (
+INFO  11:05:55,802 - #42 0
+INFO  11:05:55,802 - #5 )
+INFO  11:05:55,803 - #7 ;
+INFO  11:05:55,803 - #8 return
+INFO  11:05:55,804 - #45 c
+INFO  11:05:55,804 - #3 +
+INFO  11:05:55,804 - #42 2
+INFO  11:05:55,805 - #7 ;
+INFO  11:05:55,806 - #4 }
+INFO  11:05:55,806 - #15 void
+INFO  11:05:55,807 - #45 main
+INFO  11:05:55,809 - #10 (
+INFO  11:05:55,809 - #5 )
+INFO  11:05:55,809 - #11 {
+INFO  11:05:55,809 - #45 k
+INFO  11:05:55,809 - #10 (
+INFO  11:05:55,810 - #45 x
+INFO  11:05:55,810 - #5 )
+INFO  11:05:55,811 - #7 ;
+INFO  11:05:55,811 - #4 }
+INFO  11:05:55,811 - #4 }
+ERROR 11:05:55,835 - Greska: k nije deklarisano!  na liniji 26
+ERROR 11:05:55,836 - Nije pronadjena metoda imena noObj na liniji 26
+INFO  11:05:55,836 - Print calls = 1
+ERROR 11:05:55,837 - Parsiranje NIJE uspesno zavrseno!

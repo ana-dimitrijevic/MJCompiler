@@ -1,0 +1,26 @@
+program MJProgram
+	int x; int y;
+{
+
+	void fun () {
+	
+		print('f');
+		print('u');	
+		print('n');		
+		
+		print('f');
+		print('u');	
+		print('n');	
+		
+		
+		return;
+	}
+	
+
+	void main() {
+	
+		fun();
+		
+		return;
+	}
+}

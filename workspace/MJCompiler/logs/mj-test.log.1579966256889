@@ -1,0 +1,347 @@
+INFO  16:22:06,879 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program4.mj
+INFO  16:22:06,956 - #13 program
+INFO  16:22:06,956 - #45 P
+INFO  16:22:06,956 - #45 int
+INFO  16:22:06,958 - #45 i
+INFO  16:22:06,961 - #7 ;
+INFO  16:22:06,962 - #45 char
+INFO  16:22:06,963 - #45 c
+INFO  16:22:06,963 - #7 ;
+INFO  16:22:06,963 - #45 bool
+INFO  16:22:06,963 - #45 b
+INFO  16:22:06,963 - #7 ;
+INFO  16:22:06,964 - #45 int
+INFO  16:22:06,964 - #45 arri
+INFO  16:22:06,964 - #36 [
+INFO  16:22:06,964 - #37 ]
+INFO  16:22:06,964 - #7 ;
+INFO  16:22:06,964 - #45 bool
+INFO  16:22:06,964 - #45 arrb
+INFO  16:22:06,965 - #36 [
+INFO  16:22:06,965 - #37 ]
+INFO  16:22:06,965 - #7 ;
+INFO  16:22:06,965 - #45 char
+INFO  16:22:06,966 - #45 arrc
+INFO  16:22:06,966 - #36 [
+INFO  16:22:06,966 - #37 ]
+INFO  16:22:06,966 - #7 ;
+INFO  16:22:06,966 - #17 const
+INFO  16:22:06,966 - #45 int
+INFO  16:22:06,966 - #45 consti
+INFO  16:22:06,966 - #6 =
+INFO  16:22:06,966 - #42 1
+INFO  16:22:06,966 - #7 ;
+INFO  16:22:06,967 - #17 const
+INFO  16:22:06,967 - #45 char
+INFO  16:22:06,967 - #45 constc
+INFO  16:22:06,967 - #6 =
+INFO  16:22:06,968 - #44 a
+INFO  16:22:06,968 - #7 ;
+INFO  16:22:06,968 - #17 const
+INFO  16:22:06,968 - #45 bool
+INFO  16:22:06,968 - #45 constb
+INFO  16:22:06,968 - #6 =
+INFO  16:22:06,969 - #43 true
+INFO  16:22:06,969 - #7 ;
+INFO  16:22:06,969 - #11 {
+INFO  16:22:06,969 - #15 void
+INFO  16:22:06,970 - #45 f
+INFO  16:22:06,971 - #10 (
+INFO  16:22:06,971 - #45 int
+INFO  16:22:06,971 - #45 ii
+INFO  16:22:06,971 - #12 ,
+INFO  16:22:06,972 - #45 char
+INFO  16:22:06,972 - #45 cc
+INFO  16:22:06,972 - #12 ,
+INFO  16:22:06,972 - #45 bool
+INFO  16:22:06,972 - #45 bb
+INFO  16:22:06,972 - #12 ,
+INFO  16:22:06,972 - #45 int
+INFO  16:22:06,972 - #45 arrii
+INFO  16:22:06,972 - #36 [
+INFO  16:22:06,972 - #37 ]
+INFO  16:22:06,973 - #12 ,
+INFO  16:22:06,973 - #45 bool
+INFO  16:22:06,973 - #45 arrbb
+INFO  16:22:06,973 - #36 [
+INFO  16:22:06,973 - #37 ]
+INFO  16:22:06,973 - #12 ,
+INFO  16:22:06,973 - #45 char
+INFO  16:22:06,973 - #45 arrcc
+INFO  16:22:06,973 - #36 [
+INFO  16:22:06,973 - #37 ]
+INFO  16:22:06,974 - #5 )
+INFO  16:22:06,974 - #11 {
+INFO  16:22:06,975 - #45 consti
+INFO  16:22:06,976 - #6 =
+INFO  16:22:06,977 - #45 ii
+INFO  16:22:06,977 - #7 ;
+INFO  16:22:06,978 - #45 constc
+INFO  16:22:06,979 - #6 =
+INFO  16:22:06,979 - #45 cc
+INFO  16:22:06,979 - #7 ;
+INFO  16:22:06,979 - #45 constb
+INFO  16:22:06,979 - #6 =
+INFO  16:22:06,979 - #45 bb
+INFO  16:22:06,979 - #7 ;
+INFO  16:22:06,979 - #45 ii
+INFO  16:22:06,979 - #6 =
+INFO  16:22:06,980 - #45 c
+INFO  16:22:06,980 - #7 ;
+INFO  16:22:06,980 - #45 ii
+INFO  16:22:06,980 - #6 =
+INFO  16:22:06,980 - #45 b
+INFO  16:22:06,980 - #7 ;
+INFO  16:22:06,980 - #45 ii
+INFO  16:22:06,980 - #6 =
+INFO  16:22:06,980 - #45 arrii
+INFO  16:22:06,980 - #7 ;
+INFO  16:22:06,981 - #45 ii
+INFO  16:22:06,981 - #6 =
+INFO  16:22:06,981 - #45 arrbb
+INFO  16:22:06,981 - #7 ;
+INFO  16:22:06,981 - #45 ii
+INFO  16:22:06,981 - #6 =
+INFO  16:22:06,981 - #45 arrcc
+INFO  16:22:06,981 - #7 ;
+INFO  16:22:06,981 - #45 cc
+INFO  16:22:06,981 - #6 =
+INFO  16:22:06,982 - #45 i
+INFO  16:22:06,982 - #7 ;
+INFO  16:22:06,982 - #45 cc
+INFO  16:22:06,982 - #6 =
+INFO  16:22:06,982 - #45 b
+INFO  16:22:06,982 - #7 ;
+INFO  16:22:06,982 - #45 cc
+INFO  16:22:06,982 - #6 =
+INFO  16:22:06,983 - #45 arrii
+INFO  16:22:06,983 - #7 ;
+INFO  16:22:06,983 - #45 cc
+INFO  16:22:06,983 - #6 =
+INFO  16:22:06,983 - #45 arrbb
+INFO  16:22:06,983 - #7 ;
+INFO  16:22:06,983 - #45 cc
+INFO  16:22:06,983 - #6 =
+INFO  16:22:06,989 - #45 arrcc
+INFO  16:22:06,989 - #7 ;
+INFO  16:22:06,989 - #45 bb
+INFO  16:22:06,989 - #6 =
+INFO  16:22:06,990 - #45 i
+INFO  16:22:06,990 - #7 ;
+INFO  16:22:06,990 - #45 bb
+INFO  16:22:06,990 - #6 =
+INFO  16:22:06,990 - #45 c
+INFO  16:22:06,990 - #7 ;
+INFO  16:22:06,990 - #45 bb
+INFO  16:22:06,990 - #6 =
+INFO  16:22:06,991 - #45 arrii
+INFO  16:22:06,991 - #7 ;
+INFO  16:22:06,991 - #45 bb
+INFO  16:22:06,991 - #6 =
+INFO  16:22:06,991 - #45 arrbb
+INFO  16:22:06,992 - #7 ;
+INFO  16:22:06,992 - #45 bb
+INFO  16:22:06,992 - #6 =
+INFO  16:22:06,993 - #45 arrcc
+INFO  16:22:06,993 - #7 ;
+INFO  16:22:06,993 - #4 }
+INFO  16:22:06,993 - #15 void
+INFO  16:22:06,994 - #45 g
+INFO  16:22:06,994 - #10 (
+INFO  16:22:06,994 - #5 )
+INFO  16:22:06,995 - #45 int
+INFO  16:22:06,995 - #45 ii
+INFO  16:22:06,995 - #7 ;
+INFO  16:22:06,995 - #45 char
+INFO  16:22:06,995 - #45 cc
+INFO  16:22:06,995 - #7 ;
+INFO  16:22:06,995 - #45 bool
+INFO  16:22:06,995 - #45 bb
+INFO  16:22:06,995 - #7 ;
+INFO  16:22:06,995 - #45 int
+INFO  16:22:06,995 - #45 arrii
+INFO  16:22:06,995 - #36 [
+INFO  16:22:06,996 - #37 ]
+INFO  16:22:06,996 - #7 ;
+INFO  16:22:06,996 - #45 bool
+INFO  16:22:06,996 - #45 arrbb
+INFO  16:22:06,996 - #36 [
+INFO  16:22:06,996 - #37 ]
+INFO  16:22:06,996 - #7 ;
+INFO  16:22:06,996 - #45 char
+INFO  16:22:06,996 - #45 arrcc
+INFO  16:22:06,996 - #36 [
+INFO  16:22:06,996 - #37 ]
+INFO  16:22:06,996 - #7 ;
+INFO  16:22:06,996 - #11 {
+INFO  16:22:06,996 - #45 consti
+INFO  16:22:06,996 - #6 =
+INFO  16:22:06,996 - #45 ii
+INFO  16:22:06,996 - #7 ;
+INFO  16:22:06,997 - #45 constc
+INFO  16:22:06,997 - #6 =
+INFO  16:22:06,997 - #45 cc
+INFO  16:22:06,997 - #7 ;
+INFO  16:22:06,997 - #45 constb
+INFO  16:22:06,997 - #6 =
+INFO  16:22:06,997 - #45 bb
+INFO  16:22:06,997 - #7 ;
+INFO  16:22:06,997 - #45 ii
+INFO  16:22:06,997 - #6 =
+INFO  16:22:06,997 - #45 c
+INFO  16:22:06,997 - #7 ;
+INFO  16:22:06,998 - #45 ii
+INFO  16:22:06,998 - #6 =
+INFO  16:22:06,998 - #45 b
+INFO  16:22:06,998 - #7 ;
+INFO  16:22:06,998 - #45 ii
+INFO  16:22:06,998 - #6 =
+INFO  16:22:06,998 - #45 arrii
+INFO  16:22:06,998 - #7 ;
+INFO  16:22:06,998 - #45 ii
+INFO  16:22:06,998 - #6 =
+INFO  16:22:06,998 - #45 arrbb
+INFO  16:22:06,998 - #7 ;
+INFO  16:22:06,998 - #45 ii
+INFO  16:22:06,998 - #6 =
+INFO  16:22:06,998 - #45 arrcc
+INFO  16:22:06,998 - #7 ;
+INFO  16:22:06,999 - #45 cc
+INFO  16:22:06,999 - #6 =
+INFO  16:22:06,999 - #45 i
+INFO  16:22:06,999 - #7 ;
+INFO  16:22:06,999 - #45 cc
+INFO  16:22:06,999 - #6 =
+INFO  16:22:06,999 - #45 b
+INFO  16:22:06,999 - #7 ;
+INFO  16:22:06,999 - #45 cc
+INFO  16:22:06,999 - #6 =
+INFO  16:22:06,999 - #45 arrii
+INFO  16:22:06,999 - #7 ;
+INFO  16:22:06,999 - #45 cc
+INFO  16:22:06,999 - #6 =
+INFO  16:22:06,999 - #45 arrbb
+INFO  16:22:06,999 - #7 ;
+INFO  16:22:06,999 - #45 cc
+INFO  16:22:06,999 - #6 =
+INFO  16:22:06,999 - #45 arrcc
+INFO  16:22:06,999 - #7 ;
+INFO  16:22:06,999 - #45 bb
+INFO  16:22:07,000 - #6 =
+INFO  16:22:07,000 - #45 i
+INFO  16:22:07,000 - #7 ;
+INFO  16:22:07,000 - #45 bb
+INFO  16:22:07,000 - #6 =
+INFO  16:22:07,000 - #45 c
+INFO  16:22:07,000 - #7 ;
+INFO  16:22:07,001 - #45 bb
+INFO  16:22:07,004 - #6 =
+INFO  16:22:07,004 - #45 arrii
+INFO  16:22:07,004 - #7 ;
+INFO  16:22:07,004 - #45 bb
+INFO  16:22:07,004 - #6 =
+INFO  16:22:07,004 - #45 arrbb
+INFO  16:22:07,004 - #7 ;
+INFO  16:22:07,004 - #45 bb
+INFO  16:22:07,004 - #6 =
+INFO  16:22:07,004 - #45 arrcc
+INFO  16:22:07,004 - #7 ;
+INFO  16:22:07,004 - #4 }
+INFO  16:22:07,004 - #15 void
+INFO  16:22:07,004 - #45 h
+INFO  16:22:07,004 - #10 (
+INFO  16:22:07,004 - #45 int
+INFO  16:22:07,004 - #45 iii
+INFO  16:22:07,004 - #12 ,
+INFO  16:22:07,005 - #45 char
+INFO  16:22:07,005 - #45 ccc
+INFO  16:22:07,005 - #12 ,
+INFO  16:22:07,005 - #45 bool
+INFO  16:22:07,005 - #45 bbb
+INFO  16:22:07,005 - #12 ,
+INFO  16:22:07,005 - #45 int
+INFO  16:22:07,005 - #45 arriii
+INFO  16:22:07,005 - #36 [
+INFO  16:22:07,005 - #37 ]
+INFO  16:22:07,005 - #12 ,
+INFO  16:22:07,005 - #45 bool
+INFO  16:22:07,005 - #45 arrbbb
+INFO  16:22:07,005 - #36 [
+INFO  16:22:07,005 - #37 ]
+INFO  16:22:07,005 - #12 ,
+INFO  16:22:07,005 - #45 char
+INFO  16:22:07,005 - #45 arrccc
+INFO  16:22:07,005 - #36 [
+INFO  16:22:07,005 - #37 ]
+INFO  16:22:07,005 - #5 )
+INFO  16:22:07,006 - #45 int
+INFO  16:22:07,006 - #45 ii
+INFO  16:22:07,006 - #7 ;
+INFO  16:22:07,006 - #45 char
+INFO  16:22:07,006 - #45 cc
+INFO  16:22:07,006 - #7 ;
+INFO  16:22:07,006 - #45 bool
+INFO  16:22:07,006 - #45 bb
+INFO  16:22:07,006 - #7 ;
+INFO  16:22:07,006 - #45 int
+INFO  16:22:07,006 - #45 arrii
+INFO  16:22:07,006 - #36 [
+INFO  16:22:07,007 - #37 ]
+INFO  16:22:07,007 - #7 ;
+INFO  16:22:07,007 - #45 bool
+INFO  16:22:07,007 - #45 arrbb
+INFO  16:22:07,007 - #36 [
+INFO  16:22:07,007 - #37 ]
+INFO  16:22:07,007 - #7 ;
+INFO  16:22:07,007 - #45 char
+INFO  16:22:07,007 - #45 arrcc
+INFO  16:22:07,007 - #36 [
+INFO  16:22:07,007 - #37 ]
+INFO  16:22:07,007 - #7 ;
+INFO  16:22:07,007 - #11 {
+INFO  16:22:07,007 - #4 }
+INFO  16:22:07,007 - #15 void
+INFO  16:22:07,008 - #45 main
+INFO  16:22:07,008 - #10 (
+INFO  16:22:07,008 - #5 )
+INFO  16:22:07,008 - #11 {
+INFO  16:22:07,008 - #4 }
+INFO  16:22:07,008 - #4 }
+ERROR 16:22:07,030 - Greska: 'consti' nije promenljiva na liniji 20
+ERROR 16:22:07,030 - Greska: 'constc' nije promenljiva na liniji 21
+ERROR 16:22:07,030 - Greska: 'constb' nije promenljiva na liniji 22
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 24
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 25
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 26
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 27
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 28
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 30
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 31
+ERROR 16:22:07,030 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 32
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 33
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 34
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 36
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 37
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 38
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 39
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 40
+ERROR 16:22:07,031 - Greska: 'consti' nije promenljiva na liniji 48
+ERROR 16:22:07,031 - Greska: 'constc' nije promenljiva na liniji 49
+ERROR 16:22:07,031 - Greska: 'constb' nije promenljiva na liniji 50
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 52
+ERROR 16:22:07,031 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 53
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 54
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 55
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 56
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 58
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 59
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 60
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 61
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 62
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 64
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 65
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 66
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 67
+ERROR 16:22:07,032 - Greska: nekompatibilni tipovi u dodeli vrednosti  na liniji 68
+INFO  16:22:07,033 - Print calls = 0
+ERROR 16:22:07,034 - Parsiranje NIJE uspesno zavrseno!

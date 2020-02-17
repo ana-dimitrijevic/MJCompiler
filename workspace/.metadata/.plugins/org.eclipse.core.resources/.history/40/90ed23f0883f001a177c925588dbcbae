@@ -1,0 +1,19 @@
+program P
+{	
+
+	int izraz(int x, int y) {
+		return ((x+y) / (x-y)) % 2;
+	}
+	
+	bool bul(char c) {
+		if (c=='A' || c=='a') {
+			return true;
+		}
+		else return false;
+	}
+	
+	void main() int i; bool b; char c; {
+	}
+	
+
+}

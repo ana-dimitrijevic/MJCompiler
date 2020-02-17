@@ -1,0 +1,42 @@
+program P
+{	
+
+	int izraz(int x, int y) {
+		return ((x+y) / (x-y)) % 2;
+	}
+	
+	bool bul(char c) {
+		if (c=='A' || c=='a') 
+			return true;
+		
+		else 
+		 return false;
+		 
+	}
+	
+	char karakter(int x, int y) int x; {
+	
+		if (x-y>=-10 && x+y<10 || x==y) 
+		return 'b';
+		
+		else 
+		 return 'c';
+		 
+		
+	}
+	
+	void main() int i; int j; bool b; char c; asdfg h; {
+	
+		j = 10;
+		i = izraz(20, 10);
+		print(i);
+		
+		if (bul('a')) {
+			c = karakter(j,j);
+			print(c);
+		}
+		
+	}
+	
+
+}

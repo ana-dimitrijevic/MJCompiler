@@ -65,9 +65,8 @@ Factor, Condition, CondTerm, CondFact;
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
-DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, ForStartDesignatorStm, ForEndDesignatorStm, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else;
-
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, AssignStmnt, ActualParamsList, Or,
+ActualParams, ForStart, ForStartDsgnStm, ForCondStart, ForCondEnd, ForCond, ForEndDsgnStm, ForBodyStart, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else, Rparen, ElseOpt;
 
 precedence left ELSE;
 
@@ -187,7 +186,7 @@ FormalParamDecl ::= (SimpleFormalParameter) Type:T1 IDENT:name {: RESULT=new Sim
                     (ArrayFormalParameter) Type:T1 IDENT:name LBRACKET RBRACKET {: RESULT=new ArrayFormalParameter(T1, name); RESULT.setLine(T1left); :}
                      |
                     (FormalParameterError) error
-                     {: parser.report_info("formal parameter error recovery: successful", null); :} {: RESULT=new FormalParameterError(); :}
+                     {: parser.report_info("GRESKA: formalni parametar; Uspesno izvrsen oporavak od greske!", null); :} {: RESULT=new FormalParameterError(); :}
 ;
 
 Statements ::= (StatementsList) Statements:S1 Statement:S2 {: RESULT=new StatementsList(S1, S2); RESULT.setLine(S1left); :} 
@@ -207,11 +206,9 @@ Statement ::= (ReturnStatement) RETURN SEMI {: RESULT=new ReturnStatement(); :}
               |
               (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal:P1 RPAREN SEMI {: RESULT=new PrintStatement(exp, P1); RESULT.setLine(expleft); :}
               |
-              (IfStatement) IfStart:I1 LPAREN IfConditions:I2 RPAREN Statement:S3 {: RESULT=new IfStatement(I1, I2, S3); RESULT.setLine(I1left); :} 
-              |
-              (IfElseStatement) IfStart:I1 LPAREN IfConditions:I2 RPAREN Statement:S3 Else:E4 Statement:S5 {: RESULT=new IfElseStatement(I1, I2, S3, E4, S5); RESULT.setLine(I1left); :}
-              |
-          	  (ForStatement) ForStmBegin:F1 LPAREN ForStartDesignatorStm:F2 SEMI ForCond:F3 SEMI ForEndDesignatorStm:F4 RPAREN Statement:S5 {: RESULT=new ForStatement(F1, F2, F3, F4, S5); RESULT.setLine(F1left); :}
+              (IfStatement) IfStart:I1 LPAREN IfConditions:I2 Rparen:R3 Statement:S4 ElseOpt:E5 {: RESULT=new IfStatement(I1, I2, R3, S4, E5); RESULT.setLine(I1left); :}
+              |       
+          	  (ForStatement) ForStart:F1 LPAREN ForStartDsgnStm:F2 ForCondStart:F3 ForCond:F4 ForCondEnd:F5 ForEndDsgnStm:F6 ForBodyStart:F7 Statement:S8 {: RESULT=new ForStatement(F1, F2, F3, F4, F5, F6, F7, S8); RESULT.setLine(F1left); :}
               |
               (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :}
               |
@@ -276,7 +273,7 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC {: RESULT=ne
 AssignStmnt ::= (AssignStatement) Designator:D1 ASSIGN Expr:E2 {: RESULT=new AssignStatement(D1, E2); RESULT.setLine(D1left); :}
                  |
                 (AssignStatementError) error
-                {: parser.report_info("assign statement error recovery: successful", null); :} {: RESULT=new AssignStatementError(); :}
+                {: parser.report_info("GRESKA: naredba dodele; Uspesno izvrsen oporavak od greske!", null); :} {: RESULT=new AssignStatementError(); :}
 ;
 
 ActualParamsList ::= (ActualParametersList) ActualParams:A1 {: RESULT=new ActualParametersList(A1); RESULT.setLine(A1left); :}
@@ -294,37 +291,59 @@ PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val {: RESULT=new PrintOpti
 				(NoPrintOptionalVal) {: RESULT=new NoPrintOptionalVal(); :} /* epsilon */
 ;
 
-IfStart ::= (IfStartStatement) IF {: RESULT=new IfStartStatement(); :}
+IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :}
 ;
 
-Else ::= (Else) ELSE {: RESULT=new Else(); :};
-
-IfConditions ::= (IfConditions) Condition:C1 {: RESULT=new IfConditions(C1); RESULT.setLine(C1left); :}
+IfConditions ::=  (IfConditions) Condition:C1 {: RESULT=new IfConditions(C1); RESULT.setLine(C1left); :}
 ;
 
-ForStmBegin  ::= (ForStatementBegin) FOR {: RESULT=new ForStatementBegin(); :};
-
-ForStartDesignatorStm ::= (ForStartDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForStartDesignatorStatement(D1); RESULT.setLine(D1left); :}
-                      |
-                     (NoForStartDesignatorStatement) {: RESULT=new NoForStartDesignatorStatement(); :} /* epsilon */
+Rparen ::= (Rparen) RPAREN {: RESULT=new Rparen(); :}
 ;
 
-ForEndDesignatorStm ::= (ForEndDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForEndDesignatorStatement(D1); RESULT.setLine(D1left); :}
+ElseOpt ::= (ElseOptional) Else:E1 Statement:S2 {: RESULT=new ElseOptional(E1, S2); RESULT.setLine(E1left); :}
+			| 
+			(NoElseOptional) {: RESULT=new NoElseOptional(); :} /* epsilon */
+;
+
+Else ::= (Else) ELSE {: RESULT=new Else(); :}
+;
+
+ForStart ::= (ForStart) FOR {: RESULT=new ForStart(); :}
+;
+
+ForStartDsgnStm ::= (ForStartDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForStartDesignatorStatement(D1); RESULT.setLine(D1left); :}
+                      	  |
+                     	  (NoForStartDesignatorStatement) {: RESULT=new NoForStartDesignatorStatement(); :} /* epsilon */
+;
+
+ForCondStart ::= (ForCondStart) SEMI {: RESULT=new ForCondStart(); :} 
+;
+
+ForCondEnd ::= (ForCondEnd) SEMI {: RESULT=new ForCondEnd(); :} 
+;
+
+ForCond ::= (ForCondition) Condition:C1 {: RESULT=new ForCondition(C1); RESULT.setLine(C1left); :}
+			| 
+			(NoForCondition) {: RESULT=new NoForCondition(); :} /* epsilon */
+;
+
+ForEndDsgnStm ::= (ForEndDesignatorStatement) DesignatorStatement:D1 {: RESULT=new ForEndDesignatorStatement(D1); RESULT.setLine(D1left); :}
                       |
                      (NoForEndDesignatorStatement) {: RESULT=new NoForEndDesignatorStatement(); :} /* epsilon */
 ;
                      
-ForCond ::= (ForCondition) Condition:C1 {: RESULT=new ForCondition(C1); RESULT.setLine(C1left); :}
-             |
-            (NoForCondition) {: RESULT=new NoForCondition(); :} /* epsilon */
+ForBodyStart ::= (ForBodyStart) RPAREN {: RESULT=new ForBodyStart(); :}
 ;
 
-Condition ::= (MultipleCondition) Condition:C1 OR CondTerm:C2 {: RESULT=new MultipleCondition(C1, C2); RESULT.setLine(C1left); :}
+Condition ::= (MultipleCondition) Condition:C1 Or:O2 CondTerm:C3 {: RESULT=new MultipleCondition(C1, O2, C3); RESULT.setLine(C1left); :}
                |
               (SingleCondition) CondTerm:C1 {: RESULT=new SingleCondition(C1); RESULT.setLine(C1left); :}
                |
               (IllegalConditionError) error
-             {: parser.report_info("illegal condition error recovery: successful", null); :} {: RESULT=new IllegalConditionError(); :}
+             {: parser.report_info("GRESKA: uslov; Uspesno izvrsen oporavak od greske!", null); :} {: RESULT=new IllegalConditionError(); :}
+;
+
+Or ::= (Or) OR {: RESULT=new Or(); :}
 ;
 
 CondTerm ::= (MultipleFactorConditionTerm) CondTerm:C1 AND CondFact:C2 {: RESULT=new MultipleFactorConditionTerm(C1, C2); RESULT.setLine(C1left); :}

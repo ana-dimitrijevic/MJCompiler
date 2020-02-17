@@ -1,0 +1,57 @@
+program P
+int q;
+bool w;
+char r;
+{	
+
+	int izraz(int x, int y) bool niz[]; {
+		niz = new int['a'];
+		niz = new int[-9];
+		q = q + x / w % -r;
+		w = -w;
+		niz[w] = q;
+		niz[q] = w;
+		x[y] = niz;
+		niz[0]++;
+		niz[0]--;
+		return ((x+y) / (x-y)) % 2;
+	}
+	
+	bool bul(char c, char c) {
+		if (c=='A' || c=='a') 
+			return true;
+		
+		else 
+		 return false;
+		 
+	}
+	
+	char karakter(int x, int y) bool x; {
+	
+		x=true;
+		print(x);
+		
+		if (x-y>=-10 && x+y<10 || x==y) 
+		return 'b';
+		
+		else 
+		 return 'c';
+		 
+		
+	}
+	
+	void main() int i; int j; bool b; char c; asdfg h; {
+	
+		j = 10;
+		i = izraz(20, 10);
+		print(i);
+		
+		if (bul('a')) {
+			c = karakter(j,j);
+			print(c);
+		}
+		
+	}
+	
+
+}

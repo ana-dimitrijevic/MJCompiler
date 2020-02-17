@@ -1,0 +1,136 @@
+INFO  10:45:13,389 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  10:45:13,395 - =================Sintaksna analiza==================
+INFO  10:45:13,452 - #13 program
+INFO  10:45:13,452 - #45 MJProgram
+INFO  10:45:13,452 - #45 int
+INFO  10:45:13,453 - #45 niz
+INFO  10:45:13,454 - #36 [
+INFO  10:45:13,454 - #37 ]
+INFO  10:45:13,455 - #7 ;
+INFO  10:45:13,455 - #45 int
+INFO  10:45:13,456 - #45 x
+INFO  10:45:13,456 - #7 ;
+INFO  10:45:13,456 - #45 int
+INFO  10:45:13,456 - #45 y
+INFO  10:45:13,456 - #7 ;
+INFO  10:45:13,457 - #11 {
+INFO  10:45:13,457 - #45 int
+INFO  10:45:13,458 - #45 kkk
+INFO  10:45:13,458 - #10 (
+INFO  10:45:13,459 - #45 int
+INFO  10:45:13,459 - #45 e
+INFO  10:45:13,460 - #5 )
+INFO  10:45:13,460 - #45 int
+INFO  10:45:13,461 - #45 c
+INFO  10:45:13,461 - #7 ;
+INFO  10:45:13,461 - #11 {
+INFO  10:45:13,462 - #8 return
+INFO  10:45:13,463 - #45 e
+INFO  10:45:13,463 - #3 +
+INFO  10:45:13,465 - #45 c
+INFO  10:45:13,466 - #7 ;
+INFO  10:45:13,467 - #4 }
+INFO  10:45:13,467 - #45 int
+INFO  10:45:13,468 - #45 k
+INFO  10:45:13,468 - #10 (
+INFO  10:45:13,468 - #5 )
+INFO  10:45:13,469 - #45 int
+INFO  10:45:13,469 - #45 c
+INFO  10:45:13,469 - #12 ,
+INFO  10:45:13,469 - #45 x
+INFO  10:45:13,469 - #45 xx
+ERROR 10:45:13,470 - 
+Sintaksna greska na liniji 11
+INFO  10:45:13,470 - #7 ;
+INFO  10:45:13,472 - #11 {
+INFO  10:45:13,472 - #8 return
+INFO  10:45:13,473 - #42 1
+INFO  10:45:13,473 - GRESKA: identifikator promenljive; Uspesno izvrsen oporavak od greske!
+INFO  10:45:13,476 - #7 ;
+INFO  10:45:13,476 - #4 }
+INFO  10:45:13,476 - #15 void
+INFO  10:45:13,476 - #45 kk
+INFO  10:45:13,477 - #10 (
+INFO  10:45:13,478 - #5 )
+INFO  10:45:13,478 - #45 int
+INFO  10:45:13,478 - #45 c
+INFO  10:45:13,478 - #7 ;
+INFO  10:45:13,478 - #11 {
+INFO  10:45:13,479 - #8 return
+INFO  10:45:13,479 - #7 ;
+INFO  10:45:13,479 - #4 }
+INFO  10:45:13,486 - #15 void
+INFO  10:45:13,486 - #45 main
+INFO  10:45:13,486 - #10 (
+INFO  10:45:13,487 - #5 )
+INFO  10:45:13,487 - #11 {
+INFO  10:45:13,487 - #45 niz
+INFO  10:45:13,487 - #6 =
+INFO  10:45:13,487 - #18 new
+INFO  10:45:13,487 - #45 int
+INFO  10:45:13,487 - #36 [
+INFO  10:45:13,487 - #42 3
+INFO  10:45:13,487 - #37 ]
+INFO  10:45:13,487 - #7 ;
+INFO  10:45:13,488 - #45 x
+INFO  10:45:13,488 - #24 -
+ERROR 10:45:13,488 - 
+Sintaksna greska na liniji 22
+INFO  10:45:13,488 - #3 +
+INFO  10:45:13,488 - #7 ;
+INFO  10:45:13,488 - #45 x
+INFO  10:45:13,488 - #6 =
+INFO  10:45:13,489 - #45 k
+INFO  10:45:13,489 - assign statement error recovery: successful
+INFO  10:45:13,489 - #10 (
+INFO  10:45:13,490 - #5 )
+INFO  10:45:13,491 - #7 ;
+INFO  10:45:13,492 - #45 kk
+INFO  10:45:13,493 - #10 (
+INFO  10:45:13,494 - #5 )
+INFO  10:45:13,494 - #7 ;
+INFO  10:45:13,494 - #45 k
+INFO  10:45:13,494 - #10 (
+INFO  10:45:13,494 - #5 )
+INFO  10:45:13,494 - #7 ;
+INFO  10:45:13,495 - #9 if
+INFO  10:45:13,496 - #10 (
+INFO  10:45:13,497 - #43 false
+INFO  10:45:13,497 - #28 &&
+INFO  10:45:13,498 - #45 niz
+INFO  10:45:13,498 - #30 ==
+INFO  10:45:13,498 - #45 null
+INFO  10:45:13,499 - #5 )
+INFO  10:45:13,501 - #45 niz
+INFO  10:45:13,501 - #6 =
+INFO  10:45:13,501 - #18 new
+INFO  10:45:13,502 - #45 int
+INFO  10:45:13,502 - #36 [
+INFO  10:45:13,502 - #42 5
+INFO  10:45:13,502 - #37 ]
+INFO  10:45:13,502 - #7 ;
+INFO  10:45:13,502 - #4 }
+INFO  10:45:13,503 - #4 }
+INFO  10:45:13,505 - rs.ac.bg.etf.pp1.ast.Program@7cd84586
+INFO  10:45:13,505 - =================Semanticka analiza===================
+INFO  10:45:13,527 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  10:45:13,527 - Detektovana globalna promenljiva na liniji 3
+INFO  10:45:13,527 - Detektovana globalna promenljiva na liniji 3
+INFO  10:45:13,528 - Detektovana upotreba lokalne promenljive  na liniji 8
+INFO  10:45:13,528 - Detektovana upotreba lokalne promenljive  na liniji 25
+INFO  10:45:13,528 - Detektovan poziv funkcije na liniji 25
+INFO  10:45:13,529 - Detektovana upotreba lokalne promenljive  na liniji 26
+INFO  10:45:13,529 - Detektovan poziv funkcije na liniji 26
+INFO  10:45:13,529 - Detektovana upotreba lokalne promenljive  na liniji 27
+INFO  10:45:13,529 - Detektovan poziv funkcije na liniji 27
+INFO  10:45:13,529 - Detektovana upotreba lokalne promenljive  na liniji 29
+INFO  10:45:13,531 - ===================================
+INFO  10:45:13,531 - 0 klasa
+INFO  10:45:13,531 - 4 metoda
+INFO  10:45:13,531 - 5 globalnih promenljivih
+INFO  10:45:13,531 - 0 globalnih konstanti
+INFO  10:45:13,531 - 1 globalnih nizova
+INFO  10:45:13,531 - 3 poziva funkcija
+INFO  10:45:13,531 - 10 naredbi
+INFO  10:45:13,531 - ===================================
+ERROR 10:45:13,532 - Parsiranje NIJE uspesno zavrseno!

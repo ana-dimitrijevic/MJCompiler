@@ -1,0 +1,36 @@
+INFO  22:44:27,522 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\codegenerator.mj
+INFO  22:44:27,573 - #13 program
+INFO  22:44:27,573 - #45 MJProgram
+INFO  22:44:27,574 - #45 int
+INFO  22:44:27,575 - #45 x
+INFO  22:44:27,576 - #7 ;
+INFO  22:44:27,577 - #45 int
+INFO  22:44:27,577 - #45 y
+INFO  22:44:27,578 - #7 ;
+INFO  22:44:27,578 - #45 int
+INFO  22:44:27,578 - #45 niz
+INFO  22:44:27,578 - #36 [
+INFO  22:44:27,578 - #37 ]
+INFO  22:44:27,578 - #7 ;
+INFO  22:44:27,578 - #11 {
+INFO  22:44:27,579 - #15 void
+INFO  22:44:27,579 - #45 main
+INFO  22:44:27,580 - #10 (
+INFO  22:44:27,581 - #5 )
+INFO  22:44:27,582 - #11 {
+INFO  22:44:27,583 - #45 niz
+INFO  22:44:27,584 - #6 =
+INFO  22:44:27,585 - #18 new
+INFO  22:44:27,614 - #45 int
+INFO  22:44:27,614 - #36 [
+INFO  22:44:27,614 - #42 3
+INFO  22:44:27,614 - #37 ]
+INFO  22:44:27,614 - #7 ;
+INFO  22:44:27,615 - #45 niz
+INFO  22:44:27,615 - #22 ++
+INFO  22:44:27,615 - #7 ;
+INFO  22:44:27,615 - #4 }
+INFO  22:44:27,616 - #4 }
+ERROR 22:44:27,641 - Greska: niz' nije celobrojnog tipa  na liniji 16
+INFO  22:44:27,641 - Print calls = 0
+ERROR 22:44:27,642 - Parsiranje NIJE uspesno zavrseno!

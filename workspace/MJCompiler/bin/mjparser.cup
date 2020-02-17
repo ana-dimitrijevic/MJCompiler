@@ -65,9 +65,8 @@ Factor, Condition, CondTerm, CondFact,;
 
 nonterminal MethodDeclList, VarDeclar, DeclVar, ConstInitializer, Initializer, VarIdentList, VarIdent, FormalParamList,
 FormalParamDecl, FormPars, Statements, Statement, AbstractModif, ClassExtends, ClassVarDeclList, ClassMethDeclList,
-DeclVarList, Relop, Addop, Mulop, DesignatorStatement, ForStmBegin, ForCond, AssignStmnt, ActualParamsList,
-ActualParams, ForStartDesignatorStm, ForEndDesignatorStm, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else;
-
+DeclVarList, Relop, Addop, Mulop, DesignatorStatement, AssignStmnt, ActualParamsList, Or,
+ActualParams, ForStart, ForStartDsgnStm, ForCondStart, ForCondEnd, ForCond, ForEndDsgnStm, ForBodyStart, IfStart, FuncCallStart, ProcCallStart, LeftBrace, PrintOptVal, IfConditions, Else, Rparen, ElseOpt;
 
 precedence left ELSE;
 
@@ -187,7 +186,7 @@ FormalParamDecl ::= (SimpleFormalParameter) Type IDENT:name
                     (ArrayFormalParameter) Type IDENT:name LBRACKET RBRACKET
                      |
                     (FormalParameterError) error
-                     {: parser.report_info("formal parameter error recovery: successful", null); :}
+                     {: parser.report_info("GRESKA: formalni parametar; Uspesno izvrsen oporavak od greske!", null); :}
 ;
 
 Statements ::= (StatementsList) Statements Statement 
@@ -207,11 +206,9 @@ Statement ::= (ReturnStatement) RETURN SEMI
               |
               (PrintStatement) PRINT LPAREN Expr:exp PrintOptVal RPAREN SEMI
               |
-              (IfStatement) IfStart LPAREN IfConditions RPAREN Statement 
-              |
-              (IfElseStatement) IfStart LPAREN IfConditions RPAREN Statement Else Statement
-              |
-          	  (ForStatement) ForStmBegin LPAREN ForStartDesignatorStm SEMI ForCond SEMI ForEndDesignatorStm RPAREN Statement
+              (IfStatement) IfStart LPAREN IfConditions Rparen Statement ElseOpt
+              |       
+          	  (ForStatement) ForStart LPAREN ForStartDsgnStm ForCondStart ForCond ForCondEnd ForEndDsgnStm ForBodyStart Statement
               |
               (StatementDesignator) DesignatorStatement SEMI
               |
@@ -276,7 +273,7 @@ DesignatorStatement ::= (IncDesignatorStatement) Designator:des INC
 AssignStmnt ::= (AssignStatement) Designator ASSIGN Expr
                  |
                 (AssignStatementError) error
-                {: parser.report_info("assign statement error recovery: successful", null); :}
+                {: parser.report_info("GRESKA: naredba dodele; Uspesno izvrsen oporavak od greske!", null); :}
 ;
 
 ActualParamsList ::= (ActualParametersList) ActualParams
@@ -294,37 +291,59 @@ PrintOptVal ::= (PrintOptionalVal) COMMA NUMBERCONST:val
 				(NoPrintOptionalVal) /* epsilon */
 ;
 
-IfStart ::= (IfStartStatement) IF
+IfStart ::= (IfStart) IF
 ;
 
-Else ::= (Else) ELSE;
-
-IfConditions ::= (IfConditions) Condition
+IfConditions ::=  (IfConditions) Condition
 ;
 
-ForStmBegin  ::= (ForStatementBegin) FOR;
-
-ForStartDesignatorStm ::= (ForStartDesignatorStatement) DesignatorStatement
-                      |
-                     (NoForStartDesignatorStatement) /* epsilon */
+Rparen ::= (Rparen) RPAREN
 ;
 
-ForEndDesignatorStm ::= (ForEndDesignatorStatement) DesignatorStatement
+ElseOpt ::= (ElseOptional) Else Statement
+			| 
+			(NoElseOptional) /* epsilon */
+;
+
+Else ::= (Else) ELSE
+;
+
+ForStart ::= (ForStart) FOR
+;
+
+ForStartDsgnStm ::= (ForStartDesignatorStatement) DesignatorStatement
+                      	  |
+                     	  (NoForStartDesignatorStatement) /* epsilon */
+;
+
+ForCondStart ::= (ForCondStart) SEMI 
+;
+
+ForCondEnd ::= (ForCondEnd) SEMI 
+;
+
+ForCond ::= (ForCondition) Condition
+			| 
+			(NoForCondition) /* epsilon */
+;
+
+ForEndDsgnStm ::= (ForEndDesignatorStatement) DesignatorStatement
                       |
                      (NoForEndDesignatorStatement) /* epsilon */
 ;
                      
-ForCond ::= (ForCondition) Condition
-             |
-            (NoForCondition) /* epsilon */
+ForBodyStart ::= (ForBodyStart) RPAREN
 ;
 
-Condition ::= (MultipleCondition) Condition OR CondTerm
+Condition ::= (MultipleCondition) Condition Or CondTerm
                |
               (SingleCondition) CondTerm
                |
               (IllegalConditionError) error
-             {: parser.report_info("illegal condition error recovery: successful", null); :}
+             {: parser.report_info("GRESKA: uslov; Uspesno izvrsen oporavak od greske!", null); :}
+;
+
+Or ::= (Or) OR
 ;
 
 CondTerm ::= (MultipleFactorConditionTerm) CondTerm AND CondFact

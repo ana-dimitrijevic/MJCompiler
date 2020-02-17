@@ -1,0 +1,176 @@
+INFO  11:45:26,236 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  11:45:26,243 - =================Sintaksna analiza==================
+INFO  11:45:26,308 - #13 program
+INFO  11:45:26,308 - #45 MJProgram
+INFO  11:45:26,308 - #45 int
+INFO  11:45:26,310 - #45 niz
+INFO  11:45:26,311 - #36 [
+INFO  11:45:26,311 - #37 ]
+INFO  11:45:26,311 - #7 ;
+INFO  11:45:26,312 - #45 int
+INFO  11:45:26,312 - #45 x
+INFO  11:45:26,313 - #7 ;
+INFO  11:45:26,314 - #45 int
+INFO  11:45:26,314 - #45 y
+INFO  11:45:26,314 - #7 ;
+INFO  11:45:26,315 - #45 int
+INFO  11:45:26,315 - #45 q
+INFO  11:45:26,315 - #7 ;
+INFO  11:45:26,315 - #45 int
+INFO  11:45:26,315 - #45 w
+INFO  11:45:26,315 - #7 ;
+INFO  11:45:26,316 - #45 int
+INFO  11:45:26,316 - #45 m
+INFO  11:45:26,316 - #7 ;
+INFO  11:45:26,316 - #11 {
+INFO  11:45:26,316 - #45 int
+INFO  11:45:26,317 - #45 k
+INFO  11:45:26,317 - #10 (
+INFO  11:45:26,319 - #5 )
+INFO  11:45:26,322 - #45 int
+INFO  11:45:26,324 - #45 c
+INFO  11:45:26,324 - #12 ,
+INFO  11:45:26,324 - #45 x
+INFO  11:45:26,324 - #7 ;
+INFO  11:45:26,324 - #11 {
+INFO  11:45:26,324 - #8 return
+INFO  11:45:26,326 - #45 c
+INFO  11:45:26,326 - #3 +
+INFO  11:45:26,327 - #45 x
+INFO  11:45:26,328 - #7 ;
+INFO  11:45:26,328 - #4 }
+INFO  11:45:26,329 - #45 int
+INFO  11:45:26,329 - #45 kkk
+INFO  11:45:26,330 - #10 (
+INFO  11:45:26,331 - #45 int
+INFO  11:45:26,331 - #45 e
+INFO  11:45:26,331 - #12 ,
+INFO  11:45:26,332 - #45 int
+INFO  11:45:26,332 - #45 p
+INFO  11:45:26,332 - #12 ,
+INFO  11:45:26,332 - #45 int
+INFO  11:45:26,332 - #45 z
+INFO  11:45:26,332 - #5 )
+INFO  11:45:26,333 - #45 int
+INFO  11:45:26,333 - #45 c
+INFO  11:45:26,333 - #7 ;
+INFO  11:45:26,333 - #45 int
+INFO  11:45:26,333 - #45 t
+INFO  11:45:26,333 - #7 ;
+INFO  11:45:26,333 - #11 {
+INFO  11:45:26,334 - #8 return
+INFO  11:45:26,334 - #45 e
+INFO  11:45:26,334 - #3 +
+INFO  11:45:26,334 - #45 p
+INFO  11:45:26,335 - #3 +
+INFO  11:45:26,335 - #45 z
+INFO  11:45:26,335 - #3 +
+INFO  11:45:26,335 - #45 c
+INFO  11:45:26,335 - #3 +
+INFO  11:45:26,335 - #45 t
+INFO  11:45:26,335 - #3 +
+INFO  11:45:26,336 - #45 x
+INFO  11:45:26,336 - #3 +
+INFO  11:45:26,336 - #45 y
+INFO  11:45:26,336 - #3 +
+INFO  11:45:26,336 - #45 k
+INFO  11:45:26,336 - #10 (
+INFO  11:45:26,337 - #5 )
+INFO  11:45:26,339 - #7 ;
+INFO  11:45:26,339 - #4 }
+INFO  11:45:26,339 - #15 void
+INFO  11:45:26,339 - #45 kk
+INFO  11:45:26,340 - #10 (
+INFO  11:45:26,340 - #5 )
+INFO  11:45:26,340 - #45 int
+INFO  11:45:26,340 - #45 c
+INFO  11:45:26,341 - #7 ;
+INFO  11:45:26,341 - #11 {
+INFO  11:45:26,341 - #8 return
+INFO  11:45:26,341 - #7 ;
+INFO  11:45:26,341 - #4 }
+INFO  11:45:26,342 - #15 void
+INFO  11:45:26,342 - #45 main
+INFO  11:45:26,342 - #10 (
+INFO  11:45:26,342 - #5 )
+INFO  11:45:26,342 - #11 {
+INFO  11:45:26,342 - #45 niz
+INFO  11:45:26,342 - #6 =
+INFO  11:45:26,342 - #18 new
+INFO  11:45:26,342 - #45 int
+INFO  11:45:26,342 - #36 [
+INFO  11:45:26,343 - #42 3
+INFO  11:45:26,343 - #37 ]
+INFO  11:45:26,343 - #7 ;
+INFO  11:45:26,343 - #45 y
+INFO  11:45:26,344 - #6 =
+INFO  11:45:26,344 - #42 2
+INFO  11:45:26,344 - #3 +
+INFO  11:45:26,344 - #42 3
+INFO  11:45:26,344 - #7 ;
+INFO  11:45:26,344 - #45 x
+INFO  11:45:26,344 - #22 ++
+INFO  11:45:26,344 - #7 ;
+INFO  11:45:26,344 - #45 x
+INFO  11:45:26,345 - #6 =
+INFO  11:45:26,345 - #45 k
+INFO  11:45:26,345 - #10 (
+INFO  11:45:26,345 - #5 )
+INFO  11:45:26,345 - #7 ;
+INFO  11:45:26,345 - #45 kk
+INFO  11:45:26,345 - #10 (
+INFO  11:45:26,346 - #5 )
+INFO  11:45:26,346 - #7 ;
+INFO  11:45:26,346 - #45 k
+INFO  11:45:26,353 - #10 (
+INFO  11:45:26,353 - #5 )
+INFO  11:45:26,353 - #7 ;
+INFO  11:45:26,353 - #9 if
+INFO  11:45:26,353 - #10 (
+INFO  11:45:26,354 - #43 false
+INFO  11:45:26,354 - #28 &&
+INFO  11:45:26,354 - #45 niz
+INFO  11:45:26,355 - #30 ==
+INFO  11:45:26,355 - #45 null
+INFO  11:45:26,356 - #5 )
+INFO  11:45:26,357 - #45 niz
+INFO  11:45:26,357 - #6 =
+INFO  11:45:26,357 - #18 new
+INFO  11:45:26,357 - #45 int
+INFO  11:45:26,357 - #36 [
+INFO  11:45:26,357 - #42 5
+INFO  11:45:26,358 - #37 ]
+INFO  11:45:26,358 - #7 ;
+INFO  11:45:26,358 - #4 }
+INFO  11:45:26,359 - #4 }
+INFO  11:45:26,359 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  11:45:26,360 - =================Semanticka analiza===================
+INFO  11:45:26,374 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  11:45:26,374 - Detektovana globalna promenljiva na liniji 3
+INFO  11:45:26,374 - Detektovana globalna promenljiva na liniji 3
+INFO  11:45:26,374 - Detektovana globalna promenljiva na liniji 4
+INFO  11:45:26,374 - Detektovana globalna promenljiva na liniji 4
+INFO  11:45:26,374 - Detektovana globalna promenljiva na liniji 4
+INFO  11:45:26,375 - Detektovana upotreba formalnog argumenta  na liniji 13
+INFO  11:45:26,375 - Detektovana upotreba formalnog argumenta  na liniji 13
+INFO  11:45:26,375 - Detektovana upotreba formalnog argumenta  na liniji 13
+INFO  11:45:26,375 - Detektovana upotreba formalnog argumenta  na liniji 13
+INFO  11:45:26,376 - Detektovan poziv funkcije na liniji 13
+INFO  11:45:26,377 - Detektovana upotreba formalnog argumenta  na liniji 28
+INFO  11:45:26,377 - Detektovan poziv funkcije na liniji 28
+INFO  11:45:26,377 - Detektovana upotreba formalnog argumenta  na liniji 29
+INFO  11:45:26,377 - Detektovan poziv funkcije na liniji 29
+INFO  11:45:26,377 - Detektovana upotreba formalnog argumenta  na liniji 30
+INFO  11:45:26,377 - Detektovan poziv funkcije na liniji 30
+INFO  11:45:26,378 - Detektovana upotreba formalnog argumenta  na liniji 36
+INFO  11:45:26,379 - ===================================
+INFO  11:45:26,379 - 0 klasa
+INFO  11:45:26,379 - 4 metoda
+INFO  11:45:26,379 - 2 globalnih promenljivih
+INFO  11:45:26,380 - 0 globalnih konstanti
+INFO  11:45:26,380 - 1 globalnih nizova
+INFO  11:45:26,380 - 4 poziva funkcija
+INFO  11:45:26,381 - 11 naredbi
+INFO  11:45:26,381 - ===================================
+INFO  11:45:26,382 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  11:45:26,388 - Parsiranje uspesno zavrseno!

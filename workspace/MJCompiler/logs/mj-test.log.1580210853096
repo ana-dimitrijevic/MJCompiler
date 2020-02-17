@@ -1,0 +1,56 @@
+INFO  12:25:58,926 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  12:25:58,932 - =================Sintaksna analiza==================
+INFO  12:25:59,015 - #13 program
+INFO  12:25:59,016 - #45 MJProgram
+INFO  12:25:59,016 - #45 int
+INFO  12:25:59,019 - #45 niz
+INFO  12:25:59,020 - #36 [
+INFO  12:25:59,020 - #37 ]
+INFO  12:25:59,020 - #7 ;
+INFO  12:25:59,021 - #45 int
+INFO  12:25:59,022 - #45 x
+INFO  12:25:59,022 - #7 ;
+INFO  12:25:59,022 - #45 int
+INFO  12:25:59,023 - #45 y
+INFO  12:25:59,023 - #7 ;
+INFO  12:25:59,023 - #11 {
+INFO  12:25:59,023 - #15 void
+INFO  12:25:59,024 - #45 main
+INFO  12:25:59,025 - #10 (
+INFO  12:25:59,026 - #5 )
+INFO  12:25:59,027 - #11 {
+INFO  12:25:59,028 - #45 niz
+INFO  12:25:59,029 - #6 =
+INFO  12:25:59,030 - #18 new
+INFO  12:25:59,031 - #45 int
+INFO  12:25:59,031 - #36 [
+INFO  12:25:59,032 - #42 5
+INFO  12:25:59,032 - #37 ]
+INFO  12:25:59,033 - #7 ;
+INFO  12:25:59,034 - #19 read
+INFO  12:25:59,034 - #10 (
+INFO  12:25:59,034 - #45 niz
+INFO  12:25:59,034 - #36 [
+INFO  12:25:59,034 - #42 1
+INFO  12:25:59,035 - #37 ]
+INFO  12:25:59,035 - #5 )
+INFO  12:25:59,035 - #7 ;
+INFO  12:25:59,035 - #4 }
+INFO  12:25:59,035 - #4 }
+INFO  12:25:59,037 - rs.ac.bg.etf.pp1.ast.Program@133314b
+INFO  12:25:59,037 - =================Semanticka analiza===================
+INFO  12:25:59,061 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  12:25:59,061 - Detektovana globalna promenljiva na liniji 3
+INFO  12:25:59,062 - Detektovana globalna promenljiva na liniji 3
+INFO  12:25:59,062 - Detektovan pristup elementu niza na liniji 19
+INFO  12:25:59,064 - ===================================
+INFO  12:25:59,064 - 0 klasa
+INFO  12:25:59,064 - 1 metoda
+INFO  12:25:59,064 - 2 globalnih promenljivih
+INFO  12:25:59,064 - 0 globalnih konstanti
+INFO  12:25:59,064 - 1 globalnih nizova
+INFO  12:25:59,064 - 0 poziva funkcija
+INFO  12:25:59,065 - 2 naredbi
+INFO  12:25:59,065 - ===================================
+INFO  12:25:59,067 - Generating bytecode file: D:\Trenutni pp\workspace\MJCompiler\test\program.obj
+INFO  12:25:59,073 - Parsiranje uspesno zavrseno!

@@ -1,0 +1,17 @@
+INFO  16:12:28,594 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  16:12:28,662 - #13 program
+INFO  16:12:28,663 - #45 P
+INFO  16:12:28,663 - #11 {
+INFO  16:12:28,667 - #45 int
+INFO  16:12:28,670 - #45 main
+INFO  16:12:28,671 - #10 (
+INFO  16:12:28,672 - #5 )
+INFO  16:12:28,673 - #11 {
+INFO  16:12:28,673 - #8 return
+INFO  16:12:28,675 - #42 5
+INFO  16:12:28,675 - #7 ;
+INFO  16:12:28,675 - #4 }
+INFO  16:12:28,676 - #4 }
+ERROR 16:12:28,696 - Greska: 'P' povratna vrednost mora biti tipa void  na liniji 5
+INFO  16:12:28,696 - Print calls = 0
+ERROR 16:12:28,697 - Parsiranje NIJE uspesno zavrseno!

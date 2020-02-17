@@ -1,45 +1,62 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/0/2020 17:29:8
+// 29/0/2020 11:12:31
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ForStatement extends Statement {
 
-    private ForStmBegin ForStmBegin;
-    private ForStartDesignatorStm ForStartDesignatorStm;
+    private ForStart ForStart;
+    private ForStartDsgnStm ForStartDsgnStm;
+    private ForCondStart ForCondStart;
     private ForCond ForCond;
-    private ForEndDesignatorStm ForEndDesignatorStm;
+    private ForCondEnd ForCondEnd;
+    private ForEndDsgnStm ForEndDsgnStm;
+    private ForBodyStart ForBodyStart;
     private Statement Statement;
 
-    public ForStatement (ForStmBegin ForStmBegin, ForStartDesignatorStm ForStartDesignatorStm, ForCond ForCond, ForEndDesignatorStm ForEndDesignatorStm, Statement Statement) {
-        this.ForStmBegin=ForStmBegin;
-        if(ForStmBegin!=null) ForStmBegin.setParent(this);
-        this.ForStartDesignatorStm=ForStartDesignatorStm;
-        if(ForStartDesignatorStm!=null) ForStartDesignatorStm.setParent(this);
+    public ForStatement (ForStart ForStart, ForStartDsgnStm ForStartDsgnStm, ForCondStart ForCondStart, ForCond ForCond, ForCondEnd ForCondEnd, ForEndDsgnStm ForEndDsgnStm, ForBodyStart ForBodyStart, Statement Statement) {
+        this.ForStart=ForStart;
+        if(ForStart!=null) ForStart.setParent(this);
+        this.ForStartDsgnStm=ForStartDsgnStm;
+        if(ForStartDsgnStm!=null) ForStartDsgnStm.setParent(this);
+        this.ForCondStart=ForCondStart;
+        if(ForCondStart!=null) ForCondStart.setParent(this);
         this.ForCond=ForCond;
         if(ForCond!=null) ForCond.setParent(this);
-        this.ForEndDesignatorStm=ForEndDesignatorStm;
-        if(ForEndDesignatorStm!=null) ForEndDesignatorStm.setParent(this);
+        this.ForCondEnd=ForCondEnd;
+        if(ForCondEnd!=null) ForCondEnd.setParent(this);
+        this.ForEndDsgnStm=ForEndDsgnStm;
+        if(ForEndDsgnStm!=null) ForEndDsgnStm.setParent(this);
+        this.ForBodyStart=ForBodyStart;
+        if(ForBodyStart!=null) ForBodyStart.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
     }
 
-    public ForStmBegin getForStmBegin() {
-        return ForStmBegin;
+    public ForStart getForStart() {
+        return ForStart;
     }
 
-    public void setForStmBegin(ForStmBegin ForStmBegin) {
-        this.ForStmBegin=ForStmBegin;
+    public void setForStart(ForStart ForStart) {
+        this.ForStart=ForStart;
     }
 
-    public ForStartDesignatorStm getForStartDesignatorStm() {
-        return ForStartDesignatorStm;
+    public ForStartDsgnStm getForStartDsgnStm() {
+        return ForStartDsgnStm;
     }
 
-    public void setForStartDesignatorStm(ForStartDesignatorStm ForStartDesignatorStm) {
-        this.ForStartDesignatorStm=ForStartDesignatorStm;
+    public void setForStartDsgnStm(ForStartDsgnStm ForStartDsgnStm) {
+        this.ForStartDsgnStm=ForStartDsgnStm;
+    }
+
+    public ForCondStart getForCondStart() {
+        return ForCondStart;
+    }
+
+    public void setForCondStart(ForCondStart ForCondStart) {
+        this.ForCondStart=ForCondStart;
     }
 
     public ForCond getForCond() {
@@ -50,12 +67,28 @@ public class ForStatement extends Statement {
         this.ForCond=ForCond;
     }
 
-    public ForEndDesignatorStm getForEndDesignatorStm() {
-        return ForEndDesignatorStm;
+    public ForCondEnd getForCondEnd() {
+        return ForCondEnd;
     }
 
-    public void setForEndDesignatorStm(ForEndDesignatorStm ForEndDesignatorStm) {
-        this.ForEndDesignatorStm=ForEndDesignatorStm;
+    public void setForCondEnd(ForCondEnd ForCondEnd) {
+        this.ForCondEnd=ForCondEnd;
+    }
+
+    public ForEndDsgnStm getForEndDsgnStm() {
+        return ForEndDsgnStm;
+    }
+
+    public void setForEndDsgnStm(ForEndDsgnStm ForEndDsgnStm) {
+        this.ForEndDsgnStm=ForEndDsgnStm;
+    }
+
+    public ForBodyStart getForBodyStart() {
+        return ForBodyStart;
+    }
+
+    public void setForBodyStart(ForBodyStart ForBodyStart) {
+        this.ForBodyStart=ForBodyStart;
     }
 
     public Statement getStatement() {
@@ -71,27 +104,36 @@ public class ForStatement extends Statement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ForStmBegin!=null) ForStmBegin.accept(visitor);
-        if(ForStartDesignatorStm!=null) ForStartDesignatorStm.accept(visitor);
+        if(ForStart!=null) ForStart.accept(visitor);
+        if(ForStartDsgnStm!=null) ForStartDsgnStm.accept(visitor);
+        if(ForCondStart!=null) ForCondStart.accept(visitor);
         if(ForCond!=null) ForCond.accept(visitor);
-        if(ForEndDesignatorStm!=null) ForEndDesignatorStm.accept(visitor);
+        if(ForCondEnd!=null) ForCondEnd.accept(visitor);
+        if(ForEndDsgnStm!=null) ForEndDsgnStm.accept(visitor);
+        if(ForBodyStart!=null) ForBodyStart.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ForStmBegin!=null) ForStmBegin.traverseTopDown(visitor);
-        if(ForStartDesignatorStm!=null) ForStartDesignatorStm.traverseTopDown(visitor);
+        if(ForStart!=null) ForStart.traverseTopDown(visitor);
+        if(ForStartDsgnStm!=null) ForStartDsgnStm.traverseTopDown(visitor);
+        if(ForCondStart!=null) ForCondStart.traverseTopDown(visitor);
         if(ForCond!=null) ForCond.traverseTopDown(visitor);
-        if(ForEndDesignatorStm!=null) ForEndDesignatorStm.traverseTopDown(visitor);
+        if(ForCondEnd!=null) ForCondEnd.traverseTopDown(visitor);
+        if(ForEndDsgnStm!=null) ForEndDsgnStm.traverseTopDown(visitor);
+        if(ForBodyStart!=null) ForBodyStart.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ForStmBegin!=null) ForStmBegin.traverseBottomUp(visitor);
-        if(ForStartDesignatorStm!=null) ForStartDesignatorStm.traverseBottomUp(visitor);
+        if(ForStart!=null) ForStart.traverseBottomUp(visitor);
+        if(ForStartDsgnStm!=null) ForStartDsgnStm.traverseBottomUp(visitor);
+        if(ForCondStart!=null) ForCondStart.traverseBottomUp(visitor);
         if(ForCond!=null) ForCond.traverseBottomUp(visitor);
-        if(ForEndDesignatorStm!=null) ForEndDesignatorStm.traverseBottomUp(visitor);
+        if(ForCondEnd!=null) ForCondEnd.traverseBottomUp(visitor);
+        if(ForEndDsgnStm!=null) ForEndDsgnStm.traverseBottomUp(visitor);
+        if(ForBodyStart!=null) ForBodyStart.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -101,14 +143,20 @@ public class ForStatement extends Statement {
         buffer.append(tab);
         buffer.append("ForStatement(\n");
 
-        if(ForStmBegin!=null)
-            buffer.append(ForStmBegin.toString("  "+tab));
+        if(ForStart!=null)
+            buffer.append(ForStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ForStartDesignatorStm!=null)
-            buffer.append(ForStartDesignatorStm.toString("  "+tab));
+        if(ForStartDsgnStm!=null)
+            buffer.append(ForStartDsgnStm.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ForCondStart!=null)
+            buffer.append(ForCondStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -119,8 +167,20 @@ public class ForStatement extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ForEndDesignatorStm!=null)
-            buffer.append(ForEndDesignatorStm.toString("  "+tab));
+        if(ForCondEnd!=null)
+            buffer.append(ForCondEnd.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ForEndDsgnStm!=null)
+            buffer.append(ForEndDsgnStm.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ForBodyStart!=null)
+            buffer.append(ForBodyStart.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

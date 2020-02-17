@@ -1,0 +1,53 @@
+INFO  10:59:59,932 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\codegenerator.mj
+INFO  11:00:00,009 - #13 program
+INFO  11:00:00,010 - #45 MJProgram
+INFO  11:00:00,011 - #45 int
+INFO  11:00:00,013 - #45 x
+INFO  11:00:00,015 - #7 ;
+INFO  11:00:00,016 - #45 int
+INFO  11:00:00,017 - #45 y
+INFO  11:00:00,018 - #7 ;
+INFO  11:00:00,018 - #45 int
+INFO  11:00:00,018 - #45 niz
+INFO  11:00:00,018 - #36 [
+INFO  11:00:00,018 - #37 ]
+INFO  11:00:00,018 - #7 ;
+INFO  11:00:00,018 - #11 {
+INFO  11:00:00,019 - #45 int
+INFO  11:00:00,020 - #45 k
+INFO  11:00:00,020 - #10 (
+INFO  11:00:00,021 - #5 )
+INFO  11:00:00,026 - #45 int
+INFO  11:00:00,028 - #45 c
+INFO  11:00:00,029 - #7 ;
+INFO  11:00:00,029 - #11 {
+INFO  11:00:00,038 - #45 c
+INFO  11:00:00,040 - #6 =
+INFO  11:00:00,041 - #42 2
+INFO  11:00:00,041 - #7 ;
+INFO  11:00:00,042 - #14 print
+INFO  11:00:00,042 - #10 (
+INFO  11:00:00,042 - #42 0
+INFO  11:00:00,042 - #5 )
+INFO  11:00:00,043 - #7 ;
+INFO  11:00:00,044 - #8 return
+INFO  11:00:00,044 - #45 c
+INFO  11:00:00,044 - #3 +
+INFO  11:00:00,044 - #42 2
+INFO  11:00:00,045 - #7 ;
+INFO  11:00:00,046 - #4 }
+INFO  11:00:00,046 - #15 void
+INFO  11:00:00,047 - #45 main
+INFO  11:00:00,047 - #10 (
+INFO  11:00:00,047 - #5 )
+INFO  11:00:00,048 - #11 {
+INFO  11:00:00,048 - #45 k
+INFO  11:00:00,048 - #10 (
+INFO  11:00:00,049 - #45 x
+INFO  11:00:00,049 - #5 )
+INFO  11:00:00,049 - #7 ;
+INFO  11:00:00,049 - #4 }
+INFO  11:00:00,050 - #4 }
+ERROR 11:00:00,077 - Greska: Ocekivano 0 argumenata, a pri pozivu prosledjeno 1 na liniji 26
+INFO  11:00:00,077 - Print calls = 1
+ERROR 11:00:00,078 - Parsiranje NIJE uspesno zavrseno!

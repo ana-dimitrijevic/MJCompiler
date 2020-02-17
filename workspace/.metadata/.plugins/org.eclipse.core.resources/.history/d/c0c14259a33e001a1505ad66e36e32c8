@@ -1,0 +1,73 @@
+program MJProgram
+	int x; int y;
+{
+
+	int k (int x, int y) int c; {
+		c = 2;
+		
+		print(0);
+		
+		return x+y;
+	}
+
+	void main() {
+		x = 3;
+		
+		//load x
+		//load 3
+		//jne na_else
+		//load x 
+		//load 3
+		//jne na_else
+		//Statement....
+		//Na_else....
+		
+		if(x!=3 || x!=3 || true) {
+			
+			print(1);
+			print(1);
+			print(1);
+			
+		}
+		
+		//load x
+		//load 3
+		//jne statement
+		//load x 
+		//load 3
+		//jne na_else
+		//Statement....
+		//Na_else....
+		
+		
+		//if(x!=3 || x!=3) {
+			
+			//print(1);
+			//print(1);
+			//print(1);
+			
+		//}
+		//else {
+			//print(0);
+			//print(0);
+			//print(0);
+		//}
+
+
+		//for(x=0; x<5; x++){
+			//if(x==1 && true) continue;
+			//print(x);
+			//if(x==3) break;
+		//}
+		
+		//y = 4 + 9 + k();
+		
+		//print(x);
+		
+		//y = k(2,3);
+		
+		//print(y);
+		
+		return;
+	}
+}

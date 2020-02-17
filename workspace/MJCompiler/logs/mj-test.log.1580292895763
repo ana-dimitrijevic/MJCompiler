@@ -1,0 +1,157 @@
+INFO  11:13:21,417 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\obrisi.mj
+INFO  11:13:21,424 - =================Sintaksna analiza==================
+INFO  11:13:21,511 - #13 program
+INFO  11:13:21,511 - #45 MJProgram
+INFO  11:13:21,511 - #45 int
+INFO  11:13:21,513 - #45 niz
+INFO  11:13:21,515 - #36 [
+INFO  11:13:21,515 - #37 ]
+INFO  11:13:21,515 - #7 ;
+INFO  11:13:21,516 - #45 int
+INFO  11:13:21,517 - #45 x
+INFO  11:13:21,517 - #7 ;
+INFO  11:13:21,517 - #45 int
+INFO  11:13:21,517 - #45 y
+INFO  11:13:21,517 - #7 ;
+INFO  11:13:21,518 - #11 {
+INFO  11:13:21,518 - #45 int
+INFO  11:13:21,520 - #45 kkk
+INFO  11:13:21,520 - #10 (
+INFO  11:13:21,524 - #45 int
+INFO  11:13:21,524 - #45 e
+INFO  11:13:21,525 - #36 [
+INFO  11:13:21,525 - #42 3
+ERROR 11:13:21,525 - 
+Sintaksna greska na liniji 7
+INFO  11:13:21,526 - #37 ]
+INFO  11:13:21,526 - #5 )
+INFO  11:13:21,526 - #45 int
+INFO  11:13:21,527 - #45 c
+INFO  11:13:21,528 - #7 ;
+INFO  11:13:21,528 - GRESKA: formalni parametar; Uspesno izvrsen oporavak od greske!
+INFO  11:13:21,530 - #11 {
+INFO  11:13:21,530 - #8 return
+INFO  11:13:21,532 - #45 e
+INFO  11:13:21,532 - #3 +
+INFO  11:13:21,533 - #45 c
+INFO  11:13:21,535 - #7 ;
+INFO  11:13:21,535 - #4 }
+INFO  11:13:21,536 - #45 int
+INFO  11:13:21,536 - #45 k
+INFO  11:13:21,536 - #10 (
+INFO  11:13:21,536 - #5 )
+INFO  11:13:21,537 - #45 int
+INFO  11:13:21,537 - #45 c
+INFO  11:13:21,537 - #12 ,
+INFO  11:13:21,538 - #45 x
+INFO  11:13:21,538 - #7 ;
+INFO  11:13:21,538 - #11 {
+INFO  11:13:21,538 - #8 return
+INFO  11:13:21,538 - #42 1
+INFO  11:13:21,539 - #7 ;
+INFO  11:13:21,539 - #4 }
+INFO  11:13:21,539 - #15 void
+INFO  11:13:21,540 - #45 kk
+INFO  11:13:21,540 - #10 (
+INFO  11:13:21,544 - #5 )
+INFO  11:13:21,544 - #45 int
+INFO  11:13:21,544 - #45 c
+INFO  11:13:21,545 - #7 ;
+INFO  11:13:21,545 - #11 {
+INFO  11:13:21,545 - #8 return
+INFO  11:13:21,550 - #7 ;
+INFO  11:13:21,551 - #4 }
+INFO  11:13:21,551 - #15 void
+INFO  11:13:21,552 - #45 main
+INFO  11:13:21,552 - #10 (
+INFO  11:13:21,552 - #5 )
+INFO  11:13:21,552 - #11 {
+INFO  11:13:21,552 - #45 niz
+INFO  11:13:21,552 - #6 =
+INFO  11:13:21,552 - #18 new
+INFO  11:13:21,553 - #45 int
+INFO  11:13:21,553 - #36 [
+INFO  11:13:21,553 - #42 3
+INFO  11:13:21,553 - #37 ]
+INFO  11:13:21,553 - #7 ;
+INFO  11:13:21,554 - #45 x
+INFO  11:13:21,554 - #24 -
+ERROR 11:13:21,554 - 
+Sintaksna greska na liniji 22
+INFO  11:13:21,554 - #3 +
+INFO  11:13:21,554 - #7 ;
+INFO  11:13:21,554 - #45 x
+INFO  11:13:21,554 - #6 =
+INFO  11:13:21,554 - #45 k
+INFO  11:13:21,555 - GRESKA: naredba dodele; Uspesno izvrsen oporavak od greske!
+INFO  11:13:21,556 - #10 (
+INFO  11:13:21,557 - #5 )
+INFO  11:13:21,560 - #7 ;
+INFO  11:13:21,560 - #45 kk
+INFO  11:13:21,561 - #10 (
+INFO  11:13:21,561 - #5 )
+INFO  11:13:21,561 - #7 ;
+INFO  11:13:21,561 - #45 k
+INFO  11:13:21,562 - #10 (
+INFO  11:13:21,562 - #5 )
+INFO  11:13:21,562 - #7 ;
+INFO  11:13:21,562 - #20 for
+INFO  11:13:21,562 - #10 (
+INFO  11:13:21,563 - #45 x
+INFO  11:13:21,563 - #6 =
+INFO  11:13:21,563 - #42 0
+INFO  11:13:21,563 - #7 ;
+INFO  11:13:21,563 - #45 x
+INFO  11:13:21,564 - #34 <
+INFO  11:13:21,564 - #35 <=
+ERROR 11:13:21,564 - 
+Sintaksna greska na liniji 29
+INFO  11:13:21,564 - #42 12
+INFO  11:13:21,564 - #7 ;
+INFO  11:13:21,564 - #45 x
+INFO  11:13:21,564 - #22 ++
+INFO  11:13:21,564 - #5 )
+INFO  11:13:21,564 - GRESKA: uslov; Uspesno izvrsen oporavak od greske!
+INFO  11:13:21,566 - #45 x
+INFO  11:13:21,567 - #23 --
+INFO  11:13:21,567 - #7 ;
+INFO  11:13:21,567 - #9 if
+INFO  11:13:21,568 - #10 (
+INFO  11:13:21,568 - #43 false
+INFO  11:13:21,568 - #28 &&
+INFO  11:13:21,569 - #45 niz
+INFO  11:13:21,569 - #30 ==
+INFO  11:13:21,569 - #45 null
+INFO  11:13:21,570 - #5 )
+INFO  11:13:21,571 - #45 niz
+INFO  11:13:21,571 - #6 =
+INFO  11:13:21,572 - #18 new
+INFO  11:13:21,572 - #45 int
+INFO  11:13:21,572 - #36 [
+INFO  11:13:21,572 - #42 5
+INFO  11:13:21,572 - #37 ]
+INFO  11:13:21,572 - #7 ;
+INFO  11:13:21,572 - #4 }
+INFO  11:13:21,573 - #4 }
+INFO  11:13:21,574 - rs.ac.bg.etf.pp1.ast.Program@7cd84586
+INFO  11:13:21,574 - =================Semanticka analiza===================
+INFO  11:13:21,597 - Detektovana globalna nizovska promenljiva na liniji 2
+INFO  11:13:21,597 - Detektovana globalna promenljiva na liniji 3
+INFO  11:13:21,598 - Detektovana globalna promenljiva na liniji 3
+ERROR 11:13:21,598 - Greska: e nije deklarisano!  na liniji 8
+ERROR 11:13:21,598 - Greska: nekompatibilni tipovi u izrazu
+ERROR 11:13:21,598 - Greska: tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije kkk
+INFO  11:13:21,598 - Detektovan poziv funkcije na liniji 25
+INFO  11:13:21,599 - Detektovan poziv funkcije na liniji 26
+INFO  11:13:21,599 - Detektovan poziv funkcije na liniji 27
+INFO  11:13:21,599 - Detektovana for petlja na liniji 29
+INFO  11:13:21,600 - ===================================
+INFO  11:13:21,601 - 0 klasa
+INFO  11:13:21,601 - 4 metoda
+INFO  11:13:21,601 - 6 globalnih promenljivih
+INFO  11:13:21,601 - 0 globalnih konstanti
+INFO  11:13:21,601 - 1 globalnih nizova
+INFO  11:13:21,601 - 3 poziva funkcija
+INFO  11:13:21,601 - 12 naredbi
+INFO  11:13:21,601 - ===================================
+ERROR 11:13:21,602 - Parsiranje NIJE uspesno zavrseno!

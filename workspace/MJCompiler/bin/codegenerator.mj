@@ -3,17 +3,18 @@ program MJProgram
 	int niz[];
 {
 
-	//int k () int c; {
-	//	c = 2;
-	//	print(0);	
-	//	return c+2;
-	//}
+	int kk () int c; {
+		c = 2;
+		print(0);	
+		return c+2;
+	}
 
 	void main() {
 	
 		//niz = new int[3];
 		
-		x = 11;
+		
+		//x = 11;
 		
 		//print(1);
 		
@@ -22,7 +23,7 @@ program MJProgram
 		
 		//print(x);
 		
-		//k();
+		k();
 		
 		//print(y);
 		
@@ -35,8 +36,8 @@ program MJProgram
 		
 		//print(x);
 		
-		x++;
-		print(x);
+		//x++;
+		//print(x);
 		
 		//niz[0]--;
 		//print(niz[0]);

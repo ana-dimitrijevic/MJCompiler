@@ -1,0 +1,29 @@
+program MJProgram
+	int a, b;
+	char arr[];
+{
+
+	void fun () char c; {
+		if (len(arr) != 0) {
+			c = arr[0];
+			print(c,5);
+		}
+		return;
+	}
+	
+	bool fun2 (int a, int b) {
+		if (len(arr) != 0) {
+			c = arr[0];
+			print(c,5);
+		}
+		return false;
+	}
+
+	void main() {
+	
+		arr = new char[4];
+		arr[0] = 'a';
+		fun();
+		
+	}
+}

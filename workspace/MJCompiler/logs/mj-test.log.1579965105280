@@ -1,0 +1,8 @@
+INFO  16:11:25,367 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program1.mj
+INFO  16:11:25,440 - #13 program
+INFO  16:11:25,440 - #45 P
+INFO  16:11:25,440 - #11 {
+INFO  16:11:25,442 - #4 }
+ERROR 16:11:25,462 - Greska: 'P' main metoda ne postoji  na liniji 3
+INFO  16:11:25,462 - Print calls = 0
+ERROR 16:11:25,463 - Parsiranje NIJE uspesno zavrseno!

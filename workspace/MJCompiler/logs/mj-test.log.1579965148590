@@ -1,0 +1,16 @@
+INFO  16:11:45,285 - Compiling source file: D:\Trenutni pp\workspace\MJCompiler\unit tests\program2.mj
+INFO  16:11:45,372 - #13 program
+INFO  16:11:45,373 - #45 P
+INFO  16:11:45,373 - #11 {
+INFO  16:11:45,375 - #15 void
+INFO  16:11:45,377 - #45 main
+INFO  16:11:45,378 - #10 (
+INFO  16:11:45,379 - #45 int
+INFO  16:11:45,379 - #45 a
+INFO  16:11:45,382 - #5 )
+INFO  16:11:45,382 - #11 {
+INFO  16:11:45,383 - #4 }
+INFO  16:11:45,385 - #4 }
+ERROR 16:11:45,410 - Greska: 'P' ne sme imati parametre  na liniji 5
+INFO  16:11:45,410 - Print calls = 0
+ERROR 16:11:45,411 - Parsiranje NIJE uspesno zavrseno!
